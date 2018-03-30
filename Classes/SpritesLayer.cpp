@@ -38,5 +38,8 @@ void SpritesLayer::createDynamicSprites()
     //最后，把那只鸟画出来
     auto pBird = Sprite::createWithSpriteFrameName("bird.png");
     pBird->setPosition(Vec2(200, 460));
-    auto pBirdMoveBy = MoveBy::create(2, Vec2())
+    auto pBirdMoveBy = MoveBy::create(2, Vec2(0, 30));
+    //循环地来回上下动
+    pBird->runAction(RepeatForever::create(Sequence::create(pBirdMoveBy, pBirdMoveBy->reverse(), nullptr)));
+
 }
