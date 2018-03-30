@@ -1,0 +1,16 @@
+"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\jeza1\source\repos\CarrotGuardGame
+It appears you are building natively for Windows Desktop with Mingw GCC
+-- OpenGL include dirs: 
+CMake Error at C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake:137 (message):
+  Could NOT find GLEW (missing: GLEW_INCLUDE_DIR GLEW_LIBRARY)
+Call Stack (most recent call first):
+  C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake:377 (_FPHSA_FAILURE_MESSAGE)
+  C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindGLEW.cmake:38 (find_package_handle_standard_args)
+  cocos2d/cmake/Modules/CocosBuildHelpers.cmake:44 (find_package)
+  cocos2d/cmake/Modules/BuildModules.cmake:7 (cocos_find_package)
+  cocos2d/CMakeLists.txt:98 (BuildModules)
+
+
+-- Configuring incomplete, errors occurred!
+See also "C:/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "C:/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeError.log".
