@@ -10,7 +10,7 @@
 
 void SceneBase::sourceManager(const std::vector<std::string> &rSourceNameVec, const bool &rBLoad)
 {
-	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
+	auto pSpriteFrameCache = SpriteFrameCache::getInstance();//精灵帧缓存创建实例；
 	for (auto &iterSourceName : rSourceNameVec)
 	{
 		if (rBLoad)  pSpriteFrameCache->addSpriteFramesWithFile(iterSourceName + PLISTPOSTFIX, iterSourceName + PHOTOPOSTFIX);

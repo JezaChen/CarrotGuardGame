@@ -3,7 +3,7 @@
 //  newCardDefence
 //
 //  Created by 何泓兵 on 18-3-30.
-//
+//  看得不太懂
 //
 
 #include "Config.h"

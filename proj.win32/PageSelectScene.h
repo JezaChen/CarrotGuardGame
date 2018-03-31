@@ -28,11 +28,11 @@ protected:
 
 private:
 
-	Layer *_pPageViewLayer = nullptr;
+	Layer *_pPageViewLayer = nullptr;//页面查看图层；
 
-	Layer *_pMenuPanelLayer = nullptr;
+	Layer *_pMenuPanelLayer = nullptr;//菜单面板图层；
 
-	Layer *_pPageTurningLayer = nullptr;
+	Layer *_pPageTurningLayer = nullptr;//页面转换图层；
 
 };
 
