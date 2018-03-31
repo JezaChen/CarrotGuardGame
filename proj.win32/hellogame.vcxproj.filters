@@ -36,6 +36,15 @@
     <ClCompile Include="..\Classes\SoundUtil.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="SceneBase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="NumSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -65,9 +74,6 @@
     <ClInclude Include="..\Classes\SoundUtil.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WelcomeScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MenusLayer.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -78,6 +84,27 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicSourcesDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PageSelectScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="NumSprite.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
