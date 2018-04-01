@@ -1,7 +1,7 @@
-/** @Copyright   ±£ÎÀÂÜ²·
-*   @author      ³Â½¨ÕÃ
+/** @Copyright   ä¿å«èåœ
+*   @author      é™ˆå»ºå½°
 *   @date        2018/2/28
-*   @brief       ÎÄ¼ş¼ÓÔØ¸¨Öú¹¤¾ßÍ·ÎÄ¼ş
+*   @brief       æ–‡ä»¶åŠ è½½è¾…åŠ©å·¥å…·å¤´æ–‡ä»¶
 */
 
 #pragma once
@@ -11,33 +11,33 @@
 #include "cocos2d.h"
 #include "StringUtil.h"
 
-/** @brief ÎÄ¼ş¼ÓÔØ¸¨Öú¹¤¾ßÍ·ÎÄ¼ş£¬ÓÃÓÚ¼ÓÔØcsvÎÄ¼ş£¬È»ºó½«Æä°´ĞĞ·Ö¸î£¬¶ÁÈ¡ÀïÃæÃ¿Ò»ĞĞµÄÊı¾İ²¢·µ»ØÃ¿Ò»ĞĞ¶ÔÓ¦µÄ×Ö·û´®¡£
-*   @author ³Â½¨ÕÃ
+/** @brief æ–‡ä»¶åŠ è½½è¾…åŠ©å·¥å…·å¤´æ–‡ä»¶ï¼Œç”¨äºåŠ è½½csvæ–‡ä»¶ï¼Œç„¶åå°†å…¶æŒ‰è¡Œåˆ†å‰²ï¼Œè¯»å–é‡Œé¢æ¯ä¸€è¡Œçš„æ•°æ®å¹¶è¿”å›æ¯ä¸€è¡Œå¯¹åº”çš„å­—ç¬¦ä¸²ã€‚
+*   @author é™ˆå»ºå½°
 */
 
 class FileLoadUtil
 {
 public:
     /**
-    @brief   ¸Ãº¯ÊıÓÃÓÚ¶ÁÈ¡Ò»¸öÎÄ¼ş£¬²¢·Ö±ğ½«¸ÃÎÄ¼şÃ¿Ò»ĞĞµÄÊı¾İÒÔstd::vector<std::string>µÄĞÎÊ½±£´æ²¢·µ»Ø¡£
-    @param   FilePath ÎÄ¼şÂ·¾¶
-    @return  ·Ö¸îºóµÄ×Ö·û´®ÏòÁ¿(StrVec, ¼´std::vector<std::string>)
+    @brief   è¯¥å‡½æ•°ç”¨äºè¯»å–ä¸€ä¸ªæ–‡ä»¶ï¼Œå¹¶åˆ†åˆ«å°†è¯¥æ–‡ä»¶æ¯ä¸€è¡Œçš„æ•°æ®ä»¥std::vector<std::string>çš„å½¢å¼ä¿å­˜å¹¶è¿”å›ã€‚
+    @param   FilePath æ–‡ä»¶è·¯å¾„
+    @return  åˆ†å‰²åçš„å­—ç¬¦ä¸²å‘é‡(StrVec, å³std::vector<std::string>)
     *
     */
     StrVec getDataLines(const std::string& FilePath)
     {
         StrVec res;
 
-        //Èç¹ûÕÒ²»µ½¸ÃÎÄ¼ş£¬Ö±½Ó·µ»Ø
+        //å¦‚æœæ‰¾ä¸åˆ°è¯¥æ–‡ä»¶ï¼Œç›´æ¥è¿”å›
         if (!cocos2d::FileUtils::getInstance()->isFileExist(FilePath))
             return res;
 
-        ssize_t pSize = 0; //pSizeÓÃÓÚ´«²Î
-        unsigned char* chDatas = cocos2d::FileUtils::getInstance()->getFileData(FilePath, "r", &pSize); //µ÷ÓÃcocos2dµÄAPI£¬·µ»Ø¸ÃÎÄ¼şµÄ×Ö·û´®ĞòÁĞ
+        ssize_t pSize = 0; //pSizeç”¨äºä¼ å‚
+        unsigned char* chDatas = cocos2d::FileUtils::getInstance()->getFileData(FilePath, "r", &pSize); //è°ƒç”¨cocos2dçš„APIï¼Œè¿”å›è¯¥æ–‡ä»¶çš„å­—ç¬¦ä¸²åºåˆ—
 
-        if (chDatas) //Èç¹ûchDatas²»Îª¿Õ£¬ÒâÎ¶×ÅÎÄ¼şÓĞ¸É»õ
-            res = StringUtil().split((char*)chDatas, "\n"); //½øĞĞÇĞ¸î
-        return res; //·µ»Ø×îÖÕµÃµ½µÄ×Ö·û´®¼¯
+        if (chDatas) //å¦‚æœchDatasä¸ä¸ºç©ºï¼Œæ„å‘³ç€æ–‡ä»¶æœ‰å¹²è´§
+            res = StringUtil().split((char*)chDatas, "\n"); //è¿›è¡Œåˆ‡å‰²
+        return res; //è¿”å›æœ€ç»ˆå¾—åˆ°çš„å­—ç¬¦ä¸²é›†
 
     }
 };

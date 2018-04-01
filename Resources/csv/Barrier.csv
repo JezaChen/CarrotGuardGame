@@ -1,0 +1,17 @@
+Id,Name,ModelName,Value,AnimationCount,Level,Hp
+1,1Ob,cloud01,50,0,1,800
+2,2Ob,cloud02,50,0,1,800
+3,3Ob,cloud03,50,0,1,800
+4,4Ob,cloud04,75,0,2,1000
+5,5Ob,cloud05,150,0,2,2000
+6,6Ob,cloud06,50,0,4,1100
+7,7Ob,cloud07,150,0,4,2000
+8,8Ob,cloud08,75,0,4,1300
+9,9Ob,cloud09,75,0,4,1400
+10,10Ob,cloud10,150,0,4,900
+11,11Ob,cloud11,150,0,4,1200
+12,12Ob,cloud12,150,0,4,1300
+17,17Ob,cloud17,150,0,4,1400
+27,27Ob,cloud27,168,0,4,1500
+37,37Ob,cloud37,168,0,4,1600
+47,47Ob,cloud47,168,0,4,1700

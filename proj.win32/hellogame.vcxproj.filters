@@ -36,6 +36,31 @@
     <ClCompile Include="..\Classes\SoundUtil.cpp">
       <Filter>src</Filter>
     </ClCompile>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClCompile Include="..\Classes\LoadingSourceLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SceneManager.cpp">
+=======
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+    <ClCompile Include="SceneBase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="NumSprite.cpp">
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -65,9 +90,6 @@
     <ClInclude Include="..\Classes\SoundUtil.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WelcomeScene.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MenusLayer.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -78,6 +100,45 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>src</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClInclude Include="..\Classes\LoadingSourceLayer.h">
+=======
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+    <ClInclude Include="PublicDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicSourcesDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PageSelectScene.h">
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>src</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClInclude Include="..\Classes\SceneManager.h">
+=======
+    <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+    <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

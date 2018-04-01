@@ -15,7 +15,7 @@ protected:
     virtual void showMenu();
 
 private:
-    Layer * _pSpriteLayer = nullptr;
+    Layer * _pSpritesLayer = nullptr;
     Layer *_pMenuLayer = nullptr;
 };
 

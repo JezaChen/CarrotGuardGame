@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="8" tilewidth="80" tileheight="80">
+ <properties>
+  <property name="style" value="2"/>
+     <tileset firstgid="1" name="06" tilewidth="80" tileheight="80">
+         <image source="../../Resources/Icon.png" width="57" height="57"/>
+     </tileset>
+ </properties>
+ <objectgroup name="PATH" width="12" height="8">
+  <object name="6Ob1" x="0" y="80" width="160" height="160"/>
+  <object name="6Ob2" x="240" y="400" width="160" height="160"/>
+  <object name="6Ob3" x="720" y="400" width="160" height="160"/>
+  <object name="7Ob1" x="0" y="320" width="160" height="160"/>
+  <object name="7Ob2" x="240" y="240" width="160" height="160"/>
+  <object name="7Ob3" x="480" y="320" width="160" height="160"/>
+  <object name="7Ob4" x="720" y="240" width="160" height="160"/>
+  <object name="4Ob1" x="0" y="240" width="160" height="80"/>
+  <object name="5Ob1" x="240" y="80" width="160" height="80"/>
+  <object name="5Ob2" x="640" y="80" width="160" height="80"/>
+  <object name="1Ob1" x="480" y="80" width="80" height="80"/>
+  <object name="1Ob2" x="400" y="560" width="80" height="80"/>
+  <object name="1Ob3" x="480" y="560" width="80" height="80"/>
+  <object name="3Ob1" x="480" y="160" width="80" height="80"/>
+  <object name="2Ob1" x="560" y="160" width="80" height="80"/>
+  <object name="Obj1" x="400" y="80" width="80" height="80"/>
+  <object name="Obj2" x="560" y="80" width="80" height="80"/>
+  <object name="Obj3" x="800" y="80" width="160" height="80"/>
+  <object name="Obj4" x="480" y="240" width="160" height="80"/>
+  <object name="Obj5" x="80" y="480" width="80" height="80"/>
+  <object name="Obj6" x="320" y="560" width="80" height="80"/>
+  <object name="Obj7" x="880" y="160" width="80" height="320"/>
+  <object name="PT1" x="160" y="480"/>
+  <object name="PT2" x="160" y="160"/>
+  <object name="PT3" x="400" y="160"/>
+  <object name="PT4" x="400" y="480"/>
+  <object name="PT5" x="640" y="480"/>
+  <object name="PT6" x="640" y="160"/>
+  <object name="PT7" x="800" y="160"/>
+  <object name="PT8" x="880" y="160"/>
+  <object name="9T1" type="1" x="160" y="80" width="80" height="80">
+   <properties>
+    <property name="new" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
