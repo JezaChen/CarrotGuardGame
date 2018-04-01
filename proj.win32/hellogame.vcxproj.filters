@@ -38,6 +38,7 @@
     </ClCompile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\LoadingSourceLayer.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -48,6 +49,8 @@
 =======
 =======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClCompile Include="SceneBase.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="NumSprite.cpp">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
@@ -104,8 +110,11 @@
     </ClInclude>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="..\Classes\LoadingSourceLayer.h">
 =======
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClInclude Include="PublicDefine.h">
@@ -122,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="PageSelectScene.h">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
@@ -132,7 +144,11 @@
     </ClInclude>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="..\Classes\SceneManager.h">
+=======
+    <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
     <ClInclude Include="NumSprite.h">
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959

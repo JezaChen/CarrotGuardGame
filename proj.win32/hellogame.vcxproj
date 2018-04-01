@@ -161,7 +161,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
+=======
+    <ClCompile Include="Config.cpp" />
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
     <ClCompile Include="Config.cpp" />
 >>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
@@ -189,8 +193,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\VisibleRect.h" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="Config.h" />
+=======
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="GameScene.h" />
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
 =======
     <ClInclude Include="Config.h" />
     <ClInclude Include="GameScene.h" />
