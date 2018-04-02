@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -153,11 +153,20 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\LoadingSourceLayer.cpp" />
     <ClCompile Include="..\Classes\MenusLayer.cpp" />
+    <ClCompile Include="..\Classes\SceneManager.cpp" />
     <ClCompile Include="..\Classes\SoundUtil.cpp" />
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
+
+    <ClCompile Include="..\Classes\WelcomeScene.cpp" />
+=======
+    <ClCompile Include="Config.cpp" />
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NumSprite.cpp" />
+    <ClCompile Include="SceneBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -166,14 +175,27 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\LoadingSourceLayer.h" />
     <ClInclude Include="..\Classes\MenusLayer.h" />
     <ClInclude Include="..\Classes\route.h" />
+    <ClInclude Include="..\Classes\SceneManager.h" />
     <ClInclude Include="..\Classes\SoundUtil.h" />
     <ClInclude Include="..\Classes\SpritesLayer.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
+
     <ClInclude Include="..\Classes\WelcomeScene.h" />
+    <ClInclude Include="Config.h" />
+=======
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="GameScene.h" />
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClInclude Include="main.h" />
+    <ClInclude Include="NumSprite.h" />
+    <ClInclude Include="PageSelectScene.h" />
+    <ClInclude Include="PublicDefine.h" />
+    <ClInclude Include="PublicSourcesDefine.h" />
+    <ClInclude Include="SceneBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">

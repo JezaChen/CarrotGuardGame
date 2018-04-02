@@ -1,7 +1,7 @@
-/** @Copyright   ±£ÎÀÂÜ²·
-*   @author      ³Â½¨ÕÃ
+/** @Copyright   ä¿å«èåœ
+*   @author      é™ˆå»ºå½°
 *   @date        2018/2/28 
-*   @brief       ×Ö·û´®´¦Àí¹¤¾ßÍ·ÎÄ¼ş
+*   @brief       å­—ç¬¦ä¸²å¤„ç†å·¥å…·å¤´æ–‡ä»¶
 */
 
 #pragma once
@@ -11,16 +11,16 @@
 #include<vector>
 
 #ifndef StrVec
-#define StrVec std::vector<std::string> //ºê¶¨ÒåStrVec£¬stringÏòÁ¿
+#define StrVec std::vector<std::string> //å®å®šä¹‰StrVecï¼Œstringå‘é‡
 #endif // !1StrVec
 
 class StringUtil
 {
 public:
     /**
-    @brief   ¸Ãº¯ÊıÓÃÓÚ·Ö¸î×Ö·û´®£¬¸ø¶¨·Ö¸ô·û
-    @param   µÚÒ»¸ö²ÎÊıtargetÊÇĞèÒªÇĞ¸îµÄ×Ö·û´®, µÚ¶ş¸ö²ÎÊırSSeqÊÇ·Ö¸ô·û
-    @return  ·Ö¸îºóµÄ×Ö·û´®ÏòÁ¿(StrVec, ¼´std::vector<std::string>)
+    @brief   è¯¥å‡½æ•°ç”¨äºåˆ†å‰²å­—ç¬¦ä¸²ï¼Œç»™å®šåˆ†éš”ç¬¦
+    @param   ç¬¬ä¸€ä¸ªå‚æ•°targetæ˜¯éœ€è¦åˆ‡å‰²çš„å­—ç¬¦ä¸², ç¬¬äºŒä¸ªå‚æ•°rSSeqæ˜¯åˆ†éš”ç¬¦
+    @return  åˆ†å‰²åçš„å­—ç¬¦ä¸²å‘é‡(StrVec, å³std::vector<std::string>)
     *
     */
     StrVec split(const std::string& target, const std::string& rSSeq)

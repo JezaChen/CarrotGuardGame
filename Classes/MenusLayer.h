@@ -11,12 +11,12 @@ public:
     CREATE_FUNC(MenusLayer);
 protected:
     /*
-    @brief ³õÊ¼»¯º¯Êı
+    @brief åˆå§‹åŒ–å‡½æ•°
     */
     virtual bool init();
 
     /*
-    @brief ´´½¨Ä¿Â¼°´Å¥
+    @brief åˆ›å»ºç›®å½•æŒ‰é’®
     */
     virtual void createMenuItems();
 };
