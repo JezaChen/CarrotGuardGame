@@ -6,6 +6,7 @@
 //  ¿´µÃ²»Ì«¶®
 //
 
+#include "CommonDefine.h"
 #include "Config.h"
 #include "SoundUtil.h"
 

@@ -32,7 +32,7 @@ using TowerVec = Vector<TowerBase *>;
 //如果创建成功并且调用init方法初始化成功;
 //将对象加入到自动释放池中，并返回；
 //否则，创建对象失败，释放对象；
-#define CREATE_INSTANCE_FUNC(__CLASS__) \
+#define CREATE_INSTANCE_FUNCTION(__CLASS__) \
 private:\
     static __CLASS__ *_gInstance;\
 public:\
@@ -54,7 +54,7 @@ static __CLASS__* getInstance()\
     return _gInstance;\
 }
 //宏定义销毁新实例；
-#define DESTROY_INSTANCE_FUNC()\
+#define DESTROY_INSTANCE_FUNCTION()\
 static void destroyInstance()\
 {\
     CC_SAFE_RELEASE_NULL(_gInstance);\
