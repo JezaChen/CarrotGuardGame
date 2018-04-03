@@ -1,4 +1,4 @@
-﻿
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
@@ -10,7 +10,7 @@ USING_NS_CC;
 //  Config.h
 //  newCardDefence
 //
-//  Created by ������ on 18-3-30.
+//  Created by 何泓兵 on 18-3-30.
 //
 //
 #pragma once

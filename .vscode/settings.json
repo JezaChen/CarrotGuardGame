@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "xstring": "cpp"
-    }
+        "xstring": "cpp",
+        "ios": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

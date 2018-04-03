@@ -1,11 +1,13 @@
 #include "SceneManager.h"
+#include "CommonSource"
+#include "CommonDefine"
 
 bool SceneManager::init()
 {
     bool bRet = false;
     do
     {
-        registerChangeSceneEvent(); //×¢²á¼àÌýÊÂ¼þ
+        registerChangeSceneEvent(); 
         bRet = true;
     } while (0);
     return bRet;
@@ -15,7 +17,7 @@ void SceneManager::initWelcomeScene()
 {
     currentScene = en_WelcomeScene;
     auto currScene = std::make_tuple(currentScene, 0);
-    changeScene(currScene); //µ÷ÓÃ×Ô¼ºµÄº¯Êý´´½¨»¶Ó­½çÃæ
+    changeScene(currScene); 
 }
 
 void SceneManager::unRegisterChangeSceneEvent()
@@ -29,6 +31,25 @@ void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
     auto tSceneType = std::get<0>(changingScene);
     if(tSceneType == en_GameScene)
     {
-
+        _iCurPageIndex = std::get<1>(changingScene);
     }
+    if(tSceneType == en_LevelSelectScene)
+    {
+        _iCUrLevelIndex = std::get<1>(changingScene);
+    }
+    if(tSceneType != en_GameScene) //è‹¥ä¸æ˜¯åˆ‡æ¢åˆ°æ¸¸æˆç•Œé¢
+    {
+        //æ’­æ”¾èƒŒæ™¯éŸ³ä¹
+        SoundUtil::getInstance()->playBackgroundSound(BACKGROUNDSOUND.c_str());
+    }
+    checkCurrentPageAndLevel(); //ä¸ºä»€ä¹ˆè¦æ£€æŸ¥
+
+    auto pScene = SceneFactor
+
+    Director pDirector = Director::getInstance();
+    auto pRunScene = pDirector->getRunningScene(;
+    pRunScene ? pDirector->replaceScene(pScene)
+    checkCurrentPageAndLevel();
+
+
 }
