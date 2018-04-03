@@ -51,6 +51,9 @@ const static std::string PAGESOURCE[] =
 
 const static std::string MAPNAME = "ss_map";
 const static std::string TOWERNAME = "ss_towers_";
+/*
+* 每个主题的关卡数
+*/
 const static unsigned int THEME_LEVELCOUNT_ARRAY[] = { 12,12,12,15 };
 
 const static std::string THEMESSOURCE[] =

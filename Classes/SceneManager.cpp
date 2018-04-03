@@ -1,6 +1,7 @@
 #include "SceneManager.h"
 #include "CommonSource"
 #include "CommonDefine"
+#include "SceneFactory.h"
 
 bool SceneManager::init()
 {
@@ -28,28 +29,44 @@ void SceneManager::unRegisterChangeSceneEvent()
 void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
 {
     Director::getInstance()->getScheduler()->setTimeScale(1);
-    auto tSceneType = std::get<0>(changingScene);
-    if(tSceneType == en_GameScene)
+    auto aSceneType = std::get<0>(changingScene);
+    if(aSceneType == en_GameScene)
     {
         _iCurPageIndex = std::get<1>(changingScene);
     }
-    if(tSceneType == en_LevelSelectScene)
+    if(aSceneType == en_LevelSelectScene)
     {
         _iCUrLevelIndex = std::get<1>(changingScene);
     }
-    if(tSceneType != en_GameScene) //若不是切换到游戏界面
+    if(aSceneType != en_GameScene) //若不是切换到游戏界面
     {
         //播放背景音乐
         SoundUtil::getInstance()->playBackgroundSound(BACKGROUNDSOUND.c_str());
     }
     checkCurrentPageAndLevel(); //为什么要检查
 
-    auto pScene = SceneFactor
+    auto pScene = SceneFactory::createScene(aSceneType);
 
     Director pDirector = Director::getInstance();
-    auto pRunScene = pDirector->getRunningScene(;
-    pRunScene ? pDirector->replaceScene(pScene)
-    checkCurrentPageAndLevel();
+    auto pRunScene = pDirector->getRunningScene();
+    pRunScene ? pDirector->replaceScene(pScene);
+}
 
+void SceneManager::checkCurrentPageAndLevel()
+{
+    //获取当前主题的关卡数
+    auto aCurPageLevelCount = THEME_LEVELCOUNT_ARRAY[_iCurPageIndex];
 
+    //若当前关卡索引已经等于当前主题的关卡数
+    if(aCurPageLevelCount == _iCUrLevelIndex)
+    {
+        _iCurPageIndex++; //页面加一
+        _iCurLevelIndex = 0; //关卡数清零
+    } 
+}
+
+void SceneManager::notifyChangeScene(Ref* pData)
+{
+    auto enSceneType = *(reinterpret_cast<std::tuple<SceneType, int> *>(pData));
+    changingScene(enSceneType);
 }

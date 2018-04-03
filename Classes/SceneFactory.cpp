@@ -20,5 +20,12 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
         case en_GameSettingScene:
             pScene = GameSettingScene::create();
             break;
+        case en_GameScene:
+            //值得注意的是，切换的是加载场景
+            pScene = LoadingScene::create(); //TODO
+            break;
+        default:
+            break;
     }
+    return pScene;
 }
