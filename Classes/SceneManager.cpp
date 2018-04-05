@@ -70,3 +70,20 @@ void SceneManager::notifyChangeScene(Ref* pData)
     auto enSceneType = *(reinterpret_cast<std::tuple<SceneType, int> *>(pData));
     changingScene(enSceneType);
 }
+
+void SceneManager::registerChangeSceneEvent()
+{
+    //注册监听事件
+    NOTIFY->addObserver(this, callfuncO_selector(SceneManager::notifyChangeScene), "changeScene", nullptr);
+}
+
+int SceneManager::getCurrentPageIndex()const
+{
+    return _iCurPageIndex;
+}
+
+int SceneManager::getCurrentLevelIndex()const
+{
+    return _iCUrLevelIndex;
+}
+

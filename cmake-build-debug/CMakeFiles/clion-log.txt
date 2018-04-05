@@ -1,16 +1,30 @@
-"C:\Program Files\JetBrains\CLion 2017.3.3\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\jeza1\source\repos\CarrotGuardGame
-It appears you are building natively for Windows Desktop with Mingw GCC
--- OpenGL include dirs: 
-CMake Error at C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake:137 (message):
-  Could NOT find GLEW (missing: GLEW_INCLUDE_DIR GLEW_LIBRARY)
+/usr/share/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame
+It appears you are building natively for Linux with GCC
+-- chipmunk CHIPMUNK_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/prebuilt/linux/64-bit/libchipmunk.a
+-- curl CURL_LIBRARIES: 
+-- freetype2 FREETYPE_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/prebuilt/linux/64-bit/libfreetype.a
+-- jpeg JPEG_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/prebuilt/linux/64-bit/libjpeg.a
+-- png PNG_LIBRARIES: 
+-- tiff TIFF_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/prebuilt/linux/64-bit/libtiff.a
+-- webp WEBP_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/webp/prebuilt/linux/64-bit/libwebp.a
+-- websockets WEBSOCKETS_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/prebuilt/linux/64-bit/libwebsockets.a
+-- openssl OPENSSL_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libssl.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libcrypto.a
+-- bullet BULLET_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletDynamics.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletCollision.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletMultiThreaded.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libLinearMath.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libMiniCL.a
+-- fmod FMOD_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so
+-- OpenGL include dirs: /usr/include
+-- GLEW include dirs: /usr/include
+-- PkgConfig found
+-- checking for module 'glfw3'
+--   package 'glfw3' not found
+CMake Error at cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake:136 (message):
+  Could NOT find GLFW3 (missing: GLFW3_LIBRARIES)
 Call Stack (most recent call first):
-  C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake:377 (_FPHSA_FAILURE_MESSAGE)
-  C:/Program Files/JetBrains/CLion 2017.3.3/bin/cmake/share/cmake-3.9/Modules/FindGLEW.cmake:38 (find_package_handle_standard_args)
+  cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake:343 (_FPHSA_FAILURE_MESSAGE)
+  cocos2d/cmake/Modules/FindGLFW3.cmake:152 (find_package_handle_standard_args)
   cocos2d/cmake/Modules/CocosBuildHelpers.cmake:44 (find_package)
-  cocos2d/cmake/Modules/BuildModules.cmake:7 (cocos_find_package)
+  cocos2d/cmake/Modules/BuildModules.cmake:12 (cocos_find_package)
   cocos2d/CMakeLists.txt:98 (BuildModules)
 
 
 -- Configuring incomplete, errors occurred!
-See also "C:/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeError.log".
+See also "/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeOutput.log".
