@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="8" tilewidth="80" tileheight="80">
+ <properties>
+  <property name="style" value="2"/>
+ </properties>
+ <tileset firstgid="1" name="12" tilewidth="80" tileheight="80">
+  <image source="../../Resources/Icon.png" width="57" height="57"/>
+ </tileset>
+ <objectgroup name="PATH" width="12" height="8">
+  <object name="PT1" x="800" y="240"/>
+  <object name="PT2" x="480" y="240"/>
+  <object name="PT3" x="480" y="160"/>
+  <object name="PT4" x="880" y="160"/>
+  <object name="PT5" x="880" y="320"/>
+  <object name="PT6" x="400" y="320"/>
+  <object name="PT7" x="400" y="160"/>
+  <object name="PT8" x="240" y="160"/>
+  <object name="PT9" x="240" y="240"/>
+  <object name="PT10" x="80" y="240"/>
+  <object name="PT11" x="80" y="400"/>
+  <object name="PT12" x="240" y="400"/>
+  <object name="PT13" x="240" y="560"/>
+  <object name="PT14" x="400" y="560"/>
+  <object name="PT15" x="400" y="400"/>
+  <object name="PT16" x="880" y="400"/>
+  <object name="PT17" x="880" y="560"/>
+  <object name="PT18" x="480" y="560"/>
+  <object name="PT19" x="480" y="480"/>
+  <object name="PT20" x="720" y="480"/>
+  <object name="PT21" x="800" y="480"/>
+  <object name="9T9" type="2" x="0" y="80" width="80" height="80"/>
+  <object name="9T8" type="2" x="240" y="80" width="80" height="80"/>
+  <object name="9T6" type="1" x="400" y="80" width="80" height="80"/>
+  <object name="9T4" type="2" x="640" y="80" width="80" height="80"/>
+  <object name="9T1" type="1" x="880" y="80" width="80" height="80"/>
+  <object name="9T11" type="1" x="0" y="240" width="80" height="80"/>
+  <object name="9T18" type="1" x="320" y="240" width="80" height="80"/>
+  <object name="9T13" type="2" x="0" y="400" width="80" height="80"/>
+  <object name="9T17" type="1" x="320" y="400" width="80" height="80"/>
+  <object name="10Ob1" type="6" x="160" y="320" width="80" height="80"/>
+  <object name="9T14" type="3" x="80" y="480" width="80" height="80"/>
+  <object name="9T10" type="1" x="0" y="160" width="80" height="80"/>
+  <object name="9T12" type="1" x="0" y="320" width="80" height="80"/>
+  <object name="9T15" type="1" x="160" y="480" width="80" height="80"/>
+  <object name="9T16" type="2" x="320" y="480" width="80" height="80"/>
+  <object name="10Ob2" type="-1" x="240" y="320" width="80" height="80"/>
+  <object name="9T7" type="1" x="320" y="80" width="80" height="80"/>
+  <object name="9T5" type="1" x="560" y="80" width="80" height="80"/>
+  <object name="9T3" type="1" x="720" y="80" width="80" height="80"/>
+  <object name="9T2" type="2" x="800" y="80" width="80" height="80"/>
+  <object name="6Ob1" type="-1" x="80" y="80" width="160" height="160">
+   <properties>
+    <property name="flipx" value="180"/>
+   </properties>
+  </object>
+  <object name="Obj1" x="320" y="320" width="80" height="80"/>
+  <object name="Obj2" x="480" y="80" width="80" height="80"/>
+ </objectgroup>
+</map>

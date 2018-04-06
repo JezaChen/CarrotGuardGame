@@ -36,6 +36,21 @@
     <ClCompile Include="..\Classes\SoundUtil.cpp">
       <Filter>src</Filter>
     </ClCompile>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClCompile Include="..\Classes\LoadingSourceLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SceneManager.cpp">
+=======
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClCompile Include="SceneBase.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -43,6 +58,13 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="NumSprite.cpp">
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,6 +108,15 @@
     <ClInclude Include="..\Classes\VisibleRect.h">
       <Filter>src</Filter>
     </ClInclude>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClInclude Include="..\Classes\LoadingSourceLayer.h">
+=======
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
     <ClInclude Include="PublicDefine.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -99,12 +130,31 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="PageSelectScene.h">
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="Config.h">
       <Filter>src</Filter>
     </ClInclude>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <ClInclude Include="..\Classes\SceneManager.h">
+=======
     <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+    <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
+=======
+    <ClInclude Include="NumSprite.h">
+>>>>>>> 83fcb44c70512683539c4a6290760aa6326fb959
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,8 +19,8 @@ void MenusLayer::createMenuItems()
         Sprite::createWithSpriteFrameName("btn_adventure_pressed_CN.png"),
         [](Ref *pSender)
         {
-        auto levelScene = std::make_tuple(en_PageSelectScene, 0);  // µã»÷¸Ã°´Å¥ºó½øÈëÒ³ÃæÑ¡Ôñ³¡¾°£¨´ó¹Ø¿¨Ñ¡Ôñ£©
-        NOTIFICATION_CENTER->postNotification("changeScene", reinterpret_cast<Ref*>(&levelScene));  // Í¨ÖªÇÐ»»³¡¾°
+        auto levelScene = std::make_tuple(en_PageSelectScene, 0);  // ç‚¹å‡»è¯¥æŒ‰é’®åŽè¿›å…¥é¡µé¢é€‰æ‹©åœºæ™¯ï¼ˆå¤§å…³å¡é€‰æ‹©ï¼‰
+        NOTIFICATION_CENTER->postNotification("changeScene", reinterpret_cast<Ref*>(&levelScene));  // é€šçŸ¥åˆ‡æ¢åœºæ™¯
         }
     );
     pBtnAdventureMode->setPosition(Vec2(180, 100));
@@ -35,7 +35,7 @@ void MenusLayer::createMenuItems()
     );
     pBtnBossMode->setPosition(Vec2(pBtnAdventureMode->getPositionX() + 300, pBtnAdventureMode->getPositionY()));
 
-    if (true)  // bossÄ£Ê½Ã»ÓÐÍê³É£¬ÏÈ¼ÓÉÏËø
+    if (true)  // bossæ¨¡å¼æ²¡æœ‰å®Œæˆï¼Œå…ˆåŠ ä¸Šé”
     {
         auto pLock = Sprite::createWithSpriteFrameName("locked.png");
         pLock->setPosition(pBtnBossMode->getPositionX() + pBtnBossMode->getContentSize().width / 2 - 20, pBtnBossMode->getPositionY() - 20);
@@ -52,7 +52,7 @@ void MenusLayer::createMenuItems()
     );
     pBtnNestMode->setPosition(Vec2(pBtnBossMode->getPositionX() + 300, 100));
 
-    if (true)  // nestÄ£Ê½Ã»ÓÐÍê³É£¬ÏÈ¼ÓÉÏËø
+    if (true)  // nestæ¨¡å¼æ²¡æœ‰å®Œæˆï¼Œå…ˆåŠ ä¸Šé”
     {
         auto pLock = Sprite::createWithSpriteFrameName("locked.png");
         pLock->setPosition(pBtnNestMode->getPositionX() + pBtnNestMode->getContentSize().width / 2 - 20, pBtnNestMode->getPositionY() - 20);

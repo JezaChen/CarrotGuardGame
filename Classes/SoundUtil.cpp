@@ -4,18 +4,18 @@
 void SoundUtil::playBackgroundSound(const std::string & bgSound)
 {
     if (!_bIsBackgroundSoundOpen)
-        return; //Èç¹û±³¾°ÒôÀÖ¿ª¹ØÃ»ÓÐ´ò¿ª£¬²»²¥·Å
+        return; //å¦‚æžœèƒŒæ™¯éŸ³ä¹å¼€å…³æ²¡æœ‰æ‰“å¼€ï¼Œä¸æ’­æ”¾
 
-    //µ÷ÓÃSimpleAudioEngine²¥·ÅÒôÀÖ£¬ÉèÖÃÎªÑ­»·²¥·Å
+    //è°ƒç”¨SimpleAudioEngineæ’­æ”¾éŸ³ä¹ï¼Œè®¾ç½®ä¸ºå¾ªçŽ¯æ’­æ”¾
     CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic(bgSound.c_str(), true);
 }
 
 void SoundUtil::playEffectSound(const std::string &efSound)
 {
     if (!_bIsEffectSoundOpen)
-        return; //Èç¹ûÒôÐ§¿ª¹ØÃ»ÓÐ´ò¿ª£¬²»²¥·Å
+        return; //å¦‚æžœéŸ³æ•ˆå¼€å…³æ²¡æœ‰æ‰“å¼€ï¼Œä¸æ’­æ”¾
 
-    //µ÷ÓÃSimpleAudioEngine²¥·ÅÒôÀÖ£¬²»Ñ­»·²¥·Å
+    //è°ƒç”¨SimpleAudioEngineæ’­æ”¾éŸ³ä¹ï¼Œä¸å¾ªçŽ¯æ’­æ”¾
     CocosDenshion::SimpleAudioEngine::getInstance()->playEffect(efSound.c_str());
 }
 

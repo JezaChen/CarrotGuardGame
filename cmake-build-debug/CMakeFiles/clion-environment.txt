@@ -1,4 +1,2 @@
-ToolSet: 5.0@C:\MinGW
 Options: 
-
-Options:
+CMake: 3.8.2@/usr/share/clion/bin/cmake/bin/cmake
