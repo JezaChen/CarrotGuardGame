@@ -10,7 +10,7 @@
 #ifndef __CarrotFantasy__DynamicPropertyInterFace__
 #define __CarrotFantasy__DynamicPropertyInterFace__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 class DynamicPropertyInterFace
 {

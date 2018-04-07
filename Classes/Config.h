@@ -1,10 +1,8 @@
-
+#pragma once
 #ifndef CONFIG_H
 #define CONFIG_H
 
 #include "CommonDefine.h"
-
-USING_NS_CC;
 
 //
 //  Config.h
@@ -13,21 +11,19 @@ USING_NS_CC;
 //  Created by 何泓兵 on 18-3-30.
 //
 //
-#pragma once
-#ifndef __newCardDefence__Config__
-#define __newCardDefence__Config__
 
-#include "PublicDefine.h"
 
-    class SoundUtil;
+#include "CommonDefine.h"
+
+class SoundUtil;
 
 class Config :public Ref
 {
 public:
 
-    CREATE_INSTANCE_FUNC(Config);
+    CREATE_INSTANCE_FUNCTION(Config);
 
-    DESTROY_INSTANCE_FUNC();
+    DESTROY_INSTANCE_FUNCTION();
     /**
     *  flag source be loading
     */

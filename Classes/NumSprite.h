@@ -9,7 +9,7 @@
 #ifndef __CarrotFantasy__NumSprite__
 #define __CarrotFantasy__NumSprite__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 class NumSprite
 {

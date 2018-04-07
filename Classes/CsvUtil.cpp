@@ -84,12 +84,12 @@ std::string CsvUtil::getStr(const int & rRow, const int & rCol, const std::strin
 
 int CsvUtil::getInt(const int & rRow, const int & rCol, const std::string & FilePath)
 {
-    return atoi(getStr(rRow, rCol, FilePath).c_str);
+    return atoi(getStr(rRow, rCol, FilePath).c_str());
 }
 
 double CsvUtil::getDouble(const int & rRow, const int & rCol, const std::string & FilePath)
 {
-    return atof(getStr(rRow, rCol, FilePath).c_str);
+    return atof(getStr(rRow, rCol, FilePath).c_str());
 }
 
 StrVec CsvUtil::getRowData(const int & rRow, const std::string & FilePath)

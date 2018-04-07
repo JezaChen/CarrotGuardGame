@@ -18,6 +18,6 @@ public:
     * @return Scene* 返回创建的场景指针
     */
     static Scene* createScene(const SceneType &rEnSceneType);
-}
+};
 
 #endif

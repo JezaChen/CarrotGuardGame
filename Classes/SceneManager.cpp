@@ -1,7 +1,8 @@
 #include "SceneManager.h"
-#include "CommonSource"
-#include "CommonDefine"
+#include "CommonSource.h"
+#include "CommonDefine.h"
 #include "SceneFactory.h"
+#include "SoundUtil.h"
 
 bool SceneManager::init()
 {
@@ -36,7 +37,7 @@ void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
     }
     if(aSceneType == en_LevelSelectScene)
     {
-        _iCUrLevelIndex = std::get<1>(changingScene);
+        _iCurLevelIndex = std::get<1>(changingScene);
     }
     if(aSceneType != en_GameScene) //若不是切换到游戏界面
     {
@@ -47,9 +48,9 @@ void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
 
     auto pScene = SceneFactory::createScene(aSceneType);
 
-    Director pDirector = Director::getInstance();
+    Director* pDirector = Director::getInstance();
     auto pRunScene = pDirector->getRunningScene();
-    pRunScene ? pDirector->replaceScene(pScene);
+    pRunScene ? pDirector->replaceScene(pScene) : pDirector->runWithScene(pScene);
 }
 
 void SceneManager::checkCurrentPageAndLevel()
@@ -58,7 +59,7 @@ void SceneManager::checkCurrentPageAndLevel()
     auto aCurPageLevelCount = THEME_LEVELCOUNT_ARRAY[_iCurPageIndex];
 
     //若当前关卡索引已经等于当前主题的关卡数
-    if(aCurPageLevelCount == _iCUrLevelIndex)
+    if(aCurPageLevelCount == _iCurLevelIndex)
     {
         _iCurPageIndex++; //页面加一
         _iCurLevelIndex = 0; //关卡数清零
@@ -68,7 +69,7 @@ void SceneManager::checkCurrentPageAndLevel()
 void SceneManager::notifyChangeScene(Ref* pData)
 {
     auto enSceneType = *(reinterpret_cast<std::tuple<SceneType, int> *>(pData));
-    changingScene(enSceneType);
+    changeScene(enSceneType);
 }
 
 void SceneManager::registerChangeSceneEvent()
@@ -77,13 +78,13 @@ void SceneManager::registerChangeSceneEvent()
     NOTIFY->addObserver(this, callfuncO_selector(SceneManager::notifyChangeScene), "changeScene", nullptr);
 }
 
-int SceneManager::getCurrentPageIndex()const
+int SceneManager::getCurrentPageIndex()
 {
     return _iCurPageIndex;
 }
 
-int SceneManager::getCurrentLevelIndex()const
+int SceneManager::getCurrentLevelIndex()
 {
-    return _iCUrLevelIndex;
+    return _iCurLevelIndex;
 }
 

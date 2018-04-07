@@ -10,7 +10,7 @@
 #ifndef __newCardDefence__Entity__
 #define __newCardDefence__Entity__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 #include "cocos2d.h"
 
 class Entity :public Node

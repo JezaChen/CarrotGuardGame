@@ -61,6 +61,7 @@ static void destroyInstance()\
 }
 //宏定义通知；
 #define NOTIFY cocos2d::NotificationCenter::getInstance()
+#define NOTIFICATION_CENTER cocos2d::NotificationCenter::getInstance()
 //枚举公有属性；
 enum CsvPublicProperty
 {

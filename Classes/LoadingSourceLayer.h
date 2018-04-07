@@ -20,6 +20,6 @@ protected:
 
     std::function<void()>_funcShowMenuPanel;
     Label *_pLoadingTitle = nullptr;
-}
+}; //bug
 
 #endif // LOADING_SOURCE_LAYER_H

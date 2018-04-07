@@ -15,11 +15,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="BarrierManager.cpp" />
-    <ClCompile Include="MapUtil.cpp" />
-    <ClCompile Include="EntityLayerBase.cpp" />
-    <ClCompile Include="DynamicPropertyInterface.cpp" />
+    <ClCompile Include="..\Classes\BarrierManager.cpp" />
+    <ClCompile Include="..\Classes\DynamicPropertyInterface.cpp" />
+    <ClCompile Include="..\Classes\Entity.cpp" />
+    <ClCompile Include="..\Classes\EntityLayerBase.cpp" />
+    <ClCompile Include="..\Classes\MapUtil.cpp" />
+    <ClCompile Include="..\Classes\SceneFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -42,17 +43,18 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\PageSelectScene.h" />
-    <ClInclude Include="..\Classes\PublicDefine.h" />
-    <ClInclude Include="..\Classes\PublicSourcesDefine.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />
-    <ClInclude Include="Carrot.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="VictimEntityBase.h" />
-    <ClInclude Include="BarrierManager.h" />
-    <ClInclude Include="BarrierBase.h" />
-    <ClInclude Include="MapUtil.h" />
-    <ClInclude Include="EntityLayerBase.h" />
-    <ClInclude Include="DynamicPropertyInterface.h" />
+    <ClInclude Include="..\Classes\BarrierBase.h" />
+    <ClInclude Include="..\Classes\BarrierManager.h" />
+    <ClInclude Include="..\Classes\Carrot.h" />
+    <ClInclude Include="..\Classes\DynamicPropertyInterface.h" />
+    <ClInclude Include="..\Classes\Entity.h" />
+    <ClInclude Include="..\Classes\EntityLayerBase.h" />
+    <ClInclude Include="..\Classes\MapUtil.h" />
+    <ClInclude Include="..\Classes\VictimEntityBase.h" />
+    <ClInclude Include="..\Classes\SceneFactory.h" />
+    <ClInclude Include="..\Classes\resource.h" />
+    <ClInclude Include="..\Classes\test.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

@@ -64,7 +64,7 @@ void SpritesLayer::createCarrot()
     pLeaf1->setName("leaf1");
     
     //右侧的叶子
-    auto pLeaf3 = Sprite::createWithSpriteFrameName("leaf-3.png")
+    auto pLeaf3 = Sprite::createWithSpriteFrameName("leaf-3.png");
     pLeaf3->setAnchorPoint(Vec2(0.0f, 0.0f)); //锚点为左下角顶点
     pLeaf3->setPosition(Vec2(0, pCarrot->getContentSize().height - pLeaf3->getContentSize().height/2));
     pLeaf3->setName("leaf3");
@@ -77,7 +77,7 @@ void SpritesLayer::createCarrot()
     pLeaf2->setName("leaf2");
     _pCarrotAll->addChild(pLeaf2, 1);
 
-    _pCarrotAll->setContentSize(Size(pCarrot->getContentSize().width + 20, pCarrot->getContentSize().height + pLeaf2>getContentSize().height));
+    _pCarrotAll->setContentSize(Size(pCarrot->getContentSize().width + 20, pCarrot->getContentSize().height + pLeaf2->getContentSize().height));
     _pCarrotAll->setPosition(_VisibleSize.width / 2 - 20, _VisibleSize.height / 2 - 50);
     _pCarrotAll->setScale(0);
     addChild(_pCarrotAll);
@@ -93,8 +93,8 @@ void SpritesLayer::leafAction(float dt)
     auto pRotate = RotateBy::create(0.1f, 15);
     auto pDelay = DelayTime::create(2.0f);
     //右边叶子的动作是：延迟2秒——旋转——逆旋转——旋转——逆旋转——延迟两秒
-    _pCarrotAll->getChildByName("leaf3")->runAction(pDelay, pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr);
+    _pCarrotAll->getChildByName("leaf3")->runAction(Sequence::create(pDelay, pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr));
     //左边叶子的动作是：旋转——逆旋转——旋转——逆旋转——延迟两秒
-    _pCarrotAll->getChildByName("leaf1")->runAction(pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr);
+    _pCarrotAll->getChildByName("leaf1")->runAction(Sequence::create(pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr));
 
 }

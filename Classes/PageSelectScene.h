@@ -9,7 +9,7 @@
 #ifndef __newCardDefence__PageSelectScene__
 #define __newCardDefence__PageSelectScene__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 
 class PageSelectScene : public Scene

@@ -10,7 +10,7 @@
 #ifndef __CarrotFantasy__BarrierManager__
 #define __CarrotFantasy__BarrierManager__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 class Entity;
 
@@ -21,9 +21,9 @@ public:
 	* @brief 单例设计模式
 	* @see 来源于cocos的宏
 	*/
-	CREATE_INSTANCE_FUNC(BarrierManager);
+	CREATE_INSTANCE_FUNCTION(BarrierManager);
 
-	DESTROY_INSTANCE_FUNC();
+	DESTROY_INSTANCE_FUNCTION();
 	/*
 	* @brief 获取障碍物vector
 	*/

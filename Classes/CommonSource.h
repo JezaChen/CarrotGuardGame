@@ -32,8 +32,8 @@ const static std::vector<std::string> ALLSOURCE =
 /*
 *  欢迎场景资源
 */
-const static std::string WELCOMEBG = "mainbg.png";
-const static std::string WELCOMETITLE = "mainbg_CN.png";
+const static std::string MAIN_BACKGROUND = "mainbg.png";
+const static std::string MAIN_BACKGROUND_CN = "mainbg_CN.png";
 
 /*
 *  加载场景

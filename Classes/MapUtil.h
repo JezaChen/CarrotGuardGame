@@ -10,7 +10,7 @@
 #ifndef __CarrotFantasy__MapUtil__
 #define __CarrotFantasy__MapUtil__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 class MapUtil : public Ref
 {
@@ -19,9 +19,9 @@ public:
 	* @brief 单例设计模式
 	* @details 属于cocos里的宏
 	*/
-	CREATE_INSTANCE_FUNC(MapUtil);
+	CREATE_INSTANCE_FUNCTION(MapUtil);
 
-	DESTROY_INSTANCE_FUNC();
+	DESTROY_INSTANCE_FUNCTION();
 	/*
 	* @brief 设置当前级别的平铺地图
 	*/

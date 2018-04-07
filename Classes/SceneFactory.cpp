@@ -14,7 +14,7 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             //pScene = HelpScene::create(); //TODO:这个还没有写
             break;
         case en_PageSelectScene:
-            pScene = PageSelectScene::create();
+            //pScene = PageSelectScene::create();
             break;
         case en_LevelSelectScene:
             //pScene = LevelSelectScene::create();

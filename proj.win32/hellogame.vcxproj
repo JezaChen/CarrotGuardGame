@@ -155,6 +155,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LoadingSourceLayer.cpp" />
     <ClCompile Include="..\Classes\MenusLayer.cpp" />
+    <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\SceneManager.cpp" />
     <ClCompile Include="..\Classes\SoundUtil.cpp" />
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
@@ -180,11 +181,14 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LoadingSourceLayer.h" />
     <ClInclude Include="..\Classes\MenusLayer.h" />
+    <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\route.h" />
+    <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\SceneManager.h" />
     <ClInclude Include="..\Classes\SoundUtil.h" />
     <ClInclude Include="..\Classes\SpritesLayer.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
+    <ClInclude Include="..\Classes\test.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
@@ -197,8 +201,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\PageSelectScene.h" />
-    <ClInclude Include="..\Classes\PublicDefine.h" />
-    <ClInclude Include="..\Classes\PublicSourcesDefine.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />
     <ClInclude Include="..\Classes\MapUtil.h" />
     <ClInclude Include="..\Classes\VictimEntityBase.h" />

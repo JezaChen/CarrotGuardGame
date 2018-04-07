@@ -72,7 +72,7 @@ protected:
 
 private:
     int _iCurPageIndex = 0;
-    int _iCUrLevelIndex = 0;
+    int _iCurLevelIndex = 0;
 
     SceneManager() {}
     virtual ~SceneManager() {}
