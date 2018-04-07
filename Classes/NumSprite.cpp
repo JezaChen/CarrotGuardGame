@@ -3,26 +3,26 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-3-30.
-//  这个cpp还是横竖看不懂；
+//  
 //
 #include "NumSprite.h"
-#include<cstdio>
-#include<cstdlib>
 
 Node *NumSprite::createNum(const std::string &rSNum, const std::string &rSImage)
 {
-	auto tSize = Sprite::create(rSImage)->getContentSize(); //原图大小获取；
-	auto tINumSize = rSNum.size();
+	//原图大小获取；
+	auto aSize = Sprite::create(rSImage)->getContentSize(); 
+	auto aINumSize = rSNum.size();
 
 	auto pNumNode = Node::create();
 	pNumNode->retain();
 
-	for (int i = 0; i < tINumSize; ++i)
+	for (int i = 0; i < aINumSize; ++i)
 	{
-		auto tINum = atoi(StringUtils::format("%c", rSNum.at(i)).c_str());
-		auto pNum = Sprite::create(rSImage, Rect(tSize.width / 12 * (tINum + 2), 0, tSize.width / 12, tSize.height));
-		auto tPos = Vec2(pNum->getContentSize().width * i, 0);
-		pNum->setPosition(tPos);
+		//按照rSNum的size创造精灵，并把精灵加入pNumNode中
+		auto aINum = atoi(StringUtils::format("%c", rSNum.at(i)).c_str());
+		auto pNum = Sprite::create(rSImage, Rect(aSize.width / 12 * (aINum + 2), 0, aSize.width / 12, aSize.height));
+		auto aPos = Vec2(pNum->getContentSize().width * i, 0);
+		pNum->setPosition(aPos);
 		pNumNode->addChild(pNum);
 	}
 	return pNumNode;
