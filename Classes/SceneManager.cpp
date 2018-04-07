@@ -22,6 +22,8 @@ void SceneManager::initWelcomeScene()
     currentScene = en_WelcomeScene;
     auto currScene = std::make_tuple(currentScene, 0);
     changeScene(currScene); 
+    //播放背景音乐
+    SoundUtil::getInstance()->playBackgroundSound(BACKGROUNDSOUND.c_str());
 }
 
 void SceneManager::unRegisterChangeSceneEvent()

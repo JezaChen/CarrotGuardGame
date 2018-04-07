@@ -4,8 +4,9 @@
 SoundUtil* SoundUtil::_gInstance;
 void SoundUtil::playBackgroundSound(const std::string & bgSound)
 {
-    if (!_bIsBackgroundSoundOpen)
-        return; //如果背景音乐开关没有打开，不播放
+    //TODO 先注释掉
+    //if (!_bIsBackgroundSoundOpen)
+        //return; //如果背景音乐开关没有打开，不播放
 
     //调用SimpleAudioEngine播放音乐，设置为循环播放
     CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic(bgSound.c_str(), true);
