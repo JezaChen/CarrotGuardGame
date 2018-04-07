@@ -35,7 +35,7 @@ public:
         {
             splitStr = str_temp.substr(startIndex, endIndex);
             stringList.push_back(splitStr);
-            str_temp = std::string(str_temp.substr(endIndex + 1), size);
+            str_temp = std::string(str_temp.substr(endIndex + 1, size));
             endIndex = str_temp.find(rSSeq);
         }
         if (str_temp != "")

@@ -1,6 +1,7 @@
 #include "SoundUtil.h"
 #include "SimpleAudioEngine.h"
 
+SoundUtil* SoundUtil::_gInstance;
 void SoundUtil::playBackgroundSound(const std::string & bgSound)
 {
     if (!_bIsBackgroundSoundOpen)

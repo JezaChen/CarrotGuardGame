@@ -81,7 +81,7 @@ void MenusLayer::createMenuItems()
     );
     pBtnHelp->setPosition(Vec2(750, 220));
 
-    auto pMenu = Menu::create(pBtnAdventureMode, pBtnBossMode, pBtnNestMode, pBtnSetting, pBtnHelp);
+    auto pMenu = Menu::create(pBtnAdventureMode, pBtnBossMode, pBtnNestMode, pBtnSetting, pBtnHelp, nullptr); //bug fixed
     pMenu->setPosition(Vec2::ZERO);
     addChild(pMenu);
 }

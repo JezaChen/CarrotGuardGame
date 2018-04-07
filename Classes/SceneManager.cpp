@@ -4,6 +4,8 @@
 #include "SceneFactory.h"
 #include "SoundUtil.h"
 
+
+SceneManager* SceneManager::_gInstance;
 bool SceneManager::init()
 {
     bool bRet = false;

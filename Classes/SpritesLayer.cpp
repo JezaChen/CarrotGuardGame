@@ -2,6 +2,31 @@
 #include "CommonSource.h"
 #include "VisibleRect.h"
 
+SpritesLayer::~SpritesLayer()
+{
+    CC_SAFE_RELEASE_NULL(_pCarrotAll);
+}
+
+bool SpritesLayer::init()
+{
+    bool bRet = false;
+
+    do
+    {
+        CC_BREAK_IF(!Layer::init());
+
+        createStaticSprites();
+
+        createDynamicSprites();
+
+        createCarrot();
+
+        bRet = true;
+    } while (0);
+
+    return bRet;
+}
+
 void SpritesLayer::createStaticSprites()
 {
     auto pWelcomeMainBg = Sprite::createWithSpriteFrameName(MAIN_BACKGROUND);
@@ -79,7 +104,7 @@ void SpritesLayer::createCarrot()
 
     _pCarrotAll->setContentSize(Size(pCarrot->getContentSize().width + 20, pCarrot->getContentSize().height + pLeaf2->getContentSize().height));
     _pCarrotAll->setPosition(_VisibleSize.width / 2 - 20, _VisibleSize.height / 2 - 50);
-    _pCarrotAll->setScale(0);
+    _pCarrotAll->setScale(0.9);
     addChild(_pCarrotAll);
 
     //为了能使叶子动起来
