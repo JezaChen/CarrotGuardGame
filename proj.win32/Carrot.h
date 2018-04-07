@@ -19,18 +19,26 @@ protected:
 
 	virtual bool init();
 	/**
-	* shake or blink action
+	* @brief 摇晃动作或眨眼动作
+	* @param iImageFirstNumber 首张图片
+	* @param iImageCount 图片数
 	*/
 	ActionInterval * doShakeOrBlink(int iImageFirstNumber, int iImageCount);
-	/**
-	* action update
+	/*
+	* @brief 动画更新
 	*/
 	virtual void doAction(float t);
-
+	/*
+	* @brief 萝卜受伤了
+	*/
 	virtual void CarrotBeHurt(Ref * pRef);
-
+	/*
+	* @brief 注册胡萝卜触摸事件
+	*/
 	virtual void registerCarrotTouchEvent();
-
+	/*
+	* @brief 精灵生命值
+	*/
 	Sprite * _HpSprite;
 
 	CC_SYNTHESIZE_PASS_BY_REF(int, iHp, IHP);

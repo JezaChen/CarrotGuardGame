@@ -3,7 +3,7 @@
 //  newCardDefence
 //
 //  Created by 何泓兵 on 18-4-6.
-//
+//  存在不懂问题；
 //
 
 #include "Entity.h"
@@ -51,6 +51,7 @@ void Entity::initProperty(const int &rId, const std::string &rSCsvFileName)
 	if (_IAnimationFrameCount) sSpriteName = _sModelName + "1" + PHOTOPOSTFIX;
 	else sSpriteName = _sModelName + PHOTOPOSTFIX;
 
+	//用精灵帧创建精灵；
 	bindSprite(Sprite::createWithSpriteFrameName(sSpriteName));
 }
 
@@ -86,7 +87,9 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 {
 
 	auto sDeadImageFile = rSDeadImageFile;
+	//动画创建指针；
 	auto pAnimation = Animation::create();
+	//精灵帧数缓存；
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
 	//这个函数看不太懂；
 	if (sDeadImageFile.empty())
@@ -101,6 +104,7 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 	else
 	{
 		for (int i = 1; i <= 2; i++)
+			//添加精灵缓存(按名添加精灵缓存）
 			pAnimation->addSpriteFrame(pSpriteFrameCache->getSpriteFrameByName(sDeadImageFile + StringUtils::format("%02d", i) + PHOTOPOSTFIX));
 	}
 
@@ -112,7 +116,9 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 
 Rect Entity::getBoundingBox()const
 {
+	//获取坐标；
 	auto tPos = getPosition();
+	//获取精灵原图大小；
 	auto tSize = _pSprite->getContentSize();
 	return Rect(tPos.x - tSize.width / 2, tPos.y - tSize.height / 2, tSize.width, tSize.height);
 }
@@ -121,7 +127,3 @@ unsigned int Entity::getmID()
 {
 	return _myID;
 }
-
-
-
-

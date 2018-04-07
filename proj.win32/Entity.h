@@ -11,12 +11,14 @@
 #define __newCardDefence__Entity__
 
 #include "PublicDefine.h"
+#include "cocos2d.h"
 
 class Entity :public Node
 {
 public:
 	/*
 	*@ 析构函数
+	*@ author 何泓兵
 	*/
 	virtual ~Entity();
 
@@ -24,16 +26,20 @@ public:
 	static unsigned long ID;
 	/*
 	* @获取mID；
+	* @brief mID为隐式查看init实体是否设置成功；
 	*/
 	unsigned int getmID();
-
+	/*
+	* @brief 设置init实体属性并检验是否设置成功；
+	* @return true 设置成功，否则设置失败；
+	*/
 	virtual bool init(const int &rId, const std::string &rSCsvFileName);
 	/*
 	* @brief 获取原图大小；
 	*/
 	virtual const Size &getContentSize()const;
 	/*
-	*@brief 运行检验哪个实体已经死亡
+	*@brief 实体已经死亡后需要执行的函数
 	*/
 	virtual void doDead()final;
 
@@ -50,8 +56,9 @@ public:
 	virtual Sprite *getSprite();
 
 	/*
-	*  @brief 获取精灵的大小和源；
-	*  @return Rect 精灵大小设置完毕；
+	*  @brief 获取精灵的大小和源
+	*  @see 精灵大小设置完毕
+	*  @return Rect 重置的矩形
 	*/
 	virtual Rect getBoundingBox()const;
 
@@ -70,11 +77,11 @@ protected:
 	*/
 	virtual void initProperty(const int &rId, const std::string &rSCsvFileName);
 	/*
-	*  @brief Entity id
+	*  @brief 实体 id
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(int, _iId, IId);
 	/*
-	*  @brief Entity name
+	*  @brief 实体名
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(std::string, _sName, SName);
 	/*
@@ -94,7 +101,7 @@ protected:
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(int, _IAnimationFrameCount, AnimationFrameCount);
 	/**
-	*  Entity level
+	*  Entity 等级
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(int, _iLevel, ILevel);
 private:
