@@ -154,16 +154,20 @@ elseif ( MACOSX OR APPLE )
     )
 endif ()
 
+aux_source_directory(Classes CLASSES_DIR)
+
 set(GAME_SRC
         ${PLATFORM_SPECIFIC_SRC}
         Classes/AppDelegate.cpp
         Classes/HelloWorldScene.cpp
+        Classes
         )
 
 set(GAME_HEADERS
         ${PLATFORM_SPECIFIC_HEADERS}
         Classes/AppDelegate.h
         Classes/HelloWorldScene.h
+        Classes
         )
 
 # add the executable

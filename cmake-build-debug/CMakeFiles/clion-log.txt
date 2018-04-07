@@ -1,7 +1,7 @@
 /usr/share/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame
 It appears you are building natively for Linux with GCC
 -- chipmunk CHIPMUNK_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/prebuilt/linux/64-bit/libchipmunk.a
--- curl CURL_LIBRARIES: 
+-- curl CURL_LIBRARIES: curl
 -- freetype2 FREETYPE_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/prebuilt/linux/64-bit/libfreetype.a
 -- jpeg JPEG_LIBRARIES: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/prebuilt/linux/64-bit/libjpeg.a
 -- png PNG_LIBRARIES: 
@@ -14,17 +14,73 @@ It appears you are building natively for Linux with GCC
 -- OpenGL include dirs: /usr/include
 -- GLEW include dirs: /usr/include
 -- PkgConfig found
--- checking for module 'glfw3'
---   package 'glfw3' not found
-CMake Error at cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake:136 (message):
-  Could NOT find GLFW3 (missing: GLFW3_LIBRARIES)
-Call Stack (most recent call first):
-  cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake:343 (_FPHSA_FAILURE_MESSAGE)
-  cocos2d/cmake/Modules/FindGLFW3.cmake:152 (find_package_handle_standard_args)
-  cocos2d/cmake/Modules/CocosBuildHelpers.cmake:44 (find_package)
-  cocos2d/cmake/Modules/BuildModules.cmake:12 (cocos_find_package)
-  cocos2d/CMakeLists.txt:98 (BuildModules)
-
-
--- Configuring incomplete, errors occurred!
-See also "/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- GLFW3 include dirs: /usr/local/include/GLFW
+-- SQLite3 include dirs: /usr/include
+-- FMOD include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/include
+-- Fontconfig include dirs: /usr/include/freetype2
+-- GTK3 include dirs: /usr/include/gtk-3.0;/usr/include/at-spi2-atk/2.0;/usr/include/at-spi-2.0;/usr/include/dbus-1.0;/usr/lib/x86_64-linux-gnu/dbus-1.0/include;/usr/include/gtk-3.0;/usr/include/gio-unix-2.0/;/usr/include/cairo;/usr/include/pango-1.0;/usr/include/harfbuzz;/usr/include/pango-1.0;/usr/include/atk-1.0;/usr/include/cairo;/usr/include/pixman-1;/usr/include/freetype2;/usr/include/libpng16;/usr/include/gdk-pixbuf-2.0;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+-- Freetype include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/include/linux;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/include/linux
+-- WebP include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/webp/include/linux
+-- Chipmunk include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/include
+-- bullet include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include/bullet
+-- Bullet include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include/bullet
+-- Recast include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/recast
+-- TinyXML2 include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tinyxml2
+-- JPEG include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/include/linux
+-- ZLIB include dirs: /usr/include
+-- MINIZIP include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/unzip;/usr/include
+-- PNG include dirs: /usr/include;/usr/include
+-- TIFF include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/include/linux
+-- WEBSOCKETS include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/include/linux
+-- CURL include dirs: /usr/include/x86_64-linux-gnu
+-- Flatbuffers include dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external
+-- OPENGL add to include_dirs: /usr/include
+-- OPENGL libs added to 'cocos2dInternal': /usr/lib/x86_64-linux-gnu/libGLU.so;/usr/lib/x86_64-linux-gnu/libGL.so
+-- GLEW add to include_dirs: /usr/include
+-- GLEW libs added to 'cocos2dInternal': /usr/lib/x86_64-linux-gnu/libGLEW.so
+-- GLFW3 add to include_dirs: /usr/local/include/GLFW
+-- GLFW3 add to link_dirs: /usr/local/lib
+-- GLFW3 libs added to 'cocos2dInternal': glfw
+-- GLFW3 add definitions: -DGLFW_DLL
+-- FMOD add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/include
+-- FMOD libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so
+-- FONTCONFIG add to include_dirs: /usr/include/freetype2
+-- FONTCONFIG libs added to 'cocos2dInternal': fontconfig;freetype
+-- THREADS libs added to 'cocos2dInternal': -lpthread
+-- GTK3 add to include_dirs: /usr/include/gtk-3.0;/usr/include/at-spi2-atk/2.0;/usr/include/at-spi-2.0;/usr/include/dbus-1.0;/usr/lib/x86_64-linux-gnu/dbus-1.0/include;/usr/include/gtk-3.0;/usr/include/gio-unix-2.0/;/usr/include/cairo;/usr/include/pango-1.0;/usr/include/harfbuzz;/usr/include/pango-1.0;/usr/include/atk-1.0;/usr/include/cairo;/usr/include/pixman-1;/usr/include/freetype2;/usr/include/libpng16;/usr/include/gdk-pixbuf-2.0;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+-- GTK3 libs added to 'cocos2dInternal': gtk-3;gdk-3;pangocairo-1.0;pango-1.0;atk-1.0;cairo-gobject;cairo;gdk_pixbuf-2.0;gio-2.0;gobject-2.0;glib-2.0
+-- GTK3 add definitions: -pthread
+-- ZLIB add to include_dirs: /usr/include
+-- ZLIB libs added to 'cocos2dInternal': /usr/lib/x86_64-linux-gnu/libz.so
+-- MINIZIP add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/unzip;/usr/include
+-- MINIZIP libs added to 'cocos2dInternal': unzip;/usr/lib/x86_64-linux-gnu/libz.so
+-- JPEG add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/include/linux
+-- JPEG libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/prebuilt/linux/64-bit/libjpeg.a
+-- PNG add to include_dirs: /usr/include;/usr/include
+-- PNG libs added to 'cocos2dInternal': /usr/lib/x86_64-linux-gnu/libpng.so;/usr/lib/x86_64-linux-gnu/libz.so
+-- TIFF add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/include/linux
+-- TIFF libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/prebuilt/linux/64-bit/libtiff.a
+-- TinyXML2 add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tinyxml2
+-- TinyXML2 libs added to 'cocos2dInternal': tinyxml2
+-- FREETYPE add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/include/linux;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/include/linux
+-- FREETYPE libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/prebuilt/linux/64-bit/libfreetype.a
+-- WEBSOCKETS add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/include/linux
+-- WEBSOCKETS libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/prebuilt/linux/64-bit/libwebsockets.a
+-- CURL add to include_dirs: /usr/include/x86_64-linux-gnu
+-- CURL libs added to 'cocos2dInternal': curl
+-- OPENSSL add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/include/linux
+-- OPENSSL libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libssl.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libcrypto.a
+-- FLATBUFFERS add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external
+-- XXHASH add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/xxhash
+-- XXHASH libs added to 'cocos2dInternal': xxhash
+-- WEBP add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/webp/include/linux
+-- WEBP libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/webp/prebuilt/linux/64-bit/libwebp.a
+-- CHIPMUNK add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/include
+-- CHIPMUNK libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/prebuilt/linux/64-bit/libchipmunk.a
+-- BULLET add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/include/bullet
+-- BULLET libs added to 'cocos2dInternal': /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletDynamics.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletCollision.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletMultiThreaded.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libLinearMath.a;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libMiniCL.a
+-- RECAST add to include_dirs: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/recast
+-- RECAST libs added to 'cocos2dInternal': recast
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug

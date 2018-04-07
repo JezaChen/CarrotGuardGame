@@ -9,7 +9,7 @@
 #ifndef __CarrotFantasy__SceneBase__
 #define __CarrotFantasy__SceneBase__
 
-#include "PublicDefine.h"
+#include "CommonDefine.h"
 
 class SceneBase : public Scene
 {

@@ -34,6 +34,10 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+
+protected:
+    void preLoadSource(); //预先加载资源
+    void unLoadSource(); //释放资源
 };
 
 #endif // _APP_DELEGATE_H_

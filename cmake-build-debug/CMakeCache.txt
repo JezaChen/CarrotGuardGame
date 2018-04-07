@@ -220,6 +220,12 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a file.
+CURL_INCLUDE_DIR:PATH=CURL_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+CURL_LIBRARY:FILEPATH=CURL_LIBRARY-NOTFOUND
+
 //Value Computed by CMake
 Cocos2d-X_BINARY_DIR:STATIC=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cmake-build-debug/cocos2d
 
@@ -253,8 +259,14 @@ GLEW_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLEW.so
 //Path to a file.
 GLFW3_INCLUDE_DIR:PATH=/usr/include/GLFW
 
+//Path to a file.
+GLFW3_INCLUDE_DIRS:PATH=/usr/local/include/GLFW
+
 //Path to a library.
 GLFW3_LIBRARY:FILEPATH=GLFW3_LIBRARY-NOTFOUND
+
+//Path to a library.
+GLFW3_STATIC_LIBRARY:FILEPATH=GLFW3_STATIC_LIBRARY-NOTFOUND
 
 //Path to includes for JPEG
 JPEG_INCLUDE_DIRS:PATH=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/include/linux
@@ -289,11 +301,26 @@ OPENSSL_LIBRARIES:STRING=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuar
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//Path to a library.
+PNG_LIBRARY_DEBUG:FILEPATH=PNG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpng.so
+
+//Path to a file.
+PNG_PNG_INCLUDE_DIR:PATH=/usr/include
+
 //Path to a program.
 ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
+
+//Path to a file.
+SQLITE3_INCLUDE_DIRS:PATH=/usr/include
+
+//Path to a library.
+SQLITE3_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libsqlite3.so
 
 //Path to includes for TIFF
 TIFF_INCLUDE_DIRS:PATH=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/include/linux
@@ -336,10 +363,40 @@ WEBSOCKETS_INCLUDE_DIRS:PATH=/media/jeza/Windows/Users/jeza1/source/repos/Carrot
 WEBSOCKETS_LIBRARIES:STRING=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/prebuilt/linux/64-bit/libwebsockets.a
 
 //Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
+
+//Path to a file.
 _inc_tmp:PATH=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/include
 
 //Path to a library.
 _lib_tmp:FILEPATH=_lib_tmp-NOTFOUND
+
+//Dependencies for the target
+cocos2dInternal_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLEW.so;general;glfw;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/linux-specific/fmod/prebuilt/64-bit/libfmod.so;general;fontconfig;general;freetype;general;-lpthread;general;gtk-3;general;gdk-3;general;pangocairo-1.0;general;pango-1.0;general;atk-1.0;general;cairo-gobject;general;cairo;general;gdk_pixbuf-2.0;general;gio-2.0;general;gobject-2.0;general;glib-2.0;general;/usr/lib/x86_64-linux-gnu/libz.so;general;unzip;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/jpeg/prebuilt/linux/64-bit/libjpeg.a;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tiff/prebuilt/linux/64-bit/libtiff.a;general;tinyxml2;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/freetype2/prebuilt/linux/64-bit/libfreetype.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/websockets/prebuilt/linux/64-bit/libwebsockets.a;general;curl;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libssl.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/openssl/prebuilt/linux/64-bit/libcrypto.a;general;xxhash;general;X11;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/webp/prebuilt/linux/64-bit/libwebp.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/chipmunk/prebuilt/linux/64-bit/libchipmunk.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletDynamics.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletCollision.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libBulletMultiThreaded.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libLinearMath.a;general;/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/bullet/prebuilt/linux/64-bit/libMiniCL.a;general;recast;
+
+//Dependencies for the target
+cocos2d_LIB_DEPENDS:STATIC=general;cocos2dInternal;general;dl;
+
+//Dependencies for target
+flatbuffers_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+recast_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+tinyxml2_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+unzip_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+xxhash_LIB_DEPENDS:STATIC=
 
 
 ########################
@@ -418,6 +475,14 @@ CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Have symbol pthread_create
+CMAKE_HAVE_LIBC_CREATE:INTERNAL=
+//Have library pthreads
+CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
+//Have library pthread
+CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
+//Have include pthread.h
+CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame
@@ -440,7 +505,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -481,18 +546,104 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+CURL_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+CURL_CFLAGS_I:INTERNAL=
+CURL_CFLAGS_OTHER:INTERNAL=
+CURL_FOUND:INTERNAL=1
+CURL_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
+//ADVANCED property for variable: CURL_INCLUDE_DIR
+CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+CURL_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+CURL_LDFLAGS:INTERNAL=-lcurl
+CURL_LDFLAGS_OTHER:INTERNAL=
+CURL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+CURL_LIBRARIES:INTERNAL=curl
+//ADVANCED property for variable: CURL_LIBRARY
+CURL_LIBRARY-ADVANCED:INTERNAL=1
+CURL_LIBRARY_DIRS:INTERNAL=
+CURL_LIBS:INTERNAL=
+CURL_LIBS_L:INTERNAL=
+CURL_LIBS_OTHER:INTERNAL=
+CURL_LIBS_PATHS:INTERNAL=
+CURL_PREFIX:INTERNAL=/usr
+CURL_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
+CURL_STATIC_CFLAGS_I:INTERNAL=
+CURL_STATIC_CFLAGS_OTHER:INTERNAL=
+CURL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
+CURL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu/mit-krb5;-lcurl;-lnghttp2;-lidn2;-lrtmp;-lssh2;-lpsl;-lnettle;-lgnutls;-Wl,-z,relro;-lgssapi_krb5;-lkrb5;-lk5crypto;-lcom_err;-llber;-lldap;-lz
+CURL_STATIC_LDFLAGS_OTHER:INTERNAL=-Wl,-z,relro
+CURL_STATIC_LIBDIR:INTERNAL=
+CURL_STATIC_LIBRARIES:INTERNAL=curl;nghttp2;idn2;rtmp;ssh2;psl;nettle;gnutls;gssapi_krb5;krb5;k5crypto;com_err;lber;ldap;z
+CURL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu/mit-krb5
+CURL_STATIC_LIBS:INTERNAL=
+CURL_STATIC_LIBS_L:INTERNAL=
+CURL_STATIC_LIBS_OTHER:INTERNAL=
+CURL_STATIC_LIBS_PATHS:INTERNAL=
+CURL_VERSION:INTERNAL=7.52.1
+CURL_libcurl_INCLUDEDIR:INTERNAL=
+CURL_libcurl_LIBDIR:INTERNAL=
+CURL_libcurl_PREFIX:INTERNAL=
+CURL_libcurl_VERSION:INTERNAL=
+//Details about finding Fontconfig
+FIND_PACKAGE_MESSAGE_DETAILS_Fontconfig:INTERNAL=[1][v2.11.1()]
 //Details about finding GLEW
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libGLEW.so][v()]
+//Details about finding GTK3
+FIND_PACKAGE_MESSAGE_DETAILS_GTK3:INTERNAL=[gtk-3;gdk-3;pangocairo-1.0;pango-1.0;atk-1.0;cairo-gobject;cairo;gdk_pixbuf-2.0;gio-2.0;gobject-2.0;glib-2.0][/usr/include/gtk-3.0;/usr/include/at-spi2-atk/2.0;/usr/include/at-spi-2.0;/usr/include/dbus-1.0;/usr/lib/x86_64-linux-gnu/dbus-1.0/include;/usr/include/gtk-3.0;/usr/include/gio-unix-2.0/;/usr/include/cairo;/usr/include/pango-1.0;/usr/include/harfbuzz;/usr/include/pango-1.0;/usr/include/atk-1.0;/usr/include/cairo;/usr/include/pixman-1;/usr/include/freetype2;/usr/include/libpng16;/usr/include/gdk-pixbuf-2.0;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include][v()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libGL.so][/usr/include][v()]
+//Details about finding PNG
+FIND_PACKAGE_MESSAGE_DETAILS_PNG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpng.so][/usr/include][v1.6.30()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][v1.2.8()]
+FONTCONFIG_CFLAGS:INTERNAL=-I/usr/include/freetype2
+FONTCONFIG_CFLAGS_I:INTERNAL=
+FONTCONFIG_CFLAGS_OTHER:INTERNAL=
+FONTCONFIG_FOUND:INTERNAL=1
+FONTCONFIG_INCLUDEDIR:INTERNAL=/usr/include
+FONTCONFIG_INCLUDE_DIRS:INTERNAL=/usr/include/freetype2
+FONTCONFIG_LDFLAGS:INTERNAL=-lfontconfig;-lfreetype
+FONTCONFIG_LDFLAGS_OTHER:INTERNAL=
+FONTCONFIG_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+FONTCONFIG_LIBRARIES:INTERNAL=fontconfig;freetype
+FONTCONFIG_LIBRARY_DIRS:INTERNAL=
+FONTCONFIG_LIBS:INTERNAL=
+FONTCONFIG_LIBS_L:INTERNAL=
+FONTCONFIG_LIBS_OTHER:INTERNAL=
+FONTCONFIG_LIBS_PATHS:INTERNAL=
+FONTCONFIG_PREFIX:INTERNAL=/usr
+FONTCONFIG_STATIC_CFLAGS:INTERNAL=-I/usr/include/freetype2
+FONTCONFIG_STATIC_CFLAGS_I:INTERNAL=
+FONTCONFIG_STATIC_CFLAGS_OTHER:INTERNAL=
+FONTCONFIG_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/freetype2
+FONTCONFIG_STATIC_LDFLAGS:INTERNAL=-lfontconfig;-lexpat;-lfreetype;-lexpat;-lfreetype;-lz;-lpng16;-lm;-lz;-lm
+FONTCONFIG_STATIC_LDFLAGS_OTHER:INTERNAL=
+FONTCONFIG_STATIC_LIBDIR:INTERNAL=
+FONTCONFIG_STATIC_LIBRARIES:INTERNAL=fontconfig;expat;freetype;expat;freetype;z;png16;m;z;m
+FONTCONFIG_STATIC_LIBRARY_DIRS:INTERNAL=
+FONTCONFIG_STATIC_LIBS:INTERNAL=
+FONTCONFIG_STATIC_LIBS_L:INTERNAL=
+FONTCONFIG_STATIC_LIBS_OTHER:INTERNAL=
+FONTCONFIG_STATIC_LIBS_PATHS:INTERNAL=
+FONTCONFIG_VERSION:INTERNAL=2.11.1
+FONTCONFIG_fontconfig_INCLUDEDIR:INTERNAL=
+FONTCONFIG_fontconfig_LIBDIR:INTERNAL=
+FONTCONFIG_fontconfig_PREFIX:INTERNAL=
+FONTCONFIG_fontconfig_VERSION:INTERNAL=
 //ADVANCED property for variable: GLEW_INCLUDE_DIR
 GLEW_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLEW_LIBRARY_DEBUG
 GLEW_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLEW_LIBRARY_RELEASE
 GLEW_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLFW3_INCLUDE_DIR
+GLFW3_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GLFW3_LIBRARY
+GLFW3_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
 OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_gl_LIBRARY
@@ -501,35 +652,98 @@ OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_xmesa_INCLUDE_DIR
 OPENGL_xmesa_INCLUDE_DIR-ADVANCED:INTERNAL=1
-PC_GLFW3_CFLAGS:INTERNAL=
+PC_GLFW3_CFLAGS:INTERNAL=-I/usr/local/include
 PC_GLFW3_CFLAGS_I:INTERNAL=
 PC_GLFW3_CFLAGS_OTHER:INTERNAL=
-PC_GLFW3_FOUND:INTERNAL=
-PC_GLFW3_INCLUDEDIR:INTERNAL=
-PC_GLFW3_LIBDIR:INTERNAL=
+PC_GLFW3_FOUND:INTERNAL=1
+PC_GLFW3_INCLUDEDIR:INTERNAL=/usr/local/include
+PC_GLFW3_INCLUDE_DIRS:INTERNAL=/usr/local/include
+PC_GLFW3_LDFLAGS:INTERNAL=-L/usr/local/lib;-lglfw
+PC_GLFW3_LDFLAGS_OTHER:INTERNAL=
+PC_GLFW3_LIBDIR:INTERNAL=/usr/local/lib
+PC_GLFW3_LIBRARIES:INTERNAL=glfw
+PC_GLFW3_LIBRARY_DIRS:INTERNAL=/usr/local/lib
 PC_GLFW3_LIBS:INTERNAL=
 PC_GLFW3_LIBS_L:INTERNAL=
 PC_GLFW3_LIBS_OTHER:INTERNAL=
 PC_GLFW3_LIBS_PATHS:INTERNAL=
-PC_GLFW3_PREFIX:INTERNAL=
-PC_GLFW3_STATIC_CFLAGS:INTERNAL=
+PC_GLFW3_PREFIX:INTERNAL=/usr/local
+PC_GLFW3_STATIC_CFLAGS:INTERNAL=-I/usr/local/include
 PC_GLFW3_STATIC_CFLAGS_I:INTERNAL=
 PC_GLFW3_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_GLFW3_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include
+PC_GLFW3_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lglfw;-lrt;-lm;-ldl;-lXrandr;-lXinerama;-lXxf86vm;-lXext;-lXcursor;-lXrender;-lXfixes;-lX11;-lpthread;-lxcb;-lXau;-lXdmcp
+PC_GLFW3_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_GLFW3_STATIC_LIBDIR:INTERNAL=
+PC_GLFW3_STATIC_LIBRARIES:INTERNAL=glfw;rt;m;dl;Xrandr;Xinerama;Xxf86vm;Xext;Xcursor;Xrender;Xfixes;X11;pthread;xcb;Xau;Xdmcp
+PC_GLFW3_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
 PC_GLFW3_STATIC_LIBS:INTERNAL=
 PC_GLFW3_STATIC_LIBS_L:INTERNAL=
 PC_GLFW3_STATIC_LIBS_OTHER:INTERNAL=
 PC_GLFW3_STATIC_LIBS_PATHS:INTERNAL=
-PC_GLFW3_VERSION:INTERNAL=
+PC_GLFW3_VERSION:INTERNAL=3.2.0
 PC_GLFW3_glfw3_INCLUDEDIR:INTERNAL=
 PC_GLFW3_glfw3_LIBDIR:INTERNAL=
 PC_GLFW3_glfw3_PREFIX:INTERNAL=
 PC_GLFW3_glfw3_VERSION:INTERNAL=
+PC_GTK3_CFLAGS:INTERNAL=-pthread;-I/usr/include/gtk-3.0;-I/usr/include/at-spi2-atk/2.0;-I/usr/include/at-spi-2.0;-I/usr/include/dbus-1.0;-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include;-I/usr/include/gtk-3.0;-I/usr/include/gio-unix-2.0/;-I/usr/include/cairo;-I/usr/include/pango-1.0;-I/usr/include/harfbuzz;-I/usr/include/pango-1.0;-I/usr/include/atk-1.0;-I/usr/include/cairo;-I/usr/include/pixman-1;-I/usr/include/freetype2;-I/usr/include/libpng16;-I/usr/include/gdk-pixbuf-2.0;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_GTK3_CFLAGS_I:INTERNAL=
+PC_GTK3_CFLAGS_OTHER:INTERNAL=-pthread
+PC_GTK3_FOUND:INTERNAL=1
+PC_GTK3_INCLUDEDIR:INTERNAL=/usr/include
+PC_GTK3_INCLUDE_DIRS:INTERNAL=/usr/include/gtk-3.0;/usr/include/at-spi2-atk/2.0;/usr/include/at-spi-2.0;/usr/include/dbus-1.0;/usr/lib/x86_64-linux-gnu/dbus-1.0/include;/usr/include/gtk-3.0;/usr/include/gio-unix-2.0/;/usr/include/cairo;/usr/include/pango-1.0;/usr/include/harfbuzz;/usr/include/pango-1.0;/usr/include/atk-1.0;/usr/include/cairo;/usr/include/pixman-1;/usr/include/freetype2;/usr/include/libpng16;/usr/include/gdk-pixbuf-2.0;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_GTK3_LDFLAGS:INTERNAL=-lgtk-3;-lgdk-3;-lpangocairo-1.0;-lpango-1.0;-latk-1.0;-lcairo-gobject;-lcairo;-lgdk_pixbuf-2.0;-lgio-2.0;-lgobject-2.0;-lglib-2.0
+PC_GTK3_LDFLAGS_OTHER:INTERNAL=
+PC_GTK3_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+PC_GTK3_LIBRARIES:INTERNAL=gtk-3;gdk-3;pangocairo-1.0;pango-1.0;atk-1.0;cairo-gobject;cairo;gdk_pixbuf-2.0;gio-2.0;gobject-2.0;glib-2.0
+PC_GTK3_LIBRARY_DIRS:INTERNAL=
+PC_GTK3_LIBS:INTERNAL=
+PC_GTK3_LIBS_L:INTERNAL=
+PC_GTK3_LIBS_OTHER:INTERNAL=
+PC_GTK3_LIBS_PATHS:INTERNAL=
+PC_GTK3_PREFIX:INTERNAL=/usr
+PC_GTK3_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include/gtk-3.0;-I/usr/include/at-spi2-atk/2.0;-I/usr/include/at-spi-2.0;-I/usr/include/dbus-1.0;-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include;-I/usr/include/gtk-3.0;-I/usr/include/gio-unix-2.0/;-I/usr/include/cairo;-I/usr/include/pango-1.0;-I/usr/include/harfbuzz;-I/usr/include/pango-1.0;-I/usr/include/atk-1.0;-I/usr/include/cairo;-I/usr/include/pixman-1;-I/usr/include/freetype2;-I/usr/include/libpng16;-I/usr/include/gdk-pixbuf-2.0;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_GTK3_STATIC_CFLAGS_I:INTERNAL=
+PC_GTK3_STATIC_CFLAGS_OTHER:INTERNAL=-pthread
+PC_GTK3_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/gtk-3.0;/usr/include/at-spi2-atk/2.0;/usr/include/at-spi-2.0;/usr/include/dbus-1.0;/usr/lib/x86_64-linux-gnu/dbus-1.0/include;/usr/include/gtk-3.0;/usr/include/gio-unix-2.0/;/usr/include/cairo;/usr/include/pango-1.0;/usr/include/harfbuzz;/usr/include/pango-1.0;/usr/include/atk-1.0;/usr/include/cairo;/usr/include/pixman-1;/usr/include/freetype2;/usr/include/libpng16;/usr/include/gdk-pixbuf-2.0;/usr/include/libpng16;/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
+PC_GTK3_STATIC_LDFLAGS:INTERNAL=-lgtk-3;-latk-bridge-2.0;-latspi;-ldbus-1;-lpthread;-lsystemd;-lgdk-3;-lgio-2.0;-lXinerama;-lXi;-lXrandr;-lXcursor;-lXcomposite;-lXdamage;-lXfixes;-lxkbcommon;-lwayland-cursor;-lwayland-egl;-lwayland-client;-lepoxy;-ldl;-lpangocairo-1.0;-lpangoft2-1.0;-lharfbuzz;-lgraphite2;-lpango-1.0;-lm;-latk-1.0;-lcairo-gobject;-lcairo;-lz;-lpixman-1;-lfontconfig;-lexpat;-lfreetype;-lexpat;-lfreetype;-lz;-lpng16;-lm;-lz;-lm;-lpng16;-lm;-lz;-lm;-lxcb-shm;-lxcb-render;-lXrender;-lXext;-lX11;-lpthread;-lxcb;-lXau;-lXdmcp;-lgdk_pixbuf-2.0;-lm;-lpng16;-lm;-lz;-lm;-lgio-2.0;-lz;-lresolv;-lselinux;-lmount;-lgmodule-2.0;-pthread;-ldl;-lgobject-2.0;-lffi;-lglib-2.0;-pthread;-lpcre;-pthread
+PC_GTK3_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+PC_GTK3_STATIC_LIBDIR:INTERNAL=
+PC_GTK3_STATIC_LIBRARIES:INTERNAL=gtk-3;atk-bridge-2.0;atspi;dbus-1;pthread;systemd;gdk-3;gio-2.0;Xinerama;Xi;Xrandr;Xcursor;Xcomposite;Xdamage;Xfixes;xkbcommon;wayland-cursor;wayland-egl;wayland-client;epoxy;dl;pangocairo-1.0;pangoft2-1.0;harfbuzz;graphite2;pango-1.0;m;atk-1.0;cairo-gobject;cairo;z;pixman-1;fontconfig;expat;freetype;expat;freetype;z;png16;m;z;m;png16;m;z;m;xcb-shm;xcb-render;Xrender;Xext;X11;pthread;xcb;Xau;Xdmcp;gdk_pixbuf-2.0;m;png16;m;z;m;gio-2.0;z;resolv;selinux;mount;gmodule-2.0;dl;gobject-2.0;ffi;glib-2.0;pcre
+PC_GTK3_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_GTK3_STATIC_LIBS:INTERNAL=
+PC_GTK3_STATIC_LIBS_L:INTERNAL=
+PC_GTK3_STATIC_LIBS_OTHER:INTERNAL=
+PC_GTK3_STATIC_LIBS_PATHS:INTERNAL=
+PC_GTK3_VERSION:INTERNAL=3.22.17
+PC_GTK3_gtk+-3.0_INCLUDEDIR:INTERNAL=
+PC_GTK3_gtk+-3.0_LIBDIR:INTERNAL=
+PC_GTK3_gtk+-3.0_PREFIX:INTERNAL=
+PC_GTK3_gtk+-3.0_VERSION:INTERNAL=
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_DEBUG
+PNG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_LIBRARY_RELEASE
+PNG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PNG_PNG_INCLUDE_DIR
+PNG_PNG_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_getconf
 ProcessorCount_cmd_getconf-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SQLITE3_INCLUDE_DIRS
+SQLITE3_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SQLITE3_LIBRARIES
+SQLITE3_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+__pkg_config_checked_CURL:INTERNAL=1
+__pkg_config_checked_FONTCONFIG:INTERNAL=1
 __pkg_config_checked_PC_GLFW3:INTERNAL=1
+__pkg_config_checked_PC_GTK3:INTERNAL=1
 

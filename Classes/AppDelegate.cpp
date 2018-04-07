@@ -3,6 +3,7 @@
 #include "CsvUtil.h"
 #include "Config.h"
 #include "SoundUtil.h"
+#include "SceneManager.h"
 //TODO GameScene
 
 // #define USE_AUDIO_ENGINE 1
@@ -38,8 +39,14 @@ AppDelegate::~AppDelegate()
 #elif USE_SIMPLE_AUDIO_ENGINE
     SimpleAudioEngine::end();
 #endif
-    S
+    SceneManager::destroyInstance();
+    Config::getInstance()->saveSoundConfig();
+    Config::destroyInstance();
+    SoundUtil::destroyInstance();
+
 }
+
+
 
 // if you want a different context, modify the value of glContextAttrs
 // it will affect all platforms
@@ -130,3 +137,26 @@ void AppDelegate::applicationWillEnterForeground() {
     SimpleAudioEngine::getInstance()->resumeAllEffects();
 #endif
 }
+
+void AppDelegate::preLoadSource()
+{
+    //加载欢迎界面的所有精灵，放在缓存中
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/mainscene1-hd.plist", "Themes/scene/mainscene1-hd.png");
+    //加载各种表格文件
+    auto pCsvUtil = CsvUtil::getInstance();
+    pCsvUtil->addFileData(BARRIERCSVFILE);
+    pCsvUtil->addFileData(TOWERCSVFILE);
+    pCsvUtil->addFileData(MONSTERCSVFILE);
+    pCsvUtil->addFileData(BULLETCSVFILE);
+    pCsvUtil->addFileData(LEVELCSVFILE);
+}
+
+void AppDelegate::unLoadSource()
+{
+    //删除所有的精灵缓存
+    SpriteFrameCache::getInstance()->removeSpriteFrames();
+    //释放表格
+    CsvUtil::destroyInstance();
+}
+
+

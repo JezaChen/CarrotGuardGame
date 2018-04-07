@@ -1,4 +1,6 @@
 #include "SceneFactory.h"
+#include "WelcomeScene.h"
+#include "PageSelectScene.h"
 
 Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
 {
@@ -9,20 +11,20 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             pScene = WelcomeScene::create();
             break;
         case en_GameHelpScene:
-            pScene = HelpScene::create(); //TODO:这个还没有写
+            //pScene = HelpScene::create(); //TODO:这个还没有写
             break;
         case en_PageSelectScene:
             pScene = PageSelectScene::create();
             break;
         case en_LevelSelectScene:
-            pScene = LevelSelectScene::create();
+            //pScene = LevelSelectScene::create();
             break;
         case en_GameSettingScene:
-            pScene = GameSettingScene::create();
+           // pScene = GameSettingScene::create();
             break;
         case en_GameScene:
             //值得注意的是，切换的是加载场景
-            pScene = LoadingScene::create(); //TODO
+            //pScene = LoadingScene::create(); //TODO
             break;
         default:
             break;
