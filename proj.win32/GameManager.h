@@ -16,9 +16,9 @@ class GameManager :public Ref
 {
 public:
 
-	CREATE_INSTANCE_FUNC(GameManager);
+	CREATE_INSTANCE_FUNCTION(GameManager);
 
-	DESTROY_INSTANCE_FUNC();
+	DESTROY_INSTANCE_FUNCTION();
 
 protected:
 	/*
