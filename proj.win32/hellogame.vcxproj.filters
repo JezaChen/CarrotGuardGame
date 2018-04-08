@@ -21,6 +21,12 @@
     <ClCompile Include="..\Classes\EntityLayerBase.cpp" />
     <ClCompile Include="..\Classes\MapUtil.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
+    <ClCompile Include="..\Classes\BarrierBase.cpp" />
+    <ClCompile Include="BarrierFactory.cpp" />
+    <ClCompile Include="BarriersLayer.cpp" />
+    <ClCompile Include="DesignLayer.cpp" />
+    <ClCompile Include="DataCollectLayer.cpp" />
+    <ClCompile Include="GameManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -55,6 +61,11 @@
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\test.h" />
+    <ClInclude Include="BarrierFactory.h" />
+    <ClInclude Include="BarriersLayer.h" />
+    <ClInclude Include="DesignLayer.h" />
+    <ClInclude Include="DataCollectLayer.h" />
+    <ClInclude Include="GameManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

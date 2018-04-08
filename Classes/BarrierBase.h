@@ -25,7 +25,9 @@ public:
 
 protected:
 	/*
-	* @
+	* @brief 添加障碍物
+	* @details 绑定受伤实体基类的init
+	* @return true 添加成功，否则返回false
 	*/
 	virtual bool init(const int &rId);
 	/*

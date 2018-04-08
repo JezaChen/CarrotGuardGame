@@ -151,6 +151,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LoadingSourceLayer.cpp" />
@@ -166,6 +167,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\DynamicPropertyInterface.cpp" />
     <ClCompile Include="..\Classes\Entity.cpp" />
     <ClCompile Include="..\Classes\EntityLayerBase.cpp" />
+    <ClCompile Include="BarrierFactory.cpp" />
+    <ClCompile Include="BarriersLayer.cpp" />
+    <ClCompile Include="DataCollectLayer.cpp" />
+    <ClCompile Include="DesignLayer.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
@@ -198,6 +204,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\DynamicPropertyInterface.h" />
     <ClInclude Include="..\Classes\Entity.h" />
     <ClInclude Include="..\Classes\EntityLayerBase.h" />
+    <ClInclude Include="BarrierFactory.h" />
+    <ClInclude Include="BarriersLayer.h" />
+    <ClInclude Include="DataCollectLayer.h" />
+    <ClInclude Include="DesignLayer.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\PageSelectScene.h" />

@@ -38,6 +38,7 @@ bool MapUtil::init()
 
 void MapUtil::setCurrentLevelTiledMap(cocos2d::TMXTiledMap *pTiledMap)
 {
+	//ÇåÀíµØÍ¼£»
 	clearMap();
 	CC_SAFE_RELEASE_NULL(_pTildeMap);
 	CC_SAFE_RETAIN(pTiledMap);
@@ -45,39 +46,39 @@ void MapUtil::setCurrentLevelTiledMap(cocos2d::TMXTiledMap *pTiledMap)
 	_gridSize = _pTildeMap->getTileSize();
 	_mapSize = Size(_pTildeMap->getMapSize().width * _gridSize.width, _pTildeMap->getMapSize().height * _gridSize.height);
 
-	auto tMapGroup = _pTildeMap->getObjectGroup("PATH");
-	auto tObjs = tMapGroup->getObjects();
+	auto aMapGroup = _pTildeMap->getObjectGroup("PATH");
+	auto aObjs = aMapGroup->getObjects();
 
-	for (auto &iter : tObjs)
+	for (auto &iter : aObjs)
 	{
-		auto tObjMap = iter.asValueMap();
-		auto tObjName = tObjMap.at("name").asString();
-		auto tX = tObjMap.at("x").asFloat();
-		auto tY = tObjMap.at("y").asFloat();
-		auto tPos = Vec2(tX, tY);
-		auto tWidth = tObjMap.at("width").asFloat();
-		auto tHeight = tObjMap.at("height").asFloat();
-		auto tRect = Rect(tX, tY, tWidth, tHeight);
+		auto aObjMap = iter.asValueMap();
+		auto aObjName = aObjMap.at("name").asString();
+		auto aX = aObjMap.at("x").asFloat();
+		auto aY = aObjMap.at("y").asFloat();
+		auto aPos = Vec2(aX, aY);
+		auto aWidth = aObjMap.at("width").asFloat();
+		auto aHeight = aObjMap.at("height").asFloat();
+		auto aRect = Rect(aX, aY, aWidth, aHeight);
 
-		if (tObjName.find("PT") != std::string::npos)
+		if (aObjName.find("PT") != std::string::npos)
 		{
-			_pMovePosMap->insert(std::make_pair(atoi(tObjName.substr(2).c_str()), tPos));
+			_pMovePosMap->insert(std::make_pair(atoi(aObjName.substr(2).c_str()), aPos));
 			continue;
 		}
-		if (tObjName.find("Obj") != std::string::npos)
+		if (aObjName.find("Obj") != std::string::npos)
 		{
-			rectTransVec(tRect);
+			rectTransVec(aRect);
 			continue;
 		}
 
-		auto tIndex = tObjName.find("Ob");
+		auto tIndex = aObjName.find("Ob");
 		if (std::string::npos != tIndex)
 		{
-			_pBarrierPosMap->push_back(std::make_pair(tObjName.substr(0, tIndex + 2), tRect));
+			_pBarrierPosMap->push_back(std::make_pair(aObjName.substr(0, tIndex + 2), aRect));
 			continue;
 		}
 
-		_pEffectTowerRectVec->push_back(tRect);
+		_pEffectTowerRectVec->push_back(aRect);
 	}
 }
 
@@ -90,40 +91,40 @@ void MapUtil::clearMap()
 
 void MapUtil::rectTransVec(const Rect &rRect)
 {
-	auto tWidth = rRect.size.width;
-	auto tHeight = rRect.size.height;
-	auto tX = rRect.origin.x;
-	auto tY = rRect.origin.y;
-	if (TILESIZE == tWidth && TILESIZE == tHeight)
+	auto aWidth = rRect.size.width;
+	auto aHeight = rRect.size.height;
+	auto aX = rRect.origin.x;
+	auto aY = rRect.origin.y;
+	if (TILESIZE == aWidth && TILESIZE == aHeight)
 	{
-		_pEffectTowerRectVec->push_back(Rect(tX, tY, _gridSize.width, _gridSize.height));
+		_pEffectTowerRectVec->push_back(Rect(aX, aY, _gridSize.width, _gridSize.height));
 		return;
 	}
-	if (tWidth > TILESIZE && tHeight > TILESIZE)
+	if (aWidth > TILESIZE && aHeight > TILESIZE)
 	{
-		for (int i = 0; i < tWidth / TILESIZE; ++i)
+		for (int i = 0; i < aWidth / TILESIZE; ++i)
 		{
-			for (int j = 0; j < tHeight / TILESIZE; ++j)
+			for (int j = 0; j < aHeight / TILESIZE; ++j)
 			{
-				_pEffectTowerRectVec->push_back(Rect(tX + TILESIZE * i, tY + TILESIZE * j, TILESIZE, TILESIZE));
+				_pEffectTowerRectVec->push_back(Rect(aX + TILESIZE * i, aY + TILESIZE * j, TILESIZE, TILESIZE));
 			}
 		}
 		return;
 	}
 
-	if (tWidth > TILESIZE)
+	if (aWidth > TILESIZE)
 	{
-		for (int i = 0; i < tWidth / TILESIZE; ++i)
+		for (int i = 0; i < aWidth / TILESIZE; ++i)
 		{
-			_pEffectTowerRectVec->push_back(Rect(tX + i * TILESIZE, tY, _gridSize.width, _gridSize.height));
+			_pEffectTowerRectVec->push_back(Rect(aX + i * TILESIZE, aY, _gridSize.width, _gridSize.height));
 		}
 	}
 
-	if (tHeight > TILESIZE)
+	if (aHeight > TILESIZE)
 	{
-		for (int i = 0; i < tHeight / TILESIZE; ++i)
+		for (int i = 0; i < aHeight / TILESIZE; ++i)
 		{
-			_pEffectTowerRectVec->push_back(Rect(tX, tY + i * TILESIZE, _gridSize.width, _gridSize.height));
+			_pEffectTowerRectVec->push_back(Rect(aX, aY + i * TILESIZE, _gridSize.width, _gridSize.height));
 		}
 	}
 }
@@ -151,10 +152,10 @@ void MapUtil::removeBarrierRect(const Vec2 &rPos)
 {
 	for (auto barrierIter = _pBarrierPosMap->begin(); barrierIter != _pBarrierPosMap->end(); ++barrierIter)
 	{
-		auto tBarrier = *barrierIter;
-		if (tBarrier.second.containsPoint(rPos))
+		auto aBarrier = *barrierIter;
+		if (aBarrier.second.containsPoint(rPos))
 		{
-			rectTransVec(tBarrier.second);
+			rectTransVec(aBarrier.second);
 			_pBarrierPosMap->erase(barrierIter);
 			break;
 		}
