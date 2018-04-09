@@ -29,6 +29,9 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="..\Classes\PageSelectScene.cpp" />
     <ClCompile Include="..\Classes\PageViewLayer.cpp" />
+    <ClCompile Include="MonsterBase.cpp" />
+    <ClCompile Include="MonsterManager.cpp" />
+    <ClCompile Include="MoveControllerBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -68,6 +71,9 @@
     <ClInclude Include="DataCollectLayer.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="..\Classes\PageViewLayer.h" />
+    <ClInclude Include="MonsterBase.h" />
+    <ClInclude Include="MonsterManager.h" />
+    <ClInclude Include="MoveControllerBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

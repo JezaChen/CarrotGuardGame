@@ -74,7 +74,7 @@ protected:
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(int, _iHp, IHp);
 	/*
-	* @brief นึฮ๏ืดฬฌ
+	* @brief นึฮ๏ฮป
 	*/
 	CC_SYNTHESIZE_PASS_BY_REF(int, _iState, IState);
 	/*
