@@ -18,7 +18,7 @@ class BarrierFactory
 {
 public:
 	/*
-	* @brief 兄贵，目前障碍物只有三个，真真是高级程序员，赶工的劲头我学到了
+	* @brief 兄贵，目前障碍物只有四个，真真是高级程序员，赶工的劲头我学到了
 	*/
 	static BarrierBase *createBarrier(const BarrierType &rBarrierType);
 };
