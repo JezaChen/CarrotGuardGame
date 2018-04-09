@@ -34,6 +34,7 @@ set(COCOS2D_ROOT ${CMAKE_SOURCE_DIR}/cocos2d)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${COCOS2D_ROOT}/cmake/Modules/")
 include(CocosBuildHelpers)
 
+set(CMAKE_EXE_LINKER_FLAGS "-lpthread -lrt -ldl")
 
 # Some macro definitions
 if(WINDOWS)
@@ -168,7 +169,7 @@ set(GAME_HEADERS
         Classes/AppDelegate.h
         Classes/HelloWorldScene.h
         Classes
-        )
+        Classes/PageViewLayer.h Classes/PageViewLayer.cpp Classes/PageSelectScene.cpp)
 
 # add the executable
 if(ANDROID)

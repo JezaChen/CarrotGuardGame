@@ -156,6 +156,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LoadingSourceLayer.cpp" />
     <ClCompile Include="..\Classes\MenusLayer.cpp" />
+    <ClCompile Include="..\Classes\PageSelectScene.cpp" />
+    <ClCompile Include="..\Classes\PageViewLayer.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\SceneManager.cpp" />
     <ClCompile Include="..\Classes\SoundUtil.cpp" />
@@ -187,6 +189,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LoadingSourceLayer.h" />
     <ClInclude Include="..\Classes\MenusLayer.h" />
+    <ClInclude Include="..\Classes\PageViewLayer.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\route.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />
@@ -214,7 +217,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\PageSelectScene.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />
     <ClInclude Include="..\Classes\MapUtil.h" />
-    <ClInclude Include="..\Classes\VictimEntityBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">

@@ -1,13 +1,11 @@
-//
-//  LevelSelectScene.h
-//  newCardDefence
-//
-//  Created by 何泓兵 on 18-3-30.
-//
-//
+/**
+ * @brief 选择主题页面
+ * @authors 何泓兵
+ * @co_author 陈建彰
+ * */
 #pragma once
-#ifndef __newCardDefence__PageSelectScene__
-#define __newCardDefence__PageSelectScene__
+#ifndef PAGESELECT_SCENE_H
+#define PAGESELECT_SCENE_H
 
 #include "CommonDefine.h"
 
@@ -18,22 +16,28 @@ public:
 
 	CREATE_FUNC(PageSelectScene);
 
-	virtual ~PageSelectScene();
+	virtual ~PageSelectScene()override;
 
 protected:
 
+	/**
+	 * @brief 初始化函数
+	 * */
 	virtual bool init();
 
-	virtual void onEnter()override;
+	/**
+	 * @brief
+	 * */
+	virtual void onEnter();
 
 private:
 
-	Layer *_pPageViewLayer = nullptr;//页面查看图层；
+	Layer *_pPageViewLayer = nullptr; //主题查看图层，也就是中间那块
 
-	Layer *_pMenuPanelLayer = nullptr;//菜单面板图层；
+	Layer *_pMenuPanelLayer = nullptr; //菜单面板图层，也就是顶部那块
 
-	Layer *_pPageTurningLayer = nullptr;//页面转换图层；
+	Layer *_pPageTurningLayer = nullptr; //页面转换图层；
 
 };
 
-#endif /* defined(__newCardDefence__LevelSelectScene__) */
+#endif //PAGESELECT_SCENE_H

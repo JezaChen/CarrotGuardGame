@@ -27,6 +27,8 @@
     <ClCompile Include="DesignLayer.cpp" />
     <ClCompile Include="DataCollectLayer.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="..\Classes\PageSelectScene.cpp" />
+    <ClCompile Include="..\Classes\PageViewLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -57,7 +59,6 @@
     <ClInclude Include="..\Classes\Entity.h" />
     <ClInclude Include="..\Classes\EntityLayerBase.h" />
     <ClInclude Include="..\Classes\MapUtil.h" />
-    <ClInclude Include="..\Classes\VictimEntityBase.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\test.h" />
@@ -66,6 +67,7 @@
     <ClInclude Include="DesignLayer.h" />
     <ClInclude Include="DataCollectLayer.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="..\Classes\PageViewLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
