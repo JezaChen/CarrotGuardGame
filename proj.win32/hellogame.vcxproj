@@ -179,6 +179,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SceneBase.cpp" />
     <ClCompile Include="..\Classes\MapUtil.cpp" />
     <ClCompile Include="MonsterBase.cpp" />
+    <ClCompile Include="MonsterFactory.cpp" />
+    <ClCompile Include="MonsterHelpLayer.cpp" />
+    <ClCompile Include="MonsterLayer.cpp" />
     <ClCompile Include="MonsterManager.cpp" />
     <ClCompile Include="MoveControllerBase.cpp" />
   </ItemGroup>
@@ -221,6 +224,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\SceneBase.h" />
     <ClInclude Include="..\Classes\MapUtil.h" />
     <ClInclude Include="MonsterBase.h" />
+    <ClInclude Include="MonsterFactory.h" />
+    <ClInclude Include="MonsterHelpLayer.h" />
+    <ClInclude Include="MonsterLayer.h" />
     <ClInclude Include="MonsterManager.h" />
     <ClInclude Include="MoveControllerBase.h" />
   </ItemGroup>
