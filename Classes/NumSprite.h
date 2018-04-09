@@ -14,7 +14,7 @@
 class NumSprite
 {
 public:
-	/*
+	/**
 	*@brief 静态函数，用于创造数字精灵
 	*@param rsNum 你想要哪个数字的精灵，你就传那个数字进去(数字串也行哦）
 	*@param rsImage 在哪个图像进行切割

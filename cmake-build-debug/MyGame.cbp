@@ -813,6 +813,18 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/HelloWorldScene.h">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/PageSelectScene.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/PageSelectScene.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/PageViewLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/PageViewLayer.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/2d/CCAction.cpp">
 			<Option target="cocos2dInternal"/>
 		</Unit>

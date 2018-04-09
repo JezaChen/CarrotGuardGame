@@ -5,17 +5,24 @@
 
 #include "CommonDefine.h"
 
+/**
+ * @class MenusLayer
+ * @brief 欢迎界面上的菜单图层
+ * @author 陈建彰
+ * */
 class MenusLayer : public Layer
 {
 public:
     CREATE_FUNC(MenusLayer);
 protected:
-    /*
-    @brief 初始化函数
+    /**
+     * @brief 初始化函数
+     * @return true 如果初始化成功
+     * @return false 如果初始化失败
     */
     virtual bool init();
 
-    /*
+    /**
     @brief 创建目录按钮
     */
     virtual void createMenuItems();
