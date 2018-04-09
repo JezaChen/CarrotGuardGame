@@ -124,7 +124,7 @@ enum SceneType
     en_WelcomeScene,
     en_GameSettingScene,
     en_GameHelpScene,
-    en_PageSelectScene,
+    en_ThemeSelectScene,
     en_LevelSelectScene,
     en_GameScene
 

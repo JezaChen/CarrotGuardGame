@@ -3,8 +3,9 @@
 //
 
 #include "CommonDefine.h"
-#include "PageSelectScene.h"
+#include "ThemeSelectScene.h"
 #include "PageViewLayer.h"
+#include "SelectSceneMenuPanelLayer.h"
 
 PageSelectScene::~PageSelectScene()
 {
@@ -22,7 +23,9 @@ bool PageSelectScene::init()
         _pPageViewLayer = PageViewLayer::create();
         _pPageViewLayer->retain();
 
-        //TODO 还有菜单Layer
+        _pMenuPanelLayer = MenuPanelLayer::create();
+        _pMenuPanelLayer->retain();
+        dynamic_cast<MenuPanelLayer*>(_pMenuPanelLayer)->setPageTurnFunction(CC_CALLBACK_1(PageViewLayer::pageTurn, dynamic_cast<PageViewLayer*>(_pPageViewLayer)));
 
         bRet = true;
     }while (0);
@@ -33,7 +36,7 @@ void PageSelectScene::onEnter()
 {
     Scene::onEnter();
     addChild(_pPageViewLayer);
-    //TODO 还有菜单Layer
+    addChild(_pMenuPanelLayer);
 }
 
 

@@ -33,7 +33,7 @@ void WelcomeScene::onEnter()
 {
     Scene::onEnter();
     addChild(_pSpritesLayer); //无论加载是否完成，那几个怪物萝卜都显示出来
-    if (Config::getInstance()->getIsLoadSource()) //如果加载资源完成后
+    if (!Config::getInstance()->getIsLoadSource()) //如果加载资源完成后
     {
         auto pLoadingLayer = LoadingSourceLayer::create();
         pLoadingLayer->setFuncShowMenuPanel(CC_CALLBACK_0(WelcomeScene::showMenu, this)); //传递一个回调函数，用于加载资源完毕后回调showMenu

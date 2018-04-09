@@ -1,11 +1,6 @@
 //
-//  PageViewLayer.cpp
-//  CarrotFantasy
+// Created by jeza on 18-4-8.
 //
-//  Created by Yan on 14-9-19.
-//
-//
-
 #include "PageViewLayer.h"
 #include "SceneManager.h"
 #include "ui/UIButton.h"
@@ -52,45 +47,45 @@ void PageViewLayer::pageTurn(const bool &rBLeft)
     }
 }
 
-void PageViewLayer::setActivePagePoint(const int &rIIndex)
+//性能太差，估计要推掉
+void PageViewLayer::setActivePagePoint(const int &riIndex)
 {
-    int tIndex = -1;
-    for (auto & flagIter : *_pPagePointsVec)
+    for (int i = 0; i < _pPagePointsVec->size(); i++)
     {
-        if (rIIndex == ++tIndex)
-        {
-            flagIter->selected();
-            continue;
-        }
-        flagIter->unselected();
+        if (riIndex == i) //若命中
+            _pPagePointsVec->at(i)->selected(); //这个菜单项就被选择了，高亮显示
+        else
+            _pPagePointsVec->at(i)->unselected(); //否侧，就变成灰色
     }
 }
 
 
 void PageViewLayer::loadBackground()
 {
-    auto pBg = Sprite::createWithSpriteFrameName(BG);
-    pBg->setPosition(VisibleRectUtil::center());
-    addChild(pBg);
+    auto aBg = Sprite::createWithSpriteFrameName(BG);
+    aBg->setPosition(VisibleRectUtil::center());
+    addChild(aBg, 0);
 
-    auto pTitle = Label::createWithSystemFont("选择关卡", "Arial", 30);
-    pTitle->setPosition(Vec2(480, 615));
-    addChild(pTitle);
+    auto aTitle = Label::createWithSystemFont("选择关卡", "Microsoft YaHei UI", 30);
+    aTitle->setPosition(Vec2(480, 610));
+    addChild(aTitle, 0);
 }
 
 void PageViewLayer::createThemePoints()
 {
-    auto pPageFlagMenu = Menu::create();
-    auto tFlagCount = 5;//_pPageView->getPageCount();
-    for (int i = 0; i < tFlagCount; ++i)
+    auto aPageFlagMenu = Menu::create();
+    int iPointCounts = 5; //TODO 暂定有五个点
+    for (int i = 0; i < iPointCounts; i++)
     {
-        auto pPageFlagItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("theme_pos_normal.png"), Sprite::createWithSpriteFrameName("theme_pos_active.png"));
-        pPageFlagItem->setPosition(Vec2(430 + 20 * i, 30));
-        _pPagePointsVec->pushBack(pPageFlagItem);
-        pPageFlagMenu->addChild(pPageFlagItem);
+        //创建item，第一个是没有被选择的图像，第二个是被选择到的图像
+        auto aPagePointItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("theme_pos_normal.png"),
+            Sprite::createWithSpriteFrameName("theme_pos_active.png"));
+        aPagePointItem->setPosition(Vec2(-40 + 20 * i, -280)); //放置到相应的位置
+        _pPagePointsVec->pushBack(aPagePointItem);
+        aPageFlagMenu->addChild(aPagePointItem);
     }
-    _pPagePointsVec->at(_iPageIndex)->selected();
-    addChild(pPageFlagMenu);
+    _pPagePointsVec->at(_iPageIndex)->selected(); //这个相当于初始化选定
+    addChild(aPageFlagMenu);
 }
 
 void PageViewLayer::createThemePageView()
@@ -99,46 +94,61 @@ void PageViewLayer::createThemePageView()
     _pPageView->retain();
     _pPageView->setContentSize(Size(960.0f, 640.0f));
 
-    Size tBackgroundSize = this->getContentSize();
-    Layout *pLayout = nullptr;
+    //背景尺寸
+    //TODO 似乎有点不对
+    Size aBackgroundSize = this->getContentSize();
+    Layout *pPageLayout = nullptr;
     int i = -1;
-    for (auto & iterThemeName : PAGESOURCE)
+    for (auto &iterThemeName : PAGESOURCE)
     {
-        pLayout = Layout::create();
-        auto pButton = Button::create(iterThemeName, iterThemeName, iterThemeName, cocos2d::ui::Layout::TextureResType::PLIST);
-        pButton->setPosition(Vec2(tBackgroundSize.width / 2, tBackgroundSize.height / 2 - 20));
-        pButton->addTouchEventListener([&](Ref *pSender, Widget::TouchEventType event)
+        pPageLayout = Layout::create();
+        //每个主题的选择其实是有一个个按钮组成的，三个状态都是一样的
+        auto aPageButton = Button::create(iterThemeName, iterThemeName, iterThemeName,
+            cocos2d::ui::Layout::TextureResType::PLIST);
+        aPageButton->setPosition(Vec2(aBackgroundSize.width / 2, aBackgroundSize.height / 2 - 20));
+        aPageButton->addTouchEventListener([&](Ref *pSender, Widget::TouchEventType event)
         {
+            //若鼠标点击落下
             if (event == Widget::TouchEventType::ENDED)
             {
-                int tCurPageIndex = _pPageView->getCurPageIndex();
-                auto tEnSceneType = std::make_tuple(en_LevelSelectScene, tCurPageIndex);
-                NOTIFY->postNotification("changeScene", reinterpret_cast<Ref*>(&tEnSceneType));
+                int iCurPageIndex = static_cast<int>(_pPageView->getCurrentPageIndex());
+                auto aChangingSceneType = std::make_tuple(en_LevelSelectScene,
+                    iCurPageIndex);
+                //通知切换到关卡选择页面
+                NOTIFICATION_CENTER->postNotification("changeScene",
+                    reinterpret_cast<Ref *>(&aChangingSceneType));
+
             }
         });
-        pLayout->addChild(pButton);
-        auto pThemeFlag = Sprite::createWithSpriteFrameName(StringUtils::format("theme_pack0%d_CN.png", i + 2));
-        pThemeFlag->setScale(1.3f);
-        pThemeFlag->setPosition(490, 320);
-        pLayout->addChild(pThemeFlag);
 
-        auto pThemeMark = Sprite::createWithSpriteFrameName(StringUtils::format("bookmark_10-12.png"));
-        pThemeMark->setScale(1.5f);
-        pThemeMark->setPosition(Vec2(710, 70));
-        pLayout->addChild(pThemeMark);
-        _pPageView->insertPage(pLayout, ++i);
+        pPageLayout->addChild(aPageButton);
+
+        //aThemeInfo 是按钮右上侧那个具体信息
+        auto aThemeInfo = Sprite::createWithSpriteFrameName(StringUtils::format("theme_pack0%d_CN.png", i + 2));
+        aThemeInfo->setScale(1.3f);
+        aThemeInfo->setPosition(490, 320);
+        pPageLayout->addChild(aThemeInfo);
+
+        //aThemeMark 是下方那个关卡通关数
+        auto aThemeMark = Sprite::createWithSpriteFrameName(StringUtils::format("bookmark_10-12.png")); //TODO
+        aThemeMark->setScale(1.5f);
+        aThemeMark->setPosition(710, 70);
+        pPageLayout->addChild(aThemeMark);
+
+        _pPageView->insertPage(pPageLayout, ++i);
 
     }
-    _pPageView->setPassFocusToChild(true);
+
+    _pPageView->setPassFocusToChild(true); //TODO ???
     _pPageView->scrollToPage(_iPageIndex);
     _pPageView->addEventListener([&](Ref *pSender, PageView::EventType event)
     {
-        if (PageView::EventType::TURNING == event)
-        {
-            this->setActivePagePoint(_pPageView->getCurPageIndex());
+        if (event == PageView::EventType::TURNING) {
+            this->setActivePagePoint(
+                static_cast<const int &>(_pPageView->getCurrentPageIndex()));
         }
     });
-    addChild(_pPageView, 14);
+    addChild(_pPageView);
 }
 
 

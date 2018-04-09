@@ -19,6 +19,14 @@ AppDelegate::~AppDelegate()
     unLoadSource();
 }
 
+void AppDelegate::initGLContextAttrs() //bug fixed
+{
+    // set OpenGL context attributes: red,green,blue,alpha,depth,stencil
+    GLContextAttrs glContextAttrs = { 8, 8, 8, 8, 24, 8 };
+
+    GLView::setGLContextAttrs(glContextAttrs);
+}
+
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
