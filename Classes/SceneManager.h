@@ -9,6 +9,8 @@
 * @brief 场景控制器，用于切换场景等
 * @author 陈建彰
 * @date 20180403
+* @version 1.1
+* @update_info v1.1 保证背景音乐的连贯性
 */
 class SceneManager : public Node
 {

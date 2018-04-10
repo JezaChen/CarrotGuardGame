@@ -53,5 +53,6 @@ protected:
 protected:
     bool _bIsBackgroundSoundOpen;  //背景音乐是否打开
     bool _bIsEffectSoundOpen;  //特效音效是否打开
+    bool _bIsBackgroundSoundPlaying; //背景音乐是否正在播放中，避免情景切换会导致重复从头播放
 };
 #endif //SOUND_UTIL_H

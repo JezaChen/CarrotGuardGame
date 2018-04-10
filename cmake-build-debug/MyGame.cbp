@@ -801,10 +801,22 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/AboutUsLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/AboutUsLayer.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/AppDelegate.cpp">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/AppDelegate.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/DataStatisticsLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/DataStatisticsLayer.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/HelloWorldScene.cpp">
@@ -855,10 +867,28 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterHelpLayer.h">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/OptionLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/OptionLayer.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/PageViewLayer.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SelectSceneMenuPanelLayer.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SettingMenuPanelLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SettingMenuPanelLayer.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SettingScene.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SettingScene.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/TowerHelpLayer.cpp">

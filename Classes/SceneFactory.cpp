@@ -3,6 +3,7 @@
 #include "ThemeSelectScene.h"
 #include "LevelSelectScene.h"
 #include "HelpScene.h"
+#include "SettingScene.h"
 
 Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
 {
@@ -22,7 +23,7 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             pScene = LevelSelectScene::create();
             break;
         case en_GameSettingScene:
-           // pScene = GameSettingScene::create();
+            pScene = GameSettingScene::create();
             break;
         case en_GameScene:
             //值得注意的是，切换的是加载场景
