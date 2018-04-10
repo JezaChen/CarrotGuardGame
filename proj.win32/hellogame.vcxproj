@@ -153,11 +153,15 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\HelpLayer.cpp" />
+    <ClCompile Include="..\Classes\HelpMenuPanelLayer.cpp" />
+    <ClCompile Include="..\Classes\HelpScene.cpp" />
     <ClCompile Include="..\Classes\LevelSelectLayer.cpp" />
     <ClCompile Include="..\Classes\LevelSelectScene.cpp" />
     <ClCompile Include="..\Classes\LoadingSourceLayer.cpp" />
     <ClCompile Include="..\Classes\LocalLevelDataUtil.cpp" />
     <ClCompile Include="..\Classes\MenusLayer.cpp" />
+    <ClCompile Include="..\Classes\MonsterHelpLayer.cpp" />
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\PageViewLayer.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
@@ -165,6 +169,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SelectSceneMenuPanelLayer.cpp" />
     <ClCompile Include="..\Classes\SoundUtil.cpp" />
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
+    <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="..\Classes\Config.cpp" />
@@ -181,7 +186,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
     <ClCompile Include="..\Classes\MapUtil.cpp" />
-    <ClCompile Include="MonsterHelpLayer.cpp" />
     <ClCompile Include="MonsterLayer.cpp" />
     <ClCompile Include="MonsterManager.cpp" />
     <ClCompile Include="MoveControllerBase.cpp" />
@@ -195,11 +199,14 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HelpLayer.h" />
+    <ClInclude Include="..\Classes\HelpMenuPanelLayer.h" />
+    <ClInclude Include="..\Classes\HelpScene.h" />
     <ClInclude Include="..\Classes\LevelSelectLayer.h" />
     <ClInclude Include="..\Classes\LevelSelectScene.h" />
     <ClInclude Include="..\Classes\LoadingSourceLayer.h" />
     <ClInclude Include="..\Classes\LocalLevelDataUtil.h" />
     <ClInclude Include="..\Classes\MenusLayer.h" />
+    <ClInclude Include="..\Classes\MonsterHelpLayer.h" />
     <ClInclude Include="..\Classes\PageViewLayer.h" />
     <ClInclude Include="..\Classes\resource.h" />
     <ClInclude Include="..\Classes\route.h" />
@@ -210,6 +217,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\SpritesLayer.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\test.h" />
+    <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
     <ClInclude Include="..\Classes\GameScene.h" />
@@ -228,7 +236,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ThemeSelectScene.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />
     <ClInclude Include="..\Classes\MapUtil.h" />
-    <ClInclude Include="MonsterHelpLayer.h" />
     <ClInclude Include="MonsterLayer.h" />
     <ClInclude Include="MonsterManager.h" />
     <ClInclude Include="MoveControllerBase.h" />

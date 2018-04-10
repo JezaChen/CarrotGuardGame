@@ -169,7 +169,7 @@ set(GAME_HEADERS
         Classes/AppDelegate.h
         Classes/HelloWorldScene.h
         Classes
-        Classes/PageViewLayer.h Classes/SelectSceneMenuPanelLayer.h Classes/SelectSceneMenuPanelLayer.h Classes/LocalLevelDataUtil.h Classes/LocalLevelDataUtil.cpp Classes/LevelSelectLayer.h Classes/LevelSelectLayer.cpp Classes/LevelSelectScene.h Classes/LevelSelectScene.cpp)
+        Classes/PageViewLayer.h Classes/SelectSceneMenuPanelLayer.h Classes/SelectSceneMenuPanelLayer.h Classes/LocalLevelDataUtil.h Classes/LocalLevelDataUtil.cpp Classes/LevelSelectLayer.h Classes/LevelSelectLayer.cpp Classes/LevelSelectScene.h Classes/LevelSelectScene.cpp Classes/HelpLayer.cpp Classes/MonsterHelpLayer.h Classes/MonsterHelpLayer.cpp Classes/TowerHelpLayer.h Classes/TowerHelpLayer.cpp Classes/HelpMenuPanelLayer.h Classes/HelpMenuPanelLayer.cpp Classes/HelpScene.h Classes/HelpScene.cpp)
 
 # add the executable
 if(ANDROID)
