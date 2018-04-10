@@ -1,6 +1,7 @@
 #include "SceneFactory.h"
 #include "WelcomeScene.h"
 #include "ThemeSelectScene.h"
+#include "LevelSelectScene.h"
 
 Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
 {
@@ -17,7 +18,7 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             pScene = PageSelectScene::create();
             break;
         case en_LevelSelectScene:
-            //pScene = LevelSelectScene::create();
+            pScene = LevelSelectScene::create();
             break;
         case en_GameSettingScene:
            // pScene = GameSettingScene::create();

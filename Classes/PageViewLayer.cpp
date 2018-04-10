@@ -66,9 +66,11 @@ void PageViewLayer::loadBackground()
     aBg->setPosition(VisibleRectUtil::center());
     addChild(aBg, 0);
 
-    auto aTitle = Label::createWithSystemFont("选择关卡", "Microsoft YaHei UI", 30);
-    aTitle->setPosition(Vec2(480, 610));
+    auto aTitle = Label::createWithSystemFont(TITLE_SELECT_LEVEL, "Microsoft YaHei UI", 30); //TODO 其实有图的
+    //auto aTitle = Sprite::createWithSpriteFrameName("theme_bg_CN.png");
+    aTitle->setPosition(475, 609);
     addChild(aTitle, 0);
+    //aTitle->setScale(1.4);
 }
 
 void PageViewLayer::createThemePoints()

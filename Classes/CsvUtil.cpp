@@ -105,7 +105,7 @@ std::tuple<int, int> CsvUtil::getFileRowColNum(const std::string & FilePath)
 {
     const auto tDict = getFileDict(FilePath);
     int rowNum = tDict.size();
-    int colNum = (*tDict.begin()).size() - 1;
+    int colNum = (*tDict.begin()).size(); //bug fixed
     return std::make_tuple(rowNum, colNum);
 }
 

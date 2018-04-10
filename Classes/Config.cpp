@@ -61,8 +61,8 @@ void Config::createLevelDataFile()
 	auto pCsvUtil = CsvUtil::getInstance();
 	auto tColumnRow = pCsvUtil->getFileRowColNum(LEVELCSVFILE);
 
-	auto tColumn = std::get<0>(tColumnRow);
-	auto tRow = std::get<1>(tColumnRow);
+	auto tColumn = std::get<1>(tColumnRow); //bug fixed
+	auto tRow = std::get<0>(tColumnRow); //bug fixed
 	auto tValue = FileUtils::getInstance()->getValueMapFromFile(tLevelDataFileName);
 
 	for (int i = 1; i < tRow; ++i)

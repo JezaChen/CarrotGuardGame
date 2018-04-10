@@ -2,7 +2,7 @@
 //  SceneBase.cpp
 //  CarrotFantasy
 //
-//  Created by ?????? on 18-3-30.
+//  Created by 何泓兵，陈建彰 on 18-3-30.
 //
 //
 
@@ -10,10 +10,11 @@
 
 void SceneBase::sourceManager(const std::vector<std::string> &rSourceNameVec, const bool &rBLoad)
 {
-	auto pSpriteFrameCache = SpriteFrameCache::getInstance();//????????????????
-	for (auto &iterSourceName : rSourceNameVec)
-	{
-		if (rBLoad)  pSpriteFrameCache->addSpriteFramesWithFile(iterSourceName + PLISTPOSTFIX, iterSourceName + PHOTOPOSTFIX);
-		else pSpriteFrameCache->removeSpriteFramesFromFile(iterSourceName + PLISTPOSTFIX);
-	}
+    auto pSpriteFrameCache = SpriteFrameCache::getInstance();
+    for (auto &iterSourceName : rSourceNameVec)
+    {
+        if (rBLoad)
+            pSpriteFrameCache->addSpriteFramesWithFile(iterSourceName + PLISTPOSTFIX, iterSourceName + PHOTOPOSTFIX);
+        else pSpriteFrameCache->removeSpriteFramesFromFile(iterSourceName + PLISTPOSTFIX); //TODO 为毛要删掉
+    }
 }

@@ -231,5 +231,5 @@ const static std::vector<std::string> TOWERS =
 
 #define LEVELDATACHANGE "levelDataChange"
 
-
+static const std::string TITLE_SELECT_LEVEL = "选择关卡";
 #endif // !COMMON_SOURCE_H

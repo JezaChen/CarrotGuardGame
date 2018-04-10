@@ -16,19 +16,19 @@ public:
 
 	CREATE_FUNC(PageSelectScene);
 
-	virtual ~PageSelectScene()override;
+	~PageSelectScene()override;
 
 protected:
 
 	/**
 	 * @brief ³õÊ¼»¯º¯Êý
 	 * */
-	virtual bool init();
+	bool init() override;
 
 	/**
 	 * @brief
 	 * */
-	virtual void onEnter();
+	void onEnter() override;
 
 private:
 

@@ -194,4 +194,15 @@ enum GameEndType
     en_GameLose
 };
 
+//¹Ø¿¨×´Ì¬
+#define LEVEL_LOCK 0
+#define LEVEL_UNLOCK_BUT_NO_PASS 1
+#define LEVEL_STAR1 2
+#define LEVEL_STAR2 3
+#define LEVEL_STAR3 4
+
+//¹Ø¿¨ÕÏ°­Îï×´Ì¬
+#define BARRIERS_ALL_CLEARED 1
+#define BARRIERS_NOT_ALL_CLEAR 0
+
 #endif 

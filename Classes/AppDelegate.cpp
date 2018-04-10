@@ -13,7 +13,7 @@ AppDelegate::AppDelegate()
 AppDelegate::~AppDelegate()
 {
     SceneManager::destroyInstance();
-    Config::getInstance()->saveSoundConfig();
+    Config::getInstance()->saveSoundConfig(); //保存声音配置，不用管关卡数据
     Config::destroyInstance();
     SoundUtil::destroyInstance();
     unLoadSource();

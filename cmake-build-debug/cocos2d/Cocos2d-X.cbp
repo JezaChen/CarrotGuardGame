@@ -4393,13 +4393,40 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\"/>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/BuildModules.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosBuildHelpers.cmake">
 			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosUsePrebuiltLibs.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGLFW3.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGTK3.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPNG.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPkgConfig.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindSQLite3.cmake">
+			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SelectLibraryConfigurations.cmake">
 			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SelectModule.cmake">
@@ -4408,158 +4435,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SetCompilerOptions.cmake">
 			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosUsePrebuiltLibs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/BuildModules.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGLFW3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPkgConfig.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindSQLite3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGTK3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPkgConfig.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPNG.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SelectLibraryConfigurations.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosBuildHelpers.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosBuildHelpers.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SelectModule.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SetCompilerOptions.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CocosUsePrebuiltLibs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/BuildModules.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGLFW3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPkgConfig.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindSQLite3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindGTK3.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPkgConfig.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPNG.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/SelectLibraryConfigurations.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cmake/Modules/CMakeParseArguments.cmake">
-			<Option virtualFolder="CMake Files\cocos2d\cmake\Modules\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/recast/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\external\recast\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/recast/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\external\recast\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tinyxml2/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\external\tinyxml2\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/tinyxml2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\external\tinyxml2\"/>
@@ -4567,17 +4444,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/unzip/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\external\unzip\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/unzip/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\external\unzip\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/flatbuffers/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\external\flatbuffers\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/flatbuffers/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\external\flatbuffers\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/xxhash/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\external\xxhash\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/external/xxhash/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\external\xxhash\"/>
@@ -4585,17 +4453,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/2d/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\2d\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/2d/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\2d\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/3d/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\3d\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/3d/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\3d\"/>
@@ -4603,17 +4462,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/platform/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\platform\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/platform/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\platform\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/physics/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\physics\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/physics/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\physics\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/physics3d/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\physics3d\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/physics3d/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\physics3d\"/>
@@ -4621,17 +4471,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/math/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\math\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/math/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\math\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/navmesh/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\navmesh\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/navmesh/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\navmesh\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/renderer/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\renderer\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/renderer/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\renderer\"/>
@@ -4639,17 +4480,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/vr/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\vr\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/vr/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\vr\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/base/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\base\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/base/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\base\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/deprecated/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\deprecated\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/deprecated/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\deprecated\"/>
@@ -4657,17 +4489,8 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/ui/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\ui\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/ui/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\ui\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/network/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\network\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/network/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\network\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/audio/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\audio\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/audio/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\audio\"/>
@@ -4675,29 +4498,14 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/storage/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\storage\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/storage/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\storage\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/cocosbuilder/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\cocosbuilder\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/cocosbuilder/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\cocosbuilder\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/cocostudio/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\cocostudio\"/>
 		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/cocostudio/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\cocostudio\"/>
-		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/spine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\spine\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/cocos/editor-support/spine/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\cocos\editor-support\spine\"/>
-		</Unit>
-		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/extensions/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\cocos2d\extensions\"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/cocos2d/extensions/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cocos2d\extensions\"/>
