@@ -1,4 +1,4 @@
-#include "SceneManager.h"
+﻿#include "SceneManager.h"
 #include "CommonSource.h"
 #include "CommonDefine.h"
 #include "SceneFactory.h"
@@ -39,9 +39,9 @@ void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
     {
         _iCurPageIndex = std::get<1>(changingScene);
     }
-    if(aSceneType == en_LevelSelectScene)
+    else if(aSceneType == en_LevelSelectScene)
     {
-        _iCurLevelIndex = std::get<1>(changingScene);
+        _iCurPageIndex = std::get<1>(changingScene); //fixed
     }
     if(aSceneType != en_GameScene) //若不是切换到游戏界面
     {

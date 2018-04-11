@@ -1,27 +1,22 @@
-//
-//  MonsterHelpLayer.h
-//  CarrotFantasy
-//
-//  Created by ºÎãü±ø on 18-4-9.
-//
-//
-#pragma once
-#ifndef __CarrotFantasy__MonsterHelpLayer__
-#define __CarrotFantasy__MonsterHelpLayer__
+ï»¿/**
+ * @breif æ€ªå…½å¸®åŠ©å›¾å±‚
+ * @details å¸®åŠ©åœºæ™¯ä¸­çš„æ€ªå…½é¡µé¢
+ * @author é™ˆå»ºå½°
+ * @date 20180410
+ * */
+
+#ifndef MONSTERHELPLAYER_H
+#define MONSTERHELPLAYER_H
 
 #include "CommonDefine.h"
 
-class MonsterHelpLayer :public Layer
+class MonsterHelpLayer : public Layer
 {
 public:
-
-	CREATE_FUNC(MonsterHelpLayer);
-
+    CREATE_FUNC(MonsterHelpLayer);
 protected:
-	/*
-	* @brief Ìí¼Ó¹ÖÎï°ïÖú½øÍ¼²ã
-	*/
-	virtual bool init()override;
+    bool init() override;
+    void createMonsterHelpLayer();
 };
 
-#endif /* defined(__CarrotFantasy__MonsterHelpLayer__) */
+#endif //MONSTERHELPLAYER_H

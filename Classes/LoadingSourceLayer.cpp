@@ -13,7 +13,7 @@ bool LoadingSourceLayer::init()
         pProgressBarBg->setScaleX(1.4f);
 
         //创建一个进度条
-        auto pProgressBar = ProgressTimer::create(Sprite::create("loading/fightbloodbg.png"));
+        auto pProgressBar = ProgressTimer::create(Sprite::create("loading/fight_blood_bg.png")); //Bug Fixed on 20180409
         pProgressBar->setType(ProgressTimer::Type::BAR);
         pProgressBar->setName("progressBar");
         pProgressBar->setMidpoint(Vec2::ANCHOR_MIDDLE_LEFT);
@@ -46,7 +46,7 @@ void LoadingSourceLayer::loadSource()
                                                                       SpriteFrameCache::getInstance()->addSpriteFramesWithFile(iterOfSourcdeFile + PLISTPOSTFIX, pTexture);
                                                                       ++tIndex;
                                                                       auto tPercentage = tIndex * 1.0f / ALLSOURCE.size() *100;
-                                                                      (dynamic_cast<ProgressTimer*>(getChildByName("progreeBar")))->setPercentage(tPercentage);
+                                                                      (dynamic_cast<ProgressTimer*>(getChildByName("progressBar")))->setPercentage(tPercentage);
                                                                       _pLoadingTitle->setString(StringUtils::format("Loading %.f%%", tPercentage));
                                                                       if(tIndex == ALLSOURCE.size()) _funcShowMenuPanel();
 

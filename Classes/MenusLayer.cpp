@@ -20,7 +20,7 @@ void MenusLayer::createMenuItems()
             [](Ref *pSender)
             {
                 // 点击该按钮后进入页面选择场景（大关卡选择）
-                auto levelScene = std::make_tuple(en_PageSelectScene, 0); //传进选择大关卡场景
+                auto levelScene = std::make_tuple(en_ThemeSelectScene, 0); //传进选择大关卡场景
                 NOTIFICATION_CENTER->postNotification("changeScene", reinterpret_cast<Ref *>(&levelScene));  // 通知切换场景
             }
     );

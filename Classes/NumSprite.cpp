@@ -27,3 +27,9 @@ Node *NumSprite::createNum(const std::string &rSNum, const std::string &rSImage)
 	}
 	return pNumNode;
 }
+
+Sprite *NumSprite::createSprit(const std::string &rsImage)
+{
+	auto frame = SpriteFrame::create(rsImage, Rect(20, 0, 20, 40));
+	return Sprite::createWithSpriteFrame(frame);
+}
