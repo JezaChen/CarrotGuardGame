@@ -1,12 +1,11 @@
-#pragma once
 //
 //  Entity.h
 //  newCardDefence
 //
 //  Created by 何泓兵 on 18-4-6
+//  CC_SYNTHESIZE_PASS_BY_REF 变量和变量的设置和获取函数命名规则没有统一，需要后期修补
 //
-//
-
+#pragma once
 #ifndef __newCardDefence__Entity__
 #define __newCardDefence__Entity__
 

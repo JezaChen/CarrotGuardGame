@@ -108,14 +108,14 @@ enum AtkState
     en_Stop = en_Normal << 2,
     en_Poison = en_Normal << 3,//¶¾£»
 };
-
+//¹¥»÷ÐÔ£»
 class AtkProperty
 {
 public:
     int _enAtkState = 0;
     int _iDuration = 0;
     int _iAtk = 0;
-    int _iButtltType = 0;
+    int _iBulletsType = 0;
 };
 
 //SceneType

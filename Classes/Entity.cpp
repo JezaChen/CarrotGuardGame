@@ -92,7 +92,6 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 	auto pAnimation = Animation::create();
 	//精灵帧数缓存；
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
-	//这个函数看不太懂；
 	if (sDeadImageFile.empty())
 	{
 		if (1 == _iLevel) sDeadImageFile = "air0";
