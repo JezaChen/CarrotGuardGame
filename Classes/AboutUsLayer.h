@@ -16,8 +16,15 @@ public:
     CREATE_FUNC(AboutUsLayer);
 
 protected:
+    /**
+     * @brief 初始化函数
+     * */
     bool init() override;
 
+    /**
+     * @brief 创建背景函数
+     * @details 它是实质创造该图层一切可见对象的函数
+     * */
     virtual void createBg();
 };
 
