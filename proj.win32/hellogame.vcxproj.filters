@@ -48,6 +48,20 @@
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
     <ClCompile Include="..\Classes\TowersLayer.cpp" />
+    <ClCompile Include="..\Classes\AboutUsLayer.cpp" />
+    <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
+    <ClCompile Include="..\Classes\HelpLayer.cpp" />
+    <ClCompile Include="..\Classes\HelpMenuPanelLayer.cpp" />
+    <ClCompile Include="..\Classes\HelpScene.cpp" />
+    <ClCompile Include="..\Classes\LevelSelectLayer.cpp" />
+    <ClCompile Include="..\Classes\LevelSelectScene.cpp" />
+    <ClCompile Include="..\Classes\LocalLevelDataUtil.cpp" />
+    <ClCompile Include="..\Classes\OptionLayer.cpp" />
+    <ClCompile Include="..\Classes\SelectSceneMenuPanelLayer.cpp" />
+    <ClCompile Include="..\Classes\SettingMenuPanelLayer.cpp" />
+    <ClCompile Include="..\Classes\SettingScene.cpp" />
+    <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
+    <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -106,6 +120,21 @@
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
     <ClInclude Include="..\Classes\TowersLayer.h" />
+    <ClInclude Include="..\Classes\AboutUsLayer.h" />
+    <ClInclude Include="..\Classes\HelpLayer.h" />
+    <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
+    <ClInclude Include="..\Classes\HelpMenuPanelLayer.h" />
+    <ClInclude Include="..\Classes\HelpScene.h" />
+    <ClInclude Include="..\Classes\LevelSelectLayer.h" />
+    <ClInclude Include="..\Classes\LevelSelectScene.h" />
+    <ClInclude Include="..\Classes\LocalLevelDataUtil.h" />
+    <ClInclude Include="..\Classes\OptionLayer.h" />
+    <ClInclude Include="..\Classes\SelectSceneMenuPanelLayer.h" />
+    <ClInclude Include="..\Classes\SettingMenuPanelLayer.h" />
+    <ClInclude Include="..\Classes\SettingScene.h" />
+    <ClInclude Include="..\Classes\ThemeSelectScene.h" />
+    <ClInclude Include="..\Classes\TowerHelpLayer.h" />
+    <ClInclude Include="..\Classes\VictimEntityBase.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
