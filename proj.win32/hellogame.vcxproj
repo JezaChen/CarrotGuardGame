@@ -157,6 +157,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />
+    <ClCompile Include="..\Classes\CollisionManager.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
@@ -182,7 +183,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
+    <ClCompile Include="..\Classes\TowerPin.cpp" />
+    <ClCompile Include="..\Classes\TowerPlane.cpp" />
+    <ClCompile Include="..\Classes\TowerRocket.cpp" />
     <ClCompile Include="..\Classes\TowersLayer.cpp" />
+    <ClCompile Include="..\Classes\TowerSnow.cpp" />
+    <ClCompile Include="..\Classes\TowerStar.cpp" />
+    <ClCompile Include="..\Classes\TowerSun.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\WelcomeScene.cpp" />
     <ClCompile Include="..\Classes\Config.cpp" />
@@ -220,6 +227,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BulletLittleAnchor.h" />
     <ClInclude Include="..\Classes\BulletPin.h" />
     <ClInclude Include="..\Classes\BulletRocket.h" />
+    <ClInclude Include="..\Classes\CollisionManager.h" />
     <ClInclude Include="..\Classes\CommonDefine.h" />
     <ClInclude Include="..\Classes\CommonSource.h" />
     <ClInclude Include="..\Classes\CsvUtil.h" />
@@ -251,7 +259,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\ThemeSelectScene.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
+    <ClInclude Include="..\Classes\TowerPin.h" />
+    <ClInclude Include="..\Classes\TowerPlane.h" />
+    <ClInclude Include="..\Classes\TowerRocket.h" />
     <ClInclude Include="..\Classes\TowersLayer.h" />
+    <ClInclude Include="..\Classes\TowerSnow.h" />
+    <ClInclude Include="..\Classes\TowerStar.h" />
+    <ClInclude Include="..\Classes\TowerSun.h" />
     <ClInclude Include="..\Classes\VictimEntityBase.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
     <ClInclude Include="..\Classes\WelcomeScene.h" />
