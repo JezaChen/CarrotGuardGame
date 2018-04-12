@@ -48,6 +48,13 @@
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
     <ClCompile Include="..\Classes\TowersLayer.cpp" />
+    <ClCompile Include="..\Classes\CollisionManager.cpp" />
+    <ClCompile Include="..\Classes\TowerSun.cpp" />
+    <ClCompile Include="..\Classes\TowerStar.cpp" />
+    <ClCompile Include="..\Classes\TowerSnow.cpp" />
+    <ClCompile Include="..\Classes\TowerRocket.cpp" />
+    <ClCompile Include="..\Classes\TowerPlane.cpp" />
+    <ClCompile Include="..\Classes\TowerPin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -106,6 +113,13 @@
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
     <ClInclude Include="..\Classes\TowersLayer.h" />
+    <ClInclude Include="..\Classes\CollisionManager.h" />
+    <ClInclude Include="..\Classes\TowerSun.h" />
+    <ClInclude Include="..\Classes\TowerStar.h" />
+    <ClInclude Include="..\Classes\TowerSnow.h" />
+    <ClInclude Include="..\Classes\TowerRocket.h" />
+    <ClInclude Include="..\Classes\TowerPlane.h" />
+    <ClInclude Include="..\Classes\TowerPin.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

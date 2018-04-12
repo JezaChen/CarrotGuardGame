@@ -1,4 +1,3 @@
-#pragma once
 //
 //  BulletBase.h
 //  CarrotFantasy
@@ -6,6 +5,7 @@
 //  Created by 何泓兵 on 18-4-10.
 //  存在不懂；
 //
+#pragma once
 #ifndef __CarrotFantasy__BulletBase__
 #define __CarrotFantasy__BulletBase__
 
@@ -22,7 +22,7 @@ public:
 
 	static BulletBase *create(const int &rIId, VictimEntityBase *rVictimEntity);
 	/*
-	* @brief 子弹移动函数
+	* @brief 子弹攻击力
 	*/
 	virtual AtkProperty getAtkPro();
 	/*
