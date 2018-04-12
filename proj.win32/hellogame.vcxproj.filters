@@ -69,6 +69,11 @@
     <ClCompile Include="..\Classes\TowerSnow.cpp" />
     <ClCompile Include="..\Classes\TowerStar.cpp" />
     <ClCompile Include="..\Classes\TowerSun.cpp" />
+    <ClCompile Include="..\Classes\TowerBall.cpp" />
+    <ClCompile Include="..\Classes\TowerAnchor.cpp" />
+    <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
+    <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
+    <ClCompile Include="..\Classes\TowerFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -149,6 +154,11 @@
     <ClInclude Include="..\Classes\TowerSnow.h" />
     <ClInclude Include="..\Classes\TowerStar.h" />
     <ClInclude Include="..\Classes\TowerSun.h" />
+    <ClInclude Include="..\Classes\TowerBall.h" />
+    <ClInclude Include="..\Classes\TowerAnchor.h" />
+    <ClInclude Include="..\Classes\TowerBlueStar.h" />
+    <ClInclude Include="..\Classes\TowerFireBottle.h" />
+    <ClInclude Include="..\Classes\TowerFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

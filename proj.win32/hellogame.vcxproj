@@ -181,6 +181,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SoundUtil.cpp" />
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
+    <ClCompile Include="..\Classes\TowerAnchor.cpp" />
+    <ClCompile Include="..\Classes\TowerBall.cpp" />
+    <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
+    <ClCompile Include="..\Classes\TowerFactory.cpp" />
+    <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
     <ClCompile Include="..\Classes\TowerPin.cpp" />
@@ -257,6 +262,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\StringUtil.h" />
     <ClInclude Include="..\Classes\test.h" />
     <ClInclude Include="..\Classes\ThemeSelectScene.h" />
+    <ClInclude Include="..\Classes\TowerAnchor.h" />
+    <ClInclude Include="..\Classes\TowerBall.h" />
+    <ClInclude Include="..\Classes\TowerBlueStar.h" />
+    <ClInclude Include="..\Classes\TowerFactory.h" />
+    <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
     <ClInclude Include="..\Classes\TowerPin.h" />
