@@ -46,7 +46,8 @@ protected:
 	*/
 	virtual void checkAtkTarget(float dt);
 	/*
-	* @
+	* @brief 赋值基础参数
+	* @see 计时器监控检查攻击目标
 	*/
 	virtual bool init(const int &rIId, const std::string &rSCsvFileName);
 	/*

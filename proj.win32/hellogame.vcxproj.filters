@@ -74,6 +74,8 @@
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
+    <ClCompile Include="..\Classes\HpSlot.cpp" />
+    <ClCompile Include="..\Classes\VictimEntityBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -159,6 +161,7 @@
     <ClInclude Include="..\Classes\TowerBlueStar.h" />
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerFactory.h" />
+    <ClInclude Include="..\Classes\HpSlot.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
