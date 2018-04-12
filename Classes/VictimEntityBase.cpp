@@ -47,7 +47,7 @@ void VictimEntityBase::beHurt(const AtkProperty tBeHurtValue)
 	*/
 	if (this->getIsDead())return;
 	_iState |= tBeHurtValue._enAtkState;
-	_iBulletStateType = tBeHurtValue._iButtltType;
+	_iBulletStateType = tBeHurtValue._iBulletsType;
 	switch (tBeHurtValue._enAtkState)
 	{
 	case en_Slow: _fSlowDuration = tBeHurtValue._iDuration; break;
@@ -131,7 +131,7 @@ void VictimEntityBase::setAtkTarget(const bool &rBisAtkTarget)
 		if (!_pLockAtkTarget) createLockAtkSprite();
 		_pLockAtkTarget->runAction(_pLockFlagAnimate);
 		_pLockAtkTarget->setVisible(_bIsAtkTarget);
-		SoundUtil::getInstance()->playEffect(SELECTVICTIMENTITYBASE);
+		SoundUtil::getInstance()->playEffectSound(SELECTVICTIMENTITYBASE);
 	}
 	else
 	{

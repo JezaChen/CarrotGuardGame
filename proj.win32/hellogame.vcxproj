@@ -154,7 +154,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
-    <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />
     <ClCompile Include="..\Classes\CollisionManager.cpp" />
@@ -185,10 +184,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\TiledMapLayer.cpp" />
-    <ClCompile Include="..\Classes\TowerAnchor.cpp" />
     <ClCompile Include="..\Classes\TowerBall.cpp" />
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
-    <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
@@ -234,7 +231,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BarrierBase.h" />
     <ClInclude Include="..\Classes\BulletAnchor.h" />
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
-    <ClInclude Include="..\Classes\BulletLittleAnchor.h" />
     <ClInclude Include="..\Classes\BulletPin.h" />
     <ClInclude Include="..\Classes\BulletRocket.h" />
     <ClInclude Include="..\Classes\CollisionManager.h" />
@@ -273,10 +269,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\test.h" />
     <ClInclude Include="..\Classes\ThemeSelectScene.h" />
     <ClInclude Include="..\Classes\TiledMapLayer.h" />
-    <ClInclude Include="..\Classes\TowerAnchor.h" />
     <ClInclude Include="..\Classes\TowerBall.h" />
     <ClInclude Include="..\Classes\TowerBlueStar.h" />
-    <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
