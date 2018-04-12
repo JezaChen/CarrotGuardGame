@@ -15,15 +15,15 @@
 class Entity :public Node
 {
 public:
-	/*
-	*@ 析构函数
-	*@ author 何泓兵
-	*/
+	/**
+	*@析构函数
+	*@author 何泓兵
+	**/
 	virtual ~Entity();
 
 public:
 	static unsigned long ID;
-	/*
+	/**
 	* @获取mID；
 	* @brief mID为隐式查看init实体是否设置成功；
 	*/
@@ -33,28 +33,28 @@ public:
 	* @return true 设置成功，否则设置失败；
 	*/
 	virtual bool init(const int &rId, const std::string &rSCsvFileName);
-	/*
+	/**
 	* @brief 获取原图大小；
 	*/
 	virtual const Size &getContentSize()const;
-	/*
+	/**
 	*@brief 实体已经死亡后需要执行的函数
 	*/
 	virtual void doDead()final;
 
 
-	/*
+	/**
 	*  
 	*  @brief 每个实体需要绑定一个Sprite，用于显示；
 	*  @param pSprite 是一个绑定精灵；
 	*/
 	virtual void bindSprite(Sprite *pSprite);
-	/*
+	/**
 	* @brief 获取绑定精灵；
 	*/
 	virtual Sprite *getSprite();
 
-	/*
+	/**
 	*  @brief 获取精灵的大小和源
 	*  @see 精灵大小设置完毕
 	*  @return Rect 重置的矩形
@@ -62,7 +62,7 @@ public:
 	virtual Rect getBoundingBox()const;
 
 protected:
-	/*
+	/**
 	*  @brief 死亡动画；
 	*  @param rSDeadImageFile 死亡动画图片文件字符串；
 	*/

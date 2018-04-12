@@ -819,6 +819,12 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/DataStatisticsLayer.h">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/GameSceneII.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/GameSceneII.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/HelloWorldScene.cpp">
 			<Option target="MyGame"/>
 		</Unit>
@@ -841,6 +847,12 @@
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/HelpScene.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/LevelConfigUtil.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/LevelConfigUtil.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/LevelSelectLayer.cpp">
@@ -889,6 +901,12 @@
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/SettingScene.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/TiledMapLayer.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/TiledMapLayer.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/TowerHelpLayer.cpp">

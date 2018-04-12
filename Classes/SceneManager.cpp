@@ -37,9 +37,9 @@ void SceneManager::changeScene(const std::tuple<SceneType, int>& changingScene)
     auto aSceneType = std::get<0>(changingScene);
     if(aSceneType == en_GameScene)
     {
-        _iCurPageIndex = std::get<1>(changingScene);
+        _iCurLevelIndex = std::get<1>(changingScene); //bug fixed
     }
-    else if(aSceneType == en_LevelSelectScene)
+    else if(aSceneType == en_LevelSelectScene) 
     {
         _iCurPageIndex = std::get<1>(changingScene); //fixed
     }

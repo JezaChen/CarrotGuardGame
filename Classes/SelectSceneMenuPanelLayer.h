@@ -5,8 +5,8 @@
  * @date 20180409
  * */
 
-#ifndef MYGAME_SELECTSCENEMENUPANELLAYER_H
-#define MYGAME_SELECTSCENEMENUPANELLAYER_H
+#ifndef SELECTSCENEMENUPANELLAYER_H
+#define SELECTSCENEMENUPANELLAYER_H
 
 #include "CommonDefine.h"
 class PageViewLayer;
@@ -42,4 +42,4 @@ private:
     std::function<void (const bool&)> _funcPageTurn;
 };
 
-#endif //MYGAME_SELECTSCENEMENUPANELLAYER_H
+#endif //SELECTSCENEMENUPANELLAYER_H
