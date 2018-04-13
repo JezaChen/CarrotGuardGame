@@ -4,7 +4,7 @@
 
 #include "CommonDefine.h"
 
-/*
+/**
 * @class SceneManage 
 * @brief 场景控制器，用于切换场景等
 * @author 陈建彰

@@ -8,17 +8,22 @@
 
 
 #include "CommonDefine.h"
-class LoadingSourceLayer : public Layer 
+
+class LoadingSourceLayer : public Layer
 {
 public:
     CREATE_FUNC(LoadingSourceLayer);
+
     virtual void setFuncShowMenuPanel(const std::function<void()> &rFuncShowMenuPanel);
+
 protected:
-    virtual void onEnter()override;
-    virtual bool init();
+    void onEnter() override;
+
+    bool init() override;
+
     virtual void loadSource();
 
-    std::function<void()>_funcShowMenuPanel;
+    std::function<void()> _funcShowMenuPanel;
     Label *_pLoadingTitle = nullptr;
 }; //bug
 

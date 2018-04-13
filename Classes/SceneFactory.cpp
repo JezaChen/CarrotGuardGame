@@ -4,6 +4,7 @@
 #include "LevelSelectScene.h"
 #include "HelpScene.h"
 #include "SettingScene.h"
+#include "LoadingScene.h"
 
 Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
 {
@@ -27,7 +28,7 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             break;
         case en_GameScene:
             //值得注意的是，切换的是加载场景
-            //pScene = LoadingScene::create(); //TODO
+            pScene = LoadingScene::create(); 
             break;
         default:
             break;
