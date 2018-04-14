@@ -3,8 +3,6 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
-//  map这个到底是std里的还是游戏地图；
-//  暂时不注释了，我们一起讨论一下这个cpp吧
 
 #include "MapUtil.h"
 

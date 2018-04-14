@@ -873,6 +873,12 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/LocalLevelDataUtil.h">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterBuilder.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterBuilder.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterHelpLayer.cpp">
 			<Option target="MyGame"/>
 		</Unit>

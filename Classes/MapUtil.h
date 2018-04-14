@@ -7,7 +7,7 @@
 
 #pragma once
 #ifndef __CarrotFantasy__MapUtil__
-#define __CarrotFantasy__MapUtil__
+#define __CarrotFantasy_r_MapUtil__
 
 #include "CommonDefine.h"
 

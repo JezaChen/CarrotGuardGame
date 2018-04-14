@@ -44,13 +44,13 @@ protected:
 
     //virtual void createBarriers();
 
-    //virtual void clearAllManager();
+    virtual void clearAllManager();
 
-    //virtual void registerGameEvent();
+    virtual void registerGameEvent();
 
     //virtual void showGameEndLayer(Ref *pData);
 
-    //virtual void startBuildMonster(Ref *pData);
+    virtual void startBuildMonster(Ref *pData);
 
 private:
 

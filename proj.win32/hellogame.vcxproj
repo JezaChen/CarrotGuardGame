@@ -160,7 +160,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
-    <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GameSceneII.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HelpLayer.cpp" />
@@ -174,6 +173,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\LocalLevelDataUtil.cpp" />
     <ClCompile Include="..\Classes\MenusLayer.cpp" />
     <ClCompile Include="..\Classes\MonsterBase.cpp" />
+    <ClCompile Include="..\Classes\MonsterBuilder.cpp" />
     <ClCompile Include="..\Classes\MonsterFactory.cpp" />
     <ClCompile Include="..\Classes\OptionLayer.cpp" />
     <ClCompile Include="..\Classes\PageViewLayer.cpp" />
@@ -194,7 +194,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
-    <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
     <ClCompile Include="..\Classes\TowerPin.cpp" />
     <ClCompile Include="..\Classes\TowerPlane.cpp" />
     <ClCompile Include="..\Classes\TowerRocket.cpp" />
@@ -247,7 +246,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Config.h" />
     <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
-    <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\GameSceneII.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HelpLayer.h" />
@@ -261,6 +259,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\LocalLevelDataUtil.h" />
     <ClInclude Include="..\Classes\MenusLayer.h" />
     <ClInclude Include="..\Classes\MonsterBase.h" />
+    <ClInclude Include="..\Classes\MonsterBuilder.h" />
     <ClInclude Include="..\Classes\MonsterFactory.h" />
     <ClInclude Include="..\Classes\OptionLayer.h" />
     <ClInclude Include="..\Classes\PageViewLayer.h" />
@@ -285,7 +284,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
-    <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\TowerPin.h" />
     <ClInclude Include="..\Classes\TowerPlane.h" />
     <ClInclude Include="..\Classes\TowerRocket.h" />

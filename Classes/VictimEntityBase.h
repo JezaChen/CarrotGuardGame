@@ -93,7 +93,7 @@ protected:
     /**
      * @brief 受伤动画（抽象函数）
      */
-    virtual void behurtAction() = 0;
+    //virtual void behurtAction() = 0;
     /**
      * @brief 敌方实体的hp
      */

@@ -26,7 +26,7 @@ bool BulletBase::init(const int &rId, VictimEntityBase *rVictimEntity)
 	do
 	{
 		CC_BREAK_IF(!Entity::init(rId, BULLETCSVFILE));
-		CC_BREAK_IF(!DynamicPropertyInterFace::init(rId, BULLETCSVFILE));
+		CC_BREAK_IF(!DynamicPropertyInterface::init(rId, BULLETCSVFILE));
 		//子弹攻击状态；
 		_iAtkState = CsvUtil::getInstance()->getInt(_iId, en_AtkState, BULLETCSVFILE);
 		//子弹种类；

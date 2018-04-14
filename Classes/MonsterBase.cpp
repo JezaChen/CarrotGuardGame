@@ -28,7 +28,7 @@ bool MonsterBase::init(const int &rIId)
 
 		//TODO
 		_pMoveController = MoveControllerBase::create(this);
-		MonsterManager::getInstance()->addMonster(this);
+		MonsterManager::getInstance()->addMonster(this); //自我初始化的时候直接往管理类添加(注册)自己
 		bRet = true;
 	} while (0);
 	return  bRet;
