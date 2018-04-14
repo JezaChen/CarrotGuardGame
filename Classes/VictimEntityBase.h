@@ -1,121 +1,145 @@
-//
-//  VictimBase.h
-//  CarrotFantasy
-//
-//  Created by 何泓兵 on 18-4-7.
-//
-//
+/**
+ * @brief 敌方实体基类
+ * @details 就是怪物类的父类，封装了每个怪物的共同属性(被指定攻击、被攻击时的处理)
+ * @see 好像障碍物的基类也是这个
+ * @extends 继承于Entity
+ * @see Entity是游戏中一切运动实体的公共基类
+ * @authors 陈建彰 x 何泓兵
+ * @date 20180411
+ * @update 注释全新更新，这是你从来没有看到的全新版本
+ * */
 #pragma once
-#ifndef __CarrotFantasy__VictimEntityBase__
-#define __CarrotFantasy__VictimEntityBase__
+#ifndef VICTIMENTITY_BASE_H
+#define VICTIMENTITY_BASE_H
 
 #include "Entity.h"
+
 class HpSlot;
 
-class VictimEntityBase :public Entity
+class VictimEntityBase : public Entity
 {
 public:
 
-	virtual ~VictimEntityBase();
+    virtual ~VictimEntityBase();
 
-	/**
-	*  @brief 实体被伤害并运行被伤害func
-	*  @param rBeHurtValue 等于攻击力
-	*/
-	virtual void beHurt(const AtkProperty tBeHurtValue);
-	/*
-	* @brief 设置攻击目标
-	*/
-	virtual void setAtkTarget(const bool &rBisAtkTarget);
-	/*
-	* @brief 获取攻击目标
-	*/
-	virtual bool getAtkTarget()const { return _bIsAtkTarget; };
-	/*
-	* @被攻击后的可见生命
-	*/
-	virtual void hpSlotVisible(const bool &rBIsVisible);
+    /**
+     * @brief 敌方实体被(子弹)伤害后的处理函数
+     * @param rBeHurtValue 攻击属性
+     * @details 攻击属性里面有
+     */
+    virtual void beHurt(const AtkProperty tBeHurtValue);
+
+    /**
+     * @brief 设置炮塔的攻击目标
+     * @details 选中某个怪物，附近的炮塔就专门打这个怪物
+     * @param rBisAtkTarget 是否选中了它
+     */
+    virtual void setAtkTarget(const bool &rBisAtkTarget);
+
+    /**
+     * @brief 获知是否被选中了
+     * @return 返回是否该伤害敌方实体被玩家选中了
+     */
+    virtual bool getAtkTarget() const
+    { return _bIsAtkTarget; };
+
+    /**
+     * @brief 设置该敌方实体的生命槽是否可见
+     * @param rBIsVisible 是否设置为可见
+     * @see 玩过游戏的都知道，如果不攻击的话，生命槽过一会就会消失了，因而需要写一个函数来控制生命槽的可见性
+     * */
+    virtual void hpSlotVisible(const bool &rBIsVisible);
 
 protected:
-	/*
-	* @brief 关闭生命值显示
-	*/
-	virtual void closeHpSlot(float dt);
-	/*
-	* @brief 检查攻击目标
-	*/
-	virtual void checkAtkTarget(float dt);
-	/*
-	* @brief 赋值基础参数
-	* @see 计时器监控检查攻击目标
-	*/
-	virtual bool init(const int &rIId, const std::string &rSCsvFileName);
-	/*
-	* @brief 创建锁定标志动画
-	*/
-	virtual void createLockFlagAnimate();
-	/*
-	* @brief 把精灵和生命值插槽绑定并创建
-	*/
-	virtual void createHpSlotSprite();
-	/*
-	* @brief 把精灵和锁定攻击目标绑定并创建
-	*/
-	virtual void createLockAtkSprite();
-	/*
-	* @brief 执行死亡动画
-	*/
-	virtual void deadAction(const std::string &rSDeadImageFile = "")override;
-	/*
-	* @brief 受伤动画（抽象函数）
-	*/
-	virtual void behurtAction() = 0;
-	/*
-	* @brief 障碍物和怪物的hp
-	*/
-	CC_SYNTHESIZE_PASS_BY_REF(int, _iHp, IHp);
-	/*
-	* @brief 怪物位
-	*/
-	CC_SYNTHESIZE_PASS_BY_REF(int, _iState, IState);
-	/*
-	* @brief 状态保持时间
-	*/
-	CC_SYNTHESIZE_PASS_BY_REF(float, _fSlowDuration, FSlowDuration);
-	CC_SYNTHESIZE_PASS_BY_REF(float, _fStopDuration, fStopDuration);
-	CC_SYNTHESIZE_PASS_BY_REF(float, _fPoisonDuration, fPoisonDuration);
+    /**
+     * @brief 关闭生命槽
+     * @todo 参数好像没啥用，那写个啥
+     * */
+    virtual void closeHpSlot(float dt);
 
-	CC_SYNTHESIZE_PASS_BY_REF(float, _iBulletStateType, IBulletStateType);
-	/*
-	*  @brief 生命槽关闭时间
-	*/
-	const int _iHpCloseTime = 3;
+    /**
+     * @brief 检查该敌方实体是否被设置为攻击目标，并另所有炮塔的攻击目标指向它
+     */
+    virtual void checkAtkTarget(float dt);
+
+    /**
+     * @brief 初始化函数
+     * @param rIId 实体ID
+     * @param rSCsvFileName CSV表格的路径
+     * @see 计时器监控检查攻击目标
+     */
+    virtual bool init(const int &rIId, const std::string &rSCsvFileName);
+
+    /**
+     * @brief 创建锁定标志动画
+     */
+    virtual void createLockFlagAnimate();
+
+    /**
+     * @brief 把精灵和生命值插槽绑定并创建
+     */
+    virtual void createHpSlotSprite();
+
+    /**
+     * @brief 把精灵和锁定攻击目标绑定并创建
+     */
+    virtual void createLockAtkSprite();
+
+    /**
+     * @brief 执行死亡动画
+     */
+    virtual void deadAction(const std::string &rSDeadImageFile = "") override;
+
+    /**
+     * @brief 受伤动画（抽象函数）
+     */
+    virtual void behurtAction() = 0;
+    /**
+     * @brief 敌方实体的hp
+     */
+CC_SYNTHESIZE_PASS_BY_REF(int, _iHp, IHp);
+    /**
+    * @brief 怪物位
+    */
+CC_SYNTHESIZE_PASS_BY_REF(int, _iState, IState);
+    /**
+    * @brief 状态保持时间
+    */
+CC_SYNTHESIZE_PASS_BY_REF(float, _fSlowDuration, FSlowDuration);
+CC_SYNTHESIZE_PASS_BY_REF(float, _fStopDuration, fStopDuration);
+CC_SYNTHESIZE_PASS_BY_REF(float, _fPoisonDuration, fPoisonDuration);
+
+CC_SYNTHESIZE_PASS_BY_REF(float, _iBulletStateType, IBulletStateType);
+    /**
+    *  @brief 生命槽关闭时间
+    */
+    const int _iHpCloseTime = 3;
 
 private:
 
-	bool _bHpSlotExsit = false;
+    bool _bHpSlotExsit = false;
 
-	/*
-	* @brief 生命槽精灵
-	*/
-	HpSlot *_pHpSlot = nullptr;
-	/*
-	* @brief 锁定攻击标志精灵
-	*/
-	Sprite *_pLockAtkTarget = nullptr;
-	/*
-	* @brief 锁定标志动画
-	*/
-	Animate *_pLockFlagAnimate = nullptr;
+    /**
+    * @brief 生命槽精灵
+    */
+    HpSlot *_pHpSlot = nullptr;
+    /**
+    * @brief 锁定攻击标志精灵
+    */
+    Sprite *_pLockAtkTarget = nullptr;
+    /**
+    * @brief 锁定标志动画
+    */
+    Animate *_pLockFlagAnimate = nullptr;
 
-	/*
-	* @brief 标志受害者是攻击目标
-	*/
-	bool _bIsAtkTarget = false;
+    /**
+    * @brief 标志受害者是攻击目标
+    */
+    bool _bIsAtkTarget = false;
 
-	Vec2 _Pos;
+    Vec2 _Pos;
 
-	Size _Size;
+    Size _Size;
 };
 
-#endif /* defined(__CarrotFantasy__VictimBase__) */
+#endif
