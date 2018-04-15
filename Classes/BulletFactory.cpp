@@ -15,11 +15,13 @@
 BulletBase *BulletFactory::createBullet(const int &rBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity)
 {
 	auto cache = SpriteFrameCache::getInstance();
+	//通过plist切割png获取精灵帧；
 	cache->addSpriteFramesWithFile("Themes/Towers/TBottle-hd.plist", "Themes/Towers/TBottle-hd.png");
 	cache->addSpriteFramesWithFile("Themes/Towers/TFan-hd.plist", "Themes/Towers/TFan-hd.png");
 	cache->addSpriteFramesWithFile("Themes/Towers/TShit-hd.plist", "Themes/Towers/TShit-hd.png");
-
+	//从子弹基类创建子弹，传了攻击目标和id过来；
 	auto pBullet = BulletBase::create(rBulletId, rVictimEntity);
+
 	pBullet->setRotation(90 - 180 * (rVictimEntity->getPosition() - rTower->getPosition()).getAngle() / M_PI);
 	if (pBullet->getIBulletType() == en_GunBullet) {
 		pBullet->setPosition(rTower->getPosition() + Vec2(36 * sin(pBullet->getRotation() * M_PI / 180), 36 * cos(pBullet->getRotation() * M_PI / 180)));

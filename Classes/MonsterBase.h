@@ -44,7 +44,7 @@ protected:
 	/**
 	 * @brief 模型精灵做动作
 	 * @extends DynamicPropertyInterface
-	 * @param rDt 调度器需要的参数
+	 * @param rDt 调度器需要的参数，延迟时间
 	 */
 	virtual void doAction(const float &rDt);
 

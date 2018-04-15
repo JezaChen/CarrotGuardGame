@@ -20,8 +20,8 @@ public:
 	/*
 	* @brief 创建各种子弹
 	* @param rBulletId 子弹的id
-	* @param rTower
-	* @param rVictimEntity 受伤实体，等同于攻击力
+	* @param rTower 塔基类的指针
+	* @param rVictimEntity 受伤实体，等同于攻击目标
 	*/
 	static BulletBase *createBullet(const int &rBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity);
 };

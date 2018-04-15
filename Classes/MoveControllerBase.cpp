@@ -3,7 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-9.
-//  存在不懂问题
+//  
 //
 
 #include "MoveControllerBase.h"
@@ -17,8 +17,8 @@ bool MoveControllerBase::init(MonsterBase *pMonster)
     {
         return false;
     }
-
-    setMonster(pMonster); //绑定怪物
+	//绑定怪物
+    setMonster(pMonster);
 
     _iMonsterSpeed = _pMonster->getISpeed();
     _pMonster->addChild(this);
