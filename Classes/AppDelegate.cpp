@@ -2,7 +2,7 @@
 #include "SceneManager.h"
 #include "CsvUtil.h"
 #include "Config.h"
-#include "GameScene.h"
+#include "GameSceneII.h"
 #include "SoundUtil.h"
 USING_NS_CC;
 
@@ -66,9 +66,9 @@ void AppDelegate::applicationWillEnterForeground() {
     auto pCurScene = Director::getInstance()->getRunningScene();
     if ((pCurScene != NULL) && pCurScene->getName() == "GameScene")
     {
-        auto pGameScene = dynamic_cast<GameScene*>(pCurScene);
-        if (!pGameScene->getChildByName("CoundDown") && !pGameScene->getChildByName("GameEnd"))
-            dynamic_cast<GameScene*>(pCurScene)->clickChooseItem();
+        auto pGameScene = dynamic_cast<GameSceneII*>(pCurScene); //TODO 暂时是这个
+        //if (!pGameScene->getChildByName("CoundDown") && !pGameScene->getChildByName("GameEnd"))
+        //    dynamic_cast<GameSceneII*>(pCurScene)->clickChooseItem();
     }
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();

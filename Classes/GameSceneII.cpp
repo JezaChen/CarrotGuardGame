@@ -7,6 +7,12 @@
 #include "SceneManager.h"
 #include "TiledMapLayer.h"
 #include "LevelConfigUtil.h"
+#include "MonsterLayer.h"
+#include "MonsterManager.h"
+#include "MonsterBuilder.h"
+#include "BarrierBuilder.h"
+#include "BarriersLayer.h"
+#include "BarrierManager.h"
 
 GameSceneII::~GameSceneII()
 {
@@ -19,6 +25,8 @@ GameSceneII::~GameSceneII()
     CC_SAFE_RELEASE_NULL(_pTiledMapLayer);
     CC_SAFE_RELEASE_NULL(_pTowersLayer);
     CC_SAFE_DELETE(_pSourceVec);
+
+    clearAllManager();
 }
 
 bool GameSceneII::init()
@@ -31,6 +39,7 @@ bool GameSceneII::init()
         _pSourceVec = new std::vector<std::string>;
         this->setName("GameScene");
         preLoadSource();
+        registerGameEvent(); //TODO 在这里注册
 
         bRet = true;
 
@@ -42,6 +51,7 @@ void GameSceneII::onEnter()
 {
     Scene::onEnter();
     addLayers();
+    createBarriers(); //创建障碍物
 }
 
 void GameSceneII::onExit()
@@ -96,13 +106,55 @@ void GameSceneII::unLoadSource()
 
 void GameSceneII::createLayers()
 {
-    //TODO 目前只支持加载地图
+    //TODO 目前只支持加载地图、怪物图层
     _pTiledMapLayer = TiledMapLayer::create();
     _pTiledMapLayer->retain();
+
+    _pMonsterLayer = MonsterLayer::create();
+    _pMonsterLayer->setName("monsterLayer");
+    _pMonsterLayer->retain();
+
+    _pBarriersLayer = BarriersLayer::create();
+    _pBarriersLayer->retain();
+
+    //障碍物管理类用这个图层的方法作为障碍物添加时的显示函数
+    BarrierManager::getInstance()->setFuncAddBarrierToLayer(CC_CALLBACK_1(BarriersLayer::addEntity, _pBarriersLayer));
+
+    MonsterManager::getInstance()->setFuncAddMonsterToLayer(
+            CC_CALLBACK_1(MonsterLayer::addEntity, _pMonsterLayer)); //怪物管理类用这个图层的方法作为新怪物添加时的显示函数
+
+    //TODO 只用于调试
+    NOTIFICATION_CENTER->postNotification("startBuildMonster");
 }
 
 void GameSceneII::addLayers()
 {
-    //TODO 目前只支持加入地图图层
+    //TODO 目前只支持加入地图图层、怪物图层、障碍物图层
     addChild(_pTiledMapLayer);
+    addChild(_pMonsterLayer);
+    addChild(_pBarriersLayer);
+}
+
+void GameSceneII::clearAllManager()
+{
+    MonsterManager::getInstance()->clearManager();
+}
+
+void GameSceneII::registerGameEvent()
+{
+    //TODO 目前只支持注册构建怪物事件
+    NOTIFICATION_CENTER->addObserver(this, callfuncO_selector(GameSceneII::startBuildMonster), "startBuildMonster",
+                                     nullptr);
+}
+
+void GameSceneII::startBuildMonster(Ref *pData)
+{
+    addChild(MonsterBuilder::create());
+    auto aScheduler = Director::getInstance()->getScheduler();
+    aScheduler->setTimeScale(1.0f); //TODO 速度
+}
+
+void GameSceneII::createBarriers()
+{
+    addChild(BarrierBuilder::create()); //bug fixed
 }

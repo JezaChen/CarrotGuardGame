@@ -108,13 +108,34 @@ enum AtkState
     en_Stop = en_Normal << 2,
     en_Poison = en_Normal << 3,//毒；
 };
-//攻击性；
+
+/**
+ * @brief 攻击属性
+ * */
 class AtkProperty
 {
 public:
+    /**
+     * @brief 攻击类型
+     * @details 包含普通伤害、减速伤害、停止伤害、毒性伤害
+     * @see 详情看上一个AtkState
+     * */
     int _enAtkState = 0;
+
+    /**
+     * @brief 攻击持续时间
+     * */
     int _iDuration = 0;
+
+    /**
+     * @brief 该攻击的伤害值
+     * @details 伤害值有多少，怪物的生命值就掉多少
+     * */
     int _iAtk = 0;
+
+    /**
+     * @brief 子弹类型
+     * */
     int _iBulletsType = 0;
 };
 

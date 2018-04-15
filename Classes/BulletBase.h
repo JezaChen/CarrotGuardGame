@@ -10,9 +10,9 @@
 #define __CarrotFantasy__BulletBase__
 
 #include "Entity.h"
-#include "DynamicPropertyInterFace.h"
+#include "DynamicPropertyInterface.h"
 
-class BulletBase :public Entity, public DynamicPropertyInterFace
+class BulletBase :public Entity, public DynamicPropertyInterface
 {
 
 public:
