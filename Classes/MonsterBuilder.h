@@ -56,7 +56,6 @@ protected:
 protected:
     float _fDelayTime; //每一波怪物出现的间隔时间
     int _iMonsterCountsInCurrBatch; //当前波中怪物出现的数目
-    //int _iMonsterBuiltCount; //已经生成的怪物总数
     int _iMonsterBatch; //当前关卡怪物波数
     int _iNumber;
     int _iCurrBatch; //当前波数

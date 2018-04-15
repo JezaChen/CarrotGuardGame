@@ -20,6 +20,7 @@ class MonsterBase : public VictimEntityBase, public DynamicPropertyInterface
 public:
 	/**
 	 * @brief 根据怪物id创建怪物
+     * @method 设计模式中的工厂模式
 	 * @param rIId 怪物Id
 	 * @return 怪物ID对应的实例
 	 */

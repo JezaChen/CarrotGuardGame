@@ -42,7 +42,7 @@ protected:
 
     //virtual void collisionUpDate(float dt);
 
-    //virtual void createBarriers();
+    virtual void createBarriers();
 
     virtual void clearAllManager();
 
