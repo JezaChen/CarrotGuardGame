@@ -80,6 +80,7 @@
     <ClCompile Include="..\Classes\ScoreAndControlLayer.cpp" />
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\MonsterBuilder.cpp" />
+    <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="..\Classes\ScoreAndControlLayer.h" />
     <ClInclude Include="..\Classes\CountDownLayer.h" />
     <ClInclude Include="..\Classes\MonsterBuilder.h" />
+    <ClInclude Include="..\Classes\BarrierBuilder.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
