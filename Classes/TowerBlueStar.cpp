@@ -2,7 +2,7 @@
 //  TowerBlueStar.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø x ³Â½¨ÕÃ on 18-4-12.
+//  Created by ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x ï¿½Â½ï¿½ï¿½ï¿½ on 18-4-12.
 //  
 //
 #include "TowerBlueStar.h"
@@ -15,7 +15,7 @@ bool TowerBlueStar::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-		unschedule(schedule_selector(TowerBlueStar::doRocation));
+		unschedule(schedule_selector(TowerBlueStar::doRotation));
 
 		bRet = true;
 	} while (0);

@@ -1,6 +1,6 @@
 ﻿#include "LoadingScene.h"
 #include "SoundUtil.h"
-#include "GameSceneII.h"
+#include "GameScene.h"
 
 
 bool LoadingScene::init()
@@ -27,7 +27,7 @@ void LoadingScene::onEnter()
     SoundUtil::getInstance()->stopBackgroundSound(); //进入加载场景的时候，停止播放音乐
     NOTIFY->addObserver(this, callfuncO_selector(LoadingScene::loadSourceFinishedCallBack), "loadFinished", nullptr);
 
-    _pGameScene = GameSceneII::create();
+    _pGameScene = GameScene::create();
     _pGameScene->retain();
 }
 

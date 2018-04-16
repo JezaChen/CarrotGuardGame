@@ -223,7 +223,7 @@ void GameScene::startBuildMonster(Ref *pData)
 {
 	addChild(MonsterBuilder::create());
 	auto pScheduler = Director::getInstance()->getScheduler();
-	pScheduler->setTimeScale(1.6);
+	pScheduler->setTimeScale(2.0);
 }
 
 Carrot* GameScene::getCarrot() {

@@ -2,7 +2,7 @@
 //  TowerBall.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø x ³Â½¨ÕÃ on 18-4-12.
+//  Created by ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x ï¿½Â½ï¿½ï¿½ï¿½ on 18-4-12.
 //  
 //
 #include "TowerBall.h"
@@ -21,8 +21,8 @@ bool TowerBall::init()
 			_pTowerPanel->removeFromParentAndCleanup(true);
 		_doActionSprite = Sprite::create();
 		addChild(_doActionSprite, 100);
-		//¾«ÁéÇòÃ»ÓÐÐý×ªÐ§¹û£¬ËùÒÔÒªÈ¥³ýµ÷¶ÈÆ÷
-		unschedule(schedule_selector(TowerBall::doRocation));
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½×ªÐ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÈ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		unschedule(schedule_selector(TowerBall::doRotation));
 
 		bRet = true;
 	} while (0);
@@ -37,7 +37,7 @@ void TowerBall::chooseAtkTarget() {
 	{
 		if (isInAtkRange(iterMonster->getPosition()))
 		{
-			fireAction(); //£»Á¢¿Ì¿ª»ð
+			fireAction(); //ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½
 			setAtkTarget(iterMonster);
 			break;
 		}
@@ -47,26 +47,26 @@ void TowerBall::chooseAtkTarget() {
 void TowerBall::fire(float dt) {
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 
-	//´´½¨¹¥»÷Ð§¹û¶¯»­
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Animation * pAnimation = Animation::create();
 	for (int i = 1; i <= 4; i++) {
 		std::string SpriteFrameName = "P" + _sModelName + StringUtils::format("%d.png", i);
 		pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
 	}
 	pAnimation->setDelayPerUnit(0.03);
-	pAnimation->setLoops(1); //Ñ­»·Ò»´Î²¥·Å¾Í¿ÉÒÔÁË£¬Ñ­»·µÄ¹¤×÷ÊÇµ÷¶ÈÆ÷ÄÇ±ßµÄ
+	pAnimation->setLoops(1); //Ñ­ï¿½ï¿½Ò»ï¿½Î²ï¿½ï¿½Å¾Í¿ï¿½ï¿½ï¿½ï¿½Ë£ï¿½Ñ­ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ßµï¿½
 
-    //¶¯»­¾«ÁéÆô¶¯£¬ÓÃÓÚÆô¶¯ÉÏÃæ´´ÔìµÄ¶¯»­
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ´´ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
 	_doActionSprite->setVisible(true);
-	//todo Õâ¸öËõ·ÅÖµµÃÉÌÈ¶
+	//todo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½È¶
 	_doActionSprite->setScale(this->getPosition().distance(_pAtkTarget->getPosition()) / _doActionSprite->getContentSize().height);
 	_doActionSprite->setPosition((this->getPosition() + _pAtkTarget->getPosition()) / 2 - this->getPosition());
-	//½Ç¶È¹«Ê½»¹ÊÇ¸ú»ðÁÒÅÚÍ²Ò»ÑùµÄ
+	//ï¿½Ç¶È¹ï¿½Ê½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²Ò»ï¿½ï¿½ï¿½ï¿½
 	_doActionSprite->setRotation(90 - 180 * (_pAtkTarget->getPosition() - this->getPosition()).getAngle() / M_PI);
 	_doActionSprite->runAction(Animate::create(pAnimation));
 
-	//ÊÜÉË¾«ÁéÆô¶¯£¬ÓÃÓÚÏÔÊ¾¹ÖÊÞµÄÊÜÉË¶¯»­
-    //Õâ¸ö¾«Áé×÷Îª¹ÖÊÞ¾«ÁéµÄ×Ó½ÚµãÌí¼ÓÉÏÈ¥¾Í¿ÉÒÔÁË
+	//ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Þ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ó½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½
 	Sprite * pHurt = Sprite::create();
 	_pAtkTarget->addChild(pHurt);
 	Animation * pHurtAction = Animation::create();
@@ -76,9 +76,9 @@ void TowerBall::fire(float dt) {
 	pHurtAction->setLoops(1);
 	CallFunc * clearCF = CallFunc::create([=]() { pHurt->removeFromParentAndCleanup(true); });
 
-	//ÊµÖÊÉËº¦Ð§¹ûÆô¶¯
-    //ÓÉÓÚÕâ¸öÉËº¦Ð§¹ûÃ»ÓÐ¶ÔÅÔ±ß¹ÖÎïÓÐ¸½¼ÓÉËº¦£¬ËùÒÔ¾ÍÕë¶ÔÄÇ¸öÖ¸¶¨¹¥»÷¹ÖÎïÖ´ÐÐÉËº¦º¯Êý
-    //todo Ëæ»úÊý¹¥»÷·¨???
+	//Êµï¿½ï¿½ï¿½Ëºï¿½Ð§ï¿½ï¿½ï¿½ï¿½
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½Ð§ï¿½ï¿½Ã»ï¿½Ð¶ï¿½ï¿½Ô±ß¹ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½
+    //todo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½???
 	AtkProperty atk;
 	atk._enAtkState = 1;
 	atk._iAtk = _iBulletId;
@@ -100,5 +100,5 @@ void TowerBall::fire(float dt) {
 
 void TowerBall::missAtkTarget() {
 	CC_SAFE_RELEASE_NULL(_pAtkTarget);
-	_doActionSprite->setVisible(false); //ÖÕÖ¹¹¥»÷
+	_doActionSprite->setVisible(false); //ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½
 }

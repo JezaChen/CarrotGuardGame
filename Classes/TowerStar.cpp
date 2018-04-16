@@ -2,7 +2,7 @@
 //  TowerStar.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø x ³Â½¨ÕÃ on 18-4-12.
+//  Created by ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x ï¿½Â½ï¿½ï¿½ï¿½ on 18-4-12.
 //  
 //
 #include "TowerStar.h"
@@ -15,7 +15,7 @@ bool TowerStar::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-		unschedule(schedule_selector(TowerStar::doRocation));
+		unschedule(schedule_selector(TowerStar::doRotation));
 
 		bRet = true;
 	} while (0);
@@ -28,7 +28,7 @@ void TowerStar::fire(float dt){
 
 	auto createBulletCF = CallFunc::create([=](){
 		if (!_pAtkTarget) return;
-        //´´½¨×Óµ¯²¢·¢Éä
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		BulletStar * pBullet = BulletStar::create(getIBulletId(), _pAtkTarget);
 		pBullet->setPosition(this->getPosition());
 		pBullet->doMove();

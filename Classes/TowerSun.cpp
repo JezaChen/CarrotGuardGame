@@ -2,7 +2,7 @@
 //  TowerSun.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø x ³Â½¨ÕÃ on 18-4-12.
+//  Created by ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ x ï¿½Â½ï¿½ï¿½ï¿½ on 18-4-12.
 //  
 //
 #include "TowerSun.h"
@@ -18,7 +18,7 @@ bool TowerSun::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-		unschedule(schedule_selector(TowerSun::doRocation)); //Ì«ÑôÃ»ÓÐÐý×ªÐ§¹û£¬ÐèÒª×¢Ïúµ÷¶ÈÆ÷
+		unschedule(schedule_selector(TowerSun::doRotation)); //Ì«ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½×ªÐ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		_doAnimationSprite = Sprite::create();
 		_doAnimationSprite->setVisible(false);
@@ -32,13 +32,13 @@ bool TowerSun::init()
 void TowerSun::fire(float dt) {
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 
-	//todo Ëþ»ùÒ²ÒªÐý×ª
+	//todo ï¿½ï¿½ï¿½ï¿½Ò²Òªï¿½ï¿½×ª
 	_pTowerPanel->runAction(Sequence::create(RotateBy::create(0.1, 30), RotateBy::create(0.1, -30), nullptr));
 
-	//¹¥»÷Ð§¹û¾«ÁéÆô¶¯
+	//ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_doAnimationSprite->setVisible(true);
 
-	//¹¥»÷¶¯»­Æô¶¯
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Animation * pAnimation = Animation::create();
 	for (int i = 1; i <= 5; i++)
 	{
@@ -48,7 +48,7 @@ void TowerSun::fire(float dt) {
 	pAnimation->setDelayPerUnit(0.1);
 	pAnimation->setLoops(1);
 
-	//²¥·Å¹¥»÷ÉùÒô
+	//ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	SoundUtil::getInstance()->playEffectSound("Music/Towers/Sun.mp3");
 
 
@@ -68,10 +68,10 @@ void TowerSun::attack()
 	atk._iDuration = 0;
 
 	/*************************************************************/
-	/**-----------------------¹¥»÷ÓÎÏ·Ö÷Âß¼­-----------------------**/
+	/**-----------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ß¼ï¿½-----------------------**/
 	/*************************************************************/
 
-	//ÊÜÉË¶¯»­Æô¶¯
+	//ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½
 	Animation * pHurtAction = Animation::create();
 	for (int i = 1; i < 10; i++)
 	{
@@ -82,24 +82,24 @@ void TowerSun::attack()
 	pHurtAction->setLoops(1);
 
 	Rect rect;
-	//todo Õâ¸ö·¶Î§Ó¦¸ÃÒÔÎÄ¼þµÄÎª×¼
+	//todo ï¿½ï¿½ï¿½ï¿½ï¿½Î§Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Îª×¼
 	if (getIId() == 22) { rect = Rect(this->getPositionX() - 100, this->getPositionY() - 100, 200, 200); }
 	if (getIId() == 23) { rect = Rect(this->getPositionX() - 120, this->getPositionY() - 120, 240, 240); }
 	if (getIId() == 24) { rect = Rect(this->getPositionX() - 140, this->getPositionY() - 140, 280, 280); }
 
-	//ÏÈ¼ì²â¹ÖÎï
+	//ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
 	for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
 	{
 		MonsterBase * pMonster = (MonsterBase *)(*mIter);
-		if (rect.intersectsRect(pMonster->getBoundingBox())) //Åö×²¼ì²â
+		if (rect.intersectsRect(pMonster->getBoundingBox())) //ï¿½ï¿½×²ï¿½ï¿½ï¿½
 		{
 			pMonster->beHurt(atk);
-			//ÓÃÓÚÏÔÊ¾ÊÜÉË¶¯»­µÄÊÜÉË¾«ÁéÆô¶¯
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½
 			Sprite * pMonsterHurt = Sprite::create();
 			pMonster->addChild(pMonsterHurt);
 			CallFunc * pClear = CallFunc::create([=]() { pMonsterHurt->removeFromParentAndCleanup(true); });
-			//ÊÜÉË¾«ÁéÏÔÊ¾¶¯»­
+			//ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 			pMonsterHurt->runAction(Sequence::create(Animate::create(pHurtAction), pClear, nullptr));
 		}
 		if (pMonster->getIHp() <= 0 || pMonster->getIsDead())
@@ -113,7 +113,7 @@ void TowerSun::attack()
 		}
 	}
 
-	//ÔÙ¼ì²âÕÏ°­Îï
+	//ï¿½Ù¼ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½
 	Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
 	for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
 	{

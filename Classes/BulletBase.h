@@ -1,17 +1,10 @@
 /**
-<<<<<<< HEAD
  * @brief 子弹基类
  * @details 有一些炮塔的攻击逻辑是炮塔基类和子弹基类分离开来的，因而对于一些炮塔而言，子弹基类负责真正的攻击逻辑
  * @author 陈建彰 x 何泓兵
  * @date 20180410
  * */
-=======
-* @brief 子弹基类
-* @details 子弹的公共父类
-* @authors 何泓兵
-* @date 20180410
-* */
->>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
+
 #pragma once
 #ifndef __CarrotFantasy__BulletBase__
 #define __CarrotFantasy__BulletBase__
@@ -23,7 +16,6 @@ class BulletBase : public Entity, public DynamicPropertyInterface
 {
 
 public:
-<<<<<<< HEAD
     /**
      * @todo 废弃，好像没啥用
      * */
@@ -86,7 +78,6 @@ protected:
     VictimEntityBase *_pAtkTarget = nullptr;
 
     std::set<int> *_IdMap = nullptr;
-=======
 	//
 	std::set<int>& getIdMap();
 	/**
@@ -144,7 +135,6 @@ protected:
 	VictimEntityBase *_pAtkTarget = nullptr;
 
 	std::set<int> *_IdMap = nullptr;
->>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
 };
 
 #endif /* defined(__CarrotFantasy__BulletBase__) */

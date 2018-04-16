@@ -2,7 +2,7 @@
 //  TowerSnow.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø on 18-4-12.
+//  Created by ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ on 18-4-12.
 //  
 //
 #include "TowerSnow.h"
@@ -18,12 +18,12 @@ bool TowerSnow::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-		unschedule(schedule_selector(TowerSnow::doRocation)); //Ñ©»¨Ã»ÓÐÐý×ªÐ§¹û£¬ÐèÒª×¢Ïúµ÷¶ÈÆ÷
+		unschedule(schedule_selector(TowerSnow::doRotation)); //Ñ©ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½×ªÐ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-		//¿ª»ð¶¯×÷¾«ÁéÆô¶¯
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		_doAnimationSprite = Sprite::create();
 		_doAnimationSprite->setVisible(false);
-		addChild(_doAnimationSprite); //¼ÓÈëµ½ÅÚËþ¾«ÁéÖÐ
+		addChild(_doAnimationSprite); //ï¿½ï¿½ï¿½ëµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		bRet = true;
 	} while (0);
@@ -33,9 +33,9 @@ bool TowerSnow::init()
 void TowerSnow::fire(float dt) {
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 
-	//¹¥»÷Ð§¹û¾«ÁéÆô¶¯
+	//ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	_doAnimationSprite->setVisible(true);
-	//¹¥»÷¶¯»­Æô¶¯
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Animation * pAnimation = Animation::create();
 	for (int i = 1; i <= 5; i++)
 	{
@@ -44,7 +44,7 @@ void TowerSnow::fire(float dt) {
 	}
 	pAnimation->setDelayPerUnit(0.1);
 	pAnimation->setLoops(1);
-	SoundUtil::getInstance()->playEffectSound("Music/Towers/Snow.mp3"); //²¥·Å¹¥»÷ÉùÒô
+	SoundUtil::getInstance()->playEffectSound("Music/Towers/Snow.mp3"); //ï¿½ï¿½ï¿½Å¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	CallFunc * pCallFunc = CallFunc::create([=]() {
 		attack();
@@ -63,17 +63,17 @@ void TowerSnow::attack()
 	atk._iBulletsType = _iBulletId;
 
 	Rect rect;
-	//¸ù¾ÝÅÚËþµÈ¼¶È·¶¨¹¥»÷·¶Î§
-	//ÎªÁËºóÃæµÄ¿éÅö×²¼ì²â´òÏÂ»ù´¡
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§
+	//Îªï¿½Ëºï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½
 	if (getIId() == 31) { rect = Rect(this->getPositionX() - 80, this->getPositionY() - 80, 160, 160); }
 	if (getIId() == 32) { rect = Rect(this->getPositionX() - 100, this->getPositionY() - 100, 200, 200); }
 	if (getIId() == 33) { rect = Rect(this->getPositionX() - 120, this->getPositionY() - 120, 240, 240); }
 
 	/*************************************************************/
-	/**-----------------------¹¥»÷ÓÎÏ·Ö÷Âß¼­-----------------------**/
+	/**-----------------------ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ß¼ï¿½-----------------------**/
 	/*************************************************************/
 
-	//todo Âß¼­»¹ÊÇºÍ·É»úÄÇÃ´ÃÔ
+	//todo ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ÇºÍ·É»ï¿½ï¿½ï¿½Ã´ï¿½ï¿½
 	Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
 	for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
 	{
