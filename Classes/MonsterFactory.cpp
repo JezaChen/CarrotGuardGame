@@ -13,7 +13,6 @@ MonsterBase *MonsterFactory::createMonster(const MonsterType &rMonsterType)
 {
 	MonsterBase *pMonster = nullptr;
 
-	//根据怪物类型映射出不同的怪物Id
 	int iMosterId = 0;
 	switch (rMonsterType) {
 	case en_Land_Pink:iMosterId = 2;
@@ -53,8 +52,6 @@ MonsterBase *MonsterFactory::createMonster(const MonsterType &rMonsterType)
 	default:
 		break;
 	}
-
-	//生成并返回
 	pMonster = MonsterBase::create(iMosterId);
 
 	return pMonster;
