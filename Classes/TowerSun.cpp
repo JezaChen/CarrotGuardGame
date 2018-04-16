@@ -2,7 +2,7 @@
 //  TowerSun.cpp
 //  CarrotFantasy
 //
-//  Created by 何泓兵 x 陈建彰 on 18-4-12.
+//  Created by 何泓兵 on 18-4-12.
 //  
 //
 #include "TowerSun.h"
@@ -18,8 +18,7 @@ bool TowerSun::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-		unschedule(schedule_selector(TowerSun::doRocation)); //太阳没有旋转效果，需要注销调度器
-
+		unschedule(schedule_selector(TowerSun::doRocation));
 		_doAnimationSprite = Sprite::create();
 		_doAnimationSprite->setVisible(false);
 		addChild(_doAnimationSprite);
@@ -32,23 +31,17 @@ bool TowerSun::init()
 void TowerSun::fire(float dt) {
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 
-	//todo 塔基也要旋转
-	_pTowerPanel->runAction(Sequence::create(RotateBy::create(0.1, 30), RotateBy::create(0.1, -30), nullptr));
+	_pTowerPanel->runAction(Sequence::create(RotateBy::create(0.1, 30), RotateBy::create(0.1, -30), NULL));
 
-	//攻击效果精灵启动
 	_doAnimationSprite->setVisible(true);
-
-	//攻击动画启动
 	Animation * pAnimation = Animation::create();
-	for (int i = 1; i <= 5; i++)
+	for (int i = 1; i < 6; i++)
 	{
 		std::string SpriteFrameName = "P" + _sName + StringUtils::format("%d.png", i);
 		pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
 	}
 	pAnimation->setDelayPerUnit(0.1);
 	pAnimation->setLoops(1);
-
-	//播放攻击声音
 	SoundUtil::getInstance()->playEffectSound("Music/Towers/Sun.mp3");
 
 
@@ -66,12 +59,7 @@ void TowerSun::attack()
 	atk._enAtkState = 1;
 	atk._iAtk = _iBulletId;
 	atk._iDuration = 0;
-
-	/*************************************************************/
-	/**-----------------------攻击游戏主逻辑-----------------------**/
-	/*************************************************************/
-
-	//受伤动画启动
+	//受伤动画；
 	Animation * pHurtAction = Animation::create();
 	for (int i = 1; i < 10; i++)
 	{
@@ -82,25 +70,22 @@ void TowerSun::attack()
 	pHurtAction->setLoops(1);
 
 	Rect rect;
-	//todo 这个范围应该以文件的为准
 	if (getIId() == 22) { rect = Rect(this->getPositionX() - 100, this->getPositionY() - 100, 200, 200); }
 	if (getIId() == 23) { rect = Rect(this->getPositionX() - 120, this->getPositionY() - 120, 240, 240); }
 	if (getIId() == 24) { rect = Rect(this->getPositionX() - 140, this->getPositionY() - 140, 280, 280); }
 
-	//先检测怪物
 	Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
+
 	for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
 	{
 		MonsterBase * pMonster = (MonsterBase *)(*mIter);
-		if (rect.intersectsRect(pMonster->getBoundingBox())) //碰撞检测
+		if (rect.intersectsRect(pMonster->getBoundingBox()))
 		{
 			pMonster->beHurt(atk);
-			//用于显示受伤动画的受伤精灵启动
 			Sprite * pMonsterHurt = Sprite::create();
 			pMonster->addChild(pMonsterHurt);
 			CallFunc * pClear = CallFunc::create([=]() { pMonsterHurt->removeFromParentAndCleanup(true); });
-			//受伤精灵显示动画
-			pMonsterHurt->runAction(Sequence::create(Animate::create(pHurtAction), pClear, nullptr));
+			pMonsterHurt->runAction(Sequence::create(Animate::create(pHurtAction), pClear, NULL));
 		}
 		if (pMonster->getIHp() <= 0 || pMonster->getIsDead())
 		{
@@ -113,7 +98,6 @@ void TowerSun::attack()
 		}
 	}
 
-	//再检测障碍物
 	Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
 	for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
 	{

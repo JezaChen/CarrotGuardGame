@@ -50,6 +50,7 @@ public:
      */
     virtual void doDead() final;
 
+
     /**
      *
      *  @brief 每个实体需要绑定一个Sprite，用于显示；
@@ -71,10 +72,9 @@ public:
 
 protected:
     /**
-     *  @brief 死亡动画；
-     *  @param rSDeadImageFile 死亡动画图片文件字符串，若采用默认参数，意味着使用默认的死亡动画
-     *  @details 记住，这个函数一定要自下而上调用
-     */
+    *  @brief 死亡动画；
+    *  @param rSDeadImageFile 死亡动画图片文件字符串，若采用默认参数，意味着使用默认的死亡动画
+    */
     virtual void deadAction(const std::string &rSDeadImageFile = "");
 
     /**

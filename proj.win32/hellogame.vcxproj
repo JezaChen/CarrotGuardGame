@@ -155,14 +155,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
-    <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />
     <ClCompile Include="..\Classes\CollisionManager.cpp" />
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
-    <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GameSceneII.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HelpLayer.cpp" />
@@ -179,7 +177,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\MonsterBuilder.cpp" />
     <ClCompile Include="..\Classes\MonsterFactory.cpp" />
     <ClCompile Include="..\Classes\OptionLayer.cpp" />
-    <ClCompile Include="..\Classes\OptLayer.cpp" />
     <ClCompile Include="..\Classes\PageViewLayer.cpp" />
     <ClCompile Include="..\Classes\PauseLayer.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
@@ -193,14 +190,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\SpritesLayer.cpp" />
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\TiledMapLayer.cpp" />
-    <ClCompile Include="..\Classes\TowerAnchor.cpp" />
     <ClCompile Include="..\Classes\TowerBall.cpp" />
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
-    <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
-    <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
     <ClCompile Include="..\Classes\TowerPin.cpp" />
     <ClCompile Include="..\Classes\TowerPlane.cpp" />
     <ClCompile Include="..\Classes\TowerRocket.cpp" />
@@ -244,7 +238,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BarrierBuilder.h" />
     <ClInclude Include="..\Classes\BulletAnchor.h" />
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
-    <ClInclude Include="..\Classes\BulletLittleAnchor.h" />
     <ClInclude Include="..\Classes\BulletPin.h" />
     <ClInclude Include="..\Classes\BulletRocket.h" />
     <ClInclude Include="..\Classes\CollisionManager.h" />
@@ -255,7 +248,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Config.h" />
     <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
-    <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\GameSceneII.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HelpLayer.h" />
@@ -272,7 +264,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\MonsterBuilder.h" />
     <ClInclude Include="..\Classes\MonsterFactory.h" />
     <ClInclude Include="..\Classes\OptionLayer.h" />
-    <ClInclude Include="..\Classes\OptLayer.h" />
     <ClInclude Include="..\Classes\PageViewLayer.h" />
     <ClInclude Include="..\Classes\PauseLayer.h" />
     <ClInclude Include="..\Classes\resource.h" />
@@ -290,14 +281,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\test.h" />
     <ClInclude Include="..\Classes\ThemeSelectScene.h" />
     <ClInclude Include="..\Classes\TiledMapLayer.h" />
-    <ClInclude Include="..\Classes\TowerAnchor.h" />
     <ClInclude Include="..\Classes\TowerBall.h" />
     <ClInclude Include="..\Classes\TowerBlueStar.h" />
-    <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
-    <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\TowerPin.h" />
     <ClInclude Include="..\Classes\TowerPlane.h" />
     <ClInclude Include="..\Classes\TowerRocket.h" />

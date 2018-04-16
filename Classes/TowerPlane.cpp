@@ -20,12 +20,10 @@ bool TowerPlane::init()
 	do
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
-
 		_doAnimationSprite = Sprite::create();
 		_doAnimationSprite->setAnchorPoint(Vec2(0.5, 0));
 		_doAnimationSprite->setContentSize(Size(10, 1290));
 		_doAnimationSprite->setVisible(false);
-
 		addChild(_doAnimationSprite);
 		bRet = true;
 	} while (0);
@@ -35,8 +33,6 @@ void TowerPlane::fire(float dt)
 {
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 
-	//创建攻击时飞机的动画
-	//todo 不妨调用父类的fireAction?
 	Animation *pAnimation = Animation::create();
 	for (int i = 1; i <= 3; i++) 
 	{
@@ -51,25 +47,23 @@ void TowerPlane::fire(float dt)
 
 	CallFunc *pCallFunc = CallFunc::create([=]() 
 	{
+
 		attack();
 	});
-	getSprite()->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr));
+	getSprite()->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, NULL));
 }
 void TowerPlane::attack() 
 {
-	//创建攻击属性
+
 	AtkProperty atk;
 	atk._enAtkState = 1;
 	atk._iAtk = _iBulletId;
 	atk._iDuration = 0;
 
-	//攻击精灵启动
 	_doAnimationSprite->setVisible(true);
 
-	//攻击精灵角度与炮塔精灵的角度要一致
 	_doAnimationSprite->setRotation(getSprite()->getRotation());
 
-	//攻击精灵动画启动
 	Animation *pAnimation = Animation::create();
 	for (int i = 1; i <= 3; i++) 
 	{
@@ -83,9 +77,8 @@ void TowerPlane::attack()
 		_doAnimationSprite->setVisible(false);
 	});
 
-	_doAnimationSprite->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr));
+	_doAnimationSprite->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, NULL));
 
-	//伤害动画启动
 	Animation *pHurtAnimation = Animation::create();
 	for (int i = 1; i <= 5; i++) {
 		std::string SpriteFrameName = StringUtils::format("PPlane0%d.png", i);
@@ -94,9 +87,6 @@ void TowerPlane::attack()
 	pHurtAnimation->setLoops(1);
 	pHurtAnimation->setDelayPerUnit(0.1f);
 
-	/*************************************************************/
-	/**-----------------------攻击游戏主逻辑-----------------------**/
-    /*************************************************************/
 	int rt;
 	int rd;
 	if (_pAtkTarget && _pAtkTarget->getPositionX() > this->getPositionX())
@@ -109,8 +99,6 @@ void TowerPlane::attack()
 		rt = int(getSprite()->getRotation() + 5) % 360;
 		rd = int(getSprite()->getRotation() - 5) % 360;
 	}
-
-	//先写攻击怪物逻辑
 	Vector<MonsterBase *> MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
 	for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
 	{
@@ -121,10 +109,8 @@ void TowerPlane::attack()
 			Sprite * pMonsterHurt = Sprite::create();
 			pMonster->addChild(pMonsterHurt);
 			CallFunc * pClear = CallFunc::create([=]() { pMonsterHurt->removeFromParentAndCleanup(true); });
-			pMonsterHurt->runAction(Sequence::create(Animate::create(pHurtAnimation), pClear, nullptr));
+			pMonsterHurt->runAction(Sequence::create(Animate::create(pHurtAnimation), pClear, NULL));
 		}
-		//todo 这个逻辑不应该在这里有，去除试试
-        /**[可能要废弃]**/
 		if (pMonster->getIHp() <= 0 || pMonster->getIsDead())
 		{
 			/*mIter = (auto)*/
@@ -132,11 +118,10 @@ void TowerPlane::attack()
 		}
 		else
 		{
-			++mIter; //todo 逻辑不对劲
+			++mIter;
 		}
 	}
 
-	//后写攻击障碍物逻辑
 	Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
 	for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
 	{
