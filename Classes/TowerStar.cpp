@@ -2,7 +2,7 @@
 //  TowerStar.cpp
 //  CarrotFantasy
 //
-//  Created by ������ x �½��� on 18-4-12.
+//  Created by 何泓兵 x 陈建彰 on 18-4-12.
 //  
 //
 #include "TowerStar.h"
@@ -28,7 +28,7 @@ void TowerStar::fire(float dt){
 
 	auto createBulletCF = CallFunc::create([=](){
 		if (!_pAtkTarget) return;
-        //�����ӵ�������
+        //创建子弹并发射
 		BulletStar * pBullet = BulletStar::create(getIBulletId(), _pAtkTarget);
 		pBullet->setPosition(this->getPosition());
 		pBullet->doMove();
