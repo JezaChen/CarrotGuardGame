@@ -1,4 +1,4 @@
-#pragma once
+
 //
 //  BulletManager.cpp
 //  CarrotFantasy

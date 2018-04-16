@@ -1,4 +1,3 @@
-#pragma once
 //
 // BulletLittleAnchor.cpp
 // CarrotFantasy

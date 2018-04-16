@@ -1,4 +1,3 @@
-#pragma once
 //
 //  BarrierManager.cpp
 //  CarrotFantasy

@@ -1,4 +1,3 @@
-#pragma once
 //
 //  BulletsLayer.cpp
 //  CarrotFantasy

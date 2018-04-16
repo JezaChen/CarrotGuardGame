@@ -18,7 +18,7 @@ bool TowerSun::init()
     do
     {
         CC_BREAK_IF(!TowerBase::init(rId));
-        unschedule(schedule_selector(TowerSun::doRotation)); //太阳没有旋转效果，需要注销调度器
+        unschedule(schedule_selector(TowerSun::doRoration)); //太阳没有旋转效果，需要注销调度器
 
         _doAnimationSprite = Sprite::create();
         _doAnimationSprite->setVisible(false);

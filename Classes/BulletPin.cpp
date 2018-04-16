@@ -1,4 +1,3 @@
-#pragma once
 //
 // BullePin.cpp
 // CarrotFantasy
