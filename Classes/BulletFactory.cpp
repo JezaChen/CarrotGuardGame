@@ -1,3 +1,4 @@
+#pragma once
 //
 //  BulletFactory.cpp
 //  CarrotFantasy

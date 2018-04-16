@@ -1,3 +1,5 @@
+#pragma once
+
 #include "BulletAnchor.h"
 #include "VictimEntityBase.h"
 #include "MonsterManager.h"

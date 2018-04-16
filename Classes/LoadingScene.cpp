@@ -1,4 +1,4 @@
-ï»¿#include "LoadingScene.h"
+#include "LoadingScene.h"
 #include "SoundUtil.h"
 #include "GameScene.h"
 
@@ -9,8 +9,8 @@ bool LoadingScene::init()
     do {
         CC_BREAK_IF(!Scene::init());
 
-        //ä¸èƒ½ç”¨createWithSpriteFrameName
-        //å› ä¸ºæ²¡æœ‰åŠ è½½åˆ°çº¹ç†å½“ä¸­
+        //²»ÄÜÓÃcreateWithSpriteFrameName
+        //ÒòÎªÃ»ÓĞ¼ÓÔØµ½ÎÆÀíµ±ÖĞ
         auto aBg = Sprite::create(LOADINGSOURCE); //bug fixed
 
         aBg->setPosition(VisibleRectUtil::center());
@@ -24,7 +24,7 @@ bool LoadingScene::init()
 void LoadingScene::onEnter()
 {
     Scene::onEnter();
-    SoundUtil::getInstance()->stopBackgroundSound(); //è¿›å…¥åŠ è½½åœºæ™¯çš„æ—¶å€™ï¼Œåœæ­¢æ’­æ”¾éŸ³ä¹
+    SoundUtil::getInstance()->stopBackgroundSound(); //½øÈë¼ÓÔØ³¡¾°µÄÊ±ºò£¬Í£Ö¹²¥·ÅÒôÀÖ
     NOTIFY->addObserver(this, callfuncO_selector(LoadingScene::loadSourceFinishedCallBack), "loadFinished", nullptr);
 
     _pGameScene = GameScene::create();
@@ -40,7 +40,7 @@ void LoadingScene::onExit()
 
 void LoadingScene::loadSourceFinishedCallBack(Ref *pData)
 {
-    //æ¸å˜åˆ‡æ¢åˆ°æ¸¸æˆåœºæ™¯
+    //½¥±äÇĞ»»µ½ÓÎÏ·³¡¾°
     auto aTransScene = TransitionFade::create(0.2f, dynamic_cast<Scene*>(pData));
     Director::getInstance()->replaceScene(aTransScene);
 }

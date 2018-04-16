@@ -16,7 +16,7 @@ protected:
     void listenClick();
 
     
-    TowerOptBtn* pTowerOptBtn;
+    TowerOptBtn* _pTowerOptBtn;
     bool _bKeyOptBtn;
     Sprite *_pForbiddenSprite;
 };

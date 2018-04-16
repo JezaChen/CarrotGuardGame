@@ -1,3 +1,4 @@
+#pragma once
 //
 // BulletBlueStar.cpp
 // CarrotFantasy

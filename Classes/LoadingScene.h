@@ -1,7 +1,7 @@
-ï»¿/**
-* @brief åŠ è½½æ¸¸æˆåœºæ™¯
-* @details æ¸¸æˆè¿›å…¥å‰éœ€è¦åŠ è½½èµ„æºï¼Œæ­¤æ—¶éœ€è¦å‘ˆç°æ¸¸æˆåœºæ™¯
-* @author é™ˆå»ºå½°
+/**
+* @brief ¼ÓÔØÓÎÏ·³¡¾°
+* @details ÓÎÏ·½øÈëÇ°ĞèÒª¼ÓÔØ×ÊÔ´£¬´ËÊ±ĞèÒª³ÊÏÖÓÎÏ·³¡¾°
+* @author ³Â½¨ÕÃ
 * @date 20180412
 * */
 
@@ -14,33 +14,33 @@ class LoadingScene : public Scene
 {
 public:
     /**
-    * @brief åˆ›å»ºå®
-    * @details cocos2d-xè‡ªå¸¦å®
+    * @brief ´´½¨ºê
+    * @details cocos2d-x×Ô´øºê
     */
     CREATE_FUNC(LoadingScene);
     
 protected:
     /**
-    * @brief åˆå§‹åŒ–å‡½æ•°
+    * @brief ³õÊ¼»¯º¯Êı
     */
     bool init()override;
 
     /**
-    * @brief åœºæ™¯è¿›å…¥çš„æ—¶å€™è°ƒç”¨çš„å‡½æ•°
+    * @brief ³¡¾°½øÈëµÄÊ±ºòµ÷ÓÃµÄº¯Êı
     */
     void onEnter()override;
 
     /**
-    * @brief åœºæ™¯é€€å‡ºçš„æ—¶å€™è°ƒç”¨çš„å‡½æ•°
+    * @brief ³¡¾°ÍË³öµÄÊ±ºòµ÷ÓÃµÄº¯Êı
     */
     void onExit()override;
 
     /**
-    * @brief GameSceneçš„åŠ è½½èµ„æºå‡½æ•°å®Œæˆåï¼Œä¼šå›è°ƒè¯¥å‡½æ•°ï¼Œä»¥åˆ‡æ¢åˆ°æ¸¸æˆåœºæ™¯
+    * @brief GameSceneµÄ¼ÓÔØ×ÊÔ´º¯ÊıÍê³Éºó£¬»á»Øµ÷¸Ãº¯Êı£¬ÒÔÇĞ»»µ½ÓÎÏ·³¡¾°
     */
     virtual void loadSourceFinishedCallBack(Ref *pData);
 
 protected:
-    GameSceneII * _pGameScene = nullptr;
+    GameScene * _pGameScene = nullptr;
 };
 #pragma once
