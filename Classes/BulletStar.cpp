@@ -115,6 +115,7 @@ void BulletStar::doMove()
 				{
 					/*bIter =(auto)*/ 
 					//Çå³ý£»
+					//TODO£ºÖØ¸´×¸Óà£»
 					BarrierVector.eraseObject(pBarrier);
 				}
 				else

@@ -93,6 +93,7 @@ void BulletBlueStar::doMove() {
 				{
 					/*mIter = (auto)*/
 					//Çå³ý£»
+					//TODO£ºÖØ¸´×¸Óà£»
 					MonsterVector.eraseObject(pMonster);
 				}
 				else

@@ -78,43 +78,51 @@ void BulletAnchor::doMove()
 			int num2 = rand() % size;
 			int num3 = rand() % size;
 			//设置锚对随机障碍物的攻击目标；
-			auto barrierPoint = (BarrierVector.at(num1))->getPosition();
+			//auto barrierPoint = (BarrierVector.at(num1))->getPosition();
 			auto barrierPoint1 = (BarrierVector.at(num1))->getPosition();
 			auto barrierPoint2 = (BarrierVector.at(num2))->getPosition();
 			auto barrierPoint3 = (BarrierVector.at(num3))->getPosition();
-
+			//对三个障碍物设置三个动作；
 			MoveTo * move1 = MoveTo::create(2.5f, barrierPoint1);
 			MoveTo * move2 = MoveTo::create(2.0f, barrierPoint2);
 			MoveTo * move3 = MoveTo::create(1.5f, barrierPoint3);
-
+			//创建三种旋转动作，角度不同；
 			RotateBy * rotate1 = RotateBy::create(0.05f, 30);
 			RotateBy * rotate2 = RotateBy::create(0.05f, 35);
 			RotateBy * rotate3 = RotateBy::create(0.05f, 25);
-
+			//设置动作的延续；
 			RepeatForever * rep1 = RepeatForever::create(rotate1);
 			RepeatForever * rep2 = RepeatForever::create(rotate2);
 			RepeatForever * rep3 = RepeatForever::create(rotate3);
 
-
+			//创建精灵帧
 			std::string SpriteFrameName = StringUtils::format("PAnchor%d2.png", getILevel());
 			SpriteFrame * fileName = SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName);
+			//创建等级最高时存在的三个反弹锚；
 			auto Anchor1 = Sprite::createWithSpriteFrame(fileName);
 			auto Anchor2 = Sprite::createWithSpriteFrame(fileName);
 			auto Anchor3 = Sprite::createWithSpriteFrame(fileName);
-			auto layer = Director::getInstance()->getRunningScene()->getChildByTag(1);
 
+			auto layer = Director::getInstance()->getRunningScene()->getChildByTag(1);
+			//等级为1时只有一个反弹锚；
 			if (getILevel() == 1)
 			{
 				Anchor1->setPosition(_pAtkTarget->getPosition());
 				layer->addChild(Anchor1);
 
-				auto dieCf = CallFunc::create([=]() {
+				auto dieCf = CallFunc::create([=]() 
+				{
+					//反弹锚给予随机障碍物伤害；
 					BarrierVector.at(num1)->beHurt(getAtkPro());
+					//击中后回收；
 					Anchor1->removeFromParentAndCleanup(true);
 				});
+				//旋转起来；
 				Anchor1->runAction(rep1);
+				//反弹锚启动，攻击！
 				Anchor1->runAction(Sequence::create(move1, Animate::create(pAnimation), dieCf, NULL));
 			}
+			//两个反弹锚；
 			if (getILevel() == 2)
 			{
 				Anchor1->setPosition(_pAtkTarget->getPosition());
@@ -135,6 +143,7 @@ void BulletAnchor::doMove()
 				Anchor1->runAction(Sequence::create(move1, Animate::create(pAnimation), dieCf1, NULL));
 				Anchor2->runAction(Sequence::create(move2, Animate::create(pAnimation), dieCf2, NULL));
 			}
+			//三个反弹锚；
 			if (getILevel() == 3)
 			{
 				Anchor1->setPosition(_pAtkTarget->getPosition());

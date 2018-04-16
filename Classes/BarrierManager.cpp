@@ -80,7 +80,7 @@ void BarrierManager::removeBarrierFromManager(Ref *pBarrier)
     }
 }
 
-void BarrierManager::clearManage()
+void BarrierManager::clearManager()
 {
     _pBarrierVec->clear();
 }
