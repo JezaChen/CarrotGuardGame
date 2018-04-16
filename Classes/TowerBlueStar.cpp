@@ -2,7 +2,7 @@
 //  TowerBlueStar.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø on 18-4-12.
+//  Created by ºÎãü±ø x ³Â½¨ÕÃ on 18-4-12.
 //  
 //
 #include "TowerBlueStar.h"
