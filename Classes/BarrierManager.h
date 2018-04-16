@@ -44,7 +44,7 @@ public:
 	/**
 	 * @brief 清理管理
 	 */
-	virtual void clearManage();
+	virtual void clearManager();
 
 protected:
 

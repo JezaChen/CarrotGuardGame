@@ -81,12 +81,21 @@
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\MonsterBuilder.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="..\Classes\BulletAnchor.cpp" />
+>>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
     <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\TowerAnchor.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
     <ClCompile Include="..\Classes\OptLayer.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="..\Classes\Carrot.cpp" />
+    <ClCompile Include="..\Classes\GameEndLayer.cpp" />
+>>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -184,6 +193,10 @@
     <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\OptLayer.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="..\Classes\GameEndLayer.h" />
+>>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

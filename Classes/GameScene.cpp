@@ -82,10 +82,10 @@ void GameScene::createLayers()
 
 	TowerManager::getInstance()->setFuncAddTowerLayer(CC_CALLBACK_1(TowersLayer::addEntity, _pTowersLayer));
 
-	_pBulletsLayer = BulletsLayer::create();
+	_pBulletsLayer = BulletLayer::create();
 	_pBulletsLayer->setTag(1);
 	_pBulletsLayer->retain();
-	BulletManager::getInstance()->setFuncAddBulletLayer(CC_CALLBACK_1(BulletsLayer::addEntity, _pBulletsLayer));
+	BulletManager::getInstance()->setFuncAddBulletLayer(CC_CALLBACK_1(BulletLayer::addEntity, _pBulletsLayer));
 
 	_pScoreAndControllerLayer = ScoreAndControllerLayer::create();
 	_pScoreAndControllerLayer->retain();
@@ -102,8 +102,8 @@ void GameScene::createLayers()
 void GameScene::preLoadSource()
 {
 
-	auto tICurPageIndex = SceneManager::getInstance()->getCurPageIndex() + 1;
-	auto tICurLevelIndex = SceneManager::getInstance()->getCurLevelIndex() + 1;
+	auto tICurPageIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
+	auto tICurLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
 	auto tSSourceBg1Str = StringUtils::format(GAMESCENEBG1, tICurPageIndex);
 
 	LevelConfigUtil::getInstance()->loadLevelConfig();
@@ -166,7 +166,7 @@ void GameScene::onEnter()
 
 	registerGameEvent();
 
-	SoundUtil::getInstance()->playBackgroundSound(StringUtils::format(THEMEBACKGROUNDMUSIC, SceneManager::getInstance()->getCurPageIndex() + 1).c_str());
+	SoundUtil::getInstance()->playBackgroundSound(StringUtils::format(THEMEBACKGROUNDMUSIC, SceneManager::getInstance()->getCurrentPageIndex() + 1).c_str());
 
 	schedule(schedule_selector(GameScene::collisionUpDate), 0.2);
 }
@@ -189,7 +189,7 @@ void GameScene::createBarriers()
 	CsvUtil * pCsvUtil = CsvUtil::getInstance();
 	for (auto &iter : barriers)
 	{
-		int iLine = pCsvUtil->findValueInWithLine(iter.first, 1, BARRIERCSVFILE);
+		int iLine = pCsvUtil->findVal(iter.first, 1, BARRIERCSVFILE);
 		Vec2 tPos = iter.second.origin;
 		Size tSize = iter.second.size;
 		auto pBarrier = BarrierBase::create(iLine);

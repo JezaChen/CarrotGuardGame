@@ -75,7 +75,7 @@ private:
 
 	Layer *_pOptLayer = nullptr;
 
-	//Carrot *_pCarrot = nullptr;
+	Carrot *_pCarrot = nullptr;
 
 	int _iSourceCount = 0;
 };

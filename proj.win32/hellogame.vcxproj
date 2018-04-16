@@ -154,14 +154,20 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
+    <ClCompile Include="..\Classes\BulletAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
     <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />
+    <ClCompile Include="..\Classes\Carrot.cpp" />
     <ClCompile Include="..\Classes\CollisionManager.cpp" />
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="..\Classes\GameEndLayer.cpp" />
+>>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GameSceneII.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
@@ -255,6 +261,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Config.h" />
     <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="..\Classes\GameEndLayer.h" />
+>>>>>>> 2b54e38197accaaf381028f2c3f0fdfb3905acdb
     <ClInclude Include="..\Classes\GameScene.h" />
     <ClInclude Include="..\Classes\GameSceneII.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
