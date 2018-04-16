@@ -1,8 +1,8 @@
-//
+ï»¿//
 //  BulletBase.cpp
 //  CarrotFantasy
 //
-//  Created by ºÎãü±ø on 18-4-10.
+//  Created by ä½•æ³“å…µ on 18-4-10.
 //
 //
 
@@ -12,7 +12,7 @@
 
 BulletBase *BulletBase::create(const int &rIId, VictimEntityBase *rVictimEntity)
 {
-    //×Óµ¯Ö¸Õë£»
+    //å­å¼¹æŒ‡é’ˆï¼›
     auto pBullet = new BulletBase();
     if (pBullet && pBullet->init(rIId, rVictimEntity)) pBullet->autorelease();
     else
@@ -28,16 +28,16 @@ bool BulletBase::init(const int &rId, VictimEntityBase *rVictimEntity)
     {
         CC_BREAK_IF(!Entity::init(rId, BULLETCSVFILE));
         CC_BREAK_IF(!DynamicPropertyInterface::init(rId, BULLETCSVFILE));
-        //×Óµ¯¹¥»÷×´Ì¬£»
+        //å­å¼¹æ”»å‡»çŠ¶æ€ï¼›
         _iAtkState = CsvUtil::getInstance()->getInt(_iId, en_AtkState, BULLETCSVFILE);
-        //×Óµ¯ÖÖÀà£»
+        //å­å¼¹ç§ç±»ï¼›
         _iBulletType = CsvUtil::getInstance()->getInt(_iId, en_BulletType, BULLETCSVFILE);
-        //ËÀÍö¶¯»­ÊıÄ¿£»
+        //æ­»äº¡åŠ¨ç”»æ•°ç›®ï¼›
         _iDeadActCount = CsvUtil::getInstance()->getInt(_iId, en_DeadActCount, BULLETCSVFILE);
         CC_SAFE_RETAIN(rVictimEntity);
         _pAtkTarget = rVictimEntity;
 
-        /**[¼´½«·ÏÆú]**/
+        /**[å³å°†åºŸå¼ƒ]**/
         _IdMap = new std::set<int>();
 
         BulletManager::getInstance()->addBullet(this);
@@ -55,12 +55,12 @@ void BulletBase::doAction(const float &rDt)
         case en_NormalBullet:
         case en_GunBullet:
         {
-            //ÕâÖÖÀàĞÍµÄ×Óµ¯Ã»ÓĞĞı×ªĞ§¹û£¬Æä¶¯»­ÊÇÓĞÒ»Ö¡Ò»Ö¡À´×é³ÉµÄ
+            //è¿™ç§ç±»å‹çš„å­å¼¹æ²¡æœ‰æ—‹è½¬æ•ˆæœï¼Œå…¶åŠ¨ç”»æ˜¯æœ‰ä¸€å¸§ä¸€å¸§æ¥ç»„æˆçš„
             std::vector<std::string> tAnimationFiles;
             for (int i = 1; i <= _IAnimationFrameCount; ++i)
                 tAnimationFiles.push_back(_sModelName + StringUtils::format("%d", i) + PHOTOPOSTFIX);
 
-            //µ÷ÓÃ¸¸ÀàµÄ¶¯»­¹¹Ôì·½·¨£¬´«ÈëÏòÁ¿¹¹Ôì¶¯»­
+            //è°ƒç”¨çˆ¶ç±»çš„åŠ¨ç”»æ„é€ æ–¹æ³•ï¼Œä¼ å…¥å‘é‡æ„é€ åŠ¨ç”»
             createDynamicEntityAnimation(tAnimationFiles);
 
             //todo ?
@@ -72,7 +72,7 @@ void BulletBase::doAction(const float &rDt)
         }
         case en_NoDisspper:
         {
-            //ÕâÖÖÀàĞÍµÄ×Óµ¯Ö»ÓĞÒ»¸öÖ¡£¬ËùÒÔÊÇÎŞÏŞĞı×ª
+            //è¿™ç§ç±»å‹çš„å­å¼¹åªæœ‰ä¸€ä¸ªå¸§ï¼Œæ‰€ä»¥æ˜¯æ— é™æ—‹è½¬
             getSprite()->runAction(RepeatForever::create(RotateBy::create(0.7, 360)));
             break;
         }
@@ -107,8 +107,8 @@ void BulletBase::doMove()
     float MoveDistance;
     switch (_iBulletType)
     {
-        //todo ĞÇĞÇËÆºõÃ»Ğ´ºÃ
-        //todo ºÃÏñ²»ÓÃĞ´ÁË
+        //todo æ˜Ÿæ˜Ÿä¼¼ä¹æ²¡å†™å¥½
+        //todo å¥½åƒä¸ç”¨å†™äº†
         case en_NormalBullet:
         case en_GunBullet:
             MovetoPosition = _pAtkTarget->getPosition() - this->getPosition();
@@ -133,7 +133,7 @@ AtkProperty BulletBase::getAtkPro()
     AtkProperty tAtkProperty;
     tAtkProperty._enAtkState = _iAtkState;
     tAtkProperty._iAtk = getIAtk();
-    //³ÖĞøÊ±¼äÉè¶¨£»
+    //æŒç»­æ—¶é—´è®¾å®šï¼›
     tAtkProperty._iDuration = CsvUtil::getInstance()->getInt(_iId, en_Duration, BULLETCSVFILE);
     tAtkProperty._iBulletsType = _iBulletType;
     return tAtkProperty;

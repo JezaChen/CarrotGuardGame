@@ -1,11 +1,10 @@
-
-//
-//  BarrierFactory.h
-//  CarrotFantasy
-//
-//  Created by 何泓兵 on 18-4-8.
-//
-//
+/**
+ * @brief 障碍物工厂类
+ * @details 根据障碍物类型，生成对应的障碍物基类
+ * @author 何泓兵
+ * @date 20180408
+ * @todo 不会被弃用了吧？？
+ * */
 #pragma once
 #ifndef __CarrotFantasy__BarrierFactory__
 #define __CarrotFantasy__BarrierFactory__
@@ -17,9 +16,11 @@ class BarrierBase;
 class BarrierFactory
 {
 public:
-	/*
-	* @brief 兄贵，目前障碍物只有四个，真真是高级程序员，赶工的劲头我学到了
-	*/
+	/**
+	 * @brief 生成障碍物基类静态方法
+	 * @details 根据给定的障碍物类型，生成对应的障碍物基类
+	 * @param rBarrierType 障碍物类型
+	 * */
 	static BarrierBase *createBarrier(const BarrierType &rBarrierType);
 };
 

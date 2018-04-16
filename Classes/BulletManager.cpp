@@ -1,4 +1,4 @@
-
+#pragma once
 //
 //  BulletManager.cpp
 //  CarrotFantasy
@@ -38,7 +38,7 @@ Vector<BulletBase*> &BulletManager::getBulletVec()
 {
 	return *_pBulletVec;
 }
-
+//把子弹加入子弹vector；
 void BulletManager::addBullet(BulletBase *pBullet)
 {
 	if (_pBulletVec) _pBulletVec->pushBack(pBullet);
@@ -49,7 +49,7 @@ void BulletManager::setFuncAddBulletLayer(const std::function<void(Entity *)> &r
 {
 	_funcAddBulletLayer = rFuncAddBulletLayer;
 }
-
+//子弹要是射出去了，就从vector中清出；
 void BulletManager::checkBulletIsDead()
 {
 	for (auto iterBullet = _pBulletVec->begin(); iterBullet != _pBulletVec->end();)
@@ -59,7 +59,7 @@ void BulletManager::checkBulletIsDead()
 	}
 }
 
-
+//清空子弹的vector；
 void BulletManager::clearManager()
 {
 	_pBulletVec->clear();

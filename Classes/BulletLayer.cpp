@@ -1,3 +1,4 @@
+#pragma once
 //
 //  BulletsLayer.cpp
 //  CarrotFantasy
@@ -16,7 +17,7 @@ bool BulletLayer::init()
 	do
 	{
 		CC_BREAK_IF(!EntityLayerBase::init());
-
+		//利用cocos的定时器，更新游戏动画；
 		scheduleUpdate();
 
 		bRet = true;

@@ -50,9 +50,9 @@ Vector<MonsterBase*> &MonsterManager::getMonsterVec()
 
 void MonsterManager::addMonster(MonsterBase *pMonster)
 {
-	//添加怪物进vec；
+	//添加怪物进向量统一管理；
 	if (_pMonsterVec) _pMonsterVec->pushBack(pMonster);
-	//添加怪物进图层；
+	//添加怪物进图层，显示出来；
 	_funcAddMonsterToLayer(pMonster);
 }
 

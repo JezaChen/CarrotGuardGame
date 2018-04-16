@@ -17,7 +17,7 @@ class BulletBlueStar :public BulletBase {
 
 protected:
 	/*
-	* @brief 蓝星星的基本动作
+	* @brief 蓝星星的瞄准；
 	*/
 	void doAction();
 	/*
