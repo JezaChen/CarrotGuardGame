@@ -3,8 +3,8 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-10.
-//  有问号就是不懂的
-//   idmap是什么
+//  
+//  
 //
 
 #include "BulletBase.h"
@@ -41,7 +41,7 @@ bool BulletBase::init(const int &rId, VictimEntityBase *rVictimEntity)
 		CC_SAFE_RETAIN(rVictimEntity);
 		//设置攻击目标为参数的实体；
 		_pAtkTarget = rVictimEntity;
-		//？？
+
 		_IdMap = new std::set<int>();
 		//自我初始化的时候直接往管理类添加(注册)自己
 		BulletManager::getInstance()->addBullet(this);
@@ -95,15 +95,17 @@ void BulletBase::doMove()
 	}
 	//如果没死的话，设置延迟时间并发动攻击；
 	doAction(0.2f);
-	//？？
-	//拉姆达表达式已经忘光，你来注释吧
+
 	auto deadActionCF = CallFunc::create([=]()
 	{
+		//如果攻击目标存在并没有死，打他；
 		if (_iBulletType == en_NormalBullet || _iBulletType == en_GunBullet || _iBulletType == en_StarBullet) {
 			if (_pAtkTarget != nullptr && !_pAtkTarget->getIsDead())
 				_pAtkTarget->beHurt(getAtkPro());
+			//设置位置为攻击目标的位置；
 			this->setPosition(_pAtkTarget->getPosition());
 		}
+		//执行死亡动画；
 		deadAction(_sName);
 	});
 	//移动位置；
@@ -133,9 +135,7 @@ void BulletBase::doMove()
 	default:
 		break;
 	}
-	//子弹发射；
-	//？？
-	//这两种情况有什么区别吗？
+	//TODO？
 	this->runAction(Sequence::create(MoveBy::create(MoveDistance / _iSpeed, MovetoPosition), deadActionCF, NULL));
 }
 

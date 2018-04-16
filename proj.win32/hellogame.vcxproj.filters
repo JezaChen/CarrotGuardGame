@@ -81,6 +81,7 @@
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\MonsterBuilder.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
+    <ClCompile Include="..\Classes\BulletAnchor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />

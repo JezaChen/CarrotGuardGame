@@ -154,6 +154,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
+    <ClCompile Include="..\Classes\BulletAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />

@@ -21,15 +21,19 @@ BulletBase *BulletFactory::createBullet(const int &rBulletId, TowerBase* rTower,
 	cache->addSpriteFramesWithFile("Themes/Towers/TShit-hd.plist", "Themes/Towers/TShit-hd.png");
 	//从子弹基类创建子弹，传了攻击目标和id过来；
 	auto pBullet = BulletBase::create(rBulletId, rVictimEntity);
-
+	//设置子弹跟随怪物的方向旋转；
 	pBullet->setRotation(90 - 180 * (rVictimEntity->getPosition() - rTower->getPosition()).getAngle() / M_PI);
-	if (pBullet->getIBulletType() == en_GunBullet) {
+	//射出类子弹需要调pos以便跑动；
+	if (pBullet->getIBulletType() == en_GunBullet) 
+	{
 		pBullet->setPosition(rTower->getPosition() + Vec2(36 * sin(pBullet->getRotation() * M_PI / 180), 36 * cos(pBullet->getRotation() * M_PI / 180)));
 	}
-	else {
+	//不是射出类的子弹就不用设置，直接获取塔的位置即可；
+	else 
+	{
 		pBullet->setPosition(rTower->getPosition());
 	}
-
+	//子弹动起来；
 	pBullet->doMove();
 
 	return pBullet;

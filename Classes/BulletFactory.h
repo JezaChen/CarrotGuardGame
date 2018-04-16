@@ -1,11 +1,10 @@
-
-//
-//  BulletFactory.h
-//  CarrotFantasy
-//
-//  Created by 何泓兵 on 18-4-10.
-//
-//
+/**
+* @brief 子弹工厂类
+* @details 1-根据子弹类型、塔的类型和被害怪物实体创建各类子弹
+* @details 2-设置子弹跟随怪物旋转以及子弹的初末位置
+* @author 何泓兵
+* @date 20180410
+* */
 #pragma once
 #ifndef __CarrotFantasy__BulletFactory__
 #define __CarrotFantasy__BulletFactory__
