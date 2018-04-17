@@ -41,7 +41,7 @@ BulletStar * BulletStar::create(const int & rId, VictimEntityBase *rVictimEntity
 
 void BulletStar::doAction()
 {
-	//子弹不停地瞄准(旋转瞄准);
+	//子弹无限旋转;
 	getSprite()->runAction(RepeatForever::create(RotateBy::create(0.7, 360)));
 }
 
@@ -77,9 +77,9 @@ void BulletStar::doMove()
 		{
 			//获取怪物vector；
 			Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-			for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
+			for (int i = 0; i < MonsterVector.size(); i++)
 			{
-				MonsterBase * pMonster = (MonsterBase *)(*mIter);
+				MonsterBase * pMonster = (MonsterBase *)(MonsterVector.at(i));
 				//检测矩形相交，即检测是否击中；
 				if (rect.intersectsRect(pMonster->getBoundingBox()))
 				{
@@ -87,24 +87,20 @@ void BulletStar::doMove()
 					pMonster->beHurt(getAtkPro());
 				}
 				//打死了；
-				if (pMonster->getIHp() <= 0 || pMonster->getIsDead())
-				{
-					/*mIter = (auto)*/
-					//清除；
-					MonsterVector.eraseObject(pMonster);
-				}
-				else
-				{
-					++mIter;
-				}
+                if (pMonster->getIHp() <= 0 || pMonster->getIsDead())
+                {
+                    /*mIter = (auto)*/
+                    //清除；
+                    MonsterVector.eraseObject(pMonster);
+                }
 			}
 		}
 		else//为0的是障碍物的动画帧数；
 		{
 			Vector<BarrierBase *>  BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-			for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
+			for (int i = 0; i < BarrierVector.size(); i++)
 			{
-				BarrierBase * pBarrier = (BarrierBase *)(*bIter);
+				BarrierBase * pBarrier = (BarrierBase *)(BarrierVector.at(i));
 				if (rect.intersectsRect(pBarrier->getBoundingBox()))
 				{
 					//击中，设置伤害；
@@ -117,10 +113,6 @@ void BulletStar::doMove()
 					//清除；
 					//TODO：重复赘余；
 					BarrierVector.eraseObject(pBarrier);
-				}
-				else
-				{
-					++bIter;
 				}
 			}
 		}
