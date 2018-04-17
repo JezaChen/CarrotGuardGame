@@ -4,6 +4,7 @@
 
 #include "TiledMapLayer.h"
 #include "SceneManager.h"
+#include "MapUtil.h"
 
 bool TiledMapLayer::init()
 {
@@ -37,4 +38,6 @@ void TiledMapLayer::loadMap()
     auto aMapImage = Sprite::createWithSpriteFrameName("Path.png");
     aMapImage->setPosition(VisibleRectUtil::center());
     addChild(aMapImage);
+
+    MapUtil::getInstance()->setCurrentLevelTiledMap(_pTiledMap); //记得要设置并分析该瓦片地图啊
 }

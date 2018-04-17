@@ -13,76 +13,81 @@
 BarrierManager *BarrierManager::_gInstance;
 
 BarrierManager::BarrierManager()
-{
-
-}
+{}
 
 BarrierManager::~BarrierManager()
 {
-	CC_SAFE_DELETE(_pBarrierVec);
+    CC_SAFE_DELETE(_pBarrierVec);
 }
 
 
 bool BarrierManager::init()
 {
-	bool bRet = false;
+    bool bRet = false;
 
-	do
-	{
-		_pBarrierVec = new Vector<BarrierBase*>();
-		registerBarrierDeadEvent();
-		bRet = true;
-	} while (0);
+    do
+    {
+        _pBarrierVec = new Vector<BarrierBase *>(); //new一个向量
+        registerBarrierDeadEvent(); //注册事件
 
-	return bRet;
+        bRet = true;
+    } while (0);
+
+    return bRet;
 }
 
-Vector<BarrierBase*> &BarrierManager::getBarrierVec()
+Vector<BarrierBase *> &BarrierManager::getBarrierVec()
 {
-	return *_pBarrierVec;
+    return *_pBarrierVec;
 }
 
 void BarrierManager::addBarrier(BarrierBase *pBarrier)
 {
-	if (_pBarrierVec) _pBarrierVec->pushBack(pBarrier);
-	_funcAddBarrierToLayer(pBarrier);
+    //注册障碍物流程
+    if (_pBarrierVec) _pBarrierVec->pushBack(pBarrier); //塞进向量
+    _funcAddBarrierToLayer(pBarrier); //塞进图层
 }
 
 void BarrierManager::setFuncAddBarrierToLayer(const std::function<void(Entity *)> &rFuncAddBarrierToLayer)
 {
-	_funcAddBarrierToLayer = rFuncAddBarrierToLayer;
+    _funcAddBarrierToLayer = rFuncAddBarrierToLayer;
 }
 
 void BarrierManager::registerBarrierDeadEvent()
 {
-	//这个是干嘛的？
-	NOTIFY->addObserver(this, callfuncO_selector(BarrierManager::removeBarrierFromManager), "BarrierDead", nullptr);
+    //注册障碍物被清理之后的处理函数，用本类的removeBarrierFromManager方法来处理
+    NOTIFY->addObserver(this, callfuncO_selector(BarrierManager::removeBarrierFromManager), "BarrierDead", nullptr);
 }
-//妈耶，这个完全不知道在干嘛
+
+
 void BarrierManager::removeBarrierFromManager(Ref *pBarrier)
 {
-	if (!(_pBarrierVec && _pBarrierVec->size())) return;
-	_pBarrierVec->eraseObject(reinterpret_cast<BarrierBase*>(pBarrier));
+    //障碍物清理流程
 
-	if (!_pBarrierVec->size())
-	{
-		auto aThemeIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
-		auto aLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
-		auto aLevelData = std::make_tuple(1, 1, aThemeIndex, aLevelIndex);
-		NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref*>(&aLevelData));
-	}
+    if (!(_pBarrierVec && _pBarrierVec->size())) return;
+    _pBarrierVec->eraseObject(reinterpret_cast<BarrierBase *>(pBarrier)); //向量中找到并删除
+
+    //如果障碍物全部被清理了
+    //得修改一下通关数据
+    if (!_pBarrierVec->size())
+    {
+        //构造通知信息
+        auto aThemeIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
+        auto aLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
+        auto aLevelData = std::make_tuple(1, 1, aThemeIndex, aLevelIndex);
+        //把信息广播出去
+        NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref *>(&aLevelData));
+    }
 }
 
 void BarrierManager::clearManager()
 {
-	_pBarrierVec->clear();
+    _pBarrierVec->clear();
 }
 
 void BarrierManager::clearBeAtkLockState()
 {
-	for (auto &iterBarrier : *_pBarrierVec)
-		iterBarrier->setAtkTarget(false);
+    //清除标记
+    for (auto &iterBarrier : *_pBarrierVec)
+        iterBarrier->setAtkTarget(false);
 }
-
-
-

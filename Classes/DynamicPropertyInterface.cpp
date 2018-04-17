@@ -3,6 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
+//  兄贵，这个也是看不太懂
 //
 
 #include "DynamicPropertyInterface.h"
@@ -17,14 +18,11 @@ bool DynamicPropertyInterface::init(const int &rId, const std::string &rSCsvFile
 	bool bRet = false;
 	do
 	{
+		auto pCsvUtil = CsvUtil::getInstance();
 		_pAnimation = Animation::create();
 		_pAnimation->retain();
-
-		auto pCsvUtil = CsvUtil::getInstance();
-
-		//读取表格文件并初始化两个属性
 		_iAtk = pCsvUtil->getInt(rId, en_Atk, rSCsvFileName);
-		_iSpeed = static_cast<unsigned int>(pCsvUtil->getInt(rId, en_Speed, rSCsvFileName));
+		_iSpeed = pCsvUtil->getInt(rId, en_Speed, rSCsvFileName);
 		bRet = true;
 	} while (0);
 
@@ -36,7 +34,7 @@ void DynamicPropertyInterface::createDynamicEntityAnimation(const std::vector<st
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
 	for (auto &animationFile : rAnimationFiles)
 		_pAnimation->addSpriteFrame(pSpriteFrameCache->getSpriteFrameByName(animationFile));
-	_pAnimation->setLoops(-1); //无限循环
+	_pAnimation->setLoops(-1);
 }
 
 

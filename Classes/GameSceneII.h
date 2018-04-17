@@ -21,9 +21,9 @@ public:
 
     ~GameSceneII() override;
 
-    //virtual Carrot* getCarrot();
+    virtual Carrot* getCarrot();
 
-    //virtual void clickChooseItem();
+    virtual void clickChooseItem();
 protected:
 
     bool init() override;
@@ -40,17 +40,17 @@ protected:
 
     virtual void unLoadSource();
 
-    //virtual void collisionUpDate(float dt);
+    virtual void collisionUpDate(float dt);
 
-    //virtual void createBarriers();
+    virtual void createBarriers();
 
-    //virtual void clearAllManager();
+    virtual void clearAllManager();
 
-    //virtual void registerGameEvent();
+    virtual void registerGameEvent();
 
-    //virtual void showGameEndLayer(Ref *pData);
+    virtual void showGameEndLayer(Ref *pData);
 
-    //virtual void startBuildMonster(Ref *pData);
+    virtual void startBuildMonster(Ref *pData);
 
 private:
 
@@ -75,6 +75,8 @@ private:
     Layer *_pOptLayer = nullptr; //设置图层?
 
     Carrot *_pCarrot = nullptr; //萝卜
+
+    Layer *_pCountDownLayer = nullptr; //计数图层
 
     int _iSourceCount = 0; //TODO 该如何改进呢
 };

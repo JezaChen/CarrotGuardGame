@@ -8,6 +8,7 @@
 #include"CommonDefine.h"
 
 class GameSceneII;
+class GameScene;
 
 class LoadingScene : public Scene
 {

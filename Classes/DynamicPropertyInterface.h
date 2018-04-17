@@ -45,7 +45,7 @@ protected:
 	 */
 	CC_SYNTHESIZE_PASS_BY_REF(unsigned int, _iSpeed, ISpeed);
 	/**
-	 * @brief ¹¥»÷ÄÜÁ¦
+	 * @brief ÉËº¦Öµ
 	 */
 	CC_SYNTHESIZE_PASS_BY_REF(int, _iAtk, IAtk);
 

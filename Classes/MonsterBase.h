@@ -20,6 +20,7 @@ class MonsterBase : public VictimEntityBase, public DynamicPropertyInterface
 public:
 	/**
 	 * @brief 根据怪物id创建怪物
+     * @method 设计模式中的工厂模式
 	 * @param rIId 怪物Id
 	 * @return 怪物ID对应的实例
 	 */
@@ -44,7 +45,7 @@ protected:
 	/**
 	 * @brief 模型精灵做动作
 	 * @extends DynamicPropertyInterface
-	 * @param rDt 调度器需要的参数
+	 * @param rDt 调度器需要的参数，延迟时间
 	 */
 	virtual void doAction(const float &rDt);
 

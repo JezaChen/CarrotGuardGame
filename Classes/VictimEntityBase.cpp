@@ -79,7 +79,7 @@ void VictimEntityBase::beHurt(const AtkProperty tBeHurtValue)
         schedule(schedule_selector(VictimEntityBase::closeHpSlot), _iHpCloseTime);
         setIHp(tIHp);
         _pHpSlot->setHp(getIHp());
-        behurtAction();
+ //       behurtAction(); //TODO 好像真的没啥用
     }
 
     else if (tIHp <= 0)
