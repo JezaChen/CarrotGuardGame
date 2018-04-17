@@ -1,19 +1,19 @@
 //
-//  DynamicPropertyInterface.cpp
+//  DynamicPropertyInterFace.cpp
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
 //  兄贵，这个也是看不太懂
 //
 
-#include "DynamicPropertyInterface.h"
+#include "DynamicPropertyInterFace.h"
 
-DynamicPropertyInterface::~DynamicPropertyInterface()
+DynamicPropertyInterFace::~DynamicPropertyInterFace()
 {
 	CC_SAFE_RELEASE_NULL(_pAnimation);
 }
 
-bool DynamicPropertyInterface::init(const int &rId, const std::string &rSCsvFileName)
+bool DynamicPropertyInterFace::init(const int &rId, const std::string &rSCsvFileName)
 {
 	bool bRet = false;
 	do
@@ -29,7 +29,7 @@ bool DynamicPropertyInterface::init(const int &rId, const std::string &rSCsvFile
 	return bRet;
 }
 
-void DynamicPropertyInterface::createDynamicEntityAnimation(const std::vector<std::string> &rAnimationFiles)
+void DynamicPropertyInterFace::createDynamicEntityAnimation(const std::vector<std::string> &rAnimationFiles)
 {
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
 	for (auto &animationFile : rAnimationFiles)

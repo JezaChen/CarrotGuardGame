@@ -813,6 +813,12 @@
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/AppDelegate.h">
 			<Option target="MyGame"/>
 		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/BarrierBuilder.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/BarrierBuilder.h">
+			<Option target="MyGame"/>
+		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/DataStatisticsLayer.cpp">
 			<Option target="MyGame"/>
 		</Unit>
@@ -871,6 +877,12 @@
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/LocalLevelDataUtil.h">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterBuilder.cpp">
+			<Option target="MyGame"/>
+		</Unit>
+		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterBuilder.h">
 			<Option target="MyGame"/>
 		</Unit>
 		<Unit filename="/media/jeza/Windows/Users/jeza1/source/repos/CarrotGuardGame/Classes/MonsterHelpLayer.cpp">
