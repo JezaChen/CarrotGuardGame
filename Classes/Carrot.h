@@ -1,3 +1,10 @@
+//
+//Carrot.h
+//CarrotFantasy
+//
+//Created by 何泓兵 on 18-4-11
+//
+//
 #pragma once
 #ifndef __CarrotFantasy__Carrot__
 #define __CarrotFantasy__Carrot__
@@ -8,15 +15,20 @@ class Carrot :public Entity
 {
 
 public:
-
+	//工厂模式；
 	CREATE_FUNC(Carrot);
-
+	/**
+	* @brief 胡萝卜的矩形框图
+	*/
 	virtual Rect getBoundingBox()const;
 
 	virtual ~Carrot();
 
 protected:
-
+	/**
+	* @brief 胡萝卜及其生命值的图层设定
+	* @details 胡萝卜被玷污以及自动卖萌；
+	*/
 	virtual bool init();
 	/**
 	* @brief 摇晃动作或眨眼动作

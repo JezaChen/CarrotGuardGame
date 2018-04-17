@@ -3,7 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-12.
-//  看不太懂
+//  TODO：写多了？？？
 //
 #include "CollisionManager.h"
 #include "BarrierBase.h"

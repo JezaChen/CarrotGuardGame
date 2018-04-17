@@ -4,7 +4,7 @@
 //
 //  Created by 何泓兵 on 18-4-8.
 //
-//  有一个空的函数
+//  
 
 #include "BarrierBase.h"
 #include "BarrierManager.h"
@@ -27,13 +27,14 @@ bool BarrierBase::init(const int &rId)
 BarrierBase * BarrierBase::create(const int &rId) 
 {
 
-	BarrierBase * pBarriers = new BarrierBase(); //new一个出来
+	BarrierBase * pBarriers = new BarrierBase(); //new一个出来,分配内存空间；
 
 	if (pBarriers && pBarriers->init(rId)) //进行初始化操作
 	{
-		pBarriers->autorelease();
+		pBarriers->autorelease();//设置自动释放；
 		return pBarriers; //要是初始化成功了，出厂
 	}
+	//初始化不成功就删除它；
 	CC_SAFE_DELETE(pBarriers);
 	return nullptr;
 }
@@ -42,7 +43,8 @@ void BarrierBase::deadAction(const std::string &rSDeadImageFile)
 {
 	NOTIFY->postNotification("BarrierDead", this); //发出障碍物挂掉的通知
 	MapUtil::getInstance()->removeBarrierRect(getPosition()); //地图去除障碍物，变成炮塔可用位置
-	VictimEntityBase::deadAction();
+	//自下而上调用死亡函数；
+	VictimEntityBase::deadAction(rSDeadImageFile);
 }
 
 

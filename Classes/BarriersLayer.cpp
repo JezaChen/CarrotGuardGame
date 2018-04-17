@@ -14,6 +14,7 @@ bool BarriersLayer::init()
 
 	do
 	{
+		//自上而下的初始化函数
 		CC_BREAK_IF(!EntityLayerBase::init());
 		bRet = true;
 	} while (0);

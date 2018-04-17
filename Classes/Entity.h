@@ -63,7 +63,7 @@ public:
     virtual Sprite *getSprite();
 
     /**
-     *  @brief 获取精灵的大小和源
+     *  @brief 获取精灵的大小
      *  @see 精灵大小设置完毕
      *  @return Rect 重置的矩形
      */

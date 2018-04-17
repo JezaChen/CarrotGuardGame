@@ -99,7 +99,7 @@ void VictimEntityBase::deadAction(const std::string &rSDeadImageFile)
     NOTIFY->postNotification("monsterDeadMoney", reinterpret_cast<Ref *>(&tValue)); //发出死亡通知，以更新金钱
     if (_pHpSlot) _pHpSlot->removeFromParent(); //若生命槽显示，关闭生命槽的显示
     if (_pLockAtkTarget) _pLockAtkTarget->removeFromParent(); //若锁定标识显示，关闭锁定标识的显示
-    Entity::deadAction(); //执行实体死亡画面
+    Entity::deadAction(rSDeadImageFile); //执行实体死亡画面
 }
 
 void VictimEntityBase::createHpSlotSprite()

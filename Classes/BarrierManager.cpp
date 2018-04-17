@@ -3,7 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
-//  存在不懂问题
+//  TODO
 //
 
 #include "BarrierManager.h"
@@ -27,7 +27,7 @@ bool BarrierManager::init()
 
     do
     {
-        _pBarrierVec = new Vector<BarrierBase *>(); //new一个向量
+        _pBarrierVec = new Vector<BarrierBase *>(); //new一个向量，分配内存；
         registerBarrierDeadEvent(); //注册事件
 
         bRet = true;
@@ -55,20 +55,21 @@ void BarrierManager::setFuncAddBarrierToLayer(const std::function<void(Entity *)
 
 void BarrierManager::registerBarrierDeadEvent()
 {
-    //注册障碍物被清理之后的处理函数，用本类的removeBarrierFromManager方法来处理
+    //注册障碍物被清理之后的处理函数，用本类的removeBarrierFromManager方法来处理；
+	//发出字符串"BarrierDead"，就用以上函数处理；
     NOTIFY->addObserver(this, callfuncO_selector(BarrierManager::removeBarrierFromManager), "BarrierDead", nullptr);
 }
 
 
 void BarrierManager::removeBarrierFromManager(Ref *pBarrier)
 {
-    //障碍物清理流程
-
+    //障碍物清理流程；
     if (!(_pBarrierVec && _pBarrierVec->size())) return;
     _pBarrierVec->eraseObject(reinterpret_cast<BarrierBase *>(pBarrier)); //向量中找到并删除
 
     //如果障碍物全部被清理了
     //得修改一下通关数据
+	//TODO：没有通知出来？？？？
     if (!_pBarrierVec->size())
     {
         //构造通知信息
@@ -88,6 +89,7 @@ void BarrierManager::clearManager()
 void BarrierManager::clearBeAtkLockState()
 {
     //清除标记
+	//TODO：怎么是全部的障碍物都清空状态，浪费时间；
     for (auto &iterBarrier : *_pBarrierVec)
         iterBarrier->setAtkTarget(false);
 }

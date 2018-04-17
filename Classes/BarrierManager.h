@@ -9,7 +9,7 @@
 #define __CarrotFantasy__BarrierManager__
 
 #include "CommonDefine.h"
-
+//为了减少头文件包含；
 class Entity;
 
 class BarrierManager : public Ref
@@ -28,7 +28,7 @@ public:
      * @brief 获取障碍物向量
      * @return 障碍物向量的引用
 	 */
-	BarrierVec &getBarrierVec();
+	BarrierVec& getBarrierVec();
 
 	/**
 	 * @brief 设置用于添加障碍物到图层的处理函数
@@ -79,7 +79,7 @@ protected:
 private:
 	//赋空vector；
 	BarrierVec *_pBarrierVec = nullptr; //管理障碍物用的向量
-
+	//用于添加障碍物到图层的函数；
 	std::function<void(Entity*)> _funcAddBarrierToLayer;
 
 private:

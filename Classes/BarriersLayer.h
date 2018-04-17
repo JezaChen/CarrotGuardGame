@@ -25,7 +25,7 @@ public:
 
 protected:
 	/*
-	 * @brief 执行障碍物实体层基类init
+	 * @brief 执行障碍物实体层基类的初始化；
 	 */
 	virtual bool init();
 
