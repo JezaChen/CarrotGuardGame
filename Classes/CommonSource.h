@@ -146,7 +146,7 @@ const static std::vector<std::string> CHOOSESOURCE =
 {
     "select_normal_CN.png",
     "select_pressed_CN.png"
-};
+}; //选择关卡按钮图片
 
 /*
 * 标题大小

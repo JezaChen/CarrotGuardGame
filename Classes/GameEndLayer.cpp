@@ -84,7 +84,7 @@ void GameEndLayer::createMenu()
 		auto enLevelSelectScene = std::make_tuple(en_LevelSelectScene, SceneManager::getInstance()->getCurrentPageIndex());
 		NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&enLevelSelectScene));
 	});
-	pChooseLevelItem->setPosition(Vec2(367, 220));
+	pChooseLevelItem->setPosition(Vec2(-120, -100));
 
 	auto pAgainItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName(std::get<1>(GAMEENDSOURCE[_enGameEndType])), Sprite::createWithSpriteFrameName(std::get<2>(GAMEENDSOURCE[_enGameEndType])), [&](Ref *pSender)
 	{
@@ -94,9 +94,10 @@ void GameEndLayer::createMenu()
 		else tEnGameScene = std::make_tuple(en_GameScene, tCurLevelIndex + 1);
 		NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&tEnGameScene));
 	});
-	pAgainItem->setPosition(Vec2(600, 220));
+	pAgainItem->setPosition(Vec2(120, -100));
 
 	auto pMenu = Menu::create(pChooseLevelItem, pAgainItem, nullptr);
+    //pMenu->setAnchorPoint(Vec2::ZERO);
 	addChild(pMenu);
 
 	addChild(SharedMenu::create());
@@ -104,6 +105,7 @@ void GameEndLayer::createMenu()
 
 void GameEndLayer::loadInfo()
 {
+    //当前关卡有多少波怪
 	auto pMonsterBatchNode = NumSprite::createNum(StringUtils::format("%02d", LevelConfigUtil::getInstance()->getCurrentMonsterBatchCount()), MONEYNUMIMAGE);
 	pMonsterBatchNode->setPosition(Vec2(563, 350));
 	addChild(pMonsterBatchNode);
@@ -111,10 +113,12 @@ void GameEndLayer::loadInfo()
 	auto tMonsterBatchCount = GameManager::getInstance()->getIMonsterBatch();
 	if (en_GameLose == _enGameEndType) --tMonsterBatchCount;
 
+    //杀了多少波怪
 	auto pCurMonsterBatchNode = NumSprite::createNum(StringUtils::format("%02d", tMonsterBatchCount), MONSTERBATCHIMAGE);
 	pCurMonsterBatchNode->setPosition(Vec2(465, 350));
 	addChild(pCurMonsterBatchNode);
 
+    //当前关卡序号
 	auto pCurLevelNode = NumSprite::createNum(StringUtils::format("%02d", SceneManager::getInstance()->getCurrentLevelIndex() + 1), LITTLENUMIMAGE);
 	pCurLevelNode->setPosition(Vec2(415, 290));
 	addChild(pCurLevelNode);
@@ -183,8 +187,8 @@ void GameEndLayer::registerNoTouch()
 {
 	auto pListener = EventListenerTouchOneByOne::create();
 
-	pListener->setSwallowTouches(true);
-	pListener->onTouchBegan = [](Touch *pTouch, Event *pEvent) {return true; };
+	pListener->setSwallowTouches(true); //设置吞没事件
+	pListener->onTouchBegan = [](Touch *pTouch, Event *pEvent) {return true;};
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(pListener, this);
 }
 

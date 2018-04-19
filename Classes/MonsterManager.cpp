@@ -64,7 +64,7 @@ void MonsterManager::setFuncAddMonsterToLayer(const std::function<void(Entity*)>
 void MonsterManager::registerDeadEvent()
 {
 	NOTIFY->addObserver(this, callfuncO_selector(MonsterManager::removeMonsterFromManager), "MonsterDead", nullptr);
-	NOTIFY->addObserver(this, callfuncO_selector(MonsterManager::openCheckGameEnd), "openCheckGameEnd", nullptr);
+	NOTIFY->addObserver(this, callfuncO_selector(MonsterManager::openCheckGameEnd), "openCheckGameWin", nullptr);
 }
 
 void MonsterManager::removeMonsterFromManager(Ref *pMonster)
@@ -72,7 +72,7 @@ void MonsterManager::removeMonsterFromManager(Ref *pMonster)
 	if (!(_pMonsterVec && _pMonsterVec->size())) return;
 	_pMonsterVec->eraseObject(reinterpret_cast<MonsterBase*>(pMonster));
 
-	if (_bIsOpenCheckGameEnd)
+	if (_bIsOpenCheckGameEnd) //已经开启了游戏结束检查
 	{
 		if (!_pMonsterVec->size())
 		{

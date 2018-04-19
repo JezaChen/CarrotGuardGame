@@ -15,8 +15,6 @@ class  CountDownLayer :public Layer
 public:
 	virtual bool init();
 
-	static Scene * createScene();
-
 	CREATE_FUNC(CountDownLayer);
 
 protected:
@@ -26,6 +24,10 @@ protected:
 private:
 	int i = 0;
 	Sprite * countDownSprite;
+    Sprite* effPosSprites = nullptr;
+    Sequence* _pFadeSequence = nullptr;
+
+
 	void Num1(float t);
 	void Num2(float t);
 	void Num3(float t);
@@ -35,6 +37,9 @@ private:
 	void runArrow2(float t);
 	void runArrow3(float t);
 	void clearArrow(float t);
-	void childDispear(float t);
+	void childDisappear(float t);
+
+    void initEffectPosBlink();
+    void effectPosBlink(float t);
 };
 #endif/* defined(__CarrotFantasy__CountDownLayer__)*/

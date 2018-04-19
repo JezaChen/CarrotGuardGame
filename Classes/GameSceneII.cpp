@@ -38,6 +38,7 @@ GameSceneII::~GameSceneII()
     CC_SAFE_RELEASE_NULL(_pScoreAndControllerLayer);
     CC_SAFE_RELEASE_NULL(_pTiledMapLayer);
     CC_SAFE_RELEASE_NULL(_pTowersLayer);
+    CC_SAFE_RELEASE_NULL(_pCountDownLayer);
     CC_SAFE_DELETE(_pSourceVec);
 
     clearAllManager();
@@ -83,7 +84,7 @@ void GameSceneII::onEnter()
 
     SoundUtil::getInstance()->playBackgroundSound(StringUtils::format(THEMEBACKGROUNDMUSIC, SceneManager::getInstance()->getCurrentPageIndex() + 1).c_str());
 
-    schedule(schedule_selector(GameSceneII::collisionUpDate), 0.2);
+    schedule(schedule_selector(GameSceneII::collisionUpDate), 0.05);
 }
 
 void GameSceneII::onExit()
@@ -188,6 +189,7 @@ void GameSceneII::createLayers()
 
     _pCountDownLayer = CountDownLayer::create();
     _pCountDownLayer->setName("CoundDown");
+    _pCountDownLayer->retain();
 }
 
 void GameSceneII::addLayers()
@@ -228,7 +230,7 @@ void GameSceneII::startBuildMonster(Ref *pData)
 {
     addChild(MonsterBuilder::create());
     auto aScheduler = Director::getInstance()->getScheduler();
-    aScheduler->setTimeScale(2.0f); //TODO 速度
+    aScheduler->setTimeScale(1.8f); //TODO 速度
 }
 
 void GameSceneII::createBarriers()

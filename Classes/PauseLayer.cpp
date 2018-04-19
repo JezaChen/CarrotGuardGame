@@ -55,7 +55,7 @@ void PauseLayer::createMenu()
 	pBtnResume->setPosition(Vec2(481, 417));
 
 	MenuItemSprite *pBtnRstart = MenuItemSprite::create(
-		Sprite::createWithSpriteFrameName("C"), Sprite::createWithSpriteFrameName("menu_restart_pressed_CN.png"), [this](Ref *pSender)
+		Sprite::createWithSpriteFrameName("menu_restart_normal_CN.png"), Sprite::createWithSpriteFrameName("menu_restart_pressed_CN.png"), [this](Ref *pSender)
 	{
 		auto enGameScene = std::make_tuple(en_GameScene, SceneManager::getInstance()->getCurrentLevelIndex());
 		NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&enGameScene));

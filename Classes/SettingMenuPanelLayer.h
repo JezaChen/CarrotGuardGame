@@ -32,6 +32,10 @@ protected:
 
 private:
     LayerMultiplex *_pLayerMultiplex = nullptr;
+
+    MenuItemToggle* aOptionBtn = nullptr; //选项菜单项
+    MenuItemToggle* aStatisticsBtn = nullptr; //数据菜单项
+    MenuItemToggle* aAboutUsBtn = nullptr; //关于团队菜单项
 };
 
 #endif //SETTINGMENUPANELLAYER_H
