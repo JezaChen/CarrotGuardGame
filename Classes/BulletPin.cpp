@@ -6,7 +6,6 @@
 //
 //
 #include "BulletPin.h"
-#include "BulletPin.h"
 #include "VictimEntityBase.h"
 
 bool BulletPin::init(const int & rId, VictimEntityBase *rVictimEntity)
@@ -73,7 +72,7 @@ void BulletPin::doMove() {
 		deadAction(_sName);
 	});
 	//这个斜边参数没有用到，莫名其妙；
-	float Hypotenuse = Vec2::ZERO.distance(Director::getInstance()->getVisibleSize());
+	//float Hypotenuse = Vec2::ZERO.distance(Director::getInstance()->getVisibleSize());
 	//普通的攻击，不是穿透攻击；
 	Vec2 MovetoPosition = _pAtkTarget->getPosition() - this->getPosition();
 	float MoveDistance = this->getPosition().distance(_pAtkTarget->getPosition());

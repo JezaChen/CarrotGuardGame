@@ -59,7 +59,7 @@ void BulletBlueStar::doMove() {
 	doAction();
 
 	Animation * pAnimation = Animation::create();
-	//七个开花动画，依次创建；
+	//六个开花动画，依次创建；
 	for (int i = 1; i < 7; i++)
 	{
 		std::string SpriteFrameName = StringUtils::format("PBStar-1%d.png", i);
