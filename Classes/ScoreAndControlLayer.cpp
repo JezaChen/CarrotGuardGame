@@ -81,7 +81,7 @@ void ScoreAndControllerLayer::createTopPanel()
 	},
 		pSpeedNormalItem, pSpeedDoubleItem, nullptr);
 	//玄学调参；
-	pSpeedToggleItem->setPosition(685, 597);
+	pSpeedToggleItem->setPosition(200, 275);
 
 	auto pPauseItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("pause01.png"), Sprite::createWithSpriteFrameName("pause02.png"));
 	auto pContinueItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("pause11.png"), Sprite::createWithSpriteFrameName("pause12.png"));
@@ -94,13 +94,13 @@ void ScoreAndControllerLayer::createTopPanel()
 		pGameManager->setIsPause(!pGameManager->getIsPause());
 
 	}, pPauseItem, pContinueItem, nullptr);
-	pPauseItemToggleItem->setPosition(795, 597);
+	pPauseItemToggleItem->setPosition(300, 275);
 
 	auto pChooseItems = MenuItemSprite::create(Sprite::createWithSpriteFrameName("menu01.png"), Sprite::createWithSpriteFrameName("menu02.png"), [&](Ref *pSender)
 	{
 		this->clickChooseItem();
 	});
-	pChooseItems->setPosition(880, 597);
+	pChooseItems->setPosition(400, 275);
 	_pChooseItem = pChooseItems;
 	//菜单面板；
 	auto pMenuPanel = Menu::create(pSpeedToggleItem, pPauseItemToggleItem, pChooseItems, nullptr);

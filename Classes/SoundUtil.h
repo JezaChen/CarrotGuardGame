@@ -31,7 +31,11 @@ public:
     @brief 设置、获取背景音乐是否打开
     */
     bool getIsBackgroundSoundOpen() { return _bIsBackgroundSoundOpen; }
-    void setIsBackgroundSoundOpen(const bool &_bIsOpen) { _bIsBackgroundSoundOpen = _bIsOpen; }
+    void setIsBackgroundSoundOpen(const bool &_bIsOpen)
+    {
+        _bIsBackgroundSoundOpen = _bIsOpen;
+        _bIsOpen ? playBackgroundSound(BACKGROUNDSOUND) : stopBackgroundSound(); //再次调用播放接口
+    }
 
     /**
     @brief 设置、获取特效音乐是否打开
@@ -51,6 +55,8 @@ protected:
     }
 
 protected:
+    std::string formerBgMusic = ""; //之前的背景音乐
+
     bool _bIsBackgroundSoundOpen;  //背景音乐是否打开
     bool _bIsEffectSoundOpen;  //特效音效是否打开
     bool _bIsBackgroundSoundPlaying; //背景音乐是否正在播放中，避免情景切换会导致重复从头播放

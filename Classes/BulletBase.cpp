@@ -107,8 +107,6 @@ void BulletBase::doMove()
     float MoveDistance;
     switch (_iBulletType)
     {
-        //todo 星星似乎没写好
-        //todo 好像不用写了
         case en_NormalBullet:
         case en_GunBullet:
             MovetoPosition = _pAtkTarget->getPosition() - this->getPosition();

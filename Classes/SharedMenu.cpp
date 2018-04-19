@@ -36,15 +36,15 @@ void SharedMenu::createMenu()
 
 	auto pSinaSharedItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("share_tweibo_normal.png"), Sprite::createWithSpriteFrameName("share_tweibo_press.png"), [](Ref *pSender) {
 		log("Sina"); });
-	pSinaSharedItem->setPosition(Vec2(340, 37));
+	pSinaSharedItem->setPosition(Vec2(-150, -280));
 
 	auto pWeChatSharedItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("share_wechat_normal.png"), Sprite::createWithSpriteFrameName("share_wechat_press.png"), [](Ref *pSender) {
 		log("Weixin"); });
-	pWeChatSharedItem->setPosition(Vec2(480, 37));
+	pWeChatSharedItem->setPosition(Vec2(0, -280));
 
 	auto pWeiBoSharedItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("share_weibo_normal.png"), Sprite::createWithSpriteFrameName("share_weibo_normal.png"), [](Ref *pSender) {
 		log("Weibo"); });
-	pWeiBoSharedItem->setPosition(Vec2(620, 37));
+	pWeiBoSharedItem->setPosition(Vec2(150, -280));
 
 	auto pMenu = Menu::create(pSinaSharedItem, pWeChatSharedItem, pWeiBoSharedItem, nullptr);
 	addChild(pMenu);

@@ -3,17 +3,11 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-13.
-//  还没看过，晚上看
 //
 #include "CountDownLayer.h"
 #include "MapUtil.h"
 #include "SoundUtil.h"
-Scene * CountDownLayer::createScene() {
-	auto scene = Scene::create();
-	auto layer = CountDownLayer::create();
-	scene->addChild(layer);
-	return scene;
-}
+
 bool CountDownLayer::init() {
 	if (!Layer::init())
 	{
@@ -25,7 +19,11 @@ bool CountDownLayer::init() {
 	countDownSprite = Sprite::createWithSpriteFrameName("countdown_11.png");
 	countDownSprite->setName("countDownSprite");
 	countDownSprite->setPosition(480, 320);
-	addChild(countDownSprite);
+	addChild(countDownSprite, 2);
+
+    //initEffectPosBlink();
+    this->scheduleOnce(schedule_selector(CountDownLayer::effectPosBlink), 0.1f);
+
 	this->schedule(schedule_selector(CountDownLayer::runArrow1), 0.40f);
 	this->schedule(schedule_selector(CountDownLayer::runArrow2), 0.60f);
 	this->schedule(schedule_selector(CountDownLayer::runArrow3), 0.80f);
@@ -34,7 +32,9 @@ bool CountDownLayer::init() {
 	this->scheduleOnce(schedule_selector(CountDownLayer::Num2), 1.0f);
 	this->scheduleOnce(schedule_selector(CountDownLayer::Num3), 2.0f);
 	this->scheduleOnce(schedule_selector(CountDownLayer::GameGo), 3.0f);
-	this->scheduleOnce(schedule_selector(CountDownLayer::childDispear), 3.6f);
+	this->scheduleOnce(schedule_selector(CountDownLayer::childDisappear), 3.6f);
+
+
 	registerNoTouch();
 	return true;
 }
@@ -43,7 +43,7 @@ void CountDownLayer::Circle() {
 	auto r1 = RotateBy::create(3.0f, -1080);
 	run->setPosition(100, 100);
 	run->runAction(r1);
-	countDownSprite->addChild(run);
+	countDownSprite->addChild(run, 2);
 }
 void CountDownLayer::runArrow1(float t) {
 	auto arrowSprite1 = Sprite::createWithSpriteFrameName("arrow.png");
@@ -53,26 +53,26 @@ void CountDownLayer::runArrow1(float t) {
 	Vec2 point1 = value.at(0);
 	Vec2 point2 = value.at(1);
 
-	if (point1.x == point2.x && point1.y >= point2.y)
+	if (point1.x == point2.x && point1.y >= point2.y) //向下标箭头
 	{
 		arrowSprite1->setRotation(90);
 		arrowSprite1->setPosition(point1.x + 40, point1.y - 60);
 
 	}
-	if (point1.x == point2.x && point1.y < point2.y)
+	else if (point1.x == point2.x && point1.y < point2.y) //向上标箭头
 	{
 		arrowSprite1->setRotation(-90);
 		arrowSprite1->setPosition(point1.x + 40, point1.y + 60);
 
 	}
-	if (point1.y == point2.y && point1.x >= point2.x)
+	else if (point1.y == point2.y && point1.x >= point2.x) //向左标箭头
 	{
-		arrowSprite1->setScaleX(-1);
+		arrowSprite1->setScaleX(-1); //镜面翻转
 		arrowSprite1->setPosition(point1.x - 5, point1.y - 30);
 	}
-	if (point1.y == point2.y && point1.x < point2.x)
+	else if (point1.y == point2.y && point1.x < point2.x)
 	{
-		arrowSprite1->setPosition(point1.x + 80, point1.y - 30);
+		arrowSprite1->setPosition(point1.x + 80, point1.y - 30); //向右标箭头
 	}
 	auto fade = FadeOut::create(0.7f);
 	arrowSprite1->runAction(fade);
@@ -94,18 +94,18 @@ void CountDownLayer::runArrow2(float t) {
 		arrowSprite2->setPosition(point1.x + 40, point1.y - 90);
 
 	}
-	if (point1.x == point2.x && point1.y < point2.y)
+	else if (point1.x == point2.x && point1.y < point2.y)
 	{
 		arrowSprite2->setRotation(-90);
 		arrowSprite2->setPosition(point1.x + 40, point1.y + 90);
 
 	}
-	if (point1.y == point2.y && point1.x >= point2.x)
+	else if (point1.y == point2.y && point1.x >= point2.x)
 	{
 		arrowSprite2->setScaleX(-1);
 		arrowSprite2->setPosition(point1.x - 35, point1.y - 30);
 	}
-	if (point1.y == point2.y && point1.x < point2.x)
+	else if (point1.y == point2.y && point1.x < point2.x)
 	{
 		arrowSprite2->setPosition(point1.x + 110, point1.y - 30);
 	}
@@ -129,17 +129,17 @@ void CountDownLayer::runArrow3(float t) {
 		arrowSprite3->setRotation(90);
 		arrowSprite3->setPosition(point1.x + 40, point1.y - 120);
 	}
-	if (point1.x == point2.x && point1.y < point2.y)
+	else if (point1.x == point2.x && point1.y < point2.y)
 	{
 		arrowSprite3->setRotation(-90);
 		arrowSprite3->setPosition(point1.x + 40, point1.y + 120);
 	}
-	if (point1.y == point2.y && point1.x >= point2.x)
+	else if (point1.y == point2.y && point1.x >= point2.x)
 	{
 		arrowSprite3->setScaleX(-1);
 		arrowSprite3->setPosition(point1.x - 65, point1.y - 30);
 	}
-	if (point1.y == point2.y && point1.x < point2.x)
+	else if (point1.y == point2.y && point1.x < point2.x)
 	{
 		arrowSprite3->setPosition(point1.x + 140, point1.y - 30);
 	}
@@ -155,7 +155,7 @@ void CountDownLayer::Num1(float t) {
 	Circle();
 	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
 	three->setPosition(100, 100);
-	countDownSprite->addChild(three);
+	countDownSprite->addChild(three, 2);
 }
 void CountDownLayer::Num2(float t) {
 	countDownSprite->removeAllChildren();
@@ -163,7 +163,7 @@ void CountDownLayer::Num2(float t) {
 	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
 	auto two = Sprite::createWithSpriteFrameName("countdown_02.png");
 	two->setPosition(100, 100);
-	countDownSprite->addChild(two);
+	countDownSprite->addChild(two, 2);
 
 }
 void CountDownLayer::Num3(float t) {
@@ -172,7 +172,7 @@ void CountDownLayer::Num3(float t) {
 	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
 	auto one = Sprite::createWithSpriteFrameName("countdown_03.png");
 	one->setPosition(100, 100);
-	countDownSprite->addChild(one);
+	countDownSprite->addChild(one, 2);
 }
 void CountDownLayer::GameGo(float t) {
 	countDownSprite->removeAllChildren();
@@ -186,14 +186,49 @@ void CountDownLayer::GameGo(float t) {
 	countDownSprite->addChild(one);
 	one->runAction(Spawn::create(scale, roate, NULL));
 }
-void CountDownLayer::childDispear(float t) {
-	this->removeChildByName("countDownSprite");
+void CountDownLayer::childDisappear(float t) {
+	//this->removeChildByName("countDownSprite");
+    this->removeAllChildren();
 	NOTIFY->postNotification("startBuildMonster");
 	removeFromParent();
 }
 
+void CountDownLayer::initEffectPosBlink()
+{
+    effPosSprites = Sprite::create();
+    auto aFadeIn = FadeIn::create(0.5f);
+    auto aFadeOut = FadeOut::create(0.5f);
+    _pFadeSequence = Sequence::create(aFadeIn, DelayTime::create(0.5f), aFadeOut, DelayTime::create(0.2f), 
+        aFadeIn, DelayTime::create(0.5f), aFadeOut, nullptr);
+
+    auto effPos = MapUtil::getInstance()->getEffectTowerPoses();
+
+    for (auto &iter : effPos)
+    {
+        float x = iter.origin.x;
+        float y = iter.origin.y;
+        float width = iter.size.width;
+        float height = iter.size.height;
+
+        auto posSprite = Sprite::createWithSpriteFrameName("select_00.png");
+        posSprite->setPosition(x + width / 2, y + height / 2); 
+        posSprite->setCascadeOpacityEnabled(true); //MUST BE ATTENTIONED 孩子必须要开启级联才能跟着老爸同步透明度
+        effPosSprites->addChild(posSprite);
+    }
+    effPosSprites->setCascadeOpacityEnabled(true); //老爸也要开启级联才能与孩子一块更新透明度
+    effPosSprites->setName("effPosSprites");
+    addChild(effPosSprites, 0);
+}
+
+void CountDownLayer::effectPosBlink(float t)
+{
+    initEffectPosBlink();
+    effPosSprites->runAction(_pFadeSequence);
+}
+
 void CountDownLayer::registerNoTouch()
 {
+    //倒计时的时候触控无效了
 	auto pListener = EventListenerTouchOneByOne::create();
 
 	pListener->setSwallowTouches(true);

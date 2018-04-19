@@ -99,6 +99,11 @@ ActionInterval * Carrot::doShakeOrBlink(int iImageFirstNumber, int iImageCount)
 	//运行一次动画即可；
 	pAnimation->setLoops(1);
 	Animate * pAnimate = Animate::create(pAnimation);
+
+    //胡萝卜随机发出卖萌声音；
+    int tRandom = rand() % 3;
+    SoundUtil::getInstance()->playEffectSound(StringUtils::format(CARROT, tRandom + 1));
+
 	return pAnimate;
 }
 
@@ -106,7 +111,7 @@ void Carrot::doAction(float t)
 {
 	//停止动作；
 	getSprite()->stopAllActions();
-	int tRandom = rand() % 3;
+    int tRandom = rand() % 3;
 	switch (tRandom)
 	{
 		//按随机方式确立执行胡萝卜的卖萌动画；
@@ -120,8 +125,7 @@ void Carrot::doAction(float t)
 	default:
 		break;
 	}
-	//胡萝卜随机发出卖萌声音；
-	SoundUtil::getInstance()->playEffectSound(StringUtils::format(CARROT, tRandom + 1));
+
 }
 
 void Carrot::CarrotBeHurt(Ref * pRef)

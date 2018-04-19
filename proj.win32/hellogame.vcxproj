@@ -221,7 +221,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\EntityLayerBase.cpp" />
     <ClCompile Include="..\Classes\BarrierFactory.cpp" />
     <ClCompile Include="..\Classes\BarriersLayer.cpp" />
-    <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\DesignLayer.cpp" />
     <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\BulletBase.cpp" />
@@ -319,7 +318,6 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\EntityLayerBase.h" />
     <ClInclude Include="..\Classes\BarrierFactory.h" />
     <ClInclude Include="..\Classes\BarriersLayer.h" />
-    <ClInclude Include="..\Classes\DataCollectLayer.h" />
     <ClInclude Include="..\Classes\DesignLayer.h" />
     <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\BulletBase.h" />

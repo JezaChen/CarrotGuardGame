@@ -24,7 +24,6 @@
     <ClCompile Include="..\Classes\PageViewLayer.cpp" />
     <ClCompile Include="..\Classes\BarrierFactory.cpp" />
     <ClCompile Include="..\Classes\BarriersLayer.cpp" />
-    <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\DesignLayer.cpp" />
     <ClCompile Include="..\Classes\GameManager.cpp" />
     <ClCompile Include="..\Classes\MonsterHelpLayer.cpp" />
@@ -123,7 +122,6 @@
     <ClInclude Include="..\Classes\PageViewLayer.h" />
     <ClInclude Include="..\Classes\BarrierFactory.h" />
     <ClInclude Include="..\Classes\BarriersLayer.h" />
-    <ClInclude Include="..\Classes\DataCollectLayer.h" />
     <ClInclude Include="..\Classes\DesignLayer.h" />
     <ClInclude Include="..\Classes\GameManager.h" />
     <ClInclude Include="..\Classes\MonsterHelpLayer.h" />
