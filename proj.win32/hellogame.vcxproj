@@ -168,6 +168,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CollisionManager.cpp" />
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
     <ClCompile Include="..\Classes\GameEndLayer.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
@@ -268,6 +269,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\CountDownLayer.h" />
     <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\Config.h" />
+    <ClInclude Include="..\Classes\DataCollectLayer.h" />
     <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
     <ClInclude Include="..\Classes\GameEndLayer.h" />
