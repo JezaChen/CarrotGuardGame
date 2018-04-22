@@ -79,9 +79,9 @@ void BulletBlueStar::doMove() {
 		{
 			//获取怪物vector；
 			Vector<MonsterBase *> MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-			for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
+            for (int i = MonsterVector.size() - 1; i >= 0; i--)
 			{
-				MonsterBase * pMonster = (MonsterBase *)(*mIter);
+				MonsterBase * pMonster = (MonsterBase *)(MonsterVector.at(i));
 				//检测矩形相交，即检测是否击中；
 				if (rect.intersectsRect(pMonster->getBoundingBox()))
 				{
@@ -93,21 +93,16 @@ void BulletBlueStar::doMove() {
 				{
 					/*mIter = (auto)*/
 					//清除；
-					//TODO：重复赘余；
 					MonsterVector.eraseObject(pMonster);
-				}
-				else
-				{
-					++mIter;
 				}
 			}
 		}
 		else//为0的是障碍物的动画帧数；
 		{
 			Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-			for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
+            for (int i = BarrierVector.size() - 1; i >= 0; i--)
 			{
-				BarrierBase * pBarrier = (BarrierBase *)(*bIter);
+				BarrierBase * pBarrier = (BarrierBase *)(BarrierVector.at(i));
 				if (rect.intersectsRect(pBarrier->getBoundingBox()))
 				{
 					//击中，设置伤害；
@@ -119,10 +114,6 @@ void BulletBlueStar::doMove() {
 					/*bIter = (auto)*/ 
 					//清除；
 					BarrierVector.eraseObject(pBarrier);
-				}
-				else
-				{
-					++bIter;
 				}
 			}
 		}

@@ -98,6 +98,35 @@ enum CsvBulletProperty
     en_DeadActCount
 };
 
+enum CsvBossProperty
+{
+    en_BossName = 1,
+    en_BossModelName,
+    en_BossValue,
+    en_BossAnimationCount,
+    en_BossLevel,
+    en_BossHp,
+    en_BossSpeed,
+    en_BossAtk,
+    en_BossTime
+};
+
+/**
+ * @breif 用户数据枚举
+ * @details 什么通关总数的统计之类的
+ * @author 陈建彰
+ */
+enum StatisticType
+{
+    en_Stat_Adventure,
+    en_Stat_Cryptic,
+    en_Stat_BossMode,
+    en_Stat_Money,
+    en_Stat_BossAttack,
+    en_Stat_MonsterAttack,
+    en_Stat_BarrierClear
+};
+
 /**
 Atk State
 */
@@ -126,8 +155,8 @@ enum SceneType
     en_GameHelpScene,
     en_ThemeSelectScene,
     en_LevelSelectScene,
-    en_GameScene
-
+    en_GameScene,
+    en_BossModeScene
 };
 
 //TowerType
@@ -168,6 +197,22 @@ enum MonsterType
     en_Fly_Oldboss,
     en_Land_Oldboss,
     en_Boss_Big,
+    en_Boss_Woowala = 19, //bug fixed 序号少了
+    en_Boss_PinkyNinja,
+    en_Boss_TwistyFork,
+    en_Boss_FlyDevils,
+    en_Boss_Cyclops,
+    en_Boss_Popbowling,
+    en_Boss_Gremlins,
+    en_Boss_Sadgeezer,
+    en_Boss_FireFeet,
+    en_Boss_Unicorn,
+    en_Boss_DarkAngle,
+    en_Boss_FatMummy,
+    en_Boss_ConchKing,
+    en_Boss_Hotstar,
+    en_Boss_DrOctopus,
+    en_Boss_HugeChela
 };
 
 //BulletType
@@ -192,6 +237,12 @@ enum GameEndType
 {
     en_GameWin,
     en_GameLose
+};
+
+enum GameType
+{
+    en_Adventure, //冒险模式
+    en_BossMode //Boss模式
 };
 
 //关卡状态

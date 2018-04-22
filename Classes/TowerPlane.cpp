@@ -112,9 +112,9 @@ void TowerPlane::attack()
 
 	//ÏÈÐ´¹¥»÷¹ÖÎïÂß¼­
 	Vector<MonsterBase *> MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-	for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
+    for (int i = MonsterVector.size() - 1; i >= 0; i--)
 	{
-		MonsterBase *pMonster = dynamic_cast<MonsterBase *>(*mIter);
+		MonsterBase *pMonster = dynamic_cast<MonsterBase *>(MonsterVector.at(i));
 		int rM = int(90 - 180 * (pMonster->getPosition() - this->getPosition()).getAngle() / M_PI) % 360;
 		if (rM >= rd && rM <= rt) {
 			pMonster->beHurt(atk);
@@ -130,17 +130,13 @@ void TowerPlane::attack()
 			/*mIter = (auto)*/
 			MonsterVector.eraseObject(pMonster);
 		}
-		else
-		{
-			++mIter; //todo Âß¼­²»¶Ô¾¢
-		}
 	}
 
 	//ºóÐ´¹¥»÷ÕÏ°­ÎïÂß¼­
 	Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-	for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
+    for (int i = BarrierVector.size() - 1; i >= 0; i--)
 	{
-		BarrierBase *pBarrier = dynamic_cast<BarrierBase *>(*bIter);
+		BarrierBase *pBarrier = dynamic_cast<BarrierBase *>(BarrierVector.at(i));
 		int rB = int(90 - 180 * (pBarrier->getPosition() - this->getPosition()).getAngle() / M_PI) % 360;
 		if (rB >= rd && rB <= rt) {
 			pBarrier->beHurt(atk);
@@ -153,10 +149,6 @@ void TowerPlane::attack()
 		{
 			/*bIter = (auto)*/
 			BarrierVector.eraseObject(pBarrier);
-		}
-		else
-		{
-			++bIter;
 		}
 	}
 }

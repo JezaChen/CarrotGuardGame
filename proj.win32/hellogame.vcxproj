@@ -154,6 +154,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\BarrierBase.cpp" />
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
+    <ClCompile Include="..\Classes\BM_GameEndLayer.cpp" />
+    <ClCompile Include="..\Classes\BM_MonsterBuilder.cpp" />
+    <ClCompile Include="..\Classes\BM_ScoreAndControlLayer.cpp" />
+    <ClCompile Include="..\Classes\BossModeLevelSelectLayer.cpp" />
     <ClCompile Include="..\Classes\BulletAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
     <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
@@ -229,6 +233,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BulletManager.cpp" />
     <ClCompile Include="..\Classes\BulletStar.cpp" />
     <ClCompile Include="..\Classes\LoadingScene.cpp" />
+    <ClCompile Include="..\Classes\BossModeLevelSelectScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
@@ -244,6 +249,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\BarrierBase.h" />
     <ClInclude Include="..\Classes\BarrierBuilder.h" />
+    <ClInclude Include="..\Classes\BM_GameEndLayer.h" />
+    <ClInclude Include="..\Classes\BM_MonsterBuilder.h" />
+    <ClInclude Include="..\Classes\BM_ScoreAndControlLayer.h" />
     <ClInclude Include="..\Classes\BulletAnchor.h" />
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
     <ClInclude Include="..\Classes\BulletLittleAnchor.h" />
@@ -326,6 +334,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BulletManager.h" />
     <ClInclude Include="..\Classes\BulletStar.h" />
     <ClInclude Include="..\Classes\LoadingScene.h" />
+    <ClInclude Include="..\Classes\BossModeLevelSelectLayer.h" />
+    <ClInclude Include="..\Classes\BossModeLevelSelectScene.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />

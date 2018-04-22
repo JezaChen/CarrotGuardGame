@@ -4,7 +4,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
-//  太多看不懂，没有注释完
+
 //
 #pragma once
 #ifndef __CarrotFantasy__MapUtil__
@@ -58,6 +58,17 @@ protected:
 	* @Rect变量转Vec
 	*/
 	virtual void rectTransVec(const Rect &rRect);
+
+    /**
+     * @brief 障碍物消除后其位置都变成炮塔
+     * @since 1.1
+     * @details 有一些关卡尤其是BOSS模式的关卡中，障碍物消除会冒出炮塔
+     * @param rRect 原障碍物方块
+     * @param ttResultingTowerType 要变成的炮塔类型
+     * @todo 目前逻辑比较弱鸡
+     * @author 陈建彰
+     */
+    virtual void rectTransTower(const Rect &rRect, TowerType ttResultingTowerType);
 
 private:
 	/*

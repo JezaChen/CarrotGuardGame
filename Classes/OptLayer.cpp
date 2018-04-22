@@ -54,7 +54,8 @@ void OptLayer::listenClick()
         }
         else {
             Carrot* carrot = dynamic_cast<GameSceneII*>(Director::getInstance()->getRunningScene())->getCarrot();
-            if (carrot->getBoundingBox().containsPoint(t->getLocation())) {
+            //第一个条件，萝卜精灵不存在，是因为处于BOSS模式
+            if (carrot && carrot->getBoundingBox().containsPoint(t->getLocation())) {
                 return true;
             }
             for (auto & toweritem : TowerManager::getInstance()->getTowerVec()) {

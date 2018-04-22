@@ -36,6 +36,7 @@ void TiledMapLayer::loadMap()
     //加载游戏地图的图片画面
     //之前的瓦片地图是肉眼看不到的
     auto aMapImage = Sprite::createWithSpriteFrameName("Path.png");
+    aMapImage->setScale(960.0 / aMapImage->getContentSize().width);//bug fixed BOSS模式地图偏小，得做一个缩放
     aMapImage->setPosition(VisibleRectUtil::center());
     addChild(aMapImage);
 

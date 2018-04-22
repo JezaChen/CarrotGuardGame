@@ -17,7 +17,6 @@
 
 TowerOptBtn::TowerOptBtn()
 {
-
 }
 
 TowerOptBtn::~TowerOptBtn()
@@ -37,7 +36,8 @@ bool TowerOptBtn::init()
         //注册一个调度器
         this->schedule(schedule_selector(TowerOptBtn::ChangingItem));
         bRet = true;
-    } while (0);
+    }
+    while (0);
     return bRet;
 }
 
@@ -65,7 +65,7 @@ void TowerOptBtn::createMenuAndItems()
     //创建第一行菜单
     _pCreateMenu1 = Menu::create();
     _pCreateMenu1->setVisible(false);
-    
+
     //创建第二行菜单
     _pCreateMenu2 = Menu::create();
     _pCreateMenu2->setVisible(false);
@@ -79,7 +79,7 @@ void TowerOptBtn::createMenuAndItems()
     auto _pSpriteFrameCache = SpriteFrameCache::getInstance();
     for (int i = 1; i <= 4; ++i)
         MenuAnimation->addSpriteFrame(
-                _pSpriteFrameCache->getSpriteFrameByName(StringUtils::format("select_0%d", i) + PHOTOPOSTFIX));
+            _pSpriteFrameCache->getSpriteFrameByName(StringUtils::format("select_0%d", i) + PHOTOPOSTFIX));
     MenuAnimation->setDelayPerUnit(0.1);
     MenuAnimation->setLoops(-1);
 
@@ -100,7 +100,7 @@ void TowerOptBtn::createMenuAndItems()
 void TowerOptBtn::createTowerMenu()
 {
     int i = 1;
-    for (auto &iterTower : LevelConfigUtil::getInstance()->getCurrentTowersInfo())
+    for (auto& iterTower : LevelConfigUtil::getInstance()->getCurrentTowersInfo())
     {
         //log("%s", (iterTower + "01" + PHOTOPOSTFIX).c_str());
         int _TowerId = CsvUtil::getInstance()->findVal(iterTower, 1, TOWERCSVFILE);
@@ -116,9 +116,9 @@ void TowerOptBtn::createTowerMenu()
         if (iterTower == "PPlane1") iterTower = "Plane";
 
         auto _TowerItemSp = Sprite::createWithSpriteFrame(
-                SpriteFrameCache::getInstance()->getSpriteFrameByName(iterTower + "01" + PHOTOPOSTFIX));
+            SpriteFrameCache::getInstance()->getSpriteFrameByName(iterTower + "01" + PHOTOPOSTFIX));
 
-        auto _Toweritem = MenuItemSprite::create(_TowerItemSp, _TowerItemSp, [=](Ref *r)
+        auto _Toweritem = MenuItemSprite::create(_TowerItemSp, _TowerItemSp, [=](Ref* r)
         {
             TowerType _towerType;
             this->setTag(0);
@@ -130,47 +130,47 @@ void TowerOptBtn::createTowerMenu()
             }
             switch (_TowerId)
             {
-                case 1:
-                    _towerType = en_GreenTower;
-                    break;
-                case 4:
-                    _towerType = en_CloverTower;
-                    break;
-                case 7:
-                    _towerType = en_ShitTower;
-                    break;
-                case 10:
-                    _towerType = en_BallTower;
-                    break;
-                case 13:
-                    _towerType = en_StarTower;
-                    break;
-                case 16:
-                    _towerType = en_FireBottleTower;
-                    break;
-                case 19:
-                    _towerType = en_BlueStarTower;
-                    break;
-                case 22:
-                    _towerType = en_SunTower;
-                    break;
-                case 25:
-                    _towerType = en_RocketTower;
-                    break;
-                case 28:
-                    _towerType = en_PinTower;
-                    break;
-                case 31:
-                    _towerType = en_SnowTower;
-                    break;
-                case 34:
-                    _towerType = en_PlaneTower;
-                    break;
-                case 37:
-                    _towerType = en_AnchorTower;
-                    break;
-                default:
-                    break;
+            case 1:
+                _towerType = en_GreenTower;
+                break;
+            case 4:
+                _towerType = en_CloverTower;
+                break;
+            case 7:
+                _towerType = en_ShitTower;
+                break;
+            case 10:
+                _towerType = en_BallTower;
+                break;
+            case 13:
+                _towerType = en_StarTower;
+                break;
+            case 16:
+                _towerType = en_FireBottleTower;
+                break;
+            case 19:
+                _towerType = en_BlueStarTower;
+                break;
+            case 22:
+                _towerType = en_SunTower;
+                break;
+            case 25:
+                _towerType = en_RocketTower;
+                break;
+            case 28:
+                _towerType = en_PinTower;
+                break;
+            case 31:
+                _towerType = en_SnowTower;
+                break;
+            case 34:
+                _towerType = en_PlaneTower;
+                break;
+            case 37:
+                _towerType = en_AnchorTower;
+                break;
+            default:
+                break;
             }
             //创建塔；
             TowerFactory::createTower(_towerType, this->getPosition());
@@ -178,7 +178,7 @@ void TowerOptBtn::createTowerMenu()
 
             //钱花了；
             int createMoney = -CsvUtil::getInstance()->getInt(_TowerId, en_CreateCost, TOWERCSVFILE);
-            NotificationCenter::getInstance()->postNotification("moneyChange", (Ref *) (&createMoney));
+            NotificationCenter::getInstance()->postNotification("moneyChange", (Ref *)(&createMoney));
         });
         _Toweritem->setTag(_upGradeMoney);
         _Toweritem->setName(iterTower);
@@ -192,22 +192,22 @@ void TowerOptBtn::createTowerMenu()
     if (_pCreateTowerItemSpVec->size() > 4) _pCreateMenu2->alignItemsHorizontallyWithPadding(1);
 }
 
-void TowerOptBtn::gradeTowerMenu(TowerBase *touchTower)
+void TowerOptBtn::gradeTowerMenu(TowerBase* touchTower)
 {
     _pGradeMenu->removeAllChildrenWithCleanup(true);
 
     //创建以塔为中心的灰色圈圈
     auto _pSpriteFrameCache = SpriteFrameCache::getInstance();
     _pTowerRangeSp->setSpriteFrame(_pSpriteFrameCache->getSpriteFrameByName(
-            "range_" + StringUtils::format("%d", touchTower->getIAtkRange()) + PHOTOPOSTFIX));
+        "range_" + StringUtils::format("%d", touchTower->getIAtkRange()) + PHOTOPOSTFIX));
     _pTowerRangeSp->setVisible(true);
     auto _pAtkRange = Sprite::createWithSpriteFrame(_pSpriteFrameCache->getSpriteFrameByName(
-            StringUtils::format("range_%d", touchTower->getIAtkRange()) + PHOTOPOSTFIX));
+        StringUtils::format("range_%d", touchTower->getIAtkRange()) + PHOTOPOSTFIX));
 
     //创建升级塔的按钮
     auto UpgradeSp = Sprite::createWithSpriteFrame(
-            _pSpriteFrameCache->getSpriteFrameByName("upgrade_" + touchTower->getSUpgradeCose() + PHOTOPOSTFIX));
-    auto UpgradeItem = MenuItemSprite::create(UpgradeSp, UpgradeSp, [=](Ref *r)
+        _pSpriteFrameCache->getSpriteFrameByName("upgrade_" + touchTower->getSUpgradeCose() + PHOTOPOSTFIX));
+    auto UpgradeItem = MenuItemSprite::create(UpgradeSp, UpgradeSp, [=](Ref* r)
     {
         //钱的变动由炮塔基类来实现
         this->setTag(0);
@@ -221,8 +221,8 @@ void TowerOptBtn::gradeTowerMenu(TowerBase *touchTower)
 
     //创建卖掉塔的按钮
     auto SellSp = Sprite::createWithSpriteFrame(_pSpriteFrameCache->getSpriteFrameByName(
-            StringUtils::format("sell_%d", touchTower->getIValue()) + PHOTOPOSTFIX));
-    auto SellItem = MenuItemSprite::create(SellSp, SellSp, [=](Ref *r)
+        StringUtils::format("sell_%d", touchTower->getIValue()) + PHOTOPOSTFIX));
+    auto SellItem = MenuItemSprite::create(SellSp, SellSp, [=](Ref* r)
     {
         //钱的变动由实体基类来实现
         this->setTag(0);
@@ -260,12 +260,14 @@ void TowerOptBtn::ChangingItem(float dt)
          itemCreateSp != _pCreateTowerItemSpVec->end(); itemCreateSp++)
     {
         auto _pCreateItemSp = (*itemCreateSp);
-        if (_pCreateItemSp->getTag() > _funcCheckMoney()) _pCreateItemSp->setNormalImage(Sprite::createWithSpriteFrame(
-                    SpriteFrameCache::getInstance()->getSpriteFrameByName(
-                            _pCreateItemSp->getName() + "00" + PHOTOPOSTFIX)));
-        else _pCreateItemSp->setNormalImage(Sprite::createWithSpriteFrame(
-                    SpriteFrameCache::getInstance()->getSpriteFrameByName(
-                            _pCreateItemSp->getName() + "01" + PHOTOPOSTFIX)));
+        if (_pCreateItemSp->getTag() > _funcCheckMoney())
+            _pCreateItemSp->setNormalImage(Sprite::createWithSpriteFrame(
+                SpriteFrameCache::getInstance()->getSpriteFrameByName(
+                    _pCreateItemSp->getName() + "00" + PHOTOPOSTFIX)));
+        else
+            _pCreateItemSp->setNormalImage(Sprite::createWithSpriteFrame(
+                SpriteFrameCache::getInstance()->getSpriteFrameByName(
+                    _pCreateItemSp->getName() + "01" + PHOTOPOSTFIX)));
     }
 
     //检查升级塔菜单子项向量
@@ -276,19 +278,19 @@ void TowerOptBtn::ChangingItem(float dt)
         {
             if (_pGradeItemSp->getTag() > _funcCheckMoney())
                 _pGradeItemSp->setNormalImage(
-                        Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(
-                                _pGradeItemSp->getName() + StringUtils::format("%d", -_pGradeItemSp->getTag()) +
-                                PHOTOPOSTFIX)));
-            else 
+                    Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(
+                        _pGradeItemSp->getName() + StringUtils::format("%d", -_pGradeItemSp->getTag()) +
+                        PHOTOPOSTFIX)));
+            else
                 _pGradeItemSp->setNormalImage(Sprite::createWithSpriteFrame(
-                        SpriteFrameCache::getInstance()->getSpriteFrameByName(
-                                _pGradeItemSp->getName() + StringUtils::format("%d", _pGradeItemSp->getTag()) +
-                                PHOTOPOSTFIX)));
+                    SpriteFrameCache::getInstance()->getSpriteFrameByName(
+                        _pGradeItemSp->getName() + StringUtils::format("%d", _pGradeItemSp->getTag()) +
+                        PHOTOPOSTFIX)));
         }
     }
 }
 
-void TowerOptBtn::setFuncCheckMoney(const std::function<int()> &rFuncCheckMoney)
+void TowerOptBtn::setFuncCheckMoney(const std::function<int()>& rFuncCheckMoney)
 {
     _funcCheckMoney = rFuncCheckMoney;
 }
@@ -317,37 +319,37 @@ void TowerOptBtn::showCreateMenu()
     int x2 = 120;
     switch (_pCreateTowerItemSpVec->size())
     {
-        case 1:
-            x1 = 0;
-            break;
-        case 2:
-            x1 = 40;
-            break;
-        case 3:
-            x1 = 80;
-            break;
-        case 4:
-            x1 = 120;
-            break;
-        default:
-            break;
+    case 1:
+        x1 = 0;
+        break;
+    case 2:
+        x1 = 40;
+        break;
+    case 3:
+        x1 = 80;
+        break;
+    case 4:
+        x1 = 120;
+        break;
+    default:
+        break;
     }
     switch (_pCreateTowerItemSpVec->size() - 4)
     {
-        case 1:
-            x2 = 0;
-            break;
-        case 2:
-            x2 = 40;
-            break;
-        case 3:
-            x2 = 80;
-            break;
-        case 4:
-            x2 = 120;
-            break;
-        default:
-            break;
+    case 1:
+        x2 = 0;
+        break;
+    case 2:
+        x2 = 40;
+        break;
+    case 3:
+        x2 = 80;
+        break;
+    case 4:
+        x2 = 120;
+        break;
+    default:
+        break;
     }
     if (this->getPositionX() <= 120)
     {

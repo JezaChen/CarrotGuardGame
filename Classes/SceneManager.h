@@ -32,6 +32,8 @@ public:
     */
     virtual int getCurrentPageIndex();
     virtual int getCurrentLevelIndex();
+
+    void setCurrentPageIndex(const int & _iCurPageIndex);
 protected:
 
     /**

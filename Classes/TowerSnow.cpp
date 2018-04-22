@@ -75,9 +75,9 @@ void TowerSnow::attack()
 
     //todo 逻辑还是和飞机那么迷
     Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-    for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
+    for (int i = MonsterVector.size() - 1; i >= 0; i--)
     {
-        MonsterBase * pMonster = (MonsterBase *)(*mIter);
+        MonsterBase * pMonster = (MonsterBase *)(MonsterVector.at(i));
         if (rect.intersectsRect(pMonster->getBoundingBox()))
         {
             pMonster->beHurt(atk);
@@ -87,15 +87,12 @@ void TowerSnow::attack()
             /*mIter =(auto)*/
             MonsterVector.eraseObject(pMonster);
         }
-        else
-        {
-            ++mIter;
-        }
     }
+
     Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-    for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
+    for (int i = BarrierVector.size() - 1; i >= 0; i--)
     {
-        BarrierBase * pBarrier = (BarrierBase *)(*bIter);
+        BarrierBase * pBarrier = (BarrierBase *)(BarrierVector.at(i));
         if (rect.intersectsRect(pBarrier->getBoundingBox()))
         {
             pBarrier->beHurt(atk);
@@ -104,10 +101,6 @@ void TowerSnow::attack()
         {
             /*bIter =(auto)*/
             BarrierVector.eraseObject(pBarrier);
-        }
-        else
-        {
-            ++bIter;
         }
     }
 }

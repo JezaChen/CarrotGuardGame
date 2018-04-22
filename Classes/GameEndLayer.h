@@ -1,4 +1,3 @@
-
 //
 //  GameEndLayer.h
 //  CarrotFantasy
@@ -27,9 +26,9 @@ protected:
 
 	virtual void loadInfo();
 
-	virtual void onEnter()override;
+	void onEnter()override;
 
-	virtual void onExit()override;
+	void onExit()override;
 
 	virtual void registerNoTouch();
 

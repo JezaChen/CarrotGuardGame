@@ -212,7 +212,7 @@
 			<key>sourceSize</key>
 			<string>{420,340}</string>
 		</dict>
-		<key>theme_bg.png</key>
+		<key>boss_theme_bg.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,2},{960,640}}</string>

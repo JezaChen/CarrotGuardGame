@@ -5,6 +5,7 @@
 #include "HelpScene.h"
 #include "SettingScene.h"
 #include "LoadingScene.h"
+#include "BossModeLevelSelectScene.h"
 
 Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
 {
@@ -16,6 +17,9 @@ Scene* SceneFactory::createScene(const SceneType &rEnSceneType)
             break;
         case en_GameHelpScene:
             pScene = HelpScene::create();
+            break;
+        case en_BossModeScene:
+            pScene = BossModeLevelSelectScene::create();
             break;
         case en_ThemeSelectScene:
             pScene = PageSelectScene::create();

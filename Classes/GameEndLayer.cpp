@@ -39,6 +39,9 @@ bool GameEndLayer::init(const GameEndType &rEnGameEndType)
 
 		_enGameEndType = rEnGameEndType;
 
+        GameManager::getInstance()->setIsWin((_enGameEndType == en_GameWin));
+        GameManager::getInstance()->updateUserStatistics(); //及时保存文件
+
 		createMenu();
 
 		bRet = true;
@@ -49,13 +52,16 @@ bool GameEndLayer::init(const GameEndType &rEnGameEndType)
 
 void GameEndLayer::saveLevelData()
 {
+    //todo 障碍物清除状态没有保存 
+
 	if (en_GameWin != _enGameEndType) return;
 
 	auto tCurLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
 
 	auto tCurPageIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
 
-	auto tLevelData = std::make_tuple(0, _iCarrotType, tCurPageIndex, tCurLevelIndex);
+    //todo 障碍物全部清除那块没写啊
+	auto tLevelData = std::make_tuple(_iCarrotType, 0, tCurPageIndex, tCurLevelIndex);//bug fixed  顺序反了
 	NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref*>(&tLevelData));
 
 	if (tCurLevelIndex == 12)
@@ -64,7 +70,7 @@ void GameEndLayer::saveLevelData()
 		tCurLevelIndex = 0;
 	}
 
-	auto tNextLevelData = std::make_tuple(0, 1, tCurPageIndex, tCurLevelIndex + 1);
+	auto tNextLevelData = std::make_tuple(1, 0, tCurPageIndex, tCurLevelIndex + 1);
 	NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref*>(&tNextLevelData));
 }
 
@@ -86,7 +92,7 @@ void GameEndLayer::createMenu()
 	});
 	pChooseLevelItem->setPosition(Vec2(-120, -100));
 
-	auto pAgainItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName(std::get<1>(GAMEENDSOURCE[_enGameEndType])), Sprite::createWithSpriteFrameName(std::get<2>(GAMEENDSOURCE[_enGameEndType])), [&](Ref *pSender)
+	auto pAgainItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName(std::get<1>(GAMEENDSOURCE[_enGameEndType])), Sprite::createWithSpriteFrameName(std::get<2>(BM_GAMEENDSOURCE[_enGameEndType])), [&](Ref *pSender)
 	{
 		auto tCurLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex();
 		std::tuple<SceneType, int> tEnGameScene;

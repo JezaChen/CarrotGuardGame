@@ -8,6 +8,7 @@
 
 #include "MoveControllerBase.h"
 #include "MapUtil.h"
+#include "GameManager.h"
 
 #define STEP 10.0
 
@@ -26,6 +27,8 @@ bool MoveControllerBase::init(MonsterBase *pMonster)
     //初始化运动轨迹
     auto Points = MapUtil::getInstance()->getMovePoses();
     _pMapPoints = new std::vector<Vec2>();
+    //对于每个点
+    //要微调怪物的移动点，因为怪物大小不一运动的姿态需要改一些
     for (auto &Point : Points)
     {
         Vec2 t_point;
@@ -208,9 +211,23 @@ void MoveControllerBase::erasePoint()
         return;
     }
 
-    if (_pMonster->getPosition() == *_pMapPoints->begin())
+    if (_pMonster->getPosition() == *_pMapPoints->begin()) //已经到达转弯点
     {
-        _pMapPoints->erase(_pMapPoints->begin());
+        if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+        {
+            //如果是冒险模式，直接擦除即可
+            _pMapPoints->erase(_pMapPoints->begin());
+
+        }
+        else
+        {
+            //如果是boss模式，无穷循环
+            auto tmp = *(_pMapPoints->begin());
+            _pMapPoints->erase(_pMapPoints->begin());
+            _pMapPoints->push_back(tmp);
+            return; //后面的语句不用执行了
+        }
+
         //若擦除后剩余的轨迹只剩下了一个坐标
         //以为着怪物已经到达了萝卜坐标，发生了碰撞
         if (_pMapPoints->size() == 1)

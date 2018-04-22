@@ -89,9 +89,9 @@ void TowerSun::attack()
 
     //先检测怪物
     Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-    for (auto mIter = MonsterVector.begin(); mIter != MonsterVector.end();)
+    for (int i = MonsterVector.size() - 1; i >= 0; i--)
     {
-        MonsterBase * pMonster = (MonsterBase *)(*mIter);
+        MonsterBase * pMonster = static_cast<MonsterBase *>(MonsterVector.at(i));
         if (rect.intersectsRect(pMonster->getBoundingBox())) //碰撞检测
         {
             pMonster->beHurt(atk);
@@ -107,17 +107,13 @@ void TowerSun::attack()
             /*mIter =(auto)*/
             MonsterVector.eraseObject(pMonster);
         }
-        else
-        {
-            ++mIter;
-        }
     }
 
     //再检测障碍物
     Vector<BarrierBase *> BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-    for (auto bIter = BarrierVector.begin(); bIter != BarrierVector.end();)
+    for (int i = BarrierVector.size() - 1; i >= 0; i--)
     {
-        BarrierBase * pBarrier = (BarrierBase *)(*bIter);
+        BarrierBase * pBarrier = static_cast<BarrierBase *>(BarrierVector.at(i));
         if (rect.intersectsRect(pBarrier->getBoundingBox()))
         {
             pBarrier->beHurt(atk);
@@ -130,10 +126,6 @@ void TowerSun::attack()
         {
             /*bIter =(auto)*/
             BarrierVector.eraseObject(pBarrier);
-        }
-        else
-        {
-            ++bIter;
         }
     }
 }

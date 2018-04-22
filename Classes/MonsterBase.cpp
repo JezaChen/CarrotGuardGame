@@ -10,6 +10,7 @@
 #include "MonsterManager.h"
 #include "MoveControllerBase.h"
 #include "SoundUtil.h"
+#include "GameManager.h"
 
 bool MonsterBase::init(const int &rIId)
 {
@@ -58,6 +59,12 @@ void MonsterBase::deadAction(const std::string &rSDeadImageFile)
 {
 	MonsterSound();
 	NOTIFY->postNotification("MonsterDead", this);
+    if (this->getIId() >= 19) //如果是个BOSS
+    {
+        //todo 这个boss的ID范围应该不止那么小
+        NOTIFY->postNotification("BossDead", this); //再额外发一个BOSS死亡的通知 
+    }
+
 	getSprite()->removeAllChildrenWithCleanup(true);
 	_pMoveController->stopAllActions();
 	VictimEntityBase::deadAction();
@@ -88,4 +95,17 @@ void MonsterBase::setMaxSpeed(const int &iSpeed)
 {
 	setISpeed(iSpeed);
 	_pMoveController->setIMonsterSpeed(iSpeed);
+}
+
+void MonsterBase::beHurt(const AtkProperty tBeHurtValue)
+{
+    /******************************************/
+    /**用于BOSS模式，更改上方面板的BOSS生命进度条**/
+    /******************************************/
+    if (this->getIId() >= 19)
+    {
+        //auto hpLost = tBeHurtValue._iAtk;
+        GameManager::getInstance()->setIBossHp(getIHp());
+    }
+    VictimEntityBase::beHurt(tBeHurtValue);
 }

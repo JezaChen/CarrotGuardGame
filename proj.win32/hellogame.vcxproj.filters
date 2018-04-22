@@ -89,6 +89,11 @@
     <ClCompile Include="..\Classes\TowerAnchor.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
+    <ClCompile Include="..\Classes\BossModeLevelSelectLayer.cpp" />
+    <ClCompile Include="..\Classes\BossModeLevelSelectScene.cpp" />
+    <ClCompile Include="..\Classes\BM_MonsterBuilder.cpp" />
+    <ClCompile Include="..\Classes\BM_ScoreAndControlLayer.cpp" />
+    <ClCompile Include="..\Classes\BM_GameEndLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -186,6 +191,11 @@
     <ClInclude Include="..\Classes\TowerAnchor.h" />
     <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerOptBtn.h" />
+    <ClInclude Include="..\Classes\BossModeLevelSelectLayer.h" />
+    <ClInclude Include="..\Classes\BossModeLevelSelectScene.h" />
+    <ClInclude Include="..\Classes\BM_MonsterBuilder.h" />
+    <ClInclude Include="..\Classes\BM_ScoreAndControlLayer.h" />
+    <ClInclude Include="..\Classes\BM_GameEndLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

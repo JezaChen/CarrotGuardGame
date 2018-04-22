@@ -3,7 +3,6 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-7.
-//  兄贵，这个也是看不太懂
 //
 
 #include "DynamicPropertyInterface.h"

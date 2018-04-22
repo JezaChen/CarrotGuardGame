@@ -17,8 +17,22 @@ ID,Name,ModelName,Value,AnimationCount,Level,Hp,Speed,Atk
 16,fly_oldboss,fly_oldboss0,168,2,3,800,90,3
 17,land_oldboss,land_oldboss0,168,2,3,1000,80,3
 18,hlb,hlb10,0,0,0,10,0,0
-
-
+19,woowala,big_oldboss0,1500,2,3,80000,50,10
+20,pinky_ninja,land_oldboss0,1500,2,3,20000,50,10
+21,twisty_fork,fat_oldboss0,1500,2,3,75000,50,10
+22,fly_devils,fly_oldboss0,1500,2,3,110000,50,10
+23,cyclops,big_oldboss0,1500,2,3,40000,50,10
+24,popbowling,land_oldboss0,1500,2,3,110000,50,10
+25,gremlins,fly_oldboss0,1500,2,3,50000,50,10
+26,sadgeezer,fat_oldboss0,1500,2,3,50000,50,10
+27,firefeet,land_oldboss0,1500,2,3,60000,50,10
+28,unicorn,fly_oldboss0,1500,2,3,80000,50,10
+29,dark_angel,big_oldboss0,1500,2,3,500000,50,10
+30,fat_mummy,fat_oldboss0,1500,2,3,400000,50,10
+31,conchking,land_oldboss0,1500,2,3,200000,50,10
+32,hotstar,fat_oldboss0,1500,2,3,200000,50,10
+33,DrOctopus,fly_oldboss0,1500,2,3,70000,50,10
+34,hugechela,big_oldboss0,1500,2,3,400000,50,10
 
 
 
