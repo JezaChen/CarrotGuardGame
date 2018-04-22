@@ -159,7 +159,7 @@ protected:
     CC_SYNTHESIZE_PASS_BY_REF(int, _iUpgradeCount, IUpgradeCount);
 
     /**
-     * @brief 是否回转
+     * @brief 是否旋转
      */
     CC_SYNTHESIZE_PASS_BY_REF(bool, _bIsRotation, BIsRotation);
 

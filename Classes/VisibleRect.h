@@ -1,3 +1,11 @@
+/**
+* @brief 
+* @details 
+* @extends 
+* @see 
+* @authors ³Â½¨ÕÃ
+* @date 20180315
+* */
 #pragma once
 #ifndef VISIBLE_RECT_H
 #define VISIBLE_RECT_H

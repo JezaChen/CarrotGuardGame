@@ -22,11 +22,13 @@ bool TowerPin::init() {
 	} while (0);
 	return bRet;
 }
-void TowerPin::fire(float dt) {
+void TowerPin::fire(float dt) 
+{
 	if (!_pAtkTarget || _pAtkTarget->getIsDead()) return;
 	auto fireActionCF = CallFunc::create([=]() { fireAction(); });
 
-	auto createBulletCF = CallFunc::create([=]() {
+	auto createBulletCF = CallFunc::create([=]() 
+	{
 		if (!_pAtkTarget) return;
 		BulletPin * pBullet = BulletPin::create(_iBulletId, _pAtkTarget);
 		pBullet->setPosition(this->getPosition());
