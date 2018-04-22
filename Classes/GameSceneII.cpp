@@ -8,6 +8,7 @@
 #include "OptLayer.h"
 #include "MonsterLayer.h"
 #include "ScoreAndControlLayer.h"
+#include "BM_ScoreAndControlLayer.h" //BOSS MODE
 #include "TiledMapLayer.h"
 #include "TowersLayer.h"
 #include "BarriersLayer.h"
@@ -20,16 +21,21 @@
 #include "BarrierBase.h"
 #include "CollisionManager.h"
 #include "MonsterBuilder.h"
+#include "BM_MonsterBuilder.h" //BOSS MODE
 #include "TowerFactory.h"
 #include "Carrot.h"
 #include "TowerOptBtn.h"
 #include "CountDownLayer.h"
 #include "GameEndLayer.h"
+#include "BM_GameEndLayer.h" //BOSS MODE
 #include "SoundUtil.h"
 #include "LevelConfigUtil.h"
+#include "GameManager.h"
 
 GameSceneII::~GameSceneII()
 {
+    removeAllChildrenWithCleanup(true);
+
     CC_SAFE_RELEASE_NULL(_pBarriersLayer);
     CC_SAFE_RELEASE_NULL(_pBulletsLayer);
     CC_SAFE_RELEASE_NULL(_pCarrot);
@@ -78,7 +84,9 @@ void GameSceneII::onEnter()
     addLayers();
     createBarriers(); //创建障碍物
 
-    _pMonsterLayer->addEntity(_pCarrot); //在怪物层里面添加萝卜
+    //冒险模式才有萝卜，BOSS模式没有的
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+        _pMonsterLayer->addEntity(_pCarrot); //在怪物层里面添加萝卜
 
     registerGameEvent(); //TODO 在这里注册
 
@@ -176,16 +184,35 @@ void GameSceneII::createLayers()
     _pBulletsLayer->retain();
     BulletManager::getInstance()->setFuncAddBulletLayer(CC_CALLBACK_1(BulletLayer::addEntity, _pBulletsLayer));
 
-    _pScoreAndControllerLayer = ScoreAndControllerLayer::create();
-    _pScoreAndControllerLayer->retain();
-    TowerManager::getInstance()->setFuncCheckMoney(CC_CALLBACK_0(ScoreAndControllerLayer::getCurMoney, dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)));
+    /*********************************************/
+    /****需对游戏模式进行判断，选取不同的怪物生成类****/
+    /*********************************************/
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure) 
+    {
+        _pScoreAndControllerLayer = ScoreAndControllerLayer::create();
+        _pScoreAndControllerLayer->retain();
+        TowerManager::getInstance()->setFuncCheckMoney(CC_CALLBACK_0(ScoreAndControllerLayer::getCurMoney, dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)));
+    }
+    else
+    {
+        _pScoreAndControllerLayer = BM_ScoreAndControllerLayer::create();
+        _pScoreAndControllerLayer->retain();
+        TowerManager::getInstance()->setFuncCheckMoney(CC_CALLBACK_0(BM_ScoreAndControllerLayer::getCurMoney, dynamic_cast<BM_ScoreAndControllerLayer*>(_pScoreAndControllerLayer)));
+    }
+
 
     _pOptLayer = OptLayer::create();
     _pOptLayer->retain();
-    dynamic_cast<TowerOptBtn*>(_pOptLayer->getChildByName("TowerOptBtn"))->setFuncCheckMoney(CC_CALLBACK_0(ScoreAndControllerLayer::getCurMoney, dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)));
 
-    _pCarrot = Carrot::create();
-    _pCarrot->retain();
+    GameManager::getInstance()->getCurrGameType() == en_Adventure ?
+        dynamic_cast<TowerOptBtn*>(_pOptLayer->getChildByName("TowerOptBtn"))->setFuncCheckMoney(CC_CALLBACK_0(ScoreAndControllerLayer::getCurMoney, dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer))) :
+        dynamic_cast<TowerOptBtn*>(_pOptLayer->getChildByName("TowerOptBtn"))->setFuncCheckMoney(CC_CALLBACK_0(BM_ScoreAndControllerLayer::getCurMoney, dynamic_cast<BM_ScoreAndControllerLayer*>(_pScoreAndControllerLayer)));
+
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+    {
+        _pCarrot = Carrot::create();
+        _pCarrot->retain();
+    }
 
     _pCountDownLayer = CountDownLayer::create();
     _pCountDownLayer->setName("CoundDown");
@@ -194,12 +221,11 @@ void GameSceneII::createLayers()
 
 void GameSceneII::addLayers()
 {
-    //TODO 目前只支持加入地图图层、怪物图层、障碍物图层
     addChild(_pCountDownLayer, 100);
     addChild(_pTiledMapLayer);
-    addChild(_pMonsterLayer);
     addChild(_pBarriersLayer);
     addChild(_pTowersLayer);
+    addChild(_pMonsterLayer);
     addChild(_pBulletsLayer);
     addChild(_pOptLayer);
     addChild(_pScoreAndControllerLayer);
@@ -208,7 +234,11 @@ void GameSceneII::addLayers()
 
 void GameSceneII::clearAllManager()
 {
+    //bug 妈耶，忘记写了
     MonsterManager::getInstance()->clearManager();
+    TowerManager::getInstance()->clearManager();
+    BulletManager::getInstance()->clearManager();
+    BarrierManager::getInstance()->clearManager();
 }
 
 void GameSceneII::registerGameEvent()
@@ -221,14 +251,26 @@ void GameSceneII::registerGameEvent()
 void GameSceneII::showGameEndLayer(Ref * pData)
 {
     auto tGameEndType = *(reinterpret_cast<GameEndType*>(pData));
-    auto pGameEndLayer = GameEndLayer::create(tGameEndType);
+    Layer *pGameEndLayer = nullptr;
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+        pGameEndLayer = GameEndLayer::create(tGameEndType);
+    else
+        pGameEndLayer = BM_GameEndLayer::create(tGameEndType);
+
     pGameEndLayer->setName("GameEnd");
-    addChild(pGameEndLayer, 1);
+    addChild(pGameEndLayer, 11); //要叠在怪物图层上面
 }
 
 void GameSceneII::startBuildMonster(Ref *pData)
 {
-    addChild(MonsterBuilder::create());
+    /*********************************************/
+    /****需对游戏模式进行判断，选取不同的怪物生成类****/
+    /*********************************************/
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+        addChild(MonsterBuilder::create());
+    else
+        addChild(BM_MonsterBuilder::create());
+
     auto aScheduler = Director::getInstance()->getScheduler();
     aScheduler->setTimeScale(1.8f); //TODO 速度
 }

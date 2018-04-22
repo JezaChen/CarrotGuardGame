@@ -46,11 +46,18 @@ protected:
     virtual void registerLevelDataChangesEvent();
 
     /**
-     * @brief 监听事件所用到的处理函数
+     * @brief 监听关卡数据更新事件所用到的处理函数
      * @param pData 传入该处理函数的一些数据
      * @details 一旦有东西要修改，该函数会打开数据文件，更新key值对应的value值，并再次写入和保存
      * */
-    virtual void levelDataChange(Ref *pData);
+    void levelDataChange(Ref* pData);
+
+    /**
+     * @brief 监听用户通关历史数据更新事件所用到的处理函数
+     * @param pData 传入该处理函数的一些数据
+     * @details 一旦用户历史通关数据要修改，该函数会打开数据文件，更新key值对应的value值，并再次写入和保存
+     */
+    void statDataChange(Ref* pData);
 
 private:
     ValueMap _levelData; //关卡数据，用哈希表表示

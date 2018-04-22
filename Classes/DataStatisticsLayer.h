@@ -19,7 +19,41 @@ public:
 protected:
     bool init() override;
 
+    /**
+     * @brief 创建该图层的背景
+     */
     void createBg();
+
+    /**
+     * @brief 读取用户通关数据
+     */
+    void loadData();
+
+    /**
+     * @brief 创建数字精灵
+     */
+    void createNumSprite();
+
+    //冒险模式通关数目
+    int _iAdventureModeClearance; 
+    
+    //隐藏关卡通关数目
+    int _iCrypticModeClearance; 
+    
+    //BOSS模式通关数目
+    int _iBossModeClearance;
+    
+    //总金钱
+    int _iTotalMoney;
+    
+    //打死怪物数目
+    int _iTotalBoss;
+    
+    //打死BOSS数目
+    int _iTotalMonster;
+    
+    //清除障碍物数目
+    int _iTotalBarriers;
 };
 
 #endif //DATASTATISTICS_H

@@ -1,0 +1,17 @@
+ID,Name,ModelName,Value,AnimationCount,Level,Hp,Speed,Atk,Time
+1,woowala,big_oldboss0,500,2,4,80000,50,10,90
+2,pinky_ninja,land_oldboss0,500,2,4,20000,50,10,80
+3,twisty_fork,fat_oldboss0,500,2,4,75000,50,10,80
+4,fly_devils,fly_oldboss0,500,2,4,110000,50,10,110
+5,cyclops,big_oldboss0,500,2,4,40000,50,10,90
+6,popbowling,land_oldboss0,500,2,4,110000,50,10,110
+7,gremlins,fly_oldboss0,500,2,4,50000,50,10,110
+8,sadgeezer,fat_oldboss0,500,2,4,50000,50,10,180
+9,firefeet,land_oldboss0,500,2,4,60000,50,10,100
+10,unicorn,fly_oldboss0,500,2,4,80000,50,10,90
+11,dark_angel,big_oldboss0,500,2,4,500000,50,10,60
+12,fat_mummy,fat_oldboss0,500,2,4,400000,50,10,180
+13,conchking,land_oldboss0,500,2,4,200000,50,10,130
+14,hotstar,fat_oldboss0,500,2,4,200000,50,10,168
+15,DrOctopus,fly_oldboss0,500,2,4,70000,50,10,60
+16,hugechela,big_oldboss0,500,2,4,400000,50,10,180

@@ -4,7 +4,7 @@
 <dict>
 	<key>frames</key>
 	<dict>
-		<key>lose_bg.png</key>
+		<key>bm_lose_bg.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,2},{696,476}}</string>
@@ -17,7 +17,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>lose_bg_CN.png</key>
+		<key>bm_lose_bg_CN.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,912},{380,32}}</string>
@@ -30,7 +30,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>lose_bg_EN.png</key>
+		<key>bm_lose_bg_EN.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,946},{356,28}}</string>
@@ -43,7 +43,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>lose_bg_TW.png</key>
+		<key>bm_lose_bg_TW.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,878},{380,32}}</string>
@@ -290,7 +290,7 @@
 			<key>sourceSize</key>
 			<string>{220,80}</string>
 		</dict>
-		<key>win_bg.png</key>
+		<key>bm_win_bg.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,480},{676,396}}</string>
@@ -303,7 +303,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>win_bg_CN.png</key>
+		<key>bm_win_bg_CN.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{700,36},{298,32}}</string>
@@ -316,7 +316,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>win_bg_EN.png</key>
+		<key>bm_win_bg_EN.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,976},{372,24}}</string>
@@ -329,7 +329,7 @@
 			<key>sourceSize</key>
 			<string>{750,480}</string>
 		</dict>
-		<key>win_bg_TW.png</key>
+		<key>bm_win_bg_TW.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{700,2},{298,32}}</string>

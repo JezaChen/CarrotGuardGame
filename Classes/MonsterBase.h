@@ -32,6 +32,13 @@ public:
 	 */
 	void setMaxSpeed(const int &iSpeed);
 
+    /**
+    * @brief 怪物被(子弹)伤害后的处理函数
+    * @param rBeHurtValue 攻击属性
+    * @details 这个重写只是针对BOSS而已，其他小怪只是简单调用父类的同名函数即可
+    */
+    void beHurt(const AtkProperty tBeHurtValue) override;
+
 protected:
 	/**
 	 * @brief 执行死亡动画

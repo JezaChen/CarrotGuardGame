@@ -41,6 +41,8 @@ void LocalLevelDataUtil::registerLevelDataChangesEvent()
 {
     NOTIFICATION_CENTER->addObserver(this, callfuncO_selector(LocalLevelDataUtil::levelDataChange), LEVELDATACHANGE,
         nullptr);
+    NOTIFICATION_CENTER->addObserver(this, callfuncO_selector(LocalLevelDataUtil::statDataChange), STATDATACHANGE,
+        nullptr);
 }
 
 
@@ -67,7 +69,6 @@ void LocalLevelDataUtil::levelDataChange(Ref *pData)
 
     if (iLevelType == LEVEL_LOCK)
     {
-        //TODO ???
         _levelData[aLevelKey] = StringUtils::format("%d%d", iLevelType, 0);
     }
     else
@@ -83,5 +84,91 @@ void LocalLevelDataUtil::levelDataChange(Ref *pData)
             _levelData[aLevelKey] = StringUtils::format("%d%d", iCurrentLevelType, iLevelBarriersCleared); //更新障碍物清理情况
     }
     FileUtils::getInstance()->writeToFile(_levelData, _sLevelDataFilePath); //重新写入文件
+}
+
+void LocalLevelDataUtil::statDataChange(Ref *pData)
+{
+    auto aData = *(reinterpret_cast<std::vector<std::tuple<StatisticType, int>> *>(pData)); //先转型
+                                                                                    //根据约定，第一个是数据表项类型，第二个是增加的Value值
+    for(auto datum : aData)
+    {
+        StatisticType type = std::get<0>(datum);
+        int value = std::get<1>(datum);
+
+        std::string key = USER_STATISTICS[type];
+
+        if(type == en_Stat_Adventure && value == 1)
+        {
+            int res = 0;
+            //todo 目前只有开三个主题
+            for (int theme = 1; theme <= 3; theme++)
+            {
+                for (int level = 1; level <= 8; level++)
+                {
+                    auto aLevelKey = StringUtils::format(LEVELKEY, theme, level);
+
+                    int iCurrentLevelData = (_levelData[aLevelKey]).asInt();
+                    int iCurrentLevelType = iCurrentLevelData / 10;
+
+                    if (iCurrentLevelType > 1)
+                        res++;
+                    else
+                        break;
+                }
+                _levelData[key] = res;
+            }
+        }
+        else if (type == en_Stat_BossMode && value == 1)
+        {
+            int res = 0;
+            //todo 目前只有开三个主题
+            for (int theme = 1; theme <= 3; theme++)
+            {
+                for (int level = 13; level <= 16; level++)
+                {
+                    auto aLevelKey = StringUtils::format(LEVELKEY, theme, level);
+
+                    int iCurrentLevelData = (_levelData[aLevelKey]).asInt();
+                    int iCurrentLevelType = iCurrentLevelData / 10;
+
+                    if (iCurrentLevelType > 1)
+                        res++;
+                    else
+                        break;
+                }
+                _levelData[key] = res;
+            }
+        }
+        else if (type == en_Stat_Cryptic && value == 1)
+        {
+            int res = 0;
+            //todo 目前只有开三个主题
+            for (int theme = 1; theme <= 3; theme++)
+            {
+                for (int level = 9; level <= 12; level++)
+                {
+                    auto aLevelKey = StringUtils::format(LEVELKEY, theme, level);
+
+                    int iCurrentLevelData = (_levelData[aLevelKey]).asInt();
+                    int iCurrentLevelType = iCurrentLevelData / 10;
+
+                    if (iCurrentLevelType > 1)
+                        res++;
+                    else
+                        break;
+                }
+                _levelData[key] = res;
+            }
+        }
+        else
+        {
+            int oldVal = _levelData[key].asInt();
+            int newVal = oldVal + value;
+            _levelData[key] = newVal;
+        }
+    }
+
+    //重新写回去
+    FileUtils::getInstance()->writeToFile(_levelData, _sLevelDataFilePath);
 }
 

@@ -129,6 +129,58 @@
             <Ball/>
         </TowerType>
     </1_12>
+    <1_13>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </1_13>
+    <1_14>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </1_14>
+    <1_15>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </1_15>
+    <1_16>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </1_16>    
     <2_01>
         <ThemeIndex ThemeIndex="2"/>
         <Level Level="1"/>
@@ -283,6 +335,58 @@
             <Sun1/>
         </TowerType>
     </2_12>
+    <2_13>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </2_13>
+    <2_14>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </2_14>
+    <2_15>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </2_15>
+    <2_16>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </2_16> 
     <3_01>
         <ThemeIndex ThemeIndex="3"/>
         <Level Level="1"/>
@@ -426,4 +530,67 @@
             <Snow/>
         </TowerType>
     </3_11>
+    <3_12>
+        <ThemeIndex ThemeIndex="3"/>
+        <Level Level="11"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="20"/>
+        <TowerType>
+            <Shit/>
+            <BStar/>
+            <Snow/>
+        </TowerType>
+    </3_12>
+    <3_13>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </3_13>
+    <3_14>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </3_14>
+    <3_15>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </3_15>
+    <3_16>
+        <ThemeIndex ThemeIndex="1"/>
+        <Level Level="12"/>
+        <Money Money="1050"/>
+        <MonsterBatch MonsterBatch="1"/>
+        <TowerType>
+            <Bottle/>
+            <Shit/>
+            <Fan/>
+            <Star/>
+            <Ball/>
+        </TowerType>
+    </3_16> 
 </LevelConfigRoot>

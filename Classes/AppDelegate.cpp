@@ -83,15 +83,19 @@ void AppDelegate::applicationWillEnterForeground() {
 
 void AppDelegate::preLoadSource()
 {
+    //先加载欢迎界面的资源
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/mainscene1-hd.plist", "Themes/scene/mainscene1-hd.png");
     //    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/themescene1-hd.plist", "Themes/scene/themescene1-hd.png");
     //    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/Items/Items00-hd.plist", "Themes/Items/Items00-hd.png");
+    
+    //加载一波表格文件
     auto pCsvUtil = CsvUtil::getInstance();
     pCsvUtil->addFileData(BARRIERCSVFILE);
     pCsvUtil->addFileData(TOWERCSVFILE);
     pCsvUtil->addFileData(MONSTERCSVFILE);
     pCsvUtil->addFileData(BULLETCSVFILE);
     pCsvUtil->addFileData(LEVELCSVFILE);
+    pCsvUtil->addFileData(BOSSCSVFILE);
 }
 
 

@@ -77,7 +77,9 @@ void MonsterManager::removeMonsterFromManager(Ref *pMonster)
 		if (!_pMonsterVec->size())
 		{
 			auto aEnGameWin = en_GameWin;
-			if (GameManager::getInstance()->getICarrotHp() >= 1) NOTIFY->postNotification("gameEnd", reinterpret_cast<Ref*>(&aEnGameWin));
+			if (GameManager::getInstance()->getICarrotHp() >= 1 || GameManager::getInstance()->getCurrGameType() == en_BossMode) 
+                NOTIFY->postNotification("gameEnd", reinterpret_cast<Ref*>(&aEnGameWin));
+
 			//发完通知后要重置该变量；
 			_bIsOpenCheckGameEnd = false;
 		}
@@ -89,15 +91,7 @@ void MonsterManager::clearManager()
 	_pMonsterVec->clear();
 }
 
-void MonsterManager::openCheckGameEnd(cocos2d::Ref *pSender)
+void MonsterManager::openCheckGameEnd(Ref *pSender)
 {
 	_bIsOpenCheckGameEnd = true;
 }
-
-
-
-
-
-
-
-

@@ -21,12 +21,15 @@ const static std::vector<std::string> ALLSOURCE =
     "Themes/scene/weibo-hd",
     "Themes/scene/stages_bg-hd",
     "Themes/Items/Items00-hd",
+    "Themes/scene/gameover1-hd", //BOSS MODE GAME END SOURCE
     "Themes/scene/gameover0-hd",
     "Themes/scene/gameover-hd",
     "Themes/Items/Items01-hd",
     "Themes/scene/help_3-hd",
     "Themes/scene/help_2-hd",
-    "Themes/scene/help_1-hd"
+    "Themes/scene/help_1-hd",
+    "Themes/scene/antiboss1-hd",
+    "Themes/scene/antiboss2-hd"
 };
 
 /*
@@ -71,12 +74,13 @@ const static std::string THEMESSOURCE[] =
 #define GAMESCENEMONSTER2 "Themes/Theme%d/Items/Monsters02-hd"
 
 /*
-* csv 文件实体
+* csv 表格
 */
 const static std::string BULLETCSVFILE = "csv/Bullet.csv";
 const static std::string BARRIERCSVFILE = "csv/Barrier.csv";
 const static std::string TOWERCSVFILE = "csv/Tower.csv";
 const static std::string MONSTERCSVFILE = "csv/Monster.csv";
+const static std::string BOSSCSVFILE = "csv/Boss.csv";
 
 /*
 *  csv的级别配置
@@ -131,16 +135,41 @@ const static std::string TOWER = "TowerType";
 const static std::string MONEYNUMIMAGE = "Themes/Items/numwhite-hd.png";
 const static std::string MONSTERBATCHIMAGE = "Themes/Items/numyellow-hd.png";
 const static std::string LITTLENUMIMAGE = "Themes/scene/win_stagenum-hd.png";
-/*
-*游戏结束
-*/
+
+/**
+ * @brief 冒险游戏结束弹出图层资源
+ */
 const static std::vector<std::tuple<std::string, std::string, std::string>> GAMEENDSOURCE =
 {
     std::make_tuple(std::string("win_bg.png"), std::string("continue_normal_CN.png"), std::string("continue_pressed_CN.png")),
     std::make_tuple(std::string("lose_bg.png"), std::string("retry_normal_CN.png"), std::string("retry_pressed_CN.png"))
 };
 
+/**
+ * @brief BOSS模式游戏结束弹出图层资源
+ */
+const static std::vector<std::tuple<std::string, std::string, std::string>> BM_GAMEENDSOURCE =
+{
+    std::make_tuple(std::string("bm_win_bg.png"), std::string("continue_normal_CN.png"), std::string("continue_pressed_CN.png")),
+    std::make_tuple(std::string("bm_lose_bg.png"), std::string("retry_normal_CN.png"), std::string("retry_pressed_CN.png"))
+
+};
+
+/**
+ * @brief 冒险模式结束后显示的文字
+ * @details 赢了和输了都是显示一样的文字，所以只加载一个就可以了
+ */
 const static std::string GAMEENDTITLE = "lose_bg_CN.png";
+
+/**
+ * @brief BOSS模式结束后显示的文字
+ * @details 这个模式两个结果显示的文字是不一样的
+ */
+const static std::vector<std::string> BM_GAMEENDTITLE =
+{
+    std::string("bm_win_bg_CN.png"),
+    std::string("bm_lose_bg_CN.png")
+};
 
 const static std::vector<std::string> CHOOSESOURCE =
 {
@@ -155,16 +184,48 @@ const static std::vector<std::string> CHOOSESOURCE =
 const static int TILESIZE = 80;
 
 /**
-*  萝卜生命值
-*/
-const static int GOLDCARROTHP = 10;
-const static std::string GOLDCARROT = "gainhonor_3.png";
-const static int SILVERCARROTHP1 = 5;
-const static int SILVERCARROTHP2 = 9;
-const static std::string SILVERCARROT = "gainhonor_2.png";
-const static std::string NORMALCARROT = "gainhonor_1.png";
-const static std::string BARRIERCLEAN = "gainhonor_4.png";
+ *  @brief 萝卜生命值
+ *  @details 冒险模式下萝卜生命值所对应的荣耀
+ */
+const static int GOLDCARROTHP = 10; //满血为金萝卜
+const static int SILVERCARROTHP1 = 5; //银萝卜荣耀的生命下限
+const static int SILVERCARROTHP2 = 9; //银萝卜荣耀的生命上限
 
+/**
+ * @brief 游戏剩余时间
+ * @details BOSS模式下游戏剩余时间对应的荣耀
+ */
+const static int GOLDCARROTTIME = 10; //金萝卜荣耀的时间下限
+const static int SILVERCARROTTIME1 = 9;  //银萝卜荣耀的时间上限
+const static int SILVERCARROTTIME2 = 5; //银萝卜荣耀的时间下限
+ 
+const static std::string GOLDCARROT = "gainhonor_3.png"; //金萝卜的图片路径
+const static std::string SILVERCARROT = "gainhonor_2.png"; //银萝卜的图片路径
+const static std::string NORMALCARROT = "gainhonor_1.png"; //木萝卜的图片路径
+const static std::string BARRIERCLEAN = "gainhonor_4.png"; //障碍物全部清除的图片路径
+
+/**
+ * @brief 数据表项
+ * @details 比如冒险模式通关地图数、隐藏关卡地图数、BOSS模式通关地图数等等
+ */
+const static std::string DATA_ADVENTURE_MAP_CLEARANCE = "adventure_clear"; //冒险模式通关数
+const static std::string DATA_CRYPTIC_MAP_CLEARANCE = "cryptic_clear"; //隐藏关卡通关数
+const static std::string DATA_BOSS_MAP_CLEARANCE = "boss_clear"; //BOSS模式通关数
+const static std::string DATA_TOTAL_MONEY = "total_money"; //总金钱
+const static std::string DATA_TOTAL_BOSS_ATTACK = "total_boss"; //打死怪物总数
+const static std::string DATA_TOTAL_MONSTER_ATTACK = "total_monster"; //打死BOSS总数
+const static std::string DATA_TOTAL_BARRIER_CLEARANCE = "total_barrier"; //摧毁道具总数
+
+const static std::vector<std::string> USER_STATISTICS =
+{
+    std::string("adventure_clear"), //冒险模式通关数
+    std::string("cryptic_clear"), //隐藏关卡通关数
+    std::string("boss_clear"), //BOSS模式通关数
+    std::string("total_money"), //总金钱
+    std::string("total_boss"), //打死怪物总数
+    std::string("total_monster"), //打死BOSS总数
+    std::string("total_barrier") //摧毁道具总数
+};
 /*
 *应用配置
 */
@@ -230,6 +291,10 @@ const static std::vector<std::string> TOWERS =
 */
 
 #define LEVELDATACHANGE "levelDataChange"
+#define STATDATACHANGE "statDataChange"
 
 static const std::string TITLE_SELECT_LEVEL = "选择关卡";
+static const std::string TITLE_BOSS_MODE = "Boss模式";
+
+
 #endif // !COMMON_SOURCE_H

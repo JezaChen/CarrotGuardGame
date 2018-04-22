@@ -146,7 +146,9 @@ void LevelSelectLayer::loadLevelButton()
         gameButton->addTouchEventListener([&](Ref *pSender, Widget::TouchEventType event)
                                           {
                                               if (event == Widget::TouchEventType::ENDED)
-                                                  this->changeToGameScene(); //唤起切换游戏界面的函数
+                                                  //唤起切换游戏界面的函数
+                                                  //判断关卡是否被锁的逻辑在changeToGameScene函数里面的
+                                                  this->changeToGameScene(); 
                                           });
 
         auto aTowerBar = Sprite::createWithSpriteFrameName(

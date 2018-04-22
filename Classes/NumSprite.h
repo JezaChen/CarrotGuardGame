@@ -15,9 +15,10 @@ public:
 	 * @brief 静态函数，用于创造数字精灵
 	 * @param rsNum 你想要哪个数字的精灵，你就传那个数字进去(数字串也行哦）
 	 * @param rsImage 在哪个图像进行切割
+	 * @param spacing 数字与数字之间的间隔，默认为0，即按照原图来均匀切割。
 	 * @author 何泓兵
 	 */
-	static Node *createNum(const std::string &rSNum, const std::string &rSImage);
+	static Node *createNum(const std::string &rSNum, const std::string &rSImage, int spacing = 0);
 
 	/**
 	 * @brief 静态函数，用于创造斜杠精灵

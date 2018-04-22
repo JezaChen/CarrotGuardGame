@@ -26,7 +26,7 @@ protected:
 	virtual bool init();
 
 	/**
-	 * @注册怪物死亡事件后的处理函数
+	 * @breif 注册怪物死亡事件后的处理函数
 	 * @details 怪物死亡之后，会加上金钱图层
 	 * */
 	virtual void registerMonsterDeadEvent();
@@ -34,6 +34,7 @@ protected:
 	/*
 	* @brief 怪物死亡加钱画面的图层显示
 	* @details 怪物死亡胡金钱数增加过程
+	* @details 准确来说，是死掉之后那个金钱的框框上升的动画
 	*/
 	virtual void monsterDead(Ref *pData);
 

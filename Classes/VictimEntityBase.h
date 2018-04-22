@@ -86,6 +86,7 @@ protected:
 
     /**
      * @brief 执行死亡动画
+     * @details 其实是供doDead()函数调用的
      */
     virtual void deadAction(const std::string &rSDeadImageFile = "") override;
 

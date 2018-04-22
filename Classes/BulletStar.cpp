@@ -77,7 +77,7 @@ void BulletStar::doMove()
 		{
 			//获取怪物vector；
 			Vector<MonsterBase *>  MonsterVector = Vector<MonsterBase *>(MonsterManager::getInstance()->getMonsterVec());
-			for (int i = 0; i < MonsterVector.size(); i++)
+            for (int i = MonsterVector.size() - 1; i >= 0; i--)
 			{
 				MonsterBase * pMonster = (MonsterBase *)(MonsterVector.at(i));
 				//检测矩形相交，即检测是否击中；
@@ -98,7 +98,7 @@ void BulletStar::doMove()
 		else//为0的是障碍物的动画帧数；
 		{
 			Vector<BarrierBase *>  BarrierVector = Vector<BarrierBase *>(BarrierManager::getInstance()->getBarrierVec());
-			for (int i = 0; i < BarrierVector.size(); i++)
+            for (int i = BarrierVector.size() - 1; i >= 0; i--)
 			{
 				BarrierBase * pBarrier = (BarrierBase *)(BarrierVector.at(i));
 				if (rect.intersectsRect(pBarrier->getBoundingBox()))

@@ -43,6 +43,8 @@ void BarrierBase::deadAction(const std::string &rSDeadImageFile)
 {
 	NOTIFY->postNotification("BarrierDead", this); //发出障碍物挂掉的通知
 	MapUtil::getInstance()->removeBarrierRect(getPosition()); //地图去除障碍物，变成炮塔可用位置
+
+
 	//自下而上调用死亡函数；
 	VictimEntityBase::deadAction(rSDeadImageFile);
 }
