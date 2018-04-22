@@ -300,6 +300,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\TowerCuttle.h" />
     <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
+    <ClInclude Include="..\Classes\TowerFish.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
     <ClInclude Include="..\Classes\TowerOptBtn.h" />

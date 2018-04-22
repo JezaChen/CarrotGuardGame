@@ -188,6 +188,7 @@
     <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\TowerCuttle.h" />
+    <ClInclude Include="..\Classes\TowerFish.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
