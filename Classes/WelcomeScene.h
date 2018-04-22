@@ -1,3 +1,11 @@
+/**
+* @brief
+* @details
+* @extends
+* @see
+* @authors ³Â½¨ÕÃ
+* @date 20180315
+* */
 #pragma once
 #ifndef WELCOME_SCENE_H
 #define WELCOME_SCENE_H
