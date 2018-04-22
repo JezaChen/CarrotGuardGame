@@ -90,6 +90,8 @@
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
     <ClCompile Include="..\Classes\TowerCuttle.cpp" />
+    <ClCompile Include="..\Classes\TowerFish.cpp" />
+    <ClCompile Include="..\Classes\BulletFish.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -189,6 +191,7 @@
     <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\TowerCuttle.h" />
     <ClInclude Include="..\Classes\TowerFish.h" />
+    <ClInclude Include="..\Classes\BulletFish.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

@@ -156,6 +156,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BarrierBuilder.cpp" />
     <ClCompile Include="..\Classes\BulletAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletBlueStar.cpp" />
+    <ClCompile Include="..\Classes\BulletFish.cpp" />
     <ClCompile Include="..\Classes\BulletLittleAnchor.cpp" />
     <ClCompile Include="..\Classes\BulletPin.cpp" />
     <ClCompile Include="..\Classes\BulletRocket.cpp" />
@@ -202,6 +203,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\TowerCuttle.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
+    <ClCompile Include="..\Classes\TowerFish.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
     <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
@@ -247,6 +249,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\BarrierBuilder.h" />
     <ClInclude Include="..\Classes\BulletAnchor.h" />
     <ClInclude Include="..\Classes\BulletBlueStar.h" />
+    <ClInclude Include="..\Classes\BulletFish.h" />
     <ClInclude Include="..\Classes\BulletLittleAnchor.h" />
     <ClInclude Include="..\Classes\BulletPin.h" />
     <ClInclude Include="..\Classes\BulletRocket.h" />
