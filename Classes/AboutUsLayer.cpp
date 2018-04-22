@@ -1,6 +1,10 @@
 //
-// Created by jeza on 18-4-11.
+//  AboutUsLayer.cpp
+//  CarrotFantasy
 //
+//  Created by ³Â½¨ÕÃ on 18-4-11.
+//
+//  
 
 #include "AboutUsLayer.h"
 

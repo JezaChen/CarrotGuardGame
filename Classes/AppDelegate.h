@@ -1,3 +1,8 @@
+/**
+* @brief 应用程序类
+* @author 陈建彰
+* @date 20180411
+*/
 #ifndef  _APP_DELEGATE_H_
 #define  _APP_DELEGATE_H_
 

@@ -81,7 +81,7 @@ void WelcomeScene::showVideo()
 
 	if (videoPlayer)
 	{
-		videoPlayer->setFileName("twly.mp4");
+		videoPlayer->setFileName("video/twly.mp4");
 		videoPlayer->play();
 	}
 	videoPlayer->addEventListener(CC_CALLBACK_2(WelcomeScene::videoEventCallback, this));

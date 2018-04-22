@@ -1,3 +1,10 @@
+//
+//  AppDelegate.cpp
+//  CarrotFantasy
+//
+//  Created by ³Â½¨ÕÃ on 18-4-8.
+//
+//  
 #include "AppDelegate.h"
 #include "SceneManager.h"
 #include "CsvUtil.h"
