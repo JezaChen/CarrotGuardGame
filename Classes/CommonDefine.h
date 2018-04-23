@@ -1,4 +1,4 @@
-//
+//  游戏公有定义类
 //  CommonDefine.h
 //   newCardDefence
 //
@@ -176,8 +176,8 @@ enum TowerType
     en_PlaneTower,//飞机
     en_AnchorTower,//锚
 	en_MushroomTower,//蘑菇
-	en_FishTower//鱼骨头
-
+	en_FishTower,//鱼骨头
+	en_CuttleTower//大章鱼
 };
 
 //MonsterType

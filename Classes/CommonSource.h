@@ -1,3 +1,10 @@
+//  游戏公有资源
+//  CommonSource.h
+//   CarrotFantasy
+//
+//  Created by 陈建彰 on 18-3-30
+//  
+//
 #pragma once
 #ifndef COMMON_SOURCE_H
 #define COMMON_SOURCE_H
@@ -34,13 +41,13 @@ const static std::vector<std::string> ALLSOURCE =
 };
 
 /*
-*  欢迎场景资源
+* @brief 欢迎场景资源
 */
 const static std::string MAIN_BACKGROUND = "mainbg.png";
 const static std::string MAIN_BACKGROUND_CN = "mainbg_CN.png";
 
 /*
-*  加载场景
+* @brief 加载场景
 */
 
 const static std::string LOADINGSOURCE = "loading/loading.jpeg";
@@ -56,7 +63,7 @@ const static std::string PAGESOURCE[] =
 const static std::string MAPNAME = "ss_map";
 const static std::string TOWERNAME = "ss_towers_";
 /*
-* 每个主题的关卡数
+* @brief 每个主题的关卡数
 */
 const static unsigned int THEME_LEVELCOUNT_ARRAY[] = { 12,12,12,15 };
 
@@ -75,7 +82,7 @@ const static std::string THEMESSOURCE[] =
 #define GAMESCENEMONSTER2 "Themes/Theme%d/Items/Monsters02-hd"
 
 /*
-* csv 表格
+* @brief csv 表格
 */
 const static std::string BULLETCSVFILE = "csv/Bullet.csv";
 const static std::string BARRIERCSVFILE = "csv/Barrier.csv";
@@ -84,12 +91,12 @@ const static std::string MONSTERCSVFILE = "csv/Monster.csv";
 const static std::string BOSSCSVFILE = "csv/Boss.csv";
 
 /*
-*  csv的级别配置
+* @brief csv的级别配置
 */
 const static std::string LEVELCSVFILE = "csv/Level.csv";
 
 /*
-* 背景音乐和效果音乐
+* @brief 背景音乐和效果音乐
 */
 
 const static std::string BACKGROUNDSOUND = "Music/Main/BGMusic.mp3";
@@ -112,26 +119,26 @@ const static std::string BUILDMONSTER = "Music/Items/MC.mp3";
 const static std::string MONSTERMUSIC = "Music/Monsters/";
 
 /*
-* 主题配置信息
+* @brief 主题配置信息
 */
 
 const static std::string THEME = "Theme";
 const static std::string THEMEATTRIBUTE = "ThemeIndex";
 /**
-*  等级配置信息
+* @brief 等级配置信息
 */
 const static std::string LEVEL = "Level";
 const static std::string LEVELATTRIBUTE = "LevelIndex";
 /*
-*  怪物批量信息
+* @brief 怪物批量信息
 */
 const static std::string MONSTERBATCH = "MonsterBatch";
 /*
-*  塔的信息
+* @brief 塔的信息
 */
 const static std::string TOWER = "TowerType";
 /*
-*  精灵数
+* @brief 数字精灵
 */
 const static std::string MONEYNUMIMAGE = "Themes/Items/numwhite-hd.png";
 const static std::string MONSTERBATCHIMAGE = "Themes/Items/numyellow-hd.png";
@@ -159,6 +166,7 @@ const static std::vector<std::tuple<std::string, std::string, std::string>> BM_G
 /**
  * @brief 冒险模式结束后显示的文字
  * @details 赢了和输了都是显示一样的文字，所以只加载一个就可以了
+ * @see 时间到，你没能杀死所有怪物
  */
 const static std::string GAMEENDTITLE = "lose_bg_CN.png";
 
@@ -171,17 +179,18 @@ const static std::vector<std::string> BM_GAMEENDTITLE =
     std::string("bm_win_bg_CN.png"),
     std::string("bm_lose_bg_CN.png")
 };
-
+/**
+* @brief 选择关卡按钮图片
+*/
 const static std::vector<std::string> CHOOSESOURCE =
 {
     "select_normal_CN.png",
     "select_pressed_CN.png"
-}; //选择关卡按钮图片
+}; 
 
 /*
-* 标题大小
+* brief 标题大小
 */
-
 const static int TILESIZE = 80;
 
 /**
@@ -228,7 +237,7 @@ const static std::vector<std::string> USER_STATISTICS =
     std::string("total_barrier") //摧毁道具总数
 };
 /*
-*应用配置
+* @brief 应用配置
 */
 
 const static std::string BUILDLEVELDATAKEY = "buildLevelData";

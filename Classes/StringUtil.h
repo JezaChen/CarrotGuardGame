@@ -1,7 +1,9 @@
-/** @Copyright   保卫萝卜
+/** 
+*   @Copyright   保卫萝卜
 *   @author      陈建彰
 *   @date        2018/2/28 
 *   @brief       字符串处理工具头文件
+*   @details     实现居然在.h里写了，就这样吧
 */
 
 #pragma once
