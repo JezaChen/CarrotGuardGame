@@ -24,7 +24,7 @@ TowerBase *TowerFactory::createTower(const TowerType &rTowerType, Vec2 tposition
 	switch (rTowerType)
 	{
 	case en_GreenTower: towerId = 1; break;
-	case en_CloverTower:towerId = 4; break;
+	case en_FanTower:towerId = 4; break;
 	case en_ShitTower: towerId = 7; break;
 	case en_BallTower: towerId = 10; pTower = TowerBall::create(); break;
 	case en_StarTower: towerId = 13; pTower = TowerStar::create(); break;

@@ -92,7 +92,7 @@ enum CsvVictimProperty
 //枚举子弹属性；
 enum CsvBulletProperty
 {
-    en_AtkState = 6,//攻击状态；
+    en_AtkState = 6,//攻击类型；
     en_Duration = 9,//持续时间；
     en_BulletType,//子弹类型；
     en_DeadActCount//死亡动画数；
@@ -128,7 +128,7 @@ enum StatisticType
 };
 
 /**
-Atk State
+* @brief 攻击类型；
 */
 enum AtkState
 {
@@ -137,7 +137,7 @@ enum AtkState
     en_Stop = en_Normal << 2,
     en_Poison = en_Normal << 3,//毒；
 };
-//攻击性；
+//攻击属性；
 class AtkProperty
 {
 public:
@@ -150,31 +150,34 @@ public:
 //SceneType
 enum SceneType
 {
-    en_WelcomeScene,
-    en_GameSettingScene,
-    en_GameHelpScene,
-    en_ThemeSelectScene,
-    en_LevelSelectScene,
-    en_GameScene,
-    en_BossModeScene
+    en_WelcomeScene,//欢迎场景；
+    en_GameSettingScene,//游戏设置场景；
+    en_GameHelpScene,//游戏帮助场景；
+    en_ThemeSelectScene,//主题选择场景；
+    en_LevelSelectScene,//等级选择场景；
+    en_GameScene,//游戏场景；
+    en_BossModeScene//boss模式场景；
 };
 
 //TowerType
 enum TowerType
 {
-    en_StarTower,
-    en_CloverTower,
-    en_GreenTower,
-    en_ShitTower,
-    en_BallTower,
-    en_FireBottleTower,
-    en_BlueStarTower,
-    en_SunTower,
-    en_PinTower,
-    en_RocketTower,
-    en_SnowTower,
-    en_PlaneTower,
-    en_AnchorTower
+    en_StarTower,//星星
+    en_FanTower,//风扇
+    en_GreenTower,//绿色瓶
+    en_ShitTower,//粑粑
+    en_BallTower,//电球
+    en_FireBottleTower,//汽油瓶
+    en_BlueStarTower,//蓝星星
+    en_SunTower,//太阳
+    en_PinTower,//毒针
+    en_RocketTower,//火箭
+    en_SnowTower,//雪花
+    en_PlaneTower,//飞机
+    en_AnchorTower,//锚
+	en_MushroomTower,//蘑菇
+	en_FishTower//鱼骨头
+
 };
 
 //MonsterType
@@ -215,16 +218,19 @@ enum MonsterType
     en_Boss_HugeChela
 };
 
-//BulletType
+//子弹类型
 enum BulletType
 {
-    en_NormalBullet = 1,
-    en_NoDisspper,
-    en_GunBullet,
-    en_StarBullet
+    en_NormalBullet = 1,//普通子弹
+    en_NoDisspper,//无限旋转类子弹
+    en_GunBullet,//枪类子弹
+    en_StarBullet//星星类子弹
 };
 
-//BarrierType
+/**
+* @brief 障碍物类型
+* @details 后面主题的障碍物直接用这四个名字
+*/
 enum BarrierType
 {
     en_CloudType,
@@ -235,8 +241,8 @@ enum BarrierType
 
 enum GameEndType
 {
-    en_GameWin,
-    en_GameLose
+    en_GameWin,//赢
+    en_GameLose//输
 };
 
 enum GameType
