@@ -116,7 +116,10 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 	pAnimation->setLoops(1);
 	pAnimation->setDelayPerUnit(0.1f);
 	//执行死亡动画后，从父结点中清除掉死掉的怪物精灵
-	_pSprite->runAction(Sequence::create(Animate::create(pAnimation), CallFunc::create([this]() {this->removeFromParent(); }), NULL));
+    if (_sName != "PCuttle")
+	    _pSprite->runAction(Sequence::create(Animate::create(pAnimation), CallFunc::create([this]() {this->removeFromParent(); }), NULL));
+    else //patch 章鱼子弹不要死亡了
+        this->removeFromParent();
 }
 
 Rect Entity::getBoundingBox()const
@@ -125,7 +128,11 @@ Rect Entity::getBoundingBox()const
 	auto tPos = getPosition();
 	//获取精灵原图大小；
 	auto tSize = _pSprite->getContentSize();
-	return Rect(tPos.x - tSize.width / 4, tPos.y - tSize.height / 4, tSize.width / 2, tSize.height / 2);
+    if (_sName == "PCuttle")
+    {
+        return Rect(tPos.x - tSize.width / 4, tPos.y - tSize.height / 4, tSize.width / 2, tSize.height / 2);
+    }
+    return Rect(tPos.x - tSize.width / 2, tPos.y - tSize.height / 2, tSize.width, tSize.height);
 }
 
 unsigned int Entity::getmID()

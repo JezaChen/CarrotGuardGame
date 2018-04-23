@@ -100,6 +100,9 @@
     <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\TowerMushroom.cpp" />
     <ClCompile Include="..\Classes\TowerArrow.cpp" />
+    <ClCompile Include="..\Classes\TowerCuttle.cpp" />
+    <ClCompile Include="BulletCuttle.cpp" />
+    <ClCompile Include="BulletArrow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -208,6 +211,9 @@
     <ClInclude Include="..\Classes\DataCollectLayer.h" />
     <ClInclude Include="..\Classes\TowerMushroom.h" />
     <ClInclude Include="..\Classes\TowerArrow.h" />
+    <ClInclude Include="..\Classes\TowerCuttle.h" />
+    <ClInclude Include="BulletCuttle.h" />
+    <ClInclude Include="BulletArrow.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

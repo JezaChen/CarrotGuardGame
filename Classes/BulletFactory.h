@@ -31,6 +31,7 @@ public:
      * @param level 章鱼子弹的等级，因为不同等级的子弹数不太一样
      */
     static void createCuttleBullets(const int& rCuttleBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity);
+    static void createArrowBullets(const int& rCuttleBulletId, TowerBase* rTower, VictimEntityBase* rVictimEntity);
 };
 
 #endif /* defined(__CarrotFantasy__BulletFactory__) */

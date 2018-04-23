@@ -178,6 +178,9 @@ void TowerOptBtn::createTowerMenu()
             case 40:
                 _towerType = en_CuttleTower;
                 break;
+            case 49:
+                _towerType = en_ArrowTower;
+                break;
             default:
                 break;
             }

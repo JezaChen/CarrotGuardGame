@@ -29,3 +29,6 @@ Id,Name,ModelName,Value,AnimationCount,Level,State,Speed,Atk,Duration,BulletType
 28,PFish,PFish1,0,1,1,4,290,60,2,7,6
 29,PFish,PFish2,0,1,2,4,310,80,3,7,6
 30,PFish,PFish3,0,1,3,4,330,100,4,7,6
+31,PArrow,PArrow1,0,1,1,1,250,30,0,2,2
+32,PArrow,PArrow2,0,1,1,1,270,30,0,2,2
+33,PArrow,PArrow3,0,1,1,1,290,30,0,2,2

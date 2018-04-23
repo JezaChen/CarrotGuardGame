@@ -65,3 +65,27 @@ void BulletFactory::createCuttleBullets(const int& rCuttleBulletId, TowerBase* r
     }
 }
 
+void BulletFactory::createArrowBullets(const int& rArrowBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity)
+{
+    auto cache = SpriteFrameCache::getInstance();
+    //通过plist切割png获取精灵帧；
+    cache->addSpriteFramesWithFile("Themes/Towers/TCuttle-hd.plist", "Themes/Towers/TCuttle-hd.png");
+
+    int arrowBulletsNum;
+    switch (rArrowBulletId)
+    {
+    case 31: arrowBulletsNum = 2; break;
+    case 32: arrowBulletsNum = 3; break;
+    case 33: arrowBulletsNum = 5; break;
+    }
+
+    for (int i = 0; i < arrowBulletsNum; i++)
+    {
+        auto pBullet = BulletCuttle::create(rArrowBulletId, rVictimEntity, 90 - 180 * (rVictimEntity->getPosition() - rTower->getPosition()).getAngle() / M_PI - 10 * (arrowBulletsNum / 2) + 10 * i);
+        //设置子弹跟随怪物的方向旋转；
+        //pBullet->setRotation(90 - 180 * (rVictimEntity->getPosition() - rTower->getPosition()).getAngle() / M_PI);
+        pBullet->setPosition(rTower->getPosition());
+        //子弹动起来；
+        pBullet->doMove();
+    }
+}

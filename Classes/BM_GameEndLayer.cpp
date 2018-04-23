@@ -120,7 +120,7 @@ void BM_GameEndLayer::loadInfo()
     //todo 是否从0开始的
     int iThemeIndex = SceneManager::getInstance()->getCurrentPageIndex();
     int iLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex();
-    int iBossId = iThemeIndex * (iLevelIndex - 12) + 1;
+    int iBossId = (iThemeIndex + 1) * (iLevelIndex - 12) + 1;
 
     auto aCurBossNameNode = Sprite::createWithSpriteFrameName(StringUtils::format("names_%02d", iBossId) + PHOTOPOSTFIX);
     aCurBossNameNode->setPosition(Vec2(480, 290));

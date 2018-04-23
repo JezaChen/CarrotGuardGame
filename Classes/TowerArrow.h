@@ -7,8 +7,8 @@
 * */
 #pragma once
 #pragma once
-#ifndef __CarrotFantasy__TowerPlane__
-#define __CarrotFantasy__TowerPlane__
+#ifndef TOWER_ARROW_H
+#define TOWER_ARROW_H
 
 #include "TowerBase.h"
 
@@ -45,4 +45,4 @@ public:
 	CREATE_FUNC(TowerArrow);
 };
 
-#endif /* defined(__CarrotFantasy__TowerPlane__) */
+#endif /* defined(TOWER_ARROW_H) */

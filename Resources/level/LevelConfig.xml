@@ -179,6 +179,7 @@
         <TowerType>
             <Bottle/>
             <Shit/>
+            <Arrow/>
             <Fan/>
             <Star/>
             <Ball/>

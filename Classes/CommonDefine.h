@@ -178,7 +178,8 @@ enum TowerType
     en_AnchorTower,//锚
 	en_MushroomTower,//蘑菇
 	en_FishTower,//鱼骨头
-	en_CuttleTower//大章鱼
+	en_CuttleTower,//大章鱼
+    en_ArrowTower //弓箭
 };
 
 //怪物类型

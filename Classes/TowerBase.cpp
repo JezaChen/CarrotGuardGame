@@ -14,6 +14,7 @@
 #include "MonsterManager.h"
 #include "MonsterBase.h"
 #include "SoundUtil.h"
+#include "MapUtil.h"
 
 TowerBase::~TowerBase()
 {
@@ -49,6 +50,7 @@ bool TowerBase::init(const int &rId)
 void TowerBase::deadAction(const std::string &rSDeadImageFile)
 {
     NOTIFY->postNotification("TowerDead", this); //发出通知
+    MapUtil::getInstance()->removeBarrierRect(getPosition()); //地图去除炮塔，变成炮塔可用位置，类比于障碍物
     Entity::deadAction();
 }
 
@@ -171,7 +173,7 @@ void TowerBase::doRotation(float dt)
     if (_bIsRotation) getSprite()->runAction(RotateTo::create(0.1, static_cast<float>(90 - 180 *
                                                                                            (_pAtkTarget->getPosition() -
                                                                                             this->getPosition()).getAngle() /
-                                                                                           M_PI)));
+                                                                                            M_PI)));
 }
 
 void TowerBase::fireAction()

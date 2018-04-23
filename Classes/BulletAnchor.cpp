@@ -28,6 +28,7 @@ BulletAnchor * BulletAnchor::create(const int & rId, VictimEntityBase *rVictimEn
 	{
 		//初始化成功就设置自动释放；
 		pBullet->autorelease();
+        pBullet->retain();
 		return pBullet;
 	}
 	//否则删掉他；

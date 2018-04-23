@@ -120,7 +120,7 @@ void MapUtil::rectTransTower(const Rect& rRect, TowerType ttResultingTowerType)
     {
         for (int j = 0; j < aHeight / TILESIZE; ++j)
         {
-            //_pEffectTowerRectVec->push_back(Rect(aX + TILESIZE * i, aY + TILESIZE * j, TILESIZE, TILESIZE));
+            _pEffectTowerRectVec->push_back(Rect(aX + TILESIZE * i, aY + TILESIZE * j, TILESIZE, TILESIZE));
             TowerFactory::createTower(ttResultingTowerType, Vec2(aX + TILESIZE * i + TILESIZE / 2, aY + TILESIZE * j + TILESIZE / 2));
         }
     }

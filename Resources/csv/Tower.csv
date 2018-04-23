@@ -47,3 +47,6 @@ Id,Name,ModelName,Value,AnimationCount,Level,AttackRange,AttackSpace,BulletId,Up
 46,Mushroom,Mushroom1,176,3,1,240,2,301,260,Mushroom-11.png,0,220
 47,Mushroom,Mushroom2,384,3,1,300,1.8,302,380,Mushroom-12.png,0,0
 48,Mushroom,Mushroom3,688,3,1,340,1.5,303,0_CN,Mushroom-13.png,0,0
+49,Arrow,Arrow1,176,3,1,240,0.6,31,260,Arrow-11.png,1,220
+50,Arrow,Arrow2,384,3,1,300,0.5,32,380,Arrow-12.png,1,0
+51,Arrow,Arrow3,688,3,1,340,0.4,33,0_CN,Arrow-13.png,1,0

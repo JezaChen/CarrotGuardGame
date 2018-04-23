@@ -20,6 +20,7 @@
 #include "TowerMushroom.h"
 #include "TowerFish.h"
 #include "TowerCuttle.h"
+#include "TowerArrow.h"
 
 TowerBase *TowerFactory::createTower(const TowerType &rTowerType, Vec2 tposition)
 {
@@ -43,6 +44,7 @@ TowerBase *TowerFactory::createTower(const TowerType &rTowerType, Vec2 tposition
     case en_MushroomTower:towerId = 46; pTower = TowerMushroom::create(); break;
     case en_FishTower:towerId = 43; pTower = TowerFish::create(); break;
     case en_CuttleTower:towerId = 40; pTower = TowerCuttle::create(); break;
+    case en_ArrowTower: towerId = 49; pTower = TowerArrow::create(); break;
 	default:
 		break;
 	}
