@@ -60,13 +60,33 @@ void TowerArrow::fire(float dt)
 
 void TowerArrow::attack()
 {
+	//创建攻击属性
 	AtkProperty atk;
 	atk._enAtkState = 1;
 	atk._iAtk = _iBulletId;
-	atk._iDuration = 1;
+	atk._iDuration = 0;
 
-	/**************************************************************/
-	/**-----------------------攻击游戏主逻辑-----------------------**/
-	/**************************************************************/
+	//攻击精灵启动
+	_doAnimationSprite->setVisible(true);
 
+	//攻击精灵角度与炮塔精灵的角度要一致
+	_doAnimationSprite->setRotation(getSprite()->getRotation());
+
+	//攻击精灵动画创建
+	Animation *pAnimation = Animation::create();
+	for (int i = 1; i <= 3; i++)
+	{
+		std::string SpriteFrameName = _sName + StringUtils::format("%d.png", i);
+		pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
+	}
+	pAnimation->setLoops(1);
+	pAnimation->setDelayPerUnit(0.1f);
+	CallFunc *pCallFunc = CallFunc::create([=]()
+	{
+		_doAnimationSprite->setVisible(false);
+	});
+
+	_doAnimationSprite->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr));
+
+	//伤害动画启动
 }
