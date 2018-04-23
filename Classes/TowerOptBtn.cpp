@@ -134,7 +134,7 @@ void TowerOptBtn::createTowerMenu()
                 _towerType = en_GreenTower;
                 break;
             case 4:
-                _towerType = en_CloverTower;
+                _towerType = en_FanTower;
                 break;
             case 7:
                 _towerType = en_ShitTower;
