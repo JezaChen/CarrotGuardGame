@@ -61,6 +61,10 @@ void VictimEntityBase::beHurt(const AtkProperty tBeHurtValue)
         case en_Poison:
             _fPoisonDuration = tBeHurtValue._iDuration;
             break;
+        case en_Slow_And_Shrink:
+            _fSlowAndShrinkDuration = tBeHurtValue._iDuration;
+            break;
+        
         default:
             break;
     }

@@ -120,7 +120,7 @@ Rect Entity::getBoundingBox()const
 	auto tPos = getPosition();
 	//获取精灵原图大小；
 	auto tSize = _pSprite->getContentSize();
-	return Rect(tPos.x - tSize.width / 2, tPos.y - tSize.height / 2, tSize.width, tSize.height);
+	return Rect(tPos.x - tSize.width / 4, tPos.y - tSize.height / 4, tSize.width / 2, tSize.height / 2);
 }
 
 unsigned int Entity::getmID()

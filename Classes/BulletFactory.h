@@ -16,13 +16,21 @@ class VictimEntityBase;
 class BulletFactory
 {
 public:
-	/*
+	/**
 	* @brief 创建各种子弹
 	* @param rBulletId 子弹的id
 	* @param rTower 塔基类的指针
 	* @param rVictimEntity 受伤实体，等同于攻击目标
 	*/
 	static BulletBase *createBullet(const int &rBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity);
+
+    /**
+     * @brief 创建章鱼子弹
+     * @param rCuttleBulletId 章鱼子弹的ID
+     * @param rTower 塔基类的指针
+     * @param level 章鱼子弹的等级，因为不同等级的子弹数不太一样
+     */
+    static void createCuttleBullets(const int& rCuttleBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity);
 };
 
 #endif /* defined(__CarrotFantasy__BulletFactory__) */

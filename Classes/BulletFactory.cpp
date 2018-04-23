@@ -10,6 +10,7 @@
 #include "BulletBase.h"
 #include "VictimEntityBase.h"
 #include "TowerBase.h"
+#include "proj.win32/BulletCuttle.h"
 
 
 BulletBase *BulletFactory::createBullet(const int &rBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity)
@@ -38,3 +39,29 @@ BulletBase *BulletFactory::createBullet(const int &rBulletId, TowerBase* rTower,
 
 	return pBullet;
 }
+
+void BulletFactory::createCuttleBullets(const int& rCuttleBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity)
+{
+    auto cache = SpriteFrameCache::getInstance();
+    //通过plist切割png获取精灵帧；
+    cache->addSpriteFramesWithFile("Themes/Towers/TCuttle-hd.plist", "Themes/Towers/TCuttle-hd.png");
+
+    int cuttleBulletsNum;
+    switch (rCuttleBulletId)
+    {
+        case 25: cuttleBulletsNum = 4; break;
+        case 26: cuttleBulletsNum = 8; break;
+        case 27: cuttleBulletsNum = 12; break;
+    }
+
+    for(int i = 0; i < cuttleBulletsNum; i++)
+    {
+        auto pBullet = BulletCuttle::create(rCuttleBulletId, rVictimEntity,360 / cuttleBulletsNum * i);
+        //设置子弹跟随怪物的方向旋转；
+        //pBullet->setRotation(90 - 180 * (rVictimEntity->getPosition() - rTower->getPosition()).getAngle() / M_PI);
+        pBullet->setPosition(rTower->getPosition());
+        //子弹动起来；
+        pBullet->doMove();
+    }
+}
+

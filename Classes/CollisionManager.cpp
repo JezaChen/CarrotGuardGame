@@ -40,6 +40,15 @@ void CollisionManager::MonsterAndBullet(BulletBase * pBullet, Vector<MonsterBase
 				pMonster->addChild(HurtSprite);
 				CallFunc * ClearF = CallFunc::create([=]() {HurtSprite->removeFromParentAndCleanup(true); });
 				HurtSprite->runAction(Sequence::create(Animate::create(AnimationMaker(pBullet->getSName(), pBullet->getAnimationFrameCount() + 1)), ClearF, NULL));
+			
+                if (pBullet->getIId() >= 25 && pBullet->getIId() <= 27)
+                {
+                    pBullet->getIdMap().erase(pMonster->getmID());
+                    pBullet->setPosition(pMonster->getPosition());
+                    pBullet->stopAllActions();
+                    pBullet->doDead();
+                    return;
+                }
 			}
 		}
 	}
@@ -61,7 +70,7 @@ void CollisionManager::BarrierAndBullet(BulletBase * pBullet, Vector<BarrierBase
 				pBarrier->addChild(HurtSprite);
 				CallFunc * ClearF = CallFunc::create([=]() {HurtSprite->removeFromParentAndCleanup(true); });
 				HurtSprite->runAction(Sequence::create(Animate::create(AnimationMaker(pBullet->getSName(), pBullet->getAnimationFrameCount() + 1)), ClearF, NULL));
-				if (pBarrier->getAtkTarget())
+				if (pBarrier->getAtkTarget() || pBullet->getIId() >= 25 && pBullet->getIId() <= 27)
 				{
 					pBullet->getIdMap().erase(pBarrier->getmID());
 					pBullet->setPosition(pBarrier->getPosition());
@@ -77,7 +86,7 @@ void CollisionManager::BarrierAndBullet(BulletBase * pBullet, Vector<BarrierBase
 Animation * CollisionManager::AnimationMaker(std::string BulletName, int SpriteFrameCount)
 {
 	Animation * pAnimation = Animation::create();
-	if (SpriteFrameCount == 2)
+	if (SpriteFrameCount == 2 || SpriteFrameCount == 4)
 	{
 		for (int i = 1; i <= SpriteFrameCount; i++)
 		{

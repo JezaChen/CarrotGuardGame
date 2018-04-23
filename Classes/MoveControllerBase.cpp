@@ -152,16 +152,16 @@ void MoveControllerBase::listenerMonster(float t)
     }
 
 	//当怪兽遭受到减速变小的时候处理(蘑菇)
-	if (State_Slow_And_Shrink  && _pMonster->getFSlowDuration() > 0)
+	if (State_Slow_And_Shrink  && _pMonster->getfSlowAndShrinkDuration() > 0)
 	{
 		_pMonster->setISpeed(_iMonsterSpeed / 3);
-		float StateTime = _pMonster->getFSlowDuration() - t; //更新一下怪物受减速攻击持续时间，直接减去调度时间即可
+		float StateTime = _pMonster->getfSlowAndShrinkDuration() - t; //更新一下怪物受减速攻击持续时间，直接减去调度时间即可
 		if (StateTime < 0) StateTime = 0; //若为负数了，那就清零
 		_pMonster->setFSlowDuration(StateTime);
 
 		
 	    //_pMonster->setContentSize(Size(_pMonster->getContentSize().width / 3, _pMonster->getContentSize().height / 3));
-        _pMonster->setScale(0.33);
+        _pMonster->getSprite()->setScale(0.66);
 
 		//创建一个子精灵，用于显示怪物移动受阻动画
 		Sprite *pTemp = Sprite::create();
@@ -173,9 +173,10 @@ void MoveControllerBase::listenerMonster(float t)
 		auto pCallFunc = CallFunc::create([=]()
 		{
 			pTemp->removeFromParentAndCleanup(true);
-			if (_pMonster->getFSlowDuration() <= 0)
+			if (_pMonster->getfSlowAndShrinkDuration() <= 0)
 			{
 				_pMonster->setISpeed(_iMonsterSpeed); //恢复原来的速度
+                _pMonster->getSprite()->setScale(1); //恢复原来的大小
 				_pMonster->setIState(_pMonster->getIState() & 15); //恢复原来的状态
 			}
 		});
@@ -309,6 +310,28 @@ Animation *MoveControllerBase::AnimationMaker(int iBulletType, float t)
         pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("PPin03.png"));
         pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("PPin04.png"));
         pAnimation->setDelayPerUnit(t / 4);
+    }
+    else if (iBulletType == 301 || iBulletType == 302 || iBulletType == 303)
+    {
+        //毒蘑菇缩小减速泡泡
+        if (_pMonster->getIId() == 1 || _pMonster->getIId() == 2 || _pMonster->getIId() == 3
+            || _pMonster->getIId() == 7 || _pMonster->getIId() == 8)
+        {
+            pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("PMushroom-11.png"));
+        }
+        else
+        {
+            pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("PMushroom-21.png"));
+        }
+        pAnimation->setDelayPerUnit(t); //bug fixed
+    }
+    else if (iBulletType == 7)
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(StringUtils::format("PFish-1%d.png", i)));
+        }
+        pAnimation->setDelayPerUnit(t / 3);
     }
     pAnimation->setLoops(1);
     return pAnimation;

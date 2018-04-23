@@ -18,7 +18,11 @@ bool TowersLayer::init()
 		CC_BREAK_IF(!Layer::init());
 		auto cache = SpriteFrameCache::getInstance();
 
-		for (auto &iterSource : TOWERS) cache->addSpriteFramesWithFile(iterSource + PLISTPOSTFIX, iterSource + PHOTOPOSTFIX);
+        /********************************************************/
+        /**********************在这里加载炮塔图层******************/
+        /********************************************************/
+		for (auto &iterSource : TOWERS) 
+            cache->addSpriteFramesWithFile(iterSource + PLISTPOSTFIX, iterSource + PHOTOPOSTFIX); 
 
 		schedule(schedule_selector(TowersLayer::checkTowerGrade));
 

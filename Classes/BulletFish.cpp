@@ -20,6 +20,8 @@ bool BulletFish::init(const int & rId, VictimEntityBase *rVictimEntity)
 		//保证子弹基类的初始化成功；
 		CC_BREAK_IF(!BulletBase::init(rId, rVictimEntity));
 
+        _iCrit_Effect_Random_Number = rand() % 100;
+
 		bRet = true;
 	} while (0);
 	return bRet;
@@ -44,7 +46,7 @@ BulletFish * BulletFish::create(const int & rId, VictimEntityBase *rVictimEntity
 void BulletFish::doAction()
 {
 	//子弹不停地瞄准(旋转瞄准);
-	getSprite()->runAction(RepeatForever::create(RotateBy::create(0.7, 360)));
+	//getSprite()->runAction(RepeatForever::create(RotateBy::create(0.7, 360)));
 }
 
 void BulletFish::doMove() 
@@ -63,8 +65,9 @@ void BulletFish::doMove()
 	//2个开花动画，依次创建；
 	if (getILevel() == 1)
 	{
-		if (Crit_Effect_Random_Number > 20)
+		if (_iCrit_Effect_Random_Number > 20)
 		{
+            _iAtkState = 1;
 			for (int i = 1; i <= 2; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish0%d.png", i);
@@ -73,11 +76,6 @@ void BulletFish::doMove()
 		}
 		else
 		{
-			for (int i = 1; i <= 3; i++)
-			{
-				std::string SpriteFrameName = StringUtils::format("PFish-1%d.png", i);
-				pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
-			}
 			for (int i = 1; i <= 6; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish-2%d.png", i);
@@ -87,8 +85,9 @@ void BulletFish::doMove()
 	}
 	else if (getILevel() == 2)
 	{
-		if (Crit_Effect_Random_Number > 60)
+		if (_iCrit_Effect_Random_Number > 60)
 		{
+            _iAtkState = 1;
 			for (int i = 1; i <= 2; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish0%d.png", i);
@@ -97,11 +96,6 @@ void BulletFish::doMove()
 		}
 		else
 		{
-			for (int i = 1; i <= 3; i++)
-			{
-				std::string SpriteFrameName = StringUtils::format("PFish-1%d.png", i);
-				pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
-			}
 			for (int i = 1; i <= 6; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish-2%d.png", i);
@@ -111,8 +105,9 @@ void BulletFish::doMove()
 	}
 	else if (getILevel() == 3)
 	{
-		if (Crit_Effect_Random_Number > 80)
+		if (_iCrit_Effect_Random_Number > 80)
 		{
+            _iAtkState = 1;
 			for (int i = 1; i <= 2; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish0%d.png", i);
@@ -121,11 +116,6 @@ void BulletFish::doMove()
 		}
 		else
 		{
-			for (int i = 1; i <= 3; i++)
-			{
-				std::string SpriteFrameName = StringUtils::format("PFish-1%d.png", i);
-				pAnimation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(SpriteFrameName));
-			}
 			for (int i = 1; i <= 6; i++)
 			{
 				std::string SpriteFrameName = StringUtils::format("PFish-2%d.png", i);
@@ -190,8 +180,9 @@ void BulletFish::doMove()
 	});
 	//移动的坐标；
 	Vec2 MovetoPosition = _pAtkTarget->getPosition() - this->getPosition();
-	//移动的距离；
+    //移动的距离；
 	float MoveDistance = this->getPosition().distance(_pAtkTarget->getPosition());
+
 	//执行动画；
 	getSprite()->runAction(Sequence::create(MoveBy::create(MoveDistance / _iSpeed, MovetoPosition), Animate::create(pAnimation), deadActionCF, NULL));
 }

@@ -16,6 +16,7 @@ bool TowerFish::init()
 	{
 		CC_BREAK_IF(!TowerBase::init(rId));
 
+        srand(time(nullptr));
 		bRet = true;
 	} while (0);
 	return bRet;
@@ -29,8 +30,10 @@ void TowerFish::fire(float dt)
 	auto createBulletCF = CallFunc::create([=]() {
 		if (!_pAtkTarget) return;
 		BulletFish * pBullet = BulletFish::create(getIBulletId(), _pAtkTarget);
-		pBullet->setPosition(this->getPosition());
-		pBullet->doMove();
+        pBullet->setPosition(this->getPosition()); //确定发射位置
+                                                   //确定发射角度，公式还是一样的
+        pBullet->getSprite()->setRotation(90 - 180 * (_pAtkTarget->getPosition() - this->getPosition()).getAngle() / M_PI);
+        pBullet->doMove(); //子弹发射启动
 	});
 
 	this->runAction(Sequence::create(fireActionCF, DelayTime::create(0.35), createBulletCF, NULL));

@@ -294,7 +294,11 @@ const static std::vector<std::string> TOWERS =
     "Themes/Towers/TAnchor-hd",
     "Themes/Towers/TPlane-hd",
     "Themes/Towers/TRocket-hd",
-    "Themes/Towers/TAnchor-hd"
+    "Themes/Towers/TAnchor-hd",
+    "Themes/Towers/TMushroom-hd",
+    "Themes/Towers/TArrow-hd",
+    "Themes/Towers/TCuttle-hd",
+    "Themes/Towers/TFish-hd"
 };
 /**
 *  通知信息

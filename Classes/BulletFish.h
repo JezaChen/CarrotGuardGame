@@ -36,7 +36,7 @@ protected:
 	/**
 	* @brief 暴击效果随机数
 	*/
-	int Crit_Effect_Random_Number = rand() % 100;
+    int _iCrit_Effect_Random_Number;
 
 
 };

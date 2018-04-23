@@ -206,6 +206,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\TowerAnchor.cpp" />
     <ClCompile Include="..\Classes\TowerBall.cpp" />
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
+    <ClCompile Include="..\Classes\TowerCuttle.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />
     <ClCompile Include="..\Classes\TowerFireBottle.cpp" />
     <ClCompile Include="..\Classes\TowerFish.cpp" />
@@ -239,6 +240,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BulletStar.cpp" />
     <ClCompile Include="..\Classes\LoadingScene.cpp" />
     <ClCompile Include="..\Classes\BossModeLevelSelectScene.cpp" />
+    <ClCompile Include="BulletCuttle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
@@ -312,6 +314,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\TowerAnchor.h" />
     <ClInclude Include="..\Classes\TowerBall.h" />
     <ClInclude Include="..\Classes\TowerBlueStar.h" />
+    <ClInclude Include="..\Classes\TowerCuttle.h" />
     <ClInclude Include="..\Classes\TowerFactory.h" />
     <ClInclude Include="..\Classes\TowerFireBottle.h" />
     <ClInclude Include="..\Classes\TowerFish.h" />
@@ -346,6 +349,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\LoadingScene.h" />
     <ClInclude Include="..\Classes\BossModeLevelSelectLayer.h" />
     <ClInclude Include="..\Classes\BossModeLevelSelectScene.h" />
+    <ClInclude Include="BulletCuttle.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />

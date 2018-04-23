@@ -35,22 +35,6 @@ private:
 	*/
 	virtual void fire(float dt);
 
-	/**
-	* @brief 大章鱼实质的攻击效果函数
-	* @details 由fire调用的章鱼实质攻击效果的函数
-	* @todo 代码风格不统一
-	* */
-	void attack();
-
-	/**
-	* @brief 子弹的运动
-	*/
-	void BulletDoAction();
-
-	/*
-	* @brief 章鱼弹的移动
-	*/
-	void bulletMoveToFar();
 public:
 
 	CREATE_FUNC(TowerCuttle);

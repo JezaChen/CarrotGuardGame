@@ -17,6 +17,10 @@
 #include "TowerRocket.h"
 #include "TowerPlane.h"
 #include "TowerAnchor.h"
+#include "TowerMushroom.h"
+#include "TowerFish.h"
+#include "TowerCuttle.h"
+
 TowerBase *TowerFactory::createTower(const TowerType &rTowerType, Vec2 tposition)
 {
 	TowerBase *pTower = nullptr;
@@ -36,6 +40,9 @@ TowerBase *TowerFactory::createTower(const TowerType &rTowerType, Vec2 tposition
 	case en_SnowTower:towerId = 31; pTower = TowerSnow::create(); break;
 	case en_PlaneTower:towerId = 34; pTower = TowerPlane::create(); break;
 	case en_AnchorTower:towerId = 37; pTower = TowerAnchor::create(); break;
+    case en_MushroomTower:towerId = 46; pTower = TowerMushroom::create(); break;
+    case en_FishTower:towerId = 43; pTower = TowerFish::create(); break;
+    case en_CuttleTower:towerId = 40; pTower = TowerCuttle::create(); break;
 	default:
 		break;
 	}

@@ -136,6 +136,7 @@ enum AtkState
     en_Slow = en_Normal << 1,
     en_Stop = en_Normal << 2,
     en_Poison = en_Normal << 3,//毒；
+    en_Slow_And_Shrink = en_Normal << 4 //缩小并减速
 };
 //攻击属性；
 class AtkProperty
