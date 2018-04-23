@@ -16,9 +16,6 @@ class BulletBase : public Entity, public DynamicPropertyInterface
 {
 
 public:
-    /**
-     * @todo ·ÏÆú£¬ºÃÏñÃ»É¶ÓÃ
-     * */
     std::set<int> &getIdMap();
 
     /**

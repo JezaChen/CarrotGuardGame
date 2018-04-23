@@ -204,6 +204,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\TiledMapLayer.cpp" />
     <ClCompile Include="..\Classes\TowerAnchor.cpp" />
+    <ClCompile Include="..\Classes\TowerArrow.cpp" />
     <ClCompile Include="..\Classes\TowerBall.cpp" />
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
     <ClCompile Include="..\Classes\TowerCuttle.cpp" />
@@ -255,6 +256,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\AboutUsLayer.h" />
     <ClInclude Include="..\Classes\AdvertisementLayer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\TowerArrow.h" />
     <ClInclude Include="..\Classes\BarrierBase.h" />
     <ClInclude Include="..\Classes\BarrierBuilder.h" />
     <ClInclude Include="..\Classes\BM_GameEndLayer.h" />

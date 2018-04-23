@@ -18,6 +18,7 @@ bool DynamicPropertyInterface::init(const int &rId, const std::string &rSCsvFile
 	do
 	{
 		auto pCsvUtil = CsvUtil::getInstance();
+		//创建动画，引用计数加一，避免自动释放；
 		_pAnimation = Animation::create();
 		_pAnimation->retain();
 		_iAtk = pCsvUtil->getInt(rId, en_Atk, rSCsvFileName);
@@ -33,6 +34,7 @@ void DynamicPropertyInterface::createDynamicEntityAnimation(const std::vector<st
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
 	for (auto &animationFile : rAnimationFiles)
 		_pAnimation->addSpriteFrame(pSpriteFrameCache->getSpriteFrameByName(animationFile));
+	//设置无限执行；
 	_pAnimation->setLoops(-1);
 }
 

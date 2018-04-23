@@ -1,10 +1,9 @@
-
-//  DataCollectLayer.h
-//  CarrotFantasy
-//
-//  Created by 何泓兵 on 18-4-8.
-//
-//
+/**
+* @brief 成就汇总图层类
+* @details 成就显示底图的图层
+* @authors 何泓兵
+* @date 20180408
+* */
 #pragma once
 #ifndef __CarrotFantasy__DataCollectLayer__
 #define __CarrotFantasy__DataCollectLayer__

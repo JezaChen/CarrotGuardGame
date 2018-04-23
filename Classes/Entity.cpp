@@ -3,12 +3,12 @@
 //  newCardDefence
 //
 //  Created by 何泓兵 on 18-4-6.
-//  存在不懂问题；
+//  
 //
 
 #include "Entity.h"
 #include "CommonSource.h"
-
+//赋初值；
 unsigned long Entity::ID = 0;
 Entity::~Entity()
 {
@@ -52,16 +52,18 @@ void Entity::initProperty(const int &rId, const std::string &rSCsvFileName)
 	if (_IAnimationFrameCount) sSpriteName = _sModelName + "1" + PHOTOPOSTFIX;
 	else sSpriteName = _sModelName + PHOTOPOSTFIX;
 
-	//用精灵帧创建精灵；
+	//创建绑定；
 	bindSprite(Sprite::createWithSpriteFrameName(sSpriteName));
 }
 
 void Entity::bindSprite(cocos2d::Sprite *pSprite)
 {
+	//精灵不存在
 	if (_pSprite)
 	{
 		_pSprite->stopAllActions();
 		removeChild(_pSprite);
+		//去除
 	}
 	CC_SAFE_RELEASE_NULL(_pSprite);
 	_pSprite = pSprite;
@@ -77,9 +79,10 @@ Sprite* Entity::getSprite()
 
 void Entity::doDead()
 {
-	//这里也看不懂；
+	//发出金钱改变的通知
 	NOTIFY->postNotification("moneyChange", reinterpret_cast<Ref*>(&_iValue));
 	setIsDead(true);
+	//停止所有动画，执行死亡动画
 	_pSprite->stopAllActions();
 	deadAction();
 }
@@ -88,12 +91,14 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 {
 
 	auto sDeadImageFile = rSDeadImageFile;
-	//动画创建指针；
+	//动画创建；
 	auto pAnimation = Animation::create();
-	//精灵帧数缓存；
+
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
+	//如果死亡动画不空
 	if (sDeadImageFile.empty())
 	{
+		//死亡动画前缀；
 		if (1 == _iLevel) sDeadImageFile = "air0";
 		else if (2 == _iLevel) sDeadImageFile = "air1";
 		else if (3 == _iLevel) sDeadImageFile = "air2";
@@ -104,13 +109,13 @@ void Entity::deadAction(const std::string &rSDeadImageFile)
 	else
 	{
 		for (int i = 1; i <= 2; i++)
-			//添加精灵缓存(按名添加精灵缓存）
+			//添加死亡动画
 			pAnimation->addSpriteFrame(pSpriteFrameCache->getSpriteFrameByName(sDeadImageFile + StringUtils::format("%02d", i) + PHOTOPOSTFIX));
 	}
 
 	pAnimation->setLoops(1);
 	pAnimation->setDelayPerUnit(0.1f);
-	//这个为什么这样？
+	//执行死亡动画后，从父结点中清除掉死掉的怪物精灵
 	_pSprite->runAction(Sequence::create(Animate::create(pAnimation), CallFunc::create([this]() {this->removeFromParent(); }), NULL));
 }
 

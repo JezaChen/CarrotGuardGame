@@ -2,6 +2,7 @@
 * @brief 广告图层
 * @version 0.9Alpha
 * @author 陈建彰
+* @provided 何泓兵
 * @details 贪玩蓝月，船新版本
 * */
 #ifndef AD_LAYER_H

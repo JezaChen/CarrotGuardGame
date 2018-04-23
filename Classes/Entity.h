@@ -26,7 +26,7 @@ public:
 
     /**
     * @获取mID；
-    * @brief mID为隐式查看init实体是否设置成功；
+    * @brief mID为隐式查看实体初始化是否成功；
     */
     unsigned int getmID();
 

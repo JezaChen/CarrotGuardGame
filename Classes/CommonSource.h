@@ -1,10 +1,9 @@
-//  游戏公有资源
-//  CommonSource.h
-//   CarrotFantasy
-//
-//  Created by 陈建彰 on 18-3-30
-//  
-//
+/**
+* @brief 游戏共有资源类
+* @author 陈建彰
+* @version 1.0
+* @co_author 何泓兵(后期加注释)
+* */
 #pragma once
 #ifndef COMMON_SOURCE_H
 #define COMMON_SOURCE_H
@@ -247,13 +246,14 @@ const static std::string CONFIGBACKGROUND = "backGroundSound";
 const static std::string CONFIGEFFECTSOUND = "effectSound";
 #define LEVELKEY "%d_%02d"
 
-/* 级别配置类型
-* 主题索引，等级，金钱，怪物批量，瓶子，便便，风扇，太阳，球，火箭，针，雪，锚，弓，蓝色圆球，蘑菇，鱼骨
+/* 
+* @brief 级别配置类型
+* @details 主题索引，等级，金钱，怪物批量，瓶子，便便，风扇，太阳，电球，火箭，针，雪，锚，弓，蘑菇，鱼骨，飞机，章鱼，汽油瓶
 */
 const static std::string LEVELCONFIGFILENAME = "level/LevelConfig.xml";
 const static std::string LEVELCONFIGROOT = "LevelConfigRoot";
 const static std::string TOWERTYPE = "TowerType";
-const static std::vector<std::string> LEVELCONFIGTYPE = //这里有点问题；
+const static std::vector<std::string> LEVELCONFIGTYPE = //TODO：这里有点问题；
 {
     "ThemeIndex",
     "Level",
@@ -278,7 +278,7 @@ const static std::vector<std::string> LEVELCONFIGTYPE = //这里有点问题；
     "MushRoom",
     "FishBone"
 };
-
+//塔
 const static std::vector<std::string> TOWERS =
 {
     "Themes/Towers/TBottle-hd",
@@ -301,7 +301,7 @@ const static std::vector<std::string> TOWERS =
     "Themes/Towers/TFish-hd"
 };
 /**
-*  通知信息
+* @brief 通知信息
 */
 
 #define LEVELDATACHANGE "levelDataChange"

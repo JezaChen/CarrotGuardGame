@@ -1,10 +1,10 @@
-//
-//Carrot.h
-//CarrotFantasy
-//
-//Created by 何泓兵 on 18-4-11
-//
-//
+/**
+* @brief 萝卜类
+* @extends 继承于实体父类
+* @details 萝卜生命值显示，萝卜卖萌动画设置，注册萝卜触摸
+* @authors 何泓兵
+* @date 20180411
+* */
 #pragma once
 #ifndef __CarrotFantasy__Carrot__
 #define __CarrotFantasy__Carrot__

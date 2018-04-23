@@ -97,6 +97,9 @@
     <ClCompile Include="..\Classes\BulletFish.cpp" />
     <ClCompile Include="..\Classes\TowerFish.cpp" />
     <ClCompile Include="..\Classes\AdvertisementLayer.cpp" />
+    <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
+    <ClCompile Include="..\Classes\TowerMushroom.cpp" />
+    <ClCompile Include="..\Classes\TowerArrow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -202,6 +205,9 @@
     <ClInclude Include="..\Classes\BulletFish.h" />
     <ClInclude Include="..\Classes\TowerFish.h" />
     <ClInclude Include="..\Classes\AdvertisementLayer.h" />
+    <ClInclude Include="..\Classes\DataCollectLayer.h" />
+    <ClInclude Include="..\Classes\TowerMushroom.h" />
+    <ClInclude Include="..\Classes\TowerArrow.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

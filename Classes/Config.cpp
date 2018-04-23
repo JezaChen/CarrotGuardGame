@@ -26,12 +26,13 @@ bool Config::init()
     bool bRet = false;
     do
     {
+		//获取文件可写路径；
         _sConfigFileName = FileUtils::getInstance()->getWritablePath() + CONFIGFILE;
 
         _configValueMap = FileUtils::getInstance()->getValueMapFromFile(_sConfigFileName);
 
         _bIsLoadSource = false;
-
+		//检查关卡数据是否加载完成
         checkBuildLevelData();
 
         bRet = true;
