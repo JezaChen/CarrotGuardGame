@@ -1,11 +1,8 @@
-
-//
-//  DesignLayer.h
-//  CarrotFantasy
-//
-//  Created by 何泓兵 on 18-4-8.
-//
-//
+/**
+* @brief 游戏中“关于我们”的设计者名字显示类
+* @authors 何泓兵
+* @date 20180408
+* */
 #pragma once
 #ifndef __CarrotFantasy__DesignLayer__
 #define __CarrotFantasy__DesignLayer__

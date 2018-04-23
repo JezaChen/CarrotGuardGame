@@ -3,6 +3,7 @@
  * @details 游戏场景中能移动的实体都要集成该类，该类来完成动态的一些属性
  * @authors 何泓兵 x 陈建彰
  * @version 0.90 Beta
+ * @date 180407
  * */
 
 #pragma once
@@ -35,7 +36,7 @@ protected:
 
 	/**
 	 * @brief 移动动画
-	 * @details ?虚函数，子类必须定义属于自己的移动动画
+	 * @details 虚函数，子类必须定义属于自己的移动动画
 	 * @param rDt 调度函数需要这一个参数
 	 */
 	virtual void doAction(const float &rDt) = 0;

@@ -1,18 +1,15 @@
+/**
+* @brief 设置和配置工具类
+* @details 获取声音配置、保存声音配置、创建关卡数据等等，用于游戏全局配置的读取和保存
+* @author 何泓兵
+* @version 1.0
+* @co_author 陈建彰
+* @todo 用户通关数据（杀怪数等等）还没有加上去
+* */
+
 #pragma once
 #ifndef CONFIG_H
 #define CONFIG_H
-
-#include "CommonDefine.h"
-
-/**
- * @brief 设置和配置工具类
- * @details 获取声音配置、保存声音配置、创建关卡数据等等，用于游戏全局配置的读取和保存
- * @author 何泓兵
- * @version 1.0
- * @co_author 陈建彰
- * @todo 用户通关数据（杀怪数等等）还没有加上去
- * */
-
 
 #include "CommonDefine.h"
 
@@ -21,13 +18,15 @@ class SoundUtil;
 class Config :public Ref
 {
 public:
-
+	/**
+	* @brief 单例设计模式
+	*/
     CREATE_INSTANCE_FUNCTION(Config);
 
     DESTROY_INSTANCE_FUNCTION();
     /**
-    *  flag source be loading
-    */
+    * @brief 标记资源被加载；
+    * */
     CC_SYNTHESIZE_PASS_BY_REF(bool, _bIsLoadSource, IsLoadSource);
 
     /**

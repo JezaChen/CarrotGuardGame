@@ -33,6 +33,7 @@ void DynamicPropertyInterface::createDynamicEntityAnimation(const std::vector<st
 	auto pSpriteFrameCache = SpriteFrameCache::getInstance();
 	for (auto &animationFile : rAnimationFiles)
 		_pAnimation->addSpriteFrame(pSpriteFrameCache->getSpriteFrameByName(animationFile));
+	//设置无限执行；
 	_pAnimation->setLoops(-1);
 }
 

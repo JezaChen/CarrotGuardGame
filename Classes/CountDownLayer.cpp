@@ -38,18 +38,20 @@ bool CountDownLayer::init() {
 	registerNoTouch();
 	return true;
 }
-void CountDownLayer::Circle() {
+void CountDownLayer::Circle() 
+{
 	auto run = Sprite::createWithSpriteFrameName("countdown_12.png");
-	auto r1 = RotateBy::create(3.0f, -1080);
+	auto r1 = RotateBy::create(3.0f, -1080);//三秒钟逆时针旋转1080度；
 	run->setPosition(100, 100);
 	run->runAction(r1);
 	countDownSprite->addChild(run, 2);
 }
-void CountDownLayer::runArrow1(float t) {
+void CountDownLayer::runArrow1(float t) 
+{
 	auto arrowSprite1 = Sprite::createWithSpriteFrameName("arrow.png");
-
+	
 	std::vector<Vec2> value = MapUtil::getInstance()->getMovePoses();
-
+	//判断路径方向；
 	Vec2 point1 = value.at(0);
 	Vec2 point2 = value.at(1);
 
@@ -72,15 +74,18 @@ void CountDownLayer::runArrow1(float t) {
 	}
 	else if (point1.y == point2.y && point1.x < point2.x)
 	{
+		//右方向为起始方向；
 		arrowSprite1->setPosition(point1.x + 80, point1.y - 30); //向右标箭头
 	}
+	//创建动作；
 	auto fade = FadeOut::create(0.7f);
 	arrowSprite1->runAction(fade);
 	addChild(arrowSprite1);
 
 	i++;
 }
-void CountDownLayer::runArrow2(float t) {
+void CountDownLayer::runArrow2(float t) 
+{
 	auto arrowSprite2 = Sprite::createWithSpriteFrameName("arrow.png");
 
 	std::vector<Vec2> value = MapUtil::getInstance()->getMovePoses();
@@ -116,7 +121,8 @@ void CountDownLayer::runArrow2(float t) {
 	addChild(arrowSprite2);
 	i++;
 }
-void CountDownLayer::runArrow3(float t) {
+void CountDownLayer::runArrow3(float t) 
+{
 	auto arrowSprite3 = Sprite::createWithSpriteFrameName("arrow.png");
 
 	std::vector<Vec2> value = MapUtil::getInstance()->getMovePoses();
@@ -150,46 +156,56 @@ void CountDownLayer::runArrow3(float t) {
 
 	i++;
 }
-void CountDownLayer::Num1(float t) {
-	auto three = Sprite::createWithSpriteFrameName("countdown_01.png");
+void CountDownLayer::Num1(float t) 
+{
+	auto three = Sprite::createWithSpriteFrameName("countdown_01.png");//3
 	Circle();
-	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
+	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);//倒计时的特效音乐；
 	three->setPosition(100, 100);
 	countDownSprite->addChild(three, 2);
 }
-void CountDownLayer::Num2(float t) {
+void CountDownLayer::Num2(float t) 
+{
+	//清除所有孩子结点；
 	countDownSprite->removeAllChildren();
 	Circle();
 	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
-	auto two = Sprite::createWithSpriteFrameName("countdown_02.png");
+	auto two = Sprite::createWithSpriteFrameName("countdown_02.png");//2
 	two->setPosition(100, 100);
 	countDownSprite->addChild(two, 2);
 
 }
-void CountDownLayer::Num3(float t) {
+void CountDownLayer::Num3(float t) 
+{
 	countDownSprite->removeAllChildren();
 	Circle();
 	SoundUtil::getInstance()->playEffectSound(COUNTDOWN);
-	auto one = Sprite::createWithSpriteFrameName("countdown_03.png");
+	auto one = Sprite::createWithSpriteFrameName("countdown_03.png");//1
 	one->setPosition(100, 100);
 	countDownSprite->addChild(one, 2);
 }
-void CountDownLayer::GameGo(float t) {
+void CountDownLayer::GameGo(float t) 
+{
 	countDownSprite->removeAllChildren();
 	Circle();
 	SoundUtil::getInstance()->playEffectSound(GO);
-	auto one = Sprite::createWithSpriteFrameName("countdown_13.png");
+	auto GO = Sprite::createWithSpriteFrameName("countdown_13.png");
+	//比例设定，玄学调个1.05f；
 	auto scale = ScaleBy::create(0.3f, 1.05f);
-	auto roate = RotateBy::create(0.1f, 360);
+	//GO转了一圈出场；
+	auto arotate = RotateBy::create(0.1f, 360);
 
-	one->setPosition(100, 100);
-	countDownSprite->addChild(one);
-	one->runAction(Spawn::create(scale, roate, NULL));
+	GO->setPosition(100, 100);
+	countDownSprite->addChild(GO);
+	GO->runAction(Spawn::create(scale, arotate, NULL));
 }
-void CountDownLayer::childDisappear(float t) {
+void CountDownLayer::childDisappear(float t) 
+{
 	//this->removeChildByName("countDownSprite");
     this->removeAllChildren();
+	//怪物出来吧
 	NOTIFY->postNotification("startBuildMonster");
+	//父节点中清出来
 	removeFromParent();
 }
 
