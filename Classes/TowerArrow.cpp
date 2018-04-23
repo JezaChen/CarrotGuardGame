@@ -57,3 +57,16 @@ void TowerArrow::fire(float dt)
 	});
 	getSprite()->runAction(Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr));
 }
+
+void TowerArrow::attack()
+{
+	AtkProperty atk;
+	atk._enAtkState = 1;
+	atk._iAtk = _iBulletId;
+	atk._iDuration = 1;
+
+	/**************************************************************/
+	/**-----------------------¹¥»÷ÓÎÏ·Ö÷Âß¼­-----------------------**/
+	/**************************************************************/
+
+}
