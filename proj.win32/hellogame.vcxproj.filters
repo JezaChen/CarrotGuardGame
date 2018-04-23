@@ -99,6 +99,7 @@
     <ClCompile Include="..\Classes\AdvertisementLayer.cpp" />
     <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\TowerMushroom.cpp" />
+    <ClCompile Include="..\Classes\TowerArrow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />

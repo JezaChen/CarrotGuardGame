@@ -204,6 +204,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\ThemeSelectScene.cpp" />
     <ClCompile Include="..\Classes\TiledMapLayer.cpp" />
     <ClCompile Include="..\Classes\TowerAnchor.cpp" />
+    <ClCompile Include="..\Classes\TowerArrow.cpp" />
     <ClCompile Include="..\Classes\TowerBall.cpp" />
     <ClCompile Include="..\Classes\TowerBlueStar.cpp" />
     <ClCompile Include="..\Classes\TowerFactory.cpp" />

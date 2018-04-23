@@ -1,4 +1,3 @@
-
 /**
 * @brief ¹­¼ýÅÚËþÀà
 * @extends TowerBase
@@ -13,7 +12,7 @@
 
 #include "TowerBase.h"
 
-class TowerPlane : public TowerBase
+class TowerArrow : public TowerBase
 {
 
 	int const rId = 49;
@@ -43,7 +42,7 @@ public:
 	* */
 	void attack();
 
-	CREATE_FUNC(TowerPlane);
+	CREATE_FUNC(TowerArrow);
 };
 
 #endif /* defined(__CarrotFantasy__TowerPlane__) */
