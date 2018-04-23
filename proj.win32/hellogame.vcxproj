@@ -169,6 +169,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CollisionManager.cpp" />
     <ClCompile Include="..\Classes\CountDownLayer.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\DataCollectLayer.cpp" />
     <ClCompile Include="..\Classes\DataStatisticsLayer.cpp" />
     <ClCompile Include="..\Classes\GameEndLayer.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
@@ -210,6 +211,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\TowerFish.cpp" />
     <ClCompile Include="..\Classes\TowerHelpLayer.cpp" />
     <ClCompile Include="..\Classes\TowerManager.cpp" />
+    <ClCompile Include="..\Classes\TowerMushroom.cpp" />
     <ClCompile Include="..\Classes\TowerOptBtn.cpp" />
     <ClCompile Include="..\Classes\TowerPin.cpp" />
     <ClCompile Include="..\Classes\TowerPlane.cpp" />
@@ -268,6 +270,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\CountDownLayer.h" />
     <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\Config.h" />
+    <ClInclude Include="..\Classes\DataCollectLayer.h" />
     <ClInclude Include="..\Classes\DataStatisticsLayer.h" />
     <ClInclude Include="..\Classes\FileLoadUtil.hpp" />
     <ClInclude Include="..\Classes\GameEndLayer.h" />
@@ -314,6 +317,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\TowerFish.h" />
     <ClInclude Include="..\Classes\TowerHelpLayer.h" />
     <ClInclude Include="..\Classes\TowerManager.h" />
+    <ClInclude Include="..\Classes\TowerMushroom.h" />
     <ClInclude Include="..\Classes\TowerOptBtn.h" />
     <ClInclude Include="..\Classes\TowerPin.h" />
     <ClInclude Include="..\Classes\TowerPlane.h" />

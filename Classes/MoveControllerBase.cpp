@@ -150,6 +150,36 @@ void MoveControllerBase::listenerMonster(float t)
         pTemp->runAction(pSequence);
     }
 
+	//当怪兽遭受到减速变小的时候处理(蘑菇)
+	if (State_Slow && _pMonster->getFSlowDuration() > 0)
+	{
+		_pMonster->setISpeed(_iMonsterSpeed / 3);
+		float StateTime = _pMonster->getFSlowDuration() - t; //更新一下怪物受减速攻击持续时间，直接减去调度时间即可
+		if (StateTime < 0) StateTime = 0; //若为负数了，那就清零
+		_pMonster->setFSlowDuration(StateTime);
+
+		_pMonster->setContentSize(Size(_pMonster->getContentSize().width / 3, _pMonster->getContentSize().height / 3));
+
+		//创建一个子精灵，用于显示怪物移动受阻动画
+		Sprite *pTemp = Sprite::create();
+		pTemp->setPosition(_pMonster->getContentSize().width / 2, 40);
+		_pMonster->getSprite()->addChild(pTemp);
+
+		//创建一个动画
+		Animation *pAnimation = AnimationMaker((int)_pMonster->getIBulletStateType(), t);
+		auto pCallFunc = CallFunc::create([=]()
+		{
+			pTemp->removeFromParentAndCleanup(true);
+			if (_pMonster->getFSlowDuration() <= 0)
+			{
+				_pMonster->setISpeed(_iMonsterSpeed); //恢复原来的速度
+				_pMonster->setIState(_pMonster->getIState() & 13); //恢复原来的状态
+			}
+		});
+		Sequence *pSequence = Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr);
+		pTemp->runAction(pSequence);
+	}
+
     //当怪兽遭受到毒性攻击的时候处理
     if (State_Poison && _pMonster->getfPoisonDuration() > 0)
     {
