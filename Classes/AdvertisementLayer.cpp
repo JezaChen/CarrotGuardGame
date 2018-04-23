@@ -1,3 +1,10 @@
+//
+//  BarrierBase.cpp
+//  CarrotFantasy
+//
+//  Created by ³Â½¨ÕÃ on 18-4-22.
+//
+//  
 #include "AdvertisementLayer.h"
 #include "SoundUtil.h"
 

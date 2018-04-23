@@ -253,6 +253,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\AboutUsLayer.h" />
     <ClInclude Include="..\Classes\AdvertisementLayer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\TowerArrow.h" />
     <ClInclude Include="..\Classes\BarrierBase.h" />
     <ClInclude Include="..\Classes\BarrierBuilder.h" />
     <ClInclude Include="..\Classes\BM_GameEndLayer.h" />
