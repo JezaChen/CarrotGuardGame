@@ -1,4 +1,10 @@
 #include "MenusLayer.h"
+#include "AdvertisementLayer.h"
+
+MenusLayer::~MenusLayer()
+{
+    CC_SAFE_RELEASE_NULL(_pAdCloseButton); //因为retain了一次，所以要释放一次
+}
 
 bool MenusLayer::init()
 {
@@ -87,8 +93,40 @@ void MenusLayer::createMenuItems()
     );
     pBtnHelp->setPosition(Vec2(750, 220));
 
-    auto pMenu = Menu::create(pBtnAdventureMode, pBtnBossMode, pBtnNestMode, pBtnSetting, pBtnHelp,
+    auto _pChatButton = MenuItemSprite::create(Sprite::create("Themes/TanWanLanYue/chat.png"), nullptr,
+                                               [&](Ref* pSender)
+                                               {
+                                                   auto adLayer = AdvertisementLayer::create();
+                                                   adLayer->setName("AdLayer");
+                                                   addChild(adLayer);
+                                                   _pAdCloseButton->setVisible(true);
+                                                   _pAdCloseButton->setGlobalZOrder(20);
+                                               });
+    _pChatButton->setPosition(660, 420);
+    _pChatButton->setScale(0.1);
+
+    auto blinkAction = Blink::create(20, 50);
+    _pChatButton->runAction(blinkAction);
+    //_pChatButton->setContentSize(Size(10, 10));
+
+    _pChatButton->setVisible(true);
+
+    _pAdCloseButton = MenuItemSprite::create(Sprite::createWithSpriteFrameName("ad_close_normal.png"),
+                                                  Sprite::createWithSpriteFrameName("ad_close_pressed.png"),
+                                                  [&](Ref* pSender)
+                                                  {
+                                                      removeChildByName("AdLayer");
+                                                      _pAdCloseButton->setVisible(false);
+                                                  });
+    _pAdCloseButton->setScale(0.55);
+    _pAdCloseButton->setPosition(806, 327);
+    _pAdCloseButton->setName("AdCloseBtn");
+    _pAdCloseButton->retain(); //要retain一下吧
+    _pAdCloseButton->setVisible(false);
+    //_pAdCloseButton->setScale(0.1);
+
+    _pMenu = Menu::create(pBtnAdventureMode, pBtnBossMode, pBtnNestMode, pBtnSetting, pBtnHelp, _pChatButton, _pAdCloseButton,
                               nullptr); //bug fixed
-    pMenu->setPosition(Vec2::ZERO);
-    addChild(pMenu);
+    _pMenu->setPosition(Vec2::ZERO);
+    addChild(_pMenu);
 }

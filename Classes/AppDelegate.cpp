@@ -85,6 +85,7 @@ void AppDelegate::preLoadSource()
 {
     //先加载欢迎界面的资源
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/mainscene1-hd.plist", "Themes/scene/mainscene1-hd.png");
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/mainscene0-hd.plist", "Themes/scene/mainscene0-hd.png");
     //    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/scene/themescene1-hd.plist", "Themes/scene/themescene1-hd.png");
     //    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/Items/Items00-hd.plist", "Themes/Items/Items00-hd.png");
     

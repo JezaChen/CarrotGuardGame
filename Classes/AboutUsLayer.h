@@ -5,8 +5,8 @@
  * @author ³Â½¨ÕÃ
  * @date 20180411
  * */
-#ifndef MYGAME_ABOUTUSLAYER_H
-#define MYGAME_ABOUTUSLAYER_H
+#ifndef ABOUTUS_LAYER_H
+#define ABOUTUS_LAYER_H
 
 #include "CommonDefine.h"
 
@@ -28,4 +28,4 @@ protected:
     virtual void createBg();
 };
 
-#endif //MYGAME_ABOUTUSLAYER_H
+#endif //ABOUTUS_LAYER_H

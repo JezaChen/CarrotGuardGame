@@ -31,8 +31,20 @@ protected:
     */
     virtual void leafAction(float dt);
 
+    /**
+     * @brief 创建渣渣辉
+     * @details Hi，我是渣渣辉
+     */
+    virtual void createZhaZhaHui();
+
+    /**
+     * @brief 创建渣渣辉有话肝你讲按钮
+     */
+    virtual void createChatButton();
 private:
     Node * _pCarrotAll = nullptr;
+    MenuItemSprite *_pZhazhaHui = nullptr;
+    MenuItemSprite *_pChatButton = nullptr;
     const Size _VisibleSize = Director::getInstance()->getVisibleSize();
 };
 

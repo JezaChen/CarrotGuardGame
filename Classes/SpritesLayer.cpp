@@ -1,6 +1,8 @@
 #include "SpritesLayer.h"
 #include "CommonSource.h"
 #include "VisibleRect.h"
+#include "SoundUtil.h"
+#include "AdvertisementLayer.h"
 
 SpritesLayer::~SpritesLayer()
 {
@@ -19,7 +21,11 @@ bool SpritesLayer::init()
 
         createDynamicSprites();
 
+        createZhaZhaHui();
+
         createCarrot();
+
+        createChatButton();
 
         bRet = true;
     } while (0);
@@ -66,7 +72,7 @@ void SpritesLayer::createDynamicSprites()
     auto pBirdMoveBy = MoveBy::create(2, Vec2(0, 30));
     //循环地来回上下动
     pBird->runAction(RepeatForever::create(Sequence::create(pBirdMoveBy, pBirdMoveBy->reverse(), nullptr)));
-    addChild(pBird);
+    addChild(pBird, 10);
 }
 
 void SpritesLayer::createCarrot()
@@ -77,7 +83,13 @@ void SpritesLayer::createCarrot()
     _pCarrotAll->setName("carrot");
 
     //创建萝卜主体 
-    auto pCarrot = Sprite::createWithSpriteFrameName("carrot.png");
+    auto pCarrotSp = Sprite::createWithSpriteFrameName("carrot.png");
+    auto pCarrot = MenuItemSprite::create(pCarrotSp, pCarrotSp, [&](Ref *pSender)
+    {
+        _pCarrotAll->setVisible(false);
+        _pZhazhaHui->setVisible(true);
+        
+    });
     pCarrot->setAnchorPoint(Vec2(0.5f, 0)); //萝卜主体的锚点为底边中点
     _pCarrotAll->addChild(pCarrot, 2); //把萝卜主体放进去
 
@@ -107,6 +119,20 @@ void SpritesLayer::createCarrot()
     _pCarrotAll->setScale(0.9);
     addChild(_pCarrotAll);
 
+    auto listen = EventListenerTouchOneByOne::create();
+    listen->onTouchBegan = [&](Touch *t, Event *e)
+    {
+        _pZhazhaHui->setVisible(!_pZhazhaHui->isVisible());
+        if(_pZhazhaHui->isVisible())
+        {
+            SoundUtil::getInstance()->playEffectSound("Music/TanWanLanYue/Hi, I am ZZH.mp3");
+            //_pChatButton->setVisible(true);
+        }
+        _pCarrotAll->setVisible(!_pZhazhaHui->isVisible());
+        return true;
+    };
+    _pCarrotAll->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listen, _pCarrotAll);
+
     //为了能使叶子动起来
     //使用调度器进行动画调度，调度时间为5秒
     schedule(schedule_selector(SpritesLayer::leafAction), 5);
@@ -121,5 +147,24 @@ void SpritesLayer::leafAction(float dt)
     _pCarrotAll->getChildByName("leaf3")->runAction(Sequence::create(pDelay, pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr));
     //左边叶子的动作是：旋转——逆旋转——旋转——逆旋转——延迟两秒
     _pCarrotAll->getChildByName("leaf1")->runAction(Sequence::create(pRotate, pRotate->reverse(), pRotate, pRotate->reverse(), pDelay, nullptr));
+
+}
+
+void SpritesLayer::createZhaZhaHui()
+{
+    auto ZhazhaHuiSp = Sprite::create("tanwanlanyue/zzh.png");
+    ZhazhaHuiSp->setPosition(_VisibleSize.width / 2 - 80, _VisibleSize.height / 2 + 50);
+    _pZhazhaHui = MenuItemSprite::create(ZhazhaHuiSp, ZhazhaHuiSp, [&](Ref *pSender)
+    {
+        _pZhazhaHui->setVisible(false);
+        _pCarrotAll->setVisible(true);
+    });
+    _pZhazhaHui->setVisible(false);
+    addChild(_pZhazhaHui);
+}
+
+void SpritesLayer::createChatButton()
+{
+    //todo
 
 }

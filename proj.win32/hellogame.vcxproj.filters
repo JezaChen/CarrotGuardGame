@@ -94,6 +94,9 @@
     <ClCompile Include="..\Classes\BM_MonsterBuilder.cpp" />
     <ClCompile Include="..\Classes\BM_ScoreAndControlLayer.cpp" />
     <ClCompile Include="..\Classes\BM_GameEndLayer.cpp" />
+    <ClCompile Include="..\Classes\BulletFish.cpp" />
+    <ClCompile Include="..\Classes\TowerFish.cpp" />
+    <ClCompile Include="..\Classes\AdvertisementLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -196,6 +199,9 @@
     <ClInclude Include="..\Classes\BM_MonsterBuilder.h" />
     <ClInclude Include="..\Classes\BM_ScoreAndControlLayer.h" />
     <ClInclude Include="..\Classes\BM_GameEndLayer.h" />
+    <ClInclude Include="..\Classes\BulletFish.h" />
+    <ClInclude Include="..\Classes\TowerFish.h" />
+    <ClInclude Include="..\Classes\AdvertisementLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />

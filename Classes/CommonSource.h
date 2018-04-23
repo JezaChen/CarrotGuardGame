@@ -10,6 +10,7 @@ const static std::string PLISTPOSTFIX = ".plist";
 const static std::vector<std::string> ALLSOURCE =
 {
     "Themes/scene/mainscene1-hd",
+    //"Themes/scene/mainscene0-hd",
     "Themes/scene/themescene2-hd",
     "Themes/scene/themescene1-hd",
     "Themes/scene/themescene3-hd",

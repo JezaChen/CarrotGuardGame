@@ -52,7 +52,7 @@ void WelcomeScene::onEnter()
         addChild(_pMenuLayer);
     }
 
-	showVideo();
+	//showVideo();
 }
 
 void WelcomeScene::showMenu()
@@ -62,7 +62,7 @@ void WelcomeScene::showMenu()
     Config::getInstance()->setIsLoadSource(true);
 }
 
-
+//这个仅限安卓手机
 //贪玩蓝月启动
 void WelcomeScene::showVideo()
 {

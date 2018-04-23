@@ -14,6 +14,8 @@ class MenusLayer : public Layer
 {
 public:
     CREATE_FUNC(MenusLayer);
+    ~MenusLayer()override;
+
 protected:
     /**
      * @brief 初始化函数
@@ -26,6 +28,10 @@ protected:
     @brief 创建目录按钮
     */
     virtual void createMenuItems();
+
+    Menu *_pMenu = nullptr;
+
+    MenuItemSprite *_pAdCloseButton = nullptr;
 };
 
 #endif // MENUS_LAYER_H
