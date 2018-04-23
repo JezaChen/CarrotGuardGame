@@ -33,21 +33,23 @@ public:
      * @details 选中某个怪物，附近的炮塔就专门打这个怪物
      * @param rBisAtkTarget 是否选中了它
      */
-    virtual void setAtkTarget(const bool &rBisAtkTarget);
+    virtual void setAtkTarget(const bool& rBisAtkTarget);
 
     /**
      * @brief 获知是否被选中了
      * @return 返回是否该伤害敌方实体被玩家选中了
      */
     virtual bool getAtkTarget() const
-    { return _bIsAtkTarget; };
+    {
+        return _bIsAtkTarget;
+    };
 
     /**
      * @brief 设置该敌方实体的生命槽是否可见
      * @param rBIsVisible 是否设置为可见
      * @see 玩过游戏的都知道，如果不攻击的话，生命槽过一会就会消失了，因而需要写一个函数来控制生命槽的可见性
      * */
-    virtual void hpSlotVisible(const bool &rBIsVisible);
+    virtual void hpSlotVisible(const bool& rBIsVisible);
 
 protected:
     /**
@@ -67,7 +69,7 @@ protected:
      * @param rSCsvFileName CSV表格的路径
      * @see 计时器监控检查攻击目标
      */
-    virtual bool init(const int &rIId, const std::string &rSCsvFileName);
+    virtual bool init(const int& rIId, const std::string& rSCsvFileName);
 
     /**
      * @brief 创建锁定标志动画
@@ -88,7 +90,7 @@ protected:
      * @brief 执行死亡动画
      * @details 其实是供doDead()函数调用的
      */
-    virtual void deadAction(const std::string &rSDeadImageFile = "") override;
+    virtual void deadAction(const std::string& rSDeadImageFile = "") override;
 
     /**
      * @brief 受伤动画（抽象函数）
@@ -99,15 +101,17 @@ protected:
      */
 CC_SYNTHESIZE_PASS_BY_REF(int, _iHp, IHp);
     /**
-    * @brief 怪物位
+    * @brief 受攻击的状态
     */
 CC_SYNTHESIZE_PASS_BY_REF(int, _iState, IState);
     /**
-    * @brief 状态保持时间
+    * @brief 受攻击状态保持时间
+    * @details 一般都是毒性攻击了
     */
-CC_SYNTHESIZE_PASS_BY_REF(float, _fSlowDuration, FSlowDuration);
-CC_SYNTHESIZE_PASS_BY_REF(float, _fStopDuration, fStopDuration);
-CC_SYNTHESIZE_PASS_BY_REF(float, _fPoisonDuration, fPoisonDuration);
+CC_SYNTHESIZE_PASS_BY_REF(float, _fSlowDuration, FSlowDuration); //这个是减速攻击
+CC_SYNTHESIZE_PASS_BY_REF(float, _fStopDuration, fStopDuration); //这个是停止攻击
+CC_SYNTHESIZE_PASS_BY_REF(float, _fPoisonDuration, fPoisonDuration); //这个是有毒攻击
+CC_SYNTHESIZE_PASS_BY_REF(float, _fSlowAndShrinkDuration, fSlowAndShrinkDuration); //这个是蘑菇攻击，缩小且减速
 
 CC_SYNTHESIZE_PASS_BY_REF(float, _iBulletStateType, IBulletStateType);
     /**
@@ -122,15 +126,15 @@ private:
     /**
     * @brief 生命槽精灵
     */
-    HpSlot *_pHpSlot = nullptr;
+    HpSlot* _pHpSlot = nullptr;
     /**
     * @brief 锁定攻击标志精灵
     */
-    Sprite *_pLockAtkTarget = nullptr;
+    Sprite* _pLockAtkTarget = nullptr;
     /**
     * @brief 锁定标志动画
     */
-    Animate *_pLockFlagAnimate = nullptr;
+    Animate* _pLockFlagAnimate = nullptr;
 
     /**
     * @brief 标志受害者是攻击目标

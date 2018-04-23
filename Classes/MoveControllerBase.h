@@ -3,6 +3,7 @@
  * @details 怪物在地图上移动需要这个类来控制
  * @authors 陈建彰 x 何泓兵
  * @date 20180409
+ * @version 1.1
  * */
 #pragma once
 #ifndef CarrotFantasy_MoveControllerBase_h
