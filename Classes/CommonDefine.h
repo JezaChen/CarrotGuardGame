@@ -69,7 +69,7 @@ enum CsvPublicProperty
     en_ModelName,//模型名，一般为名字后加编号；
     en_Value,
     en_AnimationCount,//动画数；
-    en_Level//等级
+    en_Level//关卡
 };
 //枚举塔的属性；
 enum CsvTowerProperty
@@ -154,12 +154,12 @@ enum SceneType
     en_GameSettingScene,//游戏设置场景；
     en_GameHelpScene,//游戏帮助场景；
     en_ThemeSelectScene,//主题选择场景；
-    en_LevelSelectScene,//等级选择场景；
+    en_LevelSelectScene,//关卡选择场景；
     en_GameScene,//游戏场景；
     en_BossModeScene//boss模式场景；
 };
 
-//TowerType
+//塔类
 enum TowerType
 {
     en_StarTower,//星星
@@ -180,7 +180,7 @@ enum TowerType
 	en_CuttleTower//大章鱼
 };
 
-//MonsterType
+//怪物类型
 enum MonsterType
 {
     en_Land_Pink = 1,

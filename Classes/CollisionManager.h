@@ -1,10 +1,8 @@
-//
-//  CollisionManager.h
-//  CarrotFantasy
-//
-//  Created by ºÎãü±ø on 18-4-12.
-//
-//
+/**
+* @brief ·çÉÈ×Óµ¯Åö×²¼ì²âÀà
+* @authors ºÎãü±ø x ³Â½¨ÕÃ
+* @date 20180412
+* */
 #pragma once
 #ifndef __CarrotFantasy__CollisionManager__
 #define __CarrotFantasy__CollisionManager__

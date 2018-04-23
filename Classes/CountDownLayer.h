@@ -25,7 +25,6 @@ protected:
 	virtual void registerNoTouch();
 
 private:
-	int i = 0;
 	Sprite * countDownSprite;
     Sprite* effPosSprites = nullptr;
     Sequence* _pFadeSequence = nullptr;
@@ -61,7 +60,7 @@ private:
 	*/
     void initEffectPosBlink();
 	/**
-	* @brief 封装
+	* @brief 封装空地闪烁效果函数
 	*/
     void effectPosBlink(float t);
 };

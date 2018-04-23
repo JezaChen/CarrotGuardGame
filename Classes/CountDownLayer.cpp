@@ -16,7 +16,7 @@ bool CountDownLayer::init() {
 
 	Director::getInstance()->resume();
 
-	countDownSprite = Sprite::createWithSpriteFrameName("countdown_11.png");
+	countDownSprite = Sprite::createWithSpriteFrameName("countdown_11.png");//倒计时圆盘；
 	countDownSprite->setName("countDownSprite");
 	countDownSprite->setPosition(480, 320);
 	addChild(countDownSprite, 2);
@@ -82,7 +82,6 @@ void CountDownLayer::runArrow1(float t)
 	arrowSprite1->runAction(fade);
 	addChild(arrowSprite1);
 
-	i++;
 }
 void CountDownLayer::runArrow2(float t) 
 {
@@ -119,7 +118,6 @@ void CountDownLayer::runArrow2(float t)
 	auto fade = FadeOut::create(0.7f);
 	arrowSprite2->runAction(fade);
 	addChild(arrowSprite2);
-	i++;
 }
 void CountDownLayer::runArrow3(float t) 
 {
@@ -154,7 +152,6 @@ void CountDownLayer::runArrow3(float t)
 	addChild(arrowSprite3);
 
 
-	i++;
 }
 void CountDownLayer::Num1(float t) 
 {
@@ -212,8 +209,10 @@ void CountDownLayer::childDisappear(float t)
 void CountDownLayer::initEffectPosBlink()
 {
     effPosSprites = Sprite::create();
+	//空地显示动画，一闪一闪
     auto aFadeIn = FadeIn::create(0.5f);
     auto aFadeOut = FadeOut::create(0.5f);
+	//出现两次消失两次
     _pFadeSequence = Sequence::create(aFadeIn, DelayTime::create(0.5f), aFadeOut, DelayTime::create(0.2f), 
         aFadeIn, DelayTime::create(0.5f), aFadeOut, nullptr);
 
@@ -238,19 +237,22 @@ void CountDownLayer::initEffectPosBlink()
 
 void CountDownLayer::effectPosBlink(float t)
 {
+	//封装
     initEffectPosBlink();
+	//设置空地闪烁动画启动
     effPosSprites->runAction(_pFadeSequence);
 }
 
 void CountDownLayer::registerNoTouch()
 {
     //倒计时的时候触控无效了
-	auto pListener = EventListenerTouchOneByOne::create();
+	auto pTouchEvent = EventListenerTouchOneByOne::create();
+	//创建触摸
+	pTouchEvent->setSwallowTouches(true);
+	//设置触摸无效
+	pTouchEvent->onTouchBegan = [](Touch *pTouch, Event *pEvent) {return true; };
 
-	pListener->setSwallowTouches(true);
-	pListener->onTouchBegan = [](Touch *pTouch, Event *pEvent) {return true; };
-
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(pListener, this);
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(pTouchEvent, this);
 
 }
 

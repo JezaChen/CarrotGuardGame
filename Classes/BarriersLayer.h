@@ -28,6 +28,10 @@ protected:
 	 * @brief 执行障碍物实体层基类的初始化；
 	 */
 	virtual bool init();
+	/**
+	* @brief 显示障碍物被清空时出现的图层
+	*/
+	void DeleteBarrierLayer(Ref* rBarrierVec);
 
 };
 

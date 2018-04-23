@@ -69,16 +69,16 @@ void BarrierManager::removeBarrierFromManager(Ref *pBarrier)
 
     //如果障碍物全部被清理了
     //得修改一下通关数据
-	//TODO：没有通知出来？？？？
-    if (!_pBarrierVec->size())
-    {
-        //构造通知信息
-        auto aThemeIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
-        auto aLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
-        auto aLevelData = std::make_tuple(1, 1, aThemeIndex, aLevelIndex);
-        //把信息广播出去
-        NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref *>(&aLevelData));
-    }
+	if (!_pBarrierVec->size())
+	{
+		//构造通知信息
+		auto aThemeIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
+		auto aLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
+		auto aLevelData = std::make_tuple(1, 1, aThemeIndex, aLevelIndex);
+		//把信息广播出去
+		NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref *>(&aLevelData));
+		NOTIFY->postNotification("BarrierClean");
+	};
 }
 
 void BarrierManager::clearManager()

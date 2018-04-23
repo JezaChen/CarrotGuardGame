@@ -3,7 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-12.
-//  TODO：写多了？？？
+//  
 //
 #include "CollisionManager.h"
 #include "BarrierBase.h"
@@ -16,6 +16,7 @@ void CollisionManager::collision(Vector<BarrierBase *> &rBarrierVec, Vector<Mons
 	for (int i = 0; i < rBulletVec.size(); ++i)
 	{
 		BulletBase * pBullet = rBulletVec.at(i);
+		//如果子弹还在，或者子弹的种类不是风扇子弹
 		if (pBullet == nullptr || pBullet->getIsDead() || pBullet->getIBulletType() != 2)
 			continue;
 		MonsterAndBullet(pBullet, rMonsterVec);
@@ -32,10 +33,13 @@ void CollisionManager::MonsterAndBullet(BulletBase * pBullet, Vector<MonsterBase
 			continue;
 		if (pBullet->getBoundingBox().intersectsRect(pMonster->getBoundingBox()))
 		{
+			//如果之前的子弹没有停留在怪物那里
 			if (pBullet->getIdMap().find(pMonster->getmID()) == pBullet->getIdMap().end())
 			{
+				//那就干他
 				pBullet->getIdMap().insert(pMonster->getmID());
 				pMonster->beHurt(pBullet->getAtkPro());
+				//创建受伤精灵动画
 				Sprite * HurtSprite = Sprite::create();
 				pMonster->addChild(HurtSprite);
 				CallFunc * ClearF = CallFunc::create([=]() {HurtSprite->removeFromParentAndCleanup(true); });

@@ -6,7 +6,6 @@
 #include "LocalLevelDataUtil.h"
 #include "NumSprite.h"
 
-//TODO 还没有加上实质功能
 bool DataStatLayer::init()
 {
     bool bRet = false;
