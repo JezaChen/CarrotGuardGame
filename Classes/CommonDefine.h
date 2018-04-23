@@ -65,20 +65,20 @@ static void destroyInstance()                                     \
 //枚举公有属性；
 enum CsvPublicProperty
 {
-    en_Name = 1,
-    en_ModelName,
+    en_Name = 1,//名字
+    en_ModelName,//模型名，一般为名字后加编号；
     en_Value,
     en_AnimationCount,//动画数；
-    en_Level
+    en_Level//等级
 };
 //枚举塔的属性；
 enum CsvTowerProperty
 {
     en_Range = 6,//范围大小；
-    en_Space,
+    en_Space,//攻击间隔；
     en_BulletId, //子弹编号；
     en_UpGradeCost,//升级成本；
-    en_TowerBase,
+    en_TowerBase,//塔基；
     en_IsRotation,  //取消；
     en_CreateCost  //创建成本；
 };
@@ -92,12 +92,12 @@ enum CsvVictimProperty
 //枚举子弹属性；
 enum CsvBulletProperty
 {
-    en_AtkState = 6,
-    en_Duration = 9,
+    en_AtkState = 6,//攻击状态；
+    en_Duration = 9,//持续时间；
     en_BulletType,//子弹类型；
-    en_DeadActCount
+    en_DeadActCount//死亡动画数；
 };
-
+//枚举boss属性；
 enum CsvBossProperty
 {
     en_BossName = 1,
