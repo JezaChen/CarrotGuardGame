@@ -3,7 +3,7 @@
 //  CarrotFantasy
 //
 //  Created by 何泓兵 on 18-4-9.
-//  
+//  Updated by 陈建彰 since version 1.1
 //
 
 #include "MoveControllerBase.h"
@@ -121,6 +121,7 @@ void MoveControllerBase::listenerMonster(float t)
     int State_Slow = MonsterState & 2;
     int State_Stop = MonsterState & 4;
     int State_Poison = MonsterState & 8;
+    int State_Slow_And_Shrink = MonsterState & 16; //这个是香菇攻击专用
 
     //当怪兽遭受到减速的时候处理
     if (State_Slow && _pMonster->getFSlowDuration() > 0)
@@ -151,14 +152,16 @@ void MoveControllerBase::listenerMonster(float t)
     }
 
 	//当怪兽遭受到减速变小的时候处理(蘑菇)
-	if (State_Slow && _pMonster->getFSlowDuration() > 0)
+	if (State_Slow_And_Shrink  && _pMonster->getFSlowDuration() > 0)
 	{
 		_pMonster->setISpeed(_iMonsterSpeed / 3);
 		float StateTime = _pMonster->getFSlowDuration() - t; //更新一下怪物受减速攻击持续时间，直接减去调度时间即可
 		if (StateTime < 0) StateTime = 0; //若为负数了，那就清零
 		_pMonster->setFSlowDuration(StateTime);
 
-		_pMonster->setContentSize(Size(_pMonster->getContentSize().width / 3, _pMonster->getContentSize().height / 3));
+		
+	    //_pMonster->setContentSize(Size(_pMonster->getContentSize().width / 3, _pMonster->getContentSize().height / 3));
+        _pMonster->setScale(0.33);
 
 		//创建一个子精灵，用于显示怪物移动受阻动画
 		Sprite *pTemp = Sprite::create();
@@ -173,7 +176,7 @@ void MoveControllerBase::listenerMonster(float t)
 			if (_pMonster->getFSlowDuration() <= 0)
 			{
 				_pMonster->setISpeed(_iMonsterSpeed); //恢复原来的速度
-				_pMonster->setIState(_pMonster->getIState() & 13); //恢复原来的状态
+				_pMonster->setIState(_pMonster->getIState() & 15); //恢复原来的状态
 			}
 		});
 		Sequence *pSequence = Sequence::create(Animate::create(pAnimation), pCallFunc, nullptr);

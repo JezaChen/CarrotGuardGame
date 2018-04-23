@@ -136,6 +136,7 @@ enum AtkState
     en_Slow = en_Normal << 1,
     en_Stop = en_Normal << 2,
     en_Poison = en_Normal << 3,//¶¾£»
+    en_Slow_And_Shrink = en_Normal << 4 //Ïã¹½¶¾ÐÔ
 };
 //¹¥»÷ÐÔ£»
 class AtkProperty
@@ -174,7 +175,9 @@ enum TowerType
     en_RocketTower,
     en_SnowTower,
     en_PlaneTower,
-    en_AnchorTower
+    en_AnchorTower,
+    en_MushroomTower,
+    en_CuttleTower
 };
 
 //MonsterType
