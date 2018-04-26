@@ -82,6 +82,19 @@ void LocalLevelDataUtil::levelDataChange(Ref *pData)
 
         else if (iLevelBarriersCleared > iCurrentLevelBarriersCleared) //若只有障碍物全部清理情况有所进步
             _levelData[aLevelKey] = StringUtils::format("%d%d", iCurrentLevelType, iLevelBarriersCleared); //更新障碍物清理情况
+
+        //bug fixed BOSS模式的解锁逻辑在这里实现
+
+        if (iLevelIndex == 8 && iCurrentLevelType == LEVEL_UNLOCK_BUT_NO_PASS) //如果原第十二关被锁住了而现在被解锁了
+        {
+            //激活BOSS模式关卡
+            for(int i = 13; i <= 16; i++)
+            {
+
+                auto tmpLevelKey = StringUtils::format(LEVELKEY, iThemeIndex, i);
+                _levelData[tmpLevelKey] = "10";
+            }
+        }
     }
     FileUtils::getInstance()->writeToFile(_levelData, _sLevelDataFilePath); //重新写入文件
 }

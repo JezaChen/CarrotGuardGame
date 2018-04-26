@@ -18,7 +18,7 @@ BM_GameEndLayer *BM_GameEndLayer::create(const GameEndType &rEnGameEndType)
 {
     auto pBM_GameEndLayer = new BM_GameEndLayer();
 
-    if (!pBM_GameEndLayer->init(rEnGameEndType)) 
+    if (!pBM_GameEndLayer->init(rEnGameEndType))
         CC_SAFE_DELETE(pBM_GameEndLayer);
 
     return pBM_GameEndLayer;
@@ -59,8 +59,8 @@ void BM_GameEndLayer::saveLevelData()
 
     /*if (tCurLevelIndex == 12)
     {
-        ++tCurPageIndex;
-        tCurLevelIndex = 0;
+    ++tCurPageIndex;
+    tCurLevelIndex = 0;
     }*/
 
     //下一个关卡解锁
@@ -135,18 +135,18 @@ void BM_GameEndLayer::checkCarrotType()
 
     if (aRemainingTime >= GOLDCARROTTIME)
     {
-        _sCarrotType = GOLDCARROT;
+        _sCarrotType = "ss_gainhonor_3.png"; //bug fixed BOSS模式下的成就不是显示萝卜了，是显示KO，下同
         _iCarrotType = 4;
     }
 
     else if (aRemainingTime <= SILVERCARROTTIME1 && aRemainingTime >= SILVERCARROTTIME2)
     {
-        _sCarrotType = SILVERCARROT;
+        _sCarrotType = "ss_gainhonor_2.png";
         _iCarrotType = 3;
     }
     else if (aRemainingTime > 0)
     {
-        _sCarrotType = NORMALCARROT;
+        _sCarrotType = "ss_gainhonor_1.png";
         _iCarrotType = 2;
     }
 

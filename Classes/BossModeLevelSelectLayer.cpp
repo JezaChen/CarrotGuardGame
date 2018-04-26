@@ -240,8 +240,6 @@ void BossModeLevelSelectLayer::changeToGameScene()
 
 void BossModeLevelSelectLayer::loadData()
 {
-    //TODO 这个用于读取该怪物锁不锁住的
-    //TODO 需要文件那块弄好了才行
     _DataValueMap = LocalLevelDataUtil::getInstance()->getLevelData();
     checkThemeUnlocked();
 }

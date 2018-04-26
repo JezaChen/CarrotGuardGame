@@ -10,6 +10,7 @@
 
 AdvertisementLayer::~AdvertisementLayer()
 {
+    SoundUtil::getInstance()->stopBackgroundSound();
     SoundUtil::getInstance()->playBackgroundSound(BACKGROUNDSOUND);
 }
 
@@ -58,7 +59,7 @@ void AdvertisementLayer::changeAdImg()
 void AdvertisementLayer::createAdMusic()
 {
     SoundUtil::getInstance()->stopBackgroundSound();
-    SoundUtil::getInstance()->playEffectSound("Music/TanWanLanYue/0.mp3");
+    SoundUtil::getInstance()->playBackgroundSound("Music/TanWanLanYue/0.mp3");
 }
 
 void AdvertisementLayer::createAd1()
