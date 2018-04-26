@@ -7,6 +7,7 @@
 #include "MapUtil.h"
 #include "TowerFactory.h"
 #include "GameManager.h"
+#include "SceneManager.h"
 
 
 MapUtil* MapUtil::_gInstance;
@@ -179,9 +180,26 @@ void MapUtil::removeBarrierRect(const Vec2& rPos)
         if (aBarrier.second.containsPoint(rPos))
         {
             if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
-                rectTransVec(aBarrier.second);
-            else
-                rectTransTower(aBarrier.second, TowerType((rand() % 13))); //todo
+            {
+                //目前的爆炮塔的逻辑是
+                //随着关卡数的递增，爆出炮塔的概率越高
+                int iCurTheme = SceneManager::getInstance()->getCurrentPageIndex();
+                int iCurLevel = SceneManager::getInstance()->getCurrentLevelIndex();
+
+                int tmp = rand() % 30;
+                if (tmp < iCurTheme + iCurLevel) //投色子决定
+                    rectTransTower(aBarrier.second, TowerType((rand() % 17)));
+                else
+                    rectTransVec(aBarrier.second);
+            }
+            else //BOSS模式是高概率爆塔
+            {
+                int tmp = rand() % 30;
+                if (tmp < 23)
+                    rectTransTower(aBarrier.second, TowerType((rand() % 17)));
+                else
+                    rectTransVec(aBarrier.second);
+            }
             _pBarrierPosMap->erase(barrierIter);
             break;
         }

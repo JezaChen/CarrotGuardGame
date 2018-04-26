@@ -241,8 +241,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\BulletStar.cpp" />
     <ClCompile Include="..\Classes\LoadingScene.cpp" />
     <ClCompile Include="..\Classes\BossModeLevelSelectScene.cpp" />
-    <ClCompile Include="BulletArrow.cpp" />
-    <ClCompile Include="BulletCuttle.cpp" />
+    <ClCompile Include="..\Classes\BulletArrow.cpp" />
+    <ClCompile Include="..\Classes\BulletCuttle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="..\Classes\NumSprite.cpp" />
     <ClCompile Include="..\Classes\SceneBase.cpp" />
@@ -352,8 +352,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\LoadingScene.h" />
     <ClInclude Include="..\Classes\BossModeLevelSelectLayer.h" />
     <ClInclude Include="..\Classes\BossModeLevelSelectScene.h" />
-    <ClInclude Include="BulletArrow.h" />
-    <ClInclude Include="BulletCuttle.h" />
+    <ClInclude Include="..\Classes\BulletArrow.h" />
+    <ClInclude Include="..\Classes\BulletCuttle.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="..\Classes\NumSprite.h" />
     <ClInclude Include="..\Classes\SceneBase.h" />
@@ -381,6 +381,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

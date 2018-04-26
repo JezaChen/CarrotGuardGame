@@ -89,13 +89,14 @@ void LevelSelectLayer::loadMenuItem()
 
     _pStartBtn->setPosition(Vec2(0, -245));
     addChild(Menu::create(aBackBtn, aHelpBtn, _pStartBtn, nullptr), 14);
-    _pStartBtn->setVisible(false);
+    _pStartBtn->setVisible(!(std::get<0>(this->getLevelData(_iCurLevelIndex + 1)) ==
+        LEVEL_LOCK)); //bug fixed 加速按钮的显示
 
     //创建锁住按钮
     _pLockBtn = Sprite::createWithSpriteFrameName("ss_locked_CN.png");
     _pLockBtn->setPosition(Vec2(480, 75));
     addChild(_pLockBtn, 1);
-    _pLockBtn->setVisible(!_pLockBtn->isVisible());
+    _pLockBtn->setVisible(!_pStartBtn->isVisible());
 
 }
 

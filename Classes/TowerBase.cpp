@@ -253,7 +253,7 @@ void TowerBase::initTower()
     _pGradeMark->setZOrder(3);
     _pGradeMark->runAction(Animate::create(aniGradeMark));
     _pGradeMark->setPosition(0, 50);
-    addChild(_pGradeMark);
+    addChild(_pGradeMark, 10);
 
     //todo 这变量名...
     //塔基创建

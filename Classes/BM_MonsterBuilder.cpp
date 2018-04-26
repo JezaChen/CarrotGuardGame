@@ -97,7 +97,7 @@ void BM_MonsterBuilder::loadData()
     _iCurrTheme = SceneManager::getInstance()->getCurrentPageIndex();
     _iCurrLevel = SceneManager::getInstance()->getCurrentLevelIndex();
 
-    _iBossType = 19 + (_iCurrTheme + 1) * (_iCurrLevel - 12);
+    _iBossType = 19 + _iCurrTheme  * 4 + (_iCurrLevel - 12);
 }
 
 BM_MonsterBuilder::~BM_MonsterBuilder()

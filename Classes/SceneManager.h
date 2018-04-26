@@ -34,6 +34,8 @@ public:
     virtual int getCurrentLevelIndex();
 
     void setCurrentPageIndex(const int & _iCurPageIndex);
+
+    CC_SYNTHESIZE_PASS_BY_REF(bool, _bIsFirstEnter, IsFirstEnter);
 protected:
 
     /**

@@ -29,8 +29,7 @@ bool BM_ScoreAndControllerLayer::init()
         schedule(schedule_selector(BM_ScoreAndControllerLayer::bossHpChanged), 0.6f);
 
         bRet = true;
-    }
-    while (0);
+    } while (0);
 
     return bRet;
 }
@@ -55,7 +54,7 @@ void BM_ScoreAndControllerLayer::loadBg()
 
     //创建血量背景
     auto aBossHpBarBg = Sprite::createWithSpriteFrameName("menublood_02.png");
-    aBossHpBarBg->setPosition(465, 603);
+    aBossHpBarBg->setPosition(465, 595);
     addChild(aBossHpBarBg);
     //todo 要不要放大
 
@@ -70,19 +69,19 @@ void BM_ScoreAndControllerLayer::loadBg()
 
     //todo 看看官方api才行
     aBossHpBar->setMidpoint(Vec2::ANCHOR_MIDDLE_LEFT); //设置起点
-    //aBossHpBar->setAnchorPoint(Vec2::ANCHOR_MIDDLE_RIGHT);
+                                                       //aBossHpBar->setAnchorPoint(Vec2::ANCHOR_MIDDLE_RIGHT);
     aBossHpBar->setBarChangeRate(Vec2::ANCHOR_BOTTOM_RIGHT);
     aBossHpBar->setPercentage(100);
-    aBossHpBar->setPosition(465, 603);
+    aBossHpBar->setPosition(465, 595);
     addChild(aBossHpBar);
 }
 
 void BM_ScoreAndControllerLayer::createTopPanel()
 {
     auto pPauseItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("pause01.png"),
-                                             Sprite::createWithSpriteFrameName("pause02.png"));
+        Sprite::createWithSpriteFrameName("pause02.png"));
     auto pContinueItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("pause11.png"),
-                                                Sprite::createWithSpriteFrameName("pause12.png"));
+        Sprite::createWithSpriteFrameName("pause12.png"));
     //暂停继续切换；
     auto pPauseItemToggleItem = MenuItemToggle::createWithCallback([&](Ref* pSender)
     {
@@ -94,10 +93,10 @@ void BM_ScoreAndControllerLayer::createTopPanel()
     pPauseItemToggleItem->setPosition(300, 275);
 
     auto pChooseItems = MenuItemSprite::create(Sprite::createWithSpriteFrameName("menu01.png"),
-                                               Sprite::createWithSpriteFrameName("menu02.png"), [&](Ref* pSender)
-                                               {
-                                                   this->clickChooseItem();
-                                               });
+        Sprite::createWithSpriteFrameName("menu02.png"), [&](Ref* pSender)
+    {
+        this->clickChooseItem();
+    });
     pChooseItems->setPosition(400, 275);
     _pChooseItem = pChooseItems;
     //菜单面板；
@@ -111,6 +110,10 @@ void BM_ScoreAndControllerLayer::createBottomPanel()
     auto aTimerPanelSp = Sprite::createWithSpriteFrameName("honor_0.png");
     aTimerPanelSp->setPosition(100, 40); //todo
     addChild(aTimerPanelSp, 100);
+
+    _pHonorSp = Sprite::createWithSpriteFrameName("honor_3.png");
+    addChild(_pHonorSp, 100);
+    _pHonorSp->setPosition(160, 35);
 
     createNumSprite();
 }
@@ -149,11 +152,7 @@ void BM_ScoreAndControllerLayer::timeChange(float dt)
     removeChildByName("TimerSp");
     createNumSprite(); //重构计时精灵
 
-    //todo GameManager 要不要一个时间变量，用于统计结果 
-
-    //todo 时间的变化萝卜也会变化
-
-    if(_iTimeLimit == 0)
+    if (_iTimeLimit == 0)
     {
         //游戏失败
         auto aGameType = en_GameLose;
@@ -179,7 +178,7 @@ void BM_ScoreAndControllerLayer::loadData()
     //todo 是否从0开始的
     int iThemeIndex = SceneManager::getInstance()->getCurrentPageIndex();
     int iLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex();
-    int iBossId = (iThemeIndex + 1) * (iLevelIndex - 12) + 1;
+    int iBossId = iThemeIndex  * 4 + (iLevelIndex - 12) + 1;
 
     _iTimeLimit = CsvUtil::getInstance()->getInt(iBossId, en_BossTime, BOSSCSVFILE);
     _iBossCurrHp = _iBossTotalHp = CsvUtil::getInstance()->getInt(iBossId, en_BossHp, BOSSCSVFILE);
@@ -201,10 +200,26 @@ void BM_ScoreAndControllerLayer::onExit()
 
 void BM_ScoreAndControllerLayer::createNumSprite()
 {
-    _pTimeSp = NumSprite::createNum(StringUtils::format("%d", _iTimeLimit), "Themes/Items/numyellow-hd.png", 35);
+    //bug fixed 两位数和三位数的间隔处理方式不太一致
+    if (_iTimeLimit % 99 == 0)
+        _pTimeSp = NumSprite::createNum(StringUtils::format("%d", _iTimeLimit), "Themes/Items/numyellow-hd.png", 35);
+    else
+        _pTimeSp = NumSprite::createNum(StringUtils::format("%d", _iTimeLimit), "Themes/Items/numyellow-hd.png", 20);
     _pTimeSp->setName("TimerSp");
     _pTimeSp->setPosition(50, 35);
     addChild(_pTimeSp, 100);
+
+    //add 再加上一个成就精灵
+    if (_iTimeLimit == 9)
+    {
+        _pHonorSp->setSpriteFrame("honor_2.png");
+        _pHonorSp->runAction(Sequence::create(JumpBy::create(0.5f, Vec2(0, 0), 60, 2), DelayTime::create(0.5f), JumpBy::create(0.5f, Vec2(0, 0), 60, 2), nullptr));
+    }
+    else if (_iTimeLimit == 5)
+    {
+        _pHonorSp->setSpriteFrame("honor_1.png");
+        _pHonorSp->runAction(Sequence::create(JumpBy::create(0.5f, Vec2(0, 0), 60, 2), DelayTime::create(0.5f), JumpBy::create(0.5f, Vec2(0, 0), 60, 2), nullptr));
+    }
 }
 
 void BM_ScoreAndControllerLayer::clickChooseItem()

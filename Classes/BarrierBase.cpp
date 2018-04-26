@@ -17,6 +17,9 @@ bool BarrierBase::init(const int &rId)
 	do
 	{
 		CC_BREAK_IF(!VictimEntityBase::init(rId, BARRIERCSVFILE)); //调用父类的初始化，自上而下完成初始化操作
+
+        //BOSS模式下的障碍物比较难打
+
 		BarrierManager::getInstance()->addBarrier(this); //往管理类注册自己
 		bRet = true;
 	} while (0);

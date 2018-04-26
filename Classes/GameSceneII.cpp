@@ -57,8 +57,14 @@ Carrot * GameSceneII::getCarrot()
 
 void GameSceneII::clickChooseItem()
 {
-    //TODO 这个是什么东西
-    dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+    {
+        dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    }
+    else
+    {
+        dynamic_cast<BM_ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    }
 }
 
 bool GameSceneII::init()
@@ -90,6 +96,7 @@ void GameSceneII::onEnter()
 
     registerGameEvent(); //TODO 在这里注册
 
+    //播放对应主题的背景音乐
     SoundUtil::getInstance()->playBackgroundSound(StringUtils::format(THEMEBACKGROUNDMUSIC, SceneManager::getInstance()->getCurrentPageIndex() + 1).c_str());
 
     schedule(schedule_selector(GameSceneII::collisionUpDate), 0.05);

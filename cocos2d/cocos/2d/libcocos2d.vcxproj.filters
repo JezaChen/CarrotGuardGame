@@ -3938,5 +3938,6 @@
     <None Include="..\3d\CCAnimationCurve.inl">
       <Filter>3d</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
