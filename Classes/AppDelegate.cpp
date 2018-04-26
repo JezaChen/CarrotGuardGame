@@ -54,6 +54,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     preLoadSource();
     Config::getInstance()->setSoundConfig();
 
+    SceneManager::getInstance()->setIsFirstEnter(true);
+
     SceneManager::getInstance()->initWelcomeScene();
 
     return true;

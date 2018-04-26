@@ -178,7 +178,7 @@ void BM_ScoreAndControllerLayer::loadData()
     //todo 是否从0开始的
     int iThemeIndex = SceneManager::getInstance()->getCurrentPageIndex();
     int iLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex();
-    int iBossId = (iThemeIndex + 1) * (iLevelIndex - 12) + 1;
+    int iBossId = iThemeIndex  * 4 + (iLevelIndex - 12) + 1;
 
     _iTimeLimit = CsvUtil::getInstance()->getInt(iBossId, en_BossTime, BOSSCSVFILE);
     _iBossCurrHp = _iBossTotalHp = CsvUtil::getInstance()->getInt(iBossId, en_BossHp, BOSSCSVFILE);
