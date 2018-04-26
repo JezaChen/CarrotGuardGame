@@ -6,6 +6,7 @@
 #include "ui/UIButton.h"
 #include "SoundUtil.h"
 #include "CommonSource.h"
+#include "LocalLevelDataUtil.h"
 
 PageViewLayer::~PageViewLayer()
 {
@@ -24,6 +25,7 @@ bool PageViewLayer::init()
         _iPageIndex = SceneManager::getInstance()->getCurrentPageIndex();
         _pPagePointsVec = new Vector<MenuItemSprite*>;
 
+        loadData();
         loadBackground();
         createThemePageView();
         createThemePoints();
@@ -72,6 +74,24 @@ void PageViewLayer::loadBackground()
     aTitle->setPosition(475, 609);
     addChild(aTitle, 0);
     //aTitle->setScale(1.4);
+}
+
+void PageViewLayer::loadData()
+{
+    _pLevelsPastEachTheme = new std::vector<int>();
+    auto levelData = LocalLevelDataUtil::getInstance()->getLevelData();
+    for (int i = 1; i <= 3; i++)
+    {
+        int tmp = 0;
+        for (int j = 1; j <= 12; j++, tmp++) 
+        {
+            auto strLevelKey = StringUtils::format(LEVELKEY, i, j);
+            int iIsUnlocked = levelData[strLevelKey].asInt() / 10;
+            if (iIsUnlocked == 0)
+                break;
+        }
+        _pLevelsPastEachTheme->push_back(tmp);
+    }
 }
 
 void PageViewLayer::createThemePoints()
@@ -132,7 +152,7 @@ void PageViewLayer::createThemePageView()
         pPageLayout->addChild(aThemeInfo);
 
         //aThemeMark 是下方那个关卡通关数
-        auto aThemeMark = Sprite::createWithSpriteFrameName(StringUtils::format("bookmark_10-12.png")); //TODO
+        auto aThemeMark = Sprite::createWithSpriteFrameName(StringUtils::format("bookmark_%d-12.png", _pLevelsPastEachTheme->at(i + 1))); //TODO
         aThemeMark->setScale(1.5f);
         aThemeMark->setPosition(710, 70);
         pPageLayout->addChild(aThemeMark);

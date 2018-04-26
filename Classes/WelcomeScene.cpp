@@ -10,6 +10,7 @@
 #include "MenusLayer.h"
 #include "LoadingSourceLayer.h"
 #include "Config.h"
+#include "SceneManager.h"
 
 WelcomeScene::~WelcomeScene()
 {
@@ -29,7 +30,15 @@ bool WelcomeScene::init()
         //创建欢迎界面菜单的图层
         _pMenuLayer = MenusLayer::create();
         _pMenuLayer->retain();
-
+        
+        if (SceneManager::getInstance()->getIsFirstEnter())
+        {
+            auto scutBg = Sprite::create("loading/scut.png");
+            addChild(scutBg, 100);
+            scutBg->setPosition(VisibleRectUtil::center());
+            scutBg->runAction(Sequence::create(DelayTime::create(1.5f), FadeOut::create(1.0f), nullptr));
+            SceneManager::getInstance()->setIsFirstEnter(false);
+        }
         bRet = true;
     } while (0);
 
@@ -39,6 +48,7 @@ bool WelcomeScene::init()
 void WelcomeScene::onEnter()
 {
     Scene::onEnter();
+
     addChild(_pSpritesLayer); //无论加载是否完成，那几个怪物萝卜都显示出来
     if (!Config::getInstance()->getIsLoadSource()) //如果加载资源完成后
     {

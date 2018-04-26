@@ -10,7 +10,7 @@
 #include "BulletBase.h"
 #include "VictimEntityBase.h"
 #include "TowerBase.h"
-#include "proj.win32/BulletCuttle.h"
+#include "BulletCuttle.h"
 
 
 BulletBase *BulletFactory::createBullet(const int &rBulletId, TowerBase* rTower, VictimEntityBase *rVictimEntity)

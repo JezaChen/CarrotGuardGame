@@ -67,9 +67,17 @@ void PauseLayer::createMenu()
 	MenuItemSprite *pBtnSelectLevel = MenuItemSprite::create(
 		Sprite::createWithSpriteFrameName("menu_quit_normal_CN.png"), Sprite::createWithSpriteFrameName("menu_quit_pressed_CN.png"), [this](Ref *pSender)
 	{
-		auto enLevelSelectScene = std::make_tuple(en_LevelSelectScene, SceneManager::getInstance()->getCurrentPageIndex());
-		NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&enLevelSelectScene));
-
+        //bug fixed 两个模式下的退回按钮的处理逻辑不太一样，要返回到对应的选择页面中 
+	    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+	    {
+            auto enLevelSelectScene = std::make_tuple(en_LevelSelectScene, SceneManager::getInstance()->getCurrentPageIndex());
+            NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&enLevelSelectScene));
+	    }
+        else
+        {
+            auto enLevelSelectScene = std::make_tuple(en_BossModeScene, SceneManager::getInstance()->getCurrentPageIndex());
+            NOTIFY->postNotification("changeScene", reinterpret_cast<Ref *>(&enLevelSelectScene));
+        }
 	}
 	);
 	pBtnSelectLevel->setPosition(Vec2(481, 227));

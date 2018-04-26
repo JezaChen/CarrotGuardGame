@@ -39,9 +39,6 @@ bool GameEndLayer::init(const GameEndType &rEnGameEndType)
 
 		_enGameEndType = rEnGameEndType;
 
-        GameManager::getInstance()->setIsWin((_enGameEndType == en_GameWin));
-        GameManager::getInstance()->updateUserStatistics(); //及时保存文件
-
 		createMenu();
 
 		bRet = true;
@@ -52,15 +49,12 @@ bool GameEndLayer::init(const GameEndType &rEnGameEndType)
 
 void GameEndLayer::saveLevelData()
 {
-    //todo 障碍物清除状态没有保存 
-
 	if (en_GameWin != _enGameEndType) return;
 
 	auto tCurLevelIndex = SceneManager::getInstance()->getCurrentLevelIndex() + 1;
 
 	auto tCurPageIndex = SceneManager::getInstance()->getCurrentPageIndex() + 1;
 
-    //todo 障碍物全部清除那块没写啊
 	auto tLevelData = std::make_tuple(_iCarrotType, 0, tCurPageIndex, tCurLevelIndex);//bug fixed  顺序反了
 	NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref*>(&tLevelData));
 
@@ -72,6 +66,10 @@ void GameEndLayer::saveLevelData()
 
 	auto tNextLevelData = std::make_tuple(1, 0, tCurPageIndex, tCurLevelIndex + 1);
 	NOTIFY->postNotification(LEVELDATACHANGE, reinterpret_cast<Ref*>(&tNextLevelData));
+
+    //bug fixed 游戏通关历史数据更新应该放在关卡通关数据后面 
+    GameManager::getInstance()->setIsWin((_enGameEndType == en_GameWin));
+    GameManager::getInstance()->updateUserStatistics(); //及时保存文件
 }
 
 

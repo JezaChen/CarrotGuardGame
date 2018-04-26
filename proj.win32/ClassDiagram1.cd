@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BulletAnchor" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletAnchor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletBase" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAQAAAAABAAAAAAIEABAAAAAAAAAIACABAAABAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletArrow" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletArrow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletBlueStar" Collapsed="true">
+    <Position X="8" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletBlueStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletFish" Collapsed="true">
+    <Position X="9.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletFish.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletLittleAnchor" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletLittleAnchor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletPin" Collapsed="true">
+    <Position X="5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletPin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletRocket" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletRocket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletStar" Collapsed="true">
+    <Position X="2" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BulletStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entity" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAABkgQIAATAAEAAAACAAAAIAAAAAAAAAAAI=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicPropertyInterface" Collapsed="true">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAACAIACAAAEAABAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\DynamicPropertyInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerBase" Collapsed="true">
+    <Position X="29" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAQIAAIQBQkAACAAAGAAAAIAIAAAIABIBAAAAQEIA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerArrow" Collapsed="true">
+    <Position X="19.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAKABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerArrow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerAnchor" Collapsed="true">
+    <Position X="21.25" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAACAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerAnchor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerBall" Collapsed="true">
+    <Position X="23" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAACAIABBAAAAAQAIA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerBall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerBlueStar" Collapsed="true">
+    <Position X="24.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerBlueStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCuttle" Collapsed="true">
+    <Position X="26.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAIAhBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerCuttle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerFireBottle" Collapsed="true">
+    <Position X="28" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAACAIABBAAAAAQAIA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerFireBottle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerFish" Collapsed="true">
+    <Position X="29.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerFish.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerMushroom" Collapsed="true">
+    <Position X="31.25" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAKABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerMushroom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerPin" Collapsed="true">
+    <Position X="32.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerPin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerPlane" Collapsed="true">
+    <Position X="34.25" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAKABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerPlane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerRocket" Collapsed="true">
+    <Position X="35.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerRocket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerSnow" Collapsed="true">
+    <Position X="37.25" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAKABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerSnow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerStar" Collapsed="true">
+    <Position X="38.75" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerStar.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerSun" Collapsed="true">
+    <Position X="40.25" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAEAAKABBAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\TowerSun.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MonsterBase" Collapsed="true">
+    <Position X="15" Y="6" Width="1.5" />
+    <InheritanceLine Type="DynamicPropertyInterface" FixedFromPoint="true">
+      <Path>
+        <Point X="19" Y="2.625" />
+        <Point X="19.375" Y="2.625" />
+        <Point X="19.375" Y="6.403" />
+        <Point X="16.5" Y="6.403" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="VictimEntityBase">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.513" Y="0.114" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>gJAgAAAAAABAAAAAAABAAAAEAAAAAAIACABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\MonsterBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VictimEntityBase" Collapsed="true">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="Entity" ManuallyRouted="true">
+      <Path>
+        <Point X="3.25" Y="1.177" />
+        <Point X="3.25" Y="2.27" />
+        <Point X="13.75" Y="2.27" />
+        <Point X="13.75" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>gBEAAAAACEJIEAEAAAAAgAOAAgAAAAIBAAAAACAAFAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\VictimEntityBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Carrot" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="Entity" ManuallyRouted="true">
+      <Path>
+        <Point X="3.25" Y="1.177" />
+        <Point X="3.25" Y="2.902" />
+        <Point X="8" Y="2.902" />
+        <Point X="8" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACgBAAAAAAKAAAAAAAAAAAAIAChAQAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\Carrot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarrierBase" Collapsed="true">
+    <Position X="11.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\BarrierBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

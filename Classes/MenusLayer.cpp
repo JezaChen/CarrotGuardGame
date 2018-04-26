@@ -45,13 +45,13 @@ void MenusLayer::createMenuItems()
     );
     pBtnBossMode->setPosition(Vec2(pBtnAdventureMode->getPositionX() + 300, pBtnAdventureMode->getPositionY()));
 
-    if (true) // boss模式没有完成，先加上锁
+    /*if (true) // boss模式没有完成，先加上锁
     {
         auto pLock = Sprite::createWithSpriteFrameName("locked.png");
         pLock->setPosition(pBtnBossMode->getPositionX() + pBtnBossMode->getContentSize().width / 2 - 20,
                            pBtnBossMode->getPositionY() - 20);
         addChild(pLock, 1);
-    }
+    }*/
 
     auto pBtnNestMode = MenuItemSprite::create(
         Sprite::createWithSpriteFrameName("btn_nest_normal_CN.png"),

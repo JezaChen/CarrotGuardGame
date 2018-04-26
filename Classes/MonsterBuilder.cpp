@@ -45,13 +45,20 @@ void MonsterBuilder::onEnter()
 
 void MonsterBuilder::createMonsters(float t)
 {
+    if (_iMonsterCountsInCurrBatch == 0 && _fDelayTime >= DELAY_TIME)
+    {
+        //需要刷新波数
+        _iCurrBatch++;
+        NOTIFICATION_CENTER->postNotification("monsterBatchChange", (Ref *)&(_iCurrBatch)); //发送一个通知
+        GameManager::getInstance()->setIMonsterBatch(_iCurrBatch);
+    }
+
     if(_iCurrBatch == _iMonsterBatch) //最后一波
     {
         SoundUtil::getInstance()->playEffectSound(FINALWAVE);
         this->unschedule(schedule_selector(MonsterBuilder::createMonsters)); //去除调度器
         NOTIFICATION_CENTER->postNotification("openCheckGameWin");
     }
-
     //当延迟时间小于生成下一波怪物的延迟时间且当前波的怪物全部被清空了，延迟时间继续增加
     //第二个条件是因为只有该波怪物全部消掉了才能准备生成下一波怪物
     if(_fDelayTime < DELAY_TIME && MonsterManager::getInstance()->getMonsterVec().size() == 0)
@@ -62,12 +69,8 @@ void MonsterBuilder::createMonsters(float t)
         _iMonsterCountsInCurrBatch++;
         if(_iMonsterCountsInCurrBatch == 10) //当前波生成怪物的数目等于十个了
         {
-            //需要刷新波数
-            _iCurrBatch++;
             _iMonsterCountsInCurrBatch = 0;
             _fDelayTime = 0; //延迟时间也要更新
-            GameManager::getInstance()->setIMonsterBatch(_iCurrBatch);
-            NOTIFICATION_CENTER->postNotification("monsterBatchChange", (Ref *)&_iCurrBatch); //发送一个通知
         }
     }
 }

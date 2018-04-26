@@ -101,8 +101,8 @@
     <ClCompile Include="..\Classes\TowerMushroom.cpp" />
     <ClCompile Include="..\Classes\TowerArrow.cpp" />
     <ClCompile Include="..\Classes\TowerCuttle.cpp" />
-    <ClCompile Include="BulletCuttle.cpp" />
-    <ClCompile Include="BulletArrow.cpp" />
+    <ClCompile Include="..\Classes\BulletArrow.cpp" />
+    <ClCompile Include="..\Classes\BulletCuttle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
@@ -212,10 +212,14 @@
     <ClInclude Include="..\Classes\TowerMushroom.h" />
     <ClInclude Include="..\Classes\TowerArrow.h" />
     <ClInclude Include="..\Classes\TowerCuttle.h" />
-    <ClInclude Include="BulletCuttle.h" />
-    <ClInclude Include="BulletArrow.h" />
+    <ClInclude Include="..\Classes\BulletArrow.h" />
+    <ClInclude Include="..\Classes\BulletCuttle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>

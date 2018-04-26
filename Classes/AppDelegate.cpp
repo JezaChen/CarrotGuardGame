@@ -40,7 +40,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if (!glview)
     {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("Carrot Fantasy 1.0 Alpha Created By Chen Jianzhang & He Hongbing");
         director->setOpenGLView(glview);
     }
     glview->setDesignResolutionSize(960, 640, ResolutionPolicy::EXACT_FIT);
@@ -74,8 +74,8 @@ void AppDelegate::applicationWillEnterForeground() {
     if ((pCurScene != NULL) && pCurScene->getName() == "GameScene")
     {
         auto pGameScene = dynamic_cast<GameSceneII*>(pCurScene); //TODO 暂时是这个
-        //if (!pGameScene->getChildByName("CoundDown") && !pGameScene->getChildByName("GameEnd"))
-        //    dynamic_cast<GameSceneII*>(pCurScene)->clickChooseItem();
+        if (!pGameScene->getChildByName("CoundDown") && !pGameScene->getChildByName("GameEnd"))
+            dynamic_cast<GameSceneII*>(pCurScene)->clickChooseItem(); //呼出选择菜单
     }
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();

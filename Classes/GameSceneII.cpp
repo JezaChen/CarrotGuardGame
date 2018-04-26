@@ -57,8 +57,14 @@ Carrot * GameSceneII::getCarrot()
 
 void GameSceneII::clickChooseItem()
 {
-    //TODO 这个是什么东西
-    dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    if (GameManager::getInstance()->getCurrGameType() == en_Adventure)
+    {
+        dynamic_cast<ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    }
+    else
+    {
+        dynamic_cast<BM_ScoreAndControllerLayer*>(_pScoreAndControllerLayer)->clickChooseItem();
+    }
 }
 
 bool GameSceneII::init()

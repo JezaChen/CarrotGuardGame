@@ -132,7 +132,7 @@
     <1_13>
         <ThemeIndex ThemeIndex="1"/>
         <Level Level="13"/>
-        <Money Money="1050"/>
+        <Money Money="1000"/>
         <MonsterBatch MonsterBatch="1"/>
         <TowerType>
             <Bottle/>
@@ -146,7 +146,7 @@
     <1_14>
         <ThemeIndex ThemeIndex="1"/>
         <Level Level="14"/>
-        <Money Money="1050"/>
+        <Money Money="2000"/>
         <MonsterBatch MonsterBatch="1"/>
         <TowerType>
             <Bottle/>
@@ -179,7 +179,8 @@
         <TowerType>
             <Bottle/>
             <Shit/>
-            <Arrow/>
+            <Cuttle/>
+            <Anchor/>
             <Fan/>
             <Star/>
             <Ball/>
@@ -361,6 +362,7 @@
             <Bottle/>
             <Shit/>
             <Fan/>
+            <Arrow/>
             <Star/>
             <Ball/>
         </TowerType>
@@ -374,6 +376,7 @@
             <Bottle/>
             <Shit/>
             <Fan/>
+            <Cuttle/>
             <Star/>
             <Ball/>
         </TowerType>
@@ -385,6 +388,7 @@
         <MonsterBatch MonsterBatch="1"/>
         <TowerType>
             <Bottle/>
+            <Mushroom/>
             <Shit/>
             <Fan/>
             <Star/>
@@ -438,6 +442,7 @@
             <Bottle/>
             <BStar/>
             <Pin/>
+            <Arrow/>
             <Anchor/>
         </TowerType>
     </3_04>
@@ -454,7 +459,7 @@
             <BStar/>
             <Pin/>
             <Snow/>
-            <Anchor/>
+            <Arrow/>
         </TowerType>
     </3_05>
     <3_06>
@@ -480,7 +485,7 @@
             <BStar/>
             <Pin/>
             <Snow/>
-            <Anchor/>
+            <Arrow/>
             <PPlane1/>
         </TowerType>
     </3_07>
@@ -498,6 +503,7 @@
             <Snow/>
             <Bow/>
             <PPlane1/>
+            <Arrow/>
         </TowerType>
     </3_08>
     <3_09>
@@ -519,7 +525,7 @@
         <TowerType>
             <Pin/>
             <Snow/>
-            <Anchor/>
+            <Arrow/>
             <PPlane1/>
         </TowerType>
     </3_10>
@@ -540,9 +546,14 @@
         <Money Money="1050"/>
         <MonsterBatch MonsterBatch="20"/>
         <TowerType>
-            <Shit/>
-            <BStar/>
+            <Bottle/>
+            <Fan/>
             <Snow/>
+            <BStar/>
+            <Sun1/>
+            <Pin/>
+            <Arrow/>
+            <PPlane1/>
         </TowerType>
     </3_12>
     <3_13>
@@ -568,6 +579,7 @@
             <Shit/>
             <Fan/>
             <Star/>
+            <Arrow/>
             <Ball/>
         </TowerType>
     </3_14>
@@ -580,6 +592,7 @@
             <Bottle/>
             <Shit/>
             <Fan/>
+            <Cuttle/>
             <Star/>
             <Ball/>
         </TowerType>

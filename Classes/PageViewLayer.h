@@ -2,6 +2,7 @@
  * @brief 游戏关卡页面(主题)选择画面，包括背景，但这个并没有包含菜单（包含左右选择）
  * @author 陈建彰
  * @date 20180408
+ * @version 1.1
  * */
 #pragma once
 #ifndef PAGEVIEWLAYER_H
@@ -60,10 +61,18 @@ protected:
      * */
     virtual void loadBackground();
 
+    /**
+     * @breif 加载资源
+     * @since 1.1
+     * @details 为了能够正常显示每个主题的通关数，要改进
+     */
+    virtual void loadData();
+
 private:
     PageView *_pPageView = nullptr;
     int _iPageIndex = 0; //当前页面索引
     Vector<MenuItemSprite*> *_pPagePointsVec = nullptr; //存储小圆点的向量
+    std::vector<int>* _pLevelsPastEachTheme = nullptr; //每个主题的通关数
 };
 
 #endif //PAGEVIEWLAYER_H

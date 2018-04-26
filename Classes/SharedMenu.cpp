@@ -42,8 +42,8 @@ void SharedMenu::createMenu()
 		log("Weixin"); });
 	pWeChatSharedItem->setPosition(Vec2(0, -280));
 
-	auto pWeiBoSharedItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("share_weibo_normal.png"), Sprite::createWithSpriteFrameName("share_weibo_normal.png"), [](Ref *pSender) {
-		log("Weibo"); });
+	auto pWeiBoSharedItem = MenuItemSprite::create(Sprite::createWithSpriteFrameName("share_weibo_normal.png"), Sprite::createWithSpriteFrameName("share_weibo_press.png"), [](Ref *pSender) {
+		log("Weibo"); }); //bug fixed 按钮的两个状态应该是不同的 
 	pWeiBoSharedItem->setPosition(Vec2(150, -280));
 
 	auto pMenu = Menu::create(pSinaSharedItem, pWeChatSharedItem, pWeiBoSharedItem, nullptr);
