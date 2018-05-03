@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Entity" Collapsed="true">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Position X="13" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAABkgQIAATAAEAAAACAAAAIAAAAAAAAAAAI=</HashCode>
       <FileName>C:\Users\jeza1\source\repos\CarrotGuardGame\Classes\Entity.h</FileName>
@@ -184,6 +184,11 @@
   </Class>
   <Class Name="MonsterBase" Collapsed="true">
     <Position X="15" Y="6" Width="1.5" />
+    <InheritanceLine Type="VictimEntityBase">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.513" Y="0.114" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
     <InheritanceLine Type="DynamicPropertyInterface" FixedFromPoint="true">
       <Path>
         <Point X="19" Y="2.625" />
@@ -191,11 +196,6 @@
         <Point X="19.375" Y="6.403" />
         <Point X="16.5" Y="6.403" />
       </Path>
-    </InheritanceLine>
-    <InheritanceLine Type="VictimEntityBase">
-      <InheritanceModifierLabel ManuallyPlaced="true">
-        <Position X="-0.513" Y="0.114" />
-      </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>gJAgAAAAAABAAAAAAABAAAAEAAAAAAIACABAAAAAAAA=</HashCode>
@@ -206,8 +206,8 @@
     <Position X="13" Y="3.75" Width="1.5" />
     <InheritanceLine Type="Entity" ManuallyRouted="true">
       <Path>
-        <Point X="3.25" Y="1.177" />
-        <Point X="3.25" Y="2.27" />
+        <Point X="13.75" Y="2.427" />
+        <Point X="13.75" Y="2.27" />
         <Point X="13.75" Y="2.27" />
         <Point X="13.75" Y="3.75" />
       </Path>
@@ -221,8 +221,8 @@
     <Position X="7.25" Y="3.75" Width="1.5" />
     <InheritanceLine Type="Entity" ManuallyRouted="true">
       <Path>
-        <Point X="3.25" Y="1.177" />
-        <Point X="3.25" Y="2.902" />
+        <Point X="13.75" Y="2.427" />
+        <Point X="13.75" Y="2.902" />
         <Point X="8" Y="2.902" />
         <Point X="8" Y="3.75" />
       </Path>
