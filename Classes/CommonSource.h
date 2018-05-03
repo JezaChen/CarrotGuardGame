@@ -124,7 +124,7 @@ const static std::string MONSTERMUSIC = "Music/Monsters/";
 const static std::string THEME = "Theme";
 const static std::string THEMEATTRIBUTE = "ThemeIndex";
 /**
-* @brief 等级配置信息
+* @brief 关卡配置信息
 */
 const static std::string LEVEL = "Level";
 const static std::string LEVELATTRIBUTE = "LevelIndex";
